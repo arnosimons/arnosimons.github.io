@@ -3,6 +3,6 @@ layout: default
 title: "Happy Jekylling!"
 ---
 
-## Test
+## Test 2
 
 Start developing your Jekyll website.
