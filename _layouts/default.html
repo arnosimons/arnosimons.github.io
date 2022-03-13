@@ -16,15 +16,11 @@
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
+        
+        <img src="{{site.logo | relative_url}}" alt="Logo" />
         <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        <p class="view"><a href="{{ site.github.owner_url }}">My GitHub Profile</a></p>
-        <p class="view"><a href="{{site.twitter}}">My Twitter Account</a></p>
+        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a></p>
+        <p class="view"><a href="{{site.twitter}}">Twitter</a></p>
 
         {% if site.show_downloads %}
         <ul class="downloads">
