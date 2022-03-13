@@ -30,7 +30,7 @@ twitter_username: arno_simons
 github_username:  arnosimons
 
 # Build settings
-theme: minimal
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
