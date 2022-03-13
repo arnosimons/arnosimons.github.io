@@ -1,6 +1,6 @@
 title: Arno Simons
 logo: /assets/img/logo.png
 description: This is the descrption
-show_downloads: true
-google_analytics:
+twitter_username: arno_simons
+github_username:  arnosimons
 theme: jekyll-theme-minimal
