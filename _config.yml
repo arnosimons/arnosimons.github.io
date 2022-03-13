@@ -3,3 +3,5 @@ title: Arno Simons
 description: This is a description
 github_username: arnosimons
 twitter_username: arno_simons
+baseurl: "/blog"
+url: "https://arnosimons.github.io"
