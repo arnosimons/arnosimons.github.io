@@ -1,3 +1,7 @@
 theme: jekyll-theme-minimal
 title: Arno Simons
 description: This is my description
+twitter_username: arno_simons
+github_username:  arnosimons
+plugins:
+  - jekyll-feed
