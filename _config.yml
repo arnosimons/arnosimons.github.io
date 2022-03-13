@@ -31,7 +31,7 @@ github_username:  arnosimons
 
 # Build settings
 # theme: jekyll-theme-minimal
-theme: minima
+theme: minimal
 plugins:
   - jekyll-feed
 
