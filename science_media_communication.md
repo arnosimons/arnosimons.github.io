@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Science-Media Communication
-Excerpt: Teaser text
+excerpt: Teaser text
 ---
 
 ## Science-Media Communication
