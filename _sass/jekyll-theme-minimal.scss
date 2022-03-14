@@ -3,8 +3,9 @@
 
 
 :root {
-  --header-footer-size: 177px;
-  --wrapper-size: 960px;
+  --header-footer-width: 177px;
+  --wrapper-width: 860px;
+  --section-width: 600px;
 }
 
 
@@ -65,7 +66,7 @@ a:hover small {
 
 .wrapper {
 //   width:860px;
-  width:var(--wrapper-size);
+  width:var(--wrapper-width);
   margin:0 auto;
 }
 
@@ -129,7 +130,7 @@ kbd {
 
 header {
 //   width:270px;
-  width:var(--header-footer-size);
+  width:var(--header-footer-width);
   float:left;
   position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -197,6 +198,7 @@ strong {
 
 section {
   width:500px;
+  width:var(--section-width);
   float:right;
   padding-bottom:50px;
 }
@@ -214,7 +216,7 @@ hr {
 
 footer {
 //   width:270px;
-  width:var(--header-footer-size);
+  width:var(--header-footer-width);
   float:left;
   position:fixed;
   bottom:50px;
