@@ -5,7 +5,8 @@
 :root {
   --header-footer-width: 200px;
   --section-width: 600px;
-  --wrapper-width: 860px;
+  --color-text-normal:#777;
+  --color-text-highlight:#000000;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 //   color:#222;
-  color:#000000;
+  color:var(--color-text-highlight);
   margin:0 0 20px;
 }
 
@@ -55,18 +56,19 @@ a:hover, a:focus {
 
 a small {
   font-size:11px;
-  color:#777;
+//   color:#777;
+  color:var(--color-text-normal);
   margin-top:-0.3em;
   display:block;
 }
 
 a:hover small {
-  color:#777;
+//   color:#777;
+  color:var(--color-text-normal);
 }
 
 .wrapper {
-//   width:860px;
-  width:var(--wrapper-width);
+  width:860px;
   margin:0 auto;
 }
 
