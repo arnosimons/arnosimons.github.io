@@ -3,7 +3,8 @@
 
 
 :root {
-  --header_footer_size: 177px;
+  --header-footer-size: 177px;
+  --wrapper-size: 960px;
 }
 
 
@@ -63,7 +64,8 @@ a:hover small {
 }
 
 .wrapper {
-  width:860px;
+//   width:860px;
+  width:var(--wrapper-size);
   margin:0 auto;
 }
 
@@ -127,7 +129,7 @@ kbd {
 
 header {
 //   width:270px;
-  width:var(--header_footer_size);
+  width:var(--header-footer-size);
   float:left;
   position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -212,7 +214,7 @@ hr {
 
 footer {
 //   width:270px;
-  width:var(--header_footer_size);
+  width:var(--header-footer-size);
   float:left;
   position:fixed;
   bottom:50px;
