@@ -6,8 +6,10 @@ layout: default
   
   {%- if site.pages.size > 0 -%}
     {%- for page in site.pages -%}
-      <h3>{{ page.title }}</h3>
-      <p>{{ page.excerpt }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
+      {%- if page.teaser -%}
+        <h3>{{ page.title }}</h3>
+        <p>{{ page.teaser }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
+      {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
 
