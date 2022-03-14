@@ -17,8 +17,9 @@
       <header>
         <h1>{{ site.title }}</h1>
         <p><strong>{{ site.about_me }}</strong></p>
+        
         <img src="{{site.foto | relative_url}}" alt="Logo" /> 
-        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a> and <a href="{{ site.twitter }}">Twitter</a></p>
+        
         <h4><a href="{{ site.url }}">Home</a></h4>
         <h4><a href="/evidence_based_policy.html">Evidence-Based Policy</a></h4>
         <h4><a href="/instrument_constituencies.html">Policy Instrument Constituenciese</a></h4> 
@@ -32,6 +33,7 @@
 
       </section>
       <footer>
+        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a> and <a href="{{ site.twitter }}">Twitter</a></p>
         <p><small>&copy; Arno Simons</small></p>
       </footer>
     </div>
