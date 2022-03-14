@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Instrument Consituencies
-excerpt: Teaser text
+teaser: Teaser text
 ---
 
 ## Instrument Consituencies
