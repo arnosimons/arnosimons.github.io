@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Evidence-Based Policy
+excerpt: Teaser text
 ---
 
 ## Evidence-Based Policy
