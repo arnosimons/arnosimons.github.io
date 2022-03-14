@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## From Bench to Bedside
+## From Bench To Bedside
 
 This is my stuff on biomedical translation
 
