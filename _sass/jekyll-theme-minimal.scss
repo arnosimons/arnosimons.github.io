@@ -1,6 +1,13 @@
 @import "fonts";
 @import "rouge-github";
 
+
+:root {
+  --header_footer_size: 177px;
+}
+
+
+
 body {
   background-color: #fff;
   padding:50px;
@@ -119,7 +126,8 @@ kbd {
 }
 
 header {
-  width:270px;
+//   width:270px;
+  width:var(--header_footer_size);
   float:left;
   position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -203,7 +211,8 @@ hr {
 }
 
 footer {
-  width:270px;
+//   width:270px;
+  width:var(--header_footer_size);
   float:left;
   position:fixed;
   bottom:50px;
