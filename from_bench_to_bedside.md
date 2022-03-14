@@ -1,7 +1,7 @@
 ---
 layout: default
 title: From Bench To Bedside
-excerpt: Teaser text
+teaser: Teaser text
 ---
 
 ## From Bench To Bedside
