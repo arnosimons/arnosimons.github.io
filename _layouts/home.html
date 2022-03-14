@@ -8,7 +8,7 @@ layout: default
     {%- for page in site.pages -%}
       {%- if page.teaser -%}
         <h3 class="subhead">{{ page.title }}</h3>
-        <p>{{ page.teaser }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
+        <p>{{ page.excerpt | strip_html | truncatewords:75 }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
