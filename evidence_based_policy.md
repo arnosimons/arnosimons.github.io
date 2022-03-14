@@ -16,4 +16,4 @@ To conclude, we sound a note of caution: don’t get us wrong! We are neither cl
 
 You can read the original research in Policy & Politics:
 
-Simons, Arno; Schniedermann, Alexander (2021) ‘The neglected politics behind evidence-based policy: shedding light on instrument constituency dynamics’ [Open Access],  Policy & Politics, DOI: https://doi.org/10.1332/030557321X16225469993170
+<sup>Simons, Arno; Schniedermann, Alexander (2021) ‘The neglected politics behind evidence-based policy: shedding light on instrument constituency dynamics’ [Open Access],  Policy & Politics, DOI: https://doi.org/10.1332/030557321X16225469993170</sup>
