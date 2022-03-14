@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Wikipedia Science Analytics
+Excerpt: Teaser text
 ---
 
 ## Wikipedia Science Analytics
