@@ -17,12 +17,13 @@
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         
-        <p><strong>{{ site.about_me }}<strong></p>
+        <p><strong>{{ site.about_me }}</strong></p>
         
         <img src="{{site.foto | relative_url}}" alt="Logo" />
+        
+        <ul class="downloads">
 
-        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a></p>
-        <p class="view"><a href="{{ site.twitter }}">Twitter</a></p>
+        <p class="view"><a href="{{ site.github.owner_url }}">GitHub</a> | <a href="{{ site.twitter }}">Twitter</a></p>
 
         {% if site.show_downloads %}
         <ul class="downloads">
