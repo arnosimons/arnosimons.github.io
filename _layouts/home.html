@@ -5,21 +5,11 @@ layout: default
 <div>
   
   {%- if site.pages.size > 0 -%}
-    <ul>
-      {%- for page in site.pages -%}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ page.title }}
-          </a>
-        </h3>
-        {{ page.excerpt }}
-        <p><a href="{{ site.url }}">Continue reading</a></p>
-        
-      </li>
-      {%- endfor -%}
-    </ul>
-
+    {%- for page in site.pages -%}
+      <h3>{{ page.title }}</h3>
+      {{ page.excerpt }}
+    <p><sup><a href="{{ site.url }}">Continue reading</a></sup></p>        
+    {%- endfor -%}
   {%- endif -%}
 
   {{ content }}
