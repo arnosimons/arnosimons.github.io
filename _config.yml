@@ -4,3 +4,4 @@ foto: /assets/img/me_color.jpg
 description: This is the description
 theme: jekyll-theme-minimal
 twitter: https://twitter.com/arno_simons
+page_excerpts: true
