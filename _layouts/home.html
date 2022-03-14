@@ -3,6 +3,24 @@ layout: default
 ---
 
 <div>
+  
+  {%- if site.pages.size > 0 -%}
+    <ul>
+      {%- for page in site.pages -%}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ page.title }}
+          </a>
+        </h3>
+        {{ page.excerpt }}
+        <p><a href="{{ site.url }}">Continue reading</a></p>
+        
+      </li>
+      {%- endfor -%}
+    </ul>
+
+  {%- endif -%}
 
   {{ content }}
 
