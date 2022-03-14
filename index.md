@@ -1,6 +1,6 @@
 ---
-<!-- layout: default -->
-layout: home
+layout: default
+<!-- layout: home -->
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
