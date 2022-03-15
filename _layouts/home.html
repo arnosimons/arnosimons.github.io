@@ -16,9 +16,9 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2>{{ page.list_title | default: "Posts" }}</h2>
+    <h2>Latest Posts</h2>
     <ul>
-      {%- for post in site.posts -%}
+      {%- for post in site.posts limit: 3 -%}
       <li style="list-style-type: none;">
         <span>{{ post.date | date: "%b %-d, %Y" }}</span>
         <h3>
