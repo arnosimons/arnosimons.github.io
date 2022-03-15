@@ -6,7 +6,7 @@ categories: science-policy-nexus
 permalink: /:title
 ---
 
-## {{page.title}}
+## {{ page.title }}
 
 <small>Originally published on the [Policy & Politics Blog](https://policyandpoliticsblog.com/2021/07/07/why-evidence-based-policy-is-political)</small>
 
