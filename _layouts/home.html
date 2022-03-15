@@ -2,18 +2,18 @@
 layout: default
 ---
 
+<h2>{{ title }}</h2>
+
+{{ content }}
+
 <div>
   
-  {%- if site.pages.size > 0 -%}
-    {%- for page in site.pages -%}
-      {%- if page.teaser -%}
-        <h3 class="home">{{ page.title }}</h3>
-        <p>{{ page.teaser }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endif -%}
-
-  {{ content }}
+  {%- for page in site.pages -%}
+    {%- if page.teaser -%}
+      <h3 class="home">{{ page.title }}</h3>
+      <p>{{ page.teaser }}<small>...<a href="{{ page.url }}">Continue reading</a></small></p>
+    {%- endif -%}
+  {%- endfor -%}
 
   {%- if site.posts.size > 0 -%}
     <h2>Latest Posts</h2>
