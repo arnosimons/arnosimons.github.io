@@ -13,5 +13,5 @@ In their 1968 book Jazz Dance - The Story of American Vernacular Dance, Marshall
 How right and wrong they were at the same time! Right, because Jazz Dance indeed is a thrilling art that deserves study. Wrong, because the revolution did happen (in the 1980s) and it has given birth to a new era of jazz and swing dance unprecedented in scope. I am happy and proud to be part of today's Berlin and international swing dance community, and I am only beginning to document my journey through this fantastic world with my camera.
 
 {% for i in (1..8) %}
-  <img src="/assets/img/lindy/{{ i }}.jpg" />
+  <img src="/img/lindy/{{ i }}.jpg" />
 {% endfor %}

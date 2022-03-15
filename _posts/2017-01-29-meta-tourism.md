@@ -10,5 +10,5 @@ Tourism is full of paradoxes. One is that tourists often destroy what they are l
 To study meta tourism artistically, I shot pictures of tourists shooting pictures of sights.
 
 {% for i in (1..14) %}
-  <img src="/assets/img/meta-tourism/{{ i }}.jpg" />
+  <img src="/img/meta-tourism/{{ i }}.jpg" />
 {% endfor %}
