@@ -3,7 +3,7 @@ layout: default
 title: Policy Instrument Consituencies
 teaser: A policy instrument constituency is a configuration of people, ideas and things that forms around and works in support of a particular policy instrument or instrument mix. Read why instrument constituencies are important actors in the policy process. 
 categories: science-policy-nexus
-permalink: "/instrument-constituencies.html"
+permalink: /instrument-constituencies
 ---
 
 ## Policy Instrument Consituencies

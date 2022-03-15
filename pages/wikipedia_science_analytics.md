@@ -3,7 +3,7 @@ layout: default
 title: Wikipedia Science Analytics
 teaser: Teaser text
 categories: open-science
-permalink: "/wikipedia-science-analytics.html"
+permalink: /wikipedia-science-analytics
 ---
 
 ## Wikipedia Science Analytics
