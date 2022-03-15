@@ -1,10 +1,11 @@
 ---
 layout: default
+permalink: /evidence_based_policy/
 title: Evidence-Based Policy
 teaser: The idea that public policy should be informed by scientific knowledge has great appeal. But there is more “politics” to “evidence-based policy” than you might expect
 ---
 
-## Evidence-Based Policy
+## {{page.title}}
 
 <small>Originally published on the [Policy & Politics Blog](https://policyandpoliticsblog.com/2021/07/07/why-evidence-based-policy-is-political)</small>
 

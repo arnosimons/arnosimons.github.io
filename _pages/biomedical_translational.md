@@ -1,6 +1,7 @@
 ---
 layout: default
-title: From Bench To Bedside
+permalink: /biomedical_translation/
+title: Biomedical Translation
 teaser: Teaser text
 ---
 
