@@ -1,8 +1,8 @@
 ---
 layout: default
-permalink: /preprints_in_the_press/
 title: Preprints in the German Legacy Press
 teaser: Teaser text
+permalink: "/preprints-in-the-press.html"
 ---
 
 ## Preprints in the German Legacy Press

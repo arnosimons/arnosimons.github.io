@@ -1,11 +1,12 @@
 ---
 layout: default
-permalink: /biomedical_translation/
-title: Biomedical Translation
+title: Biomedical Translation From the Practioners' View
 teaser: Teaser text
+categories: biomedical-translation
+permalink: "/biomedical-translation.html"
 ---
 
-## From Bench To Bedside
+## {{ page.title }}
 
 In the context of recent debates about medical innovation, Translational Research (TR) has become a major and widely acknowledged approach. The promise of a 'translational turn' is raising high expectations, despite the fact that a widely shared definition of what TR is or should be is still missing. Generally, the goal of TR is to improve the translation of knowledge from 'bench to bedside and back'. Different models describe how research is transferred into innovation, but they vary in their characterization and enumeration of translational phases. Whereas some highlight a linear phase-oriented view of knowledge transfer, others take a more evolutionary stance emphasizing multidirectionality and feedback loops.
 
