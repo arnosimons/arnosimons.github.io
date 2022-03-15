@@ -5,6 +5,7 @@ layout: default
 {{ content }}
 
 <!-- List related pages -->
+<h2>Related Pages</h2>
 {%- for p in site.pages -%}
   {%- if p.tags contains page.tag -%}
     <h3 class="home">{{ p.title }}</h3>
@@ -13,21 +14,18 @@ layout: default
 {%- endfor -%}
 
 <!-- List latest posts -->
-{%- if site.posts.size > 0 -%}
-  <h2>Latest Posts</h2>
-  <ul>
-    {%- for p in site.posts limit: 3 -%}
-    <li style="list-style-type: none;">
-      <span>{{ p.date | date: "%b %-d, %Y" }}</span>
-      <h3>
-        <a href="{{ p.url }}">
-          {{ p.title }}
-        </a>
-      </h3>
-      {%- if site.show_excerpts -%}
+<h2>Related Posts</h2>
+<ul>
+  {%- for p in site.posts -%}
+    {%- if p.tags contains page.tag -%}
+      <li style="list-style-type: none;">
+        <span>{{ p.date | date: "%b %-d, %Y" }}</span>
+        <h3>
+          <a href="{{ p.url }}">
+            {{ p.title }}
+          </a>
+        </h3>
         {{ p.excerpt }}
-      {%- endif -%}
-    </li>
-    {%- endfor -%}
-  </ul>
-{%- endif -%}
+      </li>
+  {%- endfor -%}
+</ul>
