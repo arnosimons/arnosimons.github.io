@@ -1,7 +1,7 @@
 ---
 layout: theme
 title: Science-Policy Nexus
-tags: science-policy-nexus
+tag: science-policy-nexus
 permalink: /science-policy-nexus
 ---
 

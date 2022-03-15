@@ -2,6 +2,8 @@
 layout: default
 title: Preprints in the German Legacy Press
 teaser: Teaser text
+tags:
+    - test
 permalink: "/preprints-in-the-press.html"
 ---
 

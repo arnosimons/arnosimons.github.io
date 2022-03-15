@@ -2,7 +2,8 @@
 layout: default
 title: Wikipedia Science Analytics
 teaser: Teaser text
-tags: open-science
+tags: 
+    - open-science
 permalink: /wikipedia-science-analytics
 ---
 

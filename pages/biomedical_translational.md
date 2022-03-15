@@ -2,7 +2,8 @@
 layout: default
 title: Biomedical Translation From the Practioners' View
 teaser: Teaser text
-tags: biomedical-translation
+tags:
+    - biomedical-translation
 permalink: /biomedical-translation
 ---
 
