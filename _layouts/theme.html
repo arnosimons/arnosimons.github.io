@@ -6,7 +6,7 @@ layout: default
 
 <!-- List related pages -->
 {%- for p in site.pages -%}
-  {%- if p.tags and page.tag in p.tags -%}
+  {%- if p.tags contains page.tag -%}
     <h3 class="home">{{ p.title }}</h3>
     <p>{{ p.teaser }}<small>...<a href="{{ p.url }}">Continue reading</a></small></p>
   {%- endif -%}

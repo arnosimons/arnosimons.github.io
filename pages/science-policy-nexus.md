@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: theme
 title: Science-Policy Nexus
 tag: science-policy-nexus
 permalink: /science-policy-nexus
