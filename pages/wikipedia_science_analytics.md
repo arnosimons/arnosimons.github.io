@@ -6,6 +6,6 @@ categories: open-science
 permalink: /wikipedia-science-analytics
 ---
 
-## Wikipedia Science Analytics
+## {{ page.title }}
 
 This is my stuff on Wikipedia science analytics
