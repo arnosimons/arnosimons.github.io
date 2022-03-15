@@ -13,10 +13,15 @@
   
   <p style="margin-bottom: 10px">My Themes</p>
 
-  <h4 class="header"><a href="/science-policy-nexus.html">Science-Policy Nexus</a></h4> 
-  
-  <h4 class="header"><a href="/evidence-based-policy.html">Evidence-Based Policy</a></h4> 
-  <h4 class="header"><a href="/instrument-constituencies.html">Instrument Constituencies</a></h4>
-  <h4 class="header"><a href="/biomedical-translation.html">Biomedical Translation</a></h4>
+  {%- for p in site.pages -%}
+    {%- if p.tag -%}
+      <h4 class="header"><a href="{{ p.url }}">{{ p.title }}</a></h4>
+    {%- endif -%}
+  {%- endfor -%}
+
+  <!-- <h4 class="header"><a href="/science-policy-nexus.html">Science-Policy Nexus</a></h4> -->
+  <!-- <h4 class="header"><a href="/translation.html">Translation</a></h4> -->
+  <!-- <h4 class="header"><a href="/open-science.html">Open Science</a></h4> -->
+  <!-- <h4 class="header"><a href="/text-analytics.html">Text Analytics</a></h4>  -->
 
 </header>

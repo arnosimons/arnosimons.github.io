@@ -4,6 +4,7 @@ title: Wikipedia Science Analytics
 teaser: Teaser text
 tags: 
     - open-science
+    - translation
 permalink: /wikipedia-science-analytics
 ---
 
