@@ -7,9 +7,8 @@ tags:
 ---
 Tourism is full of paradoxes. One is that tourists often destroy what they are looking for by way of finding it. This can have major implications for cultural commodification, sustainability or archeological conservation. On a minor note, tourism is in the way of a truly esthetic experience of touristic sights. Or is it? Whereas most tourists would prefer taking a picture of a sight without other tourists in the fore- or background, I developed a taste for what might be called 'meta tourism': watching tourists instead of sights.
 
-To study meta tourism artistically, I shoot pictures of tourists shooting pictures of sights.
+To study meta tourism artistically, I shot pictures of tourists shooting pictures of sights.
 
-{% assign filenames = "1.jpg,2.jpg,3.jpg" | split: "," %}
-{% for name in filenames %}
-  <img src="/assets/img/meta-tourism/{{ name }}" />
+{% for i in (1..14) %}
+  <img src="/assets/img/meta-tourism/{{ i }}.jpg" />
 {% endfor %}
