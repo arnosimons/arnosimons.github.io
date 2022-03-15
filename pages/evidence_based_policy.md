@@ -3,7 +3,7 @@ layout: default
 title: "Evidence-Based Policy"
 teaser: The idea that public policy should be informed by scientific knowledge has great appeal. But there is more “politics” to “evidence-based policy” than you might expect
 categories: science-policy-nexus
-permalink: /{{ page.title }}
+permalink: /evidence-based-policy
 ---
 
 ## {{ page.title }}
