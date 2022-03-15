@@ -19,7 +19,7 @@ layout: default
     <h2>{{ page.list_title | default: "Posts" }}</h2>
     <ul>
       {%- for post in site.posts -%}
-      <li>
+      <li style="list-style-type: none;">
         <span>{{ post.date | date: "%b %-d, %Y" }}</span>
         <h3>
           <a href="{{ post.url }}">
