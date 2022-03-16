@@ -14,8 +14,10 @@ Against this background, the politics—and yes ideology—behind EBP can be car
 
 To conclude, we sound a note of caution: don’t get us wrong! We are neither claiming that policy making should go without science nor that EBP is inherently bad. Science is a key pillar of our societies and should therefore have a firm place in the policy process. But it cannot do away with politics or ideology, and it shouldn’t even try. EBP, as flawed as it may be, can provide important encouragement to integrate some forms of evidence in the policy process. But it should be taken for what it is: a political agenda for a specific vision of science in politics, not as a self-evident theory of policy making.
 
-<small>This post was originally published on the [Policy & Politics Blog](https://policyandpoliticsblog.com/2021/07/07/why-evidence-based-policy-is-political)</small>
-
 You can read the original research in Policy & Politics:
 
-<small>Simons, Arno; Schniedermann, Alexander (2021) ‘The neglected politics behind evidence-based policy: shedding light on instrument constituency dynamics’ [Open Access],  Policy & Politics, DOI: https://doi.org/10.1332/030557321X16225469993170</small>
+<small>Simons, Arno; Schniedermann, Alexander (2021) ‘The neglected politics behind evidence-based policy: shedding light on instrument constituency dynamics’ [Open Access],  Policy & Politics, DOI: [https://doi.org/10.1332/030557321X16225469993170](https://doi.org/10.1332/030557321X16225469993170)</small>
+
+<small>This post was originally published on the [Policy & Politics Blog](https://policyandpoliticsblog.com/2021/07/07/why-evidence-based-policy-is-political)</small>
+
+
