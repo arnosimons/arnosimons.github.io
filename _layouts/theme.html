@@ -19,12 +19,15 @@ layout: default
     {%- if p.tags contains page.tag -%}
       <li style="list-style-type: none;">
         <span>{{ p.date | date: "%b %-d, %Y" }}</span>
-        <h3>
+        <h3 class="home">
           <a href="{{ p.url }}">
             {{ p.title }}
           </a>
         </h3>
-        {{ p.excerpt }}
+        <p>
+          {{ p.content | strip_html | truncatewords: 50 }}
+          <small>...<a href="{{ p.url }}">Continue reading</a></small>
+        </p>
       </li>
     {%- endif -%}
   {%- endfor -%}
