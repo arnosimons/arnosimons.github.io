@@ -3,8 +3,10 @@ layout: post
 title:  Ludwik Fleck
 date:   2013-06-18
 tags:
-  - science communication
+  - science-communication
   - fact-making
+  - science-studies
+  - sts
 ---
 
 <img src="/img/fleck/1.png" />
