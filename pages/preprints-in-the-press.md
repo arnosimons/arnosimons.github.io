@@ -5,9 +5,12 @@ teaser: Teaser text
 tags:
     - translation
     - text-analytics
+    - science-communication
+    - framing
+    - media-studies
 permalink: "/preprints-in-the-press.html"
 ---
 
-## Preprints in the German Legacy Press
+## {{ page.title }}
 
 This is my stuff on science-media communication
