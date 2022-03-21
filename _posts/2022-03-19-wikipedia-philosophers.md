@@ -18,7 +18,7 @@ Today, I'm showing you how to make this network of philosophers:
 
 <img src="/img/wiki-philosophers/all_zoom.png"/>
 
-Does this not remind you of a brain or Jellyfish, too? 🧠🎊 
+Does this not remind you of a brain or jellyfish, too? 🧠🎊 
 
 Ok, so what you see here is how 1598 famous and not so famous philosophers are connected to each other because Wikipedians have associated them in this way. More precisely, the nodes you see in this network represent Wikipedia articles on philosophers, and the edges represent hyperlink connections Wikipedia editors have created between these articles.
 
@@ -30,7 +30,7 @@ Overall, the communities seem to make sense. For example, here are communities o
 
 <img src="/img/wiki-philosophers/ancients.png" />
 
-Here we find the "Continentalists" next to the "Marxists":
+Here we find the "continentalists" next to the "Marxists":
 
 <img src="/img/wiki-philosophers/continentalists.png" />
 
