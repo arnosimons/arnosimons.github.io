@@ -13,6 +13,9 @@ This post is part of a series on how to draw cool maps of science with Wikipedia
 Today, I'm showing you how to make this network of philosophers:
 
 <img src="/img/wiki-philosophers/all.png"/>
+
+...zooming in...
+
 <img src="/img/wiki-philosophers/all_zoom.png"/>
 
 Does this not remind you of a brain or Jellyfish, too? 🧠🎊 
