@@ -81,12 +81,11 @@ Before we actually scrape these lists, we first define a function that takes a g
 def get_soup(url):
     response = requests.get(url)
     if response.ok:
-        # response.encoding = "utf-8"
         return BeautifulSoup(response.content, 'html.parser')
     return BeautifulSoup("", 'html.parser')
 ```
 
-Then we tell Python the urls of the four philosopher lists, open each, make a `soup`, single out the `mw-parser-output`, and iterate through all list entries to extract the hyperlink and name of each mentioned philosopher (`item.a["href"].split("/wiki/")[-1]: item.a["title"]`) into a dictionary named `philosophers`.
+Then we tell Python the urls of the four philosopher lists, open each, make a soup, single out the `"mw-parser-output"`, and iterate over all list entries to extract the hyperlink and name of each mentioned philosopher as a key-value pair in a dictionary named `philosophers`.
 
 ```python
 urls = [
