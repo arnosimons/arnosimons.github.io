@@ -8,14 +8,14 @@ tags:
   - network-analysis
 ---
 
-<small>This post is part of a series on how to draw cool maps of science with Wikipedia data. In each episode I will present a different method and/or type of map and provide you with a concrete Python code example. I will not explain the code in much detail since I assume that you already know Python well enough to follow. If you don't, I recommend checking out the many free Python turorials online.</small>
+This post is part of a series on how to draw cool maps of science with Wikipedia data. In each episode I will present a different method and/or type of map and provide you with a concrete Python code example. I will not explain the code in much detail since I assume that you already know Python well enough to follow. If you don't, I recommend checking out the many free Python turorials online.
 
 Today, I'm showing you how to make this network of philosophers:
 
 <img src="/img/wiki-philosophers/all.png"/>
 <img src="/img/wiki-philosophers/all_zoom.png"/>
 
-Does this remind you of a brain or Jellyfish, too? 🧠🎊 
+Does this not remind you of a brain or Jellyfish, too? 🧠🎊 
 
 Ok, so what you see here is how 1598 famous and not so famous philosophers are connected to each other because Wikipedians have associated them in this way. More precisely, the nodes you see in this network represent Wikipedia articles on philosophers, and the edges represent hyperlink connections Wikipedia editors have created between these articles.
 
