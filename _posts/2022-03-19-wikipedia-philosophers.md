@@ -15,13 +15,13 @@ Today, I'm showing you how to make this network of philosophers:
 <img src="/img/wiki-philosophers/all.png"/>
 <img src="/img/wiki-philosophers/all_zoom.png"/>
 
-Does the shape of this network remind you of a brain or Jellyfish, too? 🧠🎊 
+Does this remind you of a brain or Jellyfish, too? 🧠🎊 
 
-Ok, so what you see here is how famous and not so famous philosophers are connected to each other because Wikipedians have associated them in this way. More precisely, the nodes you see in this network represent Wikipedia articles on philosophers, and the edges represent hyperlink connections Wikipedia editors have created between these articles. If only the article of one philosopher points via a hyperlink to the article of another one, I set the edge weight to 1. If hyperlinks are two-directional, I set the edge weight to 2.
+Ok, so what you see here is how 1598 famous and not so famous philosophers are connected to each other because Wikipedians have associated them in this way. More precisely, the nodes you see in this network represent Wikipedia articles on philosophers, and the edges represent hyperlink connections Wikipedia editors have created between these articles.
 
-The size of a name represents the betweenness centrality of the associated node and can be interpreted as a measure for how many paths between any two philosophers will pass through this node. As we see, Aristotle, Immanuel Kant, Plato, and Karl-Marx are the leading figures in this regard.
+The size of a name represents the betweenness centrality of the associated node and can be interpreted as a normalized measure for how many shortest paths between any two philosophers will lead through this node. Unsurprisingly it turns out that Aristotle, Immanuel Kant, Plato, and Karl-Marx are the leading figures in this regard.
 
-A name's color indicates to which "community" that philosopher belongs. To define these communities, I used the [Louvain method](https://en.wikipedia.org/wiki/Louvain_method), a widely-used alghorithm that optimizes the relative density of edges inside communities with respect to edges outside communities. 
+A name's color indicates to which "community" that philosopher belongs. To define the communities, I used the [Louvain method](https://en.wikipedia.org/wiki/Louvain_method), a widely-used alghorithm that optimizes the relative density of edges inside communities with respect to edges outside communities. 
 
 Overall, the found communities seem to make sense. For example, here are communities of Ancient Greek and Roman philosophers intermingling with Persian and scholastic philosophers.
 
@@ -35,7 +35,7 @@ And finally, the "enlightment scholars" next to the "utilitarianist", the "pragm
 
 <img src="/img/wiki-philosophers/analticals.png" />
 
-By the way, to produce the final graph layout I swithced over to Gephi, ["a free visualization and exploration software for all kinds of graphs and networks"](https://gephi.org/). Yes, there would have been ways to draw similar (or better) layouts in Python. But convenience.
+By the way, to produce the final graph layout I switched over to Gephi, ["a free visualization and exploration software for all kinds of graphs and networks"](https://gephi.org/). Yes, there would have been ways to draw similar (or better) layouts in Python. But convenience. The spacial layout was archieved by applying the ForceAtlas 2 alghorithm, which was ["designed for the Gephi user experience"](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679).
 
 
 So where do we start?
