@@ -27,11 +27,11 @@ Overall, the communities seem to make sense. For example, here are communities o
 
 <img src="/img/wiki-philosophers/ancients.png" />
 
-Here we find the "continentalists" next to the "Marxists":
+Here we find the "Continentalists" next to the "Marxists":
 
 <img src="/img/wiki-philosophers/continentalists.png" />
 
-And finally, the "enlightment scholars" next to the "utilitarianist", the "pragmatists", and the "analytical philosophers".
+And finally, the "Enlightenment scholars" next to the "utilitarianist", the "pragmatists", and the "analytical philosophers".
 
 <img src="/img/wiki-philosophers/analyticals.png" />
 
