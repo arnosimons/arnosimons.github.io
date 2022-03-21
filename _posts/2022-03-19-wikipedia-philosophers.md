@@ -25,15 +25,20 @@ A name's color indicates to which "community" that philosopher belongs. To defin
 
 Overall, the found communities seem to make sense. For example, here are communities of Ancient Greek and Roman philosophers intermingling with Persian and scholastic philosophers.
 
-<img src="/img/wiki-philosophers/greek.png" />
+<img src="/img/wiki-philosophers/ancients.png" />
+
+Here we find the "continentalists" next to the "Marxists":
+
+<img src="/img/wiki-philosophers/continentalists.png" />
+
+And finally, the "enlightment scholars" next to the "utilitarianist", the "pragmatists", and the "analytical philosophers".
+
+<img src="/img/wiki-philosophers/analticals.png" />
+
+By the way, to produce the final graph layout I swithced over to Gephi, ["a free visualization and exploration software for all kinds of graphs and networks"](https://gephi.org/). Yes, there would have been ways to draw similar (or better) layouts in Python. But convenience.
 
 
-To be honest, changing the random seed for initializing the alghorithm yielded slightly different communities each time, but this is a known problem. While a number of indicators have been proposed to guide the choice of "the best" community structure, I have not even opened that box. My philosopher's network is just a toy example after all.
- 
-
-
-
-So how did I make it?
+So where do we start?
 
 
 ## Modules first!
