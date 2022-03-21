@@ -109,4 +109,68 @@ philosophers = {
 print(len(philosophers))
 ```
 
-...to be continued!
+## Edges from hyperlinks
+
+...to be continued.
+
+```python
+edges = set(
+    (value, philosophers[a["href"].split("/wiki/")[-1]])
+    for key, value in philosophers.items()
+    if get_soup(WIKI_BASE_URL + key)
+    for child in get_soup(WIKI_BASE_URL + key).find("div", {"class":"mw-parser-output"}).contents
+    if child.name in ALLOWED_TAGS
+    for a in child.find_all("a")
+    if a.has_attr("href")
+    and a["href"].split("/wiki/")[-1] in philosophers
+)
+print(len(edges))
+```
+
+## Make the graph
+```python
+G = nx.Graph()
+for a, b in edges:
+    if (b, a) in G.edges:
+        G.edges[(b, a)]["weight"] += 1
+    else:
+        G.add_edge(a, b, weight=1)
+print(f"Graph has {len(G.nodes)} nodes and {len(G.edges)} edges")
+```
+
+
+## Keep only the largest connected component
+
+```python
+cc = sorted(nx.connected_components(G), key=len, reverse=True)
+keep = cc[0]
+G.remove_nodes_from([n for n in G.nodes if not n in keep])
+print(f"Number of components: {len(cc)}")
+print(f"Size of all components: {[len(c) for c in cc]}")
+print(f"Reduced Graph has {len(G.nodes)} nodes and {len(G.edges)} edges")
+```
+
+## Calculate betweenness centrality and communities
+
+```python
+nx.set_node_attributes(G, nx.betweenness_centrality(G), name="betweenness_centrality")
+```
+
+```python
+communities = sorted(nx_comm.louvain_communities(
+    G,  
+    threshold=1,
+    resolution=1,
+    seed=123,
+), key=len, reverse=True)
+for cid, c in enumerate(communities):
+    for node in c:
+        G.nodes[node]['louvain_community'] = cid
+print(f'Number of communities: {len(communities)}')
+```
+
+## Export graph
+
+```python
+nx.write_gexf(G, "wiki_philosophers.gexf")
+```
