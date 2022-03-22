@@ -20,7 +20,7 @@ Today, I'm showing you how to make this network of philosophers:
 <img src="/img/wiki-philosophers/all.png"/>
 
 
-Does this not remind you of a brain or jellyfish, too? 🧠🎊 
+Does this not remind you of a brain or jellyfish? 🧠🎊 
 
 Ok, so what you see here is how 1598 famous and not so famous philosophers are connected to each other because Wikipedians have associated them in this way. More precisely, the nodes you see in this network represent Wikipedia articles on philosophers, and the edges represent hyperlink connections Wikipedia editors have created between these articles.
 
