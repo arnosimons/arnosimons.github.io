@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: Conservation Trading. A Critical Perspective
 subthemes: 
     - Policy Instrument Constituencies

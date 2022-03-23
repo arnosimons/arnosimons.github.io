@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: The Political Duality of Scale-Making 
 subthemes: 
     - Policy Instrument Constituencies

@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: Responsible Management of Social Experiments
 subthemes: 
     - Social Experimentation

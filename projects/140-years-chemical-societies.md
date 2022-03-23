@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: History of German Chemical Societies
 subthemes: 
     - Actors & Networks

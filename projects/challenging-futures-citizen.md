@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: Challenging Futures of Citizen Panels
 subthemes: 
     - Policy Instrument Constituencies

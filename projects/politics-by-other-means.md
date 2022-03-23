@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: Politics By Other Means
 subthemes: 
     - Policy Instrument Constituencies
