@@ -1,14 +1,20 @@
 ---
 layout: default
+type: project
+recent: true
 title: Preprints in the German Legacy Press
-teaser: Teaser text
-tags:
-    - translation
-    - text-analytics
-    - science-communication
-    - framing
-    - media-studies
-permalink: "/preprints-in-the-press.html"
+tags: 
+    - "discourse analytics"
+    - "science-communication"
+    - "discourse"
+    - "methods"
+    - "framing"
+    - "preprints"
+    - "media"
+    - "media studies"
+    - "press"
+    - "journalism"
+permalink: /preprints-in-the-press
 ---
 
-This is my stuff on science-media communication
+This is my stuff on Preprints in the German Legacy Press...

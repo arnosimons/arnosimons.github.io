@@ -1,13 +1,18 @@
 ---
 layout: default
+type: project
+recent: true
 title: Wikipedia Science Analytics
-teaser: Teaser text
 tags: 
-    - open-science
-    - translation
+    - "open science"
+    - "discourse analytics"
+    - "science-communication"
+    - "discourse"
+    - "methods"
+    - "framing"
+    - "citations"
+    - "bibliometrics"
 permalink: /wikipedia-science-analytics
 ---
 
-## {{ page.title }}
-
-This is my stuff on Wikipedia science analytics
+This is my stuff on Wikipedia science analytics...

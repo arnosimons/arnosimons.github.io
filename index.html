@@ -10,9 +10,12 @@ title: Home
 <!-- List recent projects-->
 <h2>Recent Projects</h2>
 {%- for p in site.pages -%}
-  {%- if p.teaser -%}
+  {%- if p.type == "project" and p.recent -%}
     <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
-    <p>{{ p.teaser }}<small>...<a href="{{ p.url }}">Continue reading</a></small></p>
+    <p>
+      {{ p.content | strip_html | truncatewords: 50 }}
+      <small>...<a href="{{ p.url }}">Continue reading</a></small>
+    </p>
   {%- endif -%}
 {%- endfor -%}
 
