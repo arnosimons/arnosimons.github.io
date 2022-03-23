@@ -2,8 +2,9 @@
 layout: post
 title: Why Evidence-Based Policy is political
 date:   2021-07-07
-tags:
-    - science-policy-nexus
+subthemes:
+    - Evidence-Based Policy
+    - Policy Instrument Constituencies
 ---
 
 The idea that public policy should be informed by scientific knowledge has great appeal. There is a growing understanding among politicians, the media and the public that decision making—especially on complex issues such as climate change and biodiversity—must include a scientific evaluation of the underlying problems and the available solutions. The reasoning is that, without science, public policies are most likely doomed to be irrational or ideological or both. To dissociate themselves from such “bad policy making” and to express their commitment to science in the policy process, policy makers and analysts have come to adopt the slogan “evidence-based policy” (EBP).

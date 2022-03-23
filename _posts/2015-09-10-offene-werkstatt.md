@@ -2,8 +2,8 @@
 layout: post
 title:  Offene Werkstätten als Reallabore für Suffizienz?
 date:   2015-09-10
-tags:
-  - open-science
+subthemes:
+  - Open Science & Technology
 ---
 
 > „Die Städte sind für dich gebaut...“ (Berthold Brecht)

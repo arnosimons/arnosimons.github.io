@@ -3,7 +3,7 @@ layout: subtheme
 type: subtheme
 title: Policy Instrument Consituencies
 theme: Science-Society Nexus
-permalink: /instrument-constituencies
+permalink: /policy-instrument-constituencies
 ---
 
 A policy instrument constituency is a configuration of people, ideas and things that forms around and works in support of a particular policy instrument or instrument mix. The instrument and its constituency are co-evolving: each is constitutive of and constituted by the other. The more an instrument constituency reflects itself as having a collective interest in articulating, developing, disseminating and implementing the instrument that it forms around, the more it behaves as a collective actor. In fact, the instrument constituency is a key actor in the policy process and helps to explain policy change by showing how policy instruments are actively promoted rather than passively chosen. Instrument constituencies play a different role from other policy actors, such as advocacy coalitions or epistemic communities.

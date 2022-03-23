@@ -2,10 +2,11 @@
 layout: post
 title:  "Wikipedia Science Maps: Philosophers"
 date:   2022-03-19
-tags:
-  - philosophy
-  - text-analytics
-  - network-analysis
+subthemes:
+  - Actors & Networks
+  - Words & Framing
+  - Open Science & Technology
+  - Science Communication
 ---
 
 This post is part of a series on how to draw cool maps of science with Wikipedia data. In each episode I will present a different method and/or type of map and provide you with a concrete Python code example. I will not explain the code in much detail since I assume that you already know Python well enough to follow. If you don't, I recommend checking out the many free Python turorials online.
