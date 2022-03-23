@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 title: Rational Suicide Bombers?
 subthemes: 
     - Actors & Networks

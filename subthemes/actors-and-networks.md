@@ -2,9 +2,7 @@
 layout: subtheme
 type: subtheme
 title: Actors & Networks
-theme: "Discourse Analytics"
-subthemes: 
-    - "discourse analytics"
+theme: Discourse Analytics
 permalink: /actors-and-networks
 ---
 
