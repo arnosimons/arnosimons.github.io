@@ -9,15 +9,19 @@ title: Home
 
 <!-- List recent projects-->
 <h2>Recent Projects</h2>
-{%- for p in site.pages -%}
-  {%- if p.type == "project" and p.recent -%}
-    <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
-    <p>
-      {{ p.content | strip_html | truncatewords: 50 }}
-      <small>...<a href="{{ p.url }}">Continue reading</a></small>
-    </p>
-  {%- endif -%}
-{%- endfor -%}
+<ul>
+  {%- for p in site.pages -%}
+    {%- if p.type == "project" and p.recent -%}
+      <li style="list-style-type: none;">
+        <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+        <p>
+          {{ p.content | strip_html | truncatewords: 50 }}
+          <small>...<a href="{{ p.url }}">Continue reading</a></small>
+        </p>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
 
 <!-- List latest posts -->
 <h2>Recent Posts</h2>
