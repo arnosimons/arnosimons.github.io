@@ -2,7 +2,7 @@
 layout: theme
 title: Open S&T
 tag: open-science
-permalink: /text-analytics
+permalink: /open-science
 ---
 
 ## {{ page.title }}
