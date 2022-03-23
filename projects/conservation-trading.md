@@ -15,4 +15,8 @@ The analysis shows that the development of conservation trading was predominantl
 
 Whereas the development of conservation trading is sometimes portrayed as a rational process of neutral policy learning, this process, through its constituency, has developed a life and political momentum of its own, which one should be aware of when engaging with the design and implementation of better conservation policies. As an outlook, we suggest a forward-looking social policy assessment approach, which opens up policy design discourses for debate and reflexive engagement. Acknowledging possible shortcomings with a broad range of concerned societal actors can help to assure policy transparency, add specificity, and increase the sound ecological and societal embedding of conservation trading.
 
-<small>Mann, C. and Simons, A. (2015) 'Local emergence and international developments of conservation trading systems: Innovation dynamics and related problems', Environmental Conservation, 42(4): 325–334.</small>
+<small>
+    <a href="https://doi.org/10.1017/S0376892914000381">
+        Mann, C. and Simons, A. (2015) 'Local emergence and international developments of conservation trading systems: Innovation dynamics and related problems', Environmental Conservation, 42(4): 325–334.
+    </a>
+</small>
