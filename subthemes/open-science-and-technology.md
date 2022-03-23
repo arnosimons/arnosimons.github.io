@@ -1,10 +1,8 @@
 ---
-layout: theme
+layout: subtheme
 type: subtheme
 title: Open Science & Technology
-themetag: "open science & technology"
-tags: 
-    - "science-society nexus"
+theme: Science-Society Nexus
 permalink: /open-science-and-technology
 ---
 

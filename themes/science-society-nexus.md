@@ -1,8 +1,7 @@
 ---
-layout: theme
+layout: default
 type: theme
 title: Science-Society Nexus
-themetag: "science-society nexus"
 permalink: /science-society-nexus
 ---
 

@@ -1,8 +1,7 @@
 ---
-layout: theme
+layout: default
 type: theme
 title: Discourse Analytics
-themetag: "discourse analytics"
 permalink: /discourse-analytics
 ---
 

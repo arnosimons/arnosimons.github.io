@@ -3,15 +3,11 @@ layout: default
 type: project
 recent: true
 title: Wikipedia Science Analytics
-tags: 
-    - "open science"
-    - "discourse analytics"
-    - "science-communication"
-    - "discourse"
-    - "methods"
-    - "framing"
-    - "citations"
-    - "bibliometrics"
+subthemes: 
+    - Open Science & Technology
+    - Science Communication
+    - Words & Framing
+    - Actors & Networks
 permalink: /wikipedia-science-analytics
 ---
 

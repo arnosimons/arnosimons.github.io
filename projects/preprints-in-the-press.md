@@ -3,17 +3,9 @@ layout: default
 type: project
 recent: true
 title: Preprints in the German Legacy Press
-tags: 
-    - "discourse analytics"
-    - "science-communication"
-    - "discourse"
-    - "methods"
-    - "framing"
-    - "preprints"
-    - "media"
-    - "media studies"
-    - "press"
-    - "journalism"
+subthemes: 
+    - Science Communication
+    - Words & Framing
 permalink: /preprints-in-the-press
 ---
 

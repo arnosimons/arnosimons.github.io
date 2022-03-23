@@ -6,10 +6,10 @@ layout: default
 
 
 <!-- List related pages -->
-<h2>Recent Projects</h2>
+<h2>Related Projects</h2>
 <ul>
   {%- for p in site.pages -%}
-    {%- if p.type == "project" and p.tags contains page.themetag -%}
+    {%- if p.type == "project" and p.subthemes contains page.title -%}
       <li style="list-style-type: none;">
         <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
         <p>
@@ -26,7 +26,7 @@ layout: default
 <h2>Related Posts</h2>
 <ul>
   {%- for p in site.posts -%}
-    {%- if p.tags contains page.tag -%}
+    {%- if p.subthemes contains page.title -%}
       <li style="list-style-type: none;">
         <span>{{ p.date | date: "%b %-d, %Y" }}</span>
         <h3 class="home">

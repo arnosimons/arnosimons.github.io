@@ -1,10 +1,8 @@
 ---
-layout: theme
+layout: subtheme
 type: subtheme
 title: Science Communication
-themetag: "science communication"
-tags: 
-    - "science-society nexus"
+theme: Science-Society Nexus
 permalink: /science-communication
 ---
 

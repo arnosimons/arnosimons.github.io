@@ -1,10 +1,8 @@
 ---
-layout: theme
+layout: subtheme
 type: subtheme
 title: Translational Research
-themetag: "translational research"
-tags: 
-    - "science-society nexus"
+theme: Science-Society Nexus
 permalink: /translational-research
 ---
 

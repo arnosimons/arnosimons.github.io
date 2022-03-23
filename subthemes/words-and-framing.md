@@ -1,10 +1,8 @@
 ---
-layout: theme
+layout: subtheme
 type: subtheme
 title: Words & Framing
-themetag: "words & framing"
-tags: 
-    - "discourse analytics"
+theme: Discourse Analytics
 permalink: /words-and-framing
 ---
 

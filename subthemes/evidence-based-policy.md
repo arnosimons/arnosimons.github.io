@@ -1,10 +1,8 @@
 ---
-layout: theme
+layout: subtheme
 type: subtheme
 title: Evidence-Based Policy
-themetag: "evidence-based policy"
-tags: 
-    - "science-society nexus"
+theme: Science-Society Nexus
 permalink: /evidence-based-policy
 ---
 
