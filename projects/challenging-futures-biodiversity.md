@@ -6,6 +6,7 @@ title: Challenging Futures of Biodiversity Offsets and Banking
 subthemes: 
     - Policy Instrument Constituencies
     - Environmental Markets
+    - Open Science & Technology
 permalink: /challenging-futures-biodiversity
 ---
 
