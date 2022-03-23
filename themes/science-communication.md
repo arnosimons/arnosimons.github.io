@@ -1,7 +1,12 @@
 ---
 layout: theme
+type: subtheme
 title: Science Communication
-tag: science-communication
+tags: 
+    - "science communication"
+    - "open science"
+    - "science-society nexus"
+    - "science-policy nexus"
 permalink: /science-communication
 ---
 

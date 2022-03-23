@@ -1,8 +1,11 @@
 ---
 layout: theme
-title: Science-Policy Nexus
-tag: science-policy-nexus
-permalink: /science-policy-nexus
+type: theme
+title: Science-Society Nexus
+tags: 
+    - "science-society nexus"
+    - "science-policy nexus"
+permalink: /science-society-nexus
 ---
 
 How scientific knowledge does and should relate to public policy making—and to governance more broadly—is certainly not a new question, but one that has gained pressing importance over the past decades, especially in the context of increasingly complex and boundary-spanning challenges like climate change, biodiversity, and most recently the Covid-19 pandemic.
