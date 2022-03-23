@@ -13,11 +13,18 @@
   
   <p style="margin-bottom: 10px">My Themes</p>
 
+
   {%- for p in site.pages -%}
     {%- if p.tag -%}
       <h4 class="header"><a href="{{ p.url }}">{{ p.title }}</a></h4>
     {%- endif -%}
   {%- endfor -%}
+  <h5 class="header"><a href="{{ p.url }}">Social Experimentation</a></h5>
+  <h5 class="header"><a href="{{ p.url }}">Open Science and Technology</a></h5>
+  <h5 class="header"><a href="{{ p.url }}">Policy Instrument Constituencies</a></h5>
+
+
+  Open Science and Technology
 
   <!-- <h4 class="header"><a href="/science-policy-nexus.html">Science-Policy Nexus</a></h4> -->
   <!-- <h4 class="header"><a href="/translation.html">Translation</a></h4> -->

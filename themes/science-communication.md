@@ -5,6 +5,4 @@ tag: science-communication
 permalink: /science-communication
 ---
 
-## {{ page.title }}
-
 Science communication is...
