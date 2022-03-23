@@ -2,11 +2,7 @@
 layout: theme
 type: theme
 title: Discourse Analytics
-tags: 
-    - "discourse analytics"
-    - "discourse"
-    - "methods"
-    - "framing"
+themetag: "discourse analytics"
 permalink: /discourse-analytics
 ---
 

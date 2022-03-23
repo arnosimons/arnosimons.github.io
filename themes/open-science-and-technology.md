@@ -2,11 +2,9 @@
 layout: theme
 type: subtheme
 title: Open Science & Technology
+themetag: "open science & technology"
 tags: 
-    - "open science"
-    - "open technology"
     - "science-society nexus"
-    - "science-policy nexus"
 permalink: /open-science-and-technology
 ---
 

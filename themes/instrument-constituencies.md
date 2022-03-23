@@ -2,10 +2,9 @@
 layout: theme
 type: subtheme
 title: Policy Instrument Consituencies
+themetag: "instrument constituencies"
 tags:
     - "science-society nexus"
-    - "instrument constituencies"
-    - "science-policy nexus"
 permalink: /instrument-constituencies
 ---
 

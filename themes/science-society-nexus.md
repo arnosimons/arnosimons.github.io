@@ -2,9 +2,7 @@
 layout: theme
 type: theme
 title: Science-Society Nexus
-tags: 
-    - "science-society nexus"
-    - "science-policy nexus"
+themetag: "science-society nexus"
 permalink: /science-society-nexus
 ---
 

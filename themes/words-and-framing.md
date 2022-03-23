@@ -2,11 +2,9 @@
 layout: theme
 type: subtheme
 title: Words & Framing
+themetag: "words & framing"
 tags: 
     - "discourse analytics"
-    - "discourse"
-    - "methods"
-    - "framing"
 permalink: /words-and-framing
 ---
 

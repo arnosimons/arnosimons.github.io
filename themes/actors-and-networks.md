@@ -2,13 +2,9 @@
 layout: theme
 type: subtheme
 title: Actors & Networks
+themetag: "actors & networks"
 tags: 
     - "discourse analytics"
-    - "discourse"
-    - "actors"
-    - "agency"
-    - "networks"
-    - "netwotk analysis"
 permalink: /actors-and-networks
 ---
 
