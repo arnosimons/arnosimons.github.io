@@ -14,17 +14,25 @@
   <p style="margin-bottom: 10px">My Themes</p>
 
 
-  {%- for p in site.pages -%}
-    {%- if p.tag -%}
-      <h4 class="header"><a href="{{ p.url }}">{{ p.title }}</a></h4>
-    {%- endif -%}
-  {%- endfor -%}
-  <h5 class="header"><a href="{{ p.url }}">Social Experimentation</a></h5>
-  <h5 class="header"><a href="{{ p.url }}">Open Science and Technology</a></h5>
-  <h5 class="header"><a href="{{ p.url }}">Policy Instrument Constituencies</a></h5>
+  <!-- {%- for p in site.pages -%} -->
+    <!-- {%- if p.tag -%} -->
+      <!-- <h4 class="header"><a href="{{ p.url }}">{{ p.title }}</a></h4> -->
+    <!-- {%- endif -%} -->
+  <!-- {%- endfor -%} -->
 
+  <h4 class="header"><a href="{{ p.url }}">Science-Society Nexus</a></h5>
+    
+    <h5 class="header"><a href="{{ p.url }}">Policy Instrument Constituencies</a></h5>
+    <h5 class="header"><a href="{{ p.url }}">Evidence-Based Policy</a></h5>
+    <h5 class="header"><a href="{{ p.url }}">Science Communication</a></h5>
+    <h5 class="header"><a href="{{ p.url }}">Open Science and Technology</a></h5>
+    <h5 class="header"><a href="{{ p.url }}">Translational Research</a></h5>
 
-  Open Science and Technology
+  <h4 class="header"><a href="{{ p.url }}">Discourse Analytics</a></h5>
+    
+    <h5 class="header"><a href="{{ p.url }}">Words and Framing</a></h5>
+    <h5 class="header"><a href="{{ p.url }}">Actors and Networks</a></h5>
+
 
   <!-- <h4 class="header"><a href="/science-policy-nexus.html">Science-Policy Nexus</a></h4> -->
   <!-- <h4 class="header"><a href="/translation.html">Translation</a></h4> -->
