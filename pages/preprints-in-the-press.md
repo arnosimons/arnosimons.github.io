@@ -11,6 +11,4 @@ tags:
 permalink: "/preprints-in-the-press.html"
 ---
 
-## {{ page.title }}
-
 This is my stuff on science-media communication
