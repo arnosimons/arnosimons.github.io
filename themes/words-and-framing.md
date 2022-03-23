@@ -1,13 +1,13 @@
 ---
 layout: theme
-type: theme
-title: Discourse Analytics
+type: subtheme
+title: Words & Framing
 tags: 
     - "discourse analytics"
     - "discourse"
     - "methods"
     - "framing"
-permalink: /discourse-analytics
+permalink: /words-and-framing
 ---
 
-Discourse analytics is ...
+words and framing...
