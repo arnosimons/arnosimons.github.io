@@ -13,7 +13,7 @@ title: Home
   {%- for p in site.pages -%}
     {%- if p.type == "project" and p.recent -%}
       <li style="list-style-type: none;">
-        <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+        <h3 style="margin-bottom: 2px"><a href="{{ p.url }}">{{ p.title }}</a></h3>
         <p>
           {{ p.content | strip_html | truncatewords: 50 }}
           <small>...<a href="{{ p.url }}">Continue reading</a></small>
@@ -29,7 +29,7 @@ title: Home
   {%- for p in site.posts limit: 3 -%}
     <li style="list-style-type: none;">
       <span>{{ p.date | date: "%b %-d, %Y" }}</span>
-      <h3 class="home">
+      <h3 style="margin-bottom: 2px">
           <a href="{{ p.url }}">
             {{ p.title }}
           </a>
