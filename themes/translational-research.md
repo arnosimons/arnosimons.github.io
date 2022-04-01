@@ -1,6 +1,5 @@
 ---
 layout: theme
-type: theme
 title: Translational Research
 permalink: /translational-research
 ---

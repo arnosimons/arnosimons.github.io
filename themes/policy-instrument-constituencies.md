@@ -1,7 +1,6 @@
 ---
 layout: theme
-type: theme
-title: Policy Instrument Consituencies
+title: Policy Instrument Constituencies
 permalink: /policy-instrument-constituencies
 ---
 
