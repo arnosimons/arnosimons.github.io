@@ -2,12 +2,11 @@
 layout: default
 type: project
 recent: false
+date: 2018
 title: The Concept of Instrument Constituencies
 themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
-    - Evidence-Based Policy
-    - Social Experimentation
 permalink: /the-concept-of-instrument-constituencies
 ---
 

@@ -2,12 +2,11 @@
 layout: default
 type: project
 recent: true
+date: 2022
 title: Who are the “Heroes of CRISPR”? Priority Disputes on Wikipedia
 themes: 
     - Science Communication
     - Open Science & Technology
-    - Actors & Networks
-    - Words & Framing
 permalink: /who-are-the-heroes-of-crispr
 ---
 

@@ -2,11 +2,11 @@
 layout: default
 type: project
 recent: false
+date: 2015
 title: Fact-Making in Document Networks
 themes: 
     - Policy Instrument Constituencies
-    - Actors & Networks
-    - Words & Framing
+    - Environmental Markets
 permalink: /fact-making-in-document-networks
 ---
 

@@ -2,11 +2,11 @@
 layout: default
 type: project
 recent: false
+date: 2014
 title: The Political Duality of Scale-Making in Environmental Markets
 themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
-    - Words & Frames
 permalink: /the-political-duality-of-scale-making
 ---
 

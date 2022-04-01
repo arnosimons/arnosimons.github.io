@@ -2,11 +2,10 @@
 layout: default
 type: project
 recent: true
+date: 2020
 title: Assessing the Organizational Climate for Translational Research with a New Survey Tool
 themes: 
     - Translational Research
-    - Actors & Networks
-    - Words & Framing
 permalink: /assessing-organizational-climate-for-tr
 ---
 

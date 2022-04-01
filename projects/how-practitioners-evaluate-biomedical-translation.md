@@ -2,11 +2,10 @@
 layout: default
 type: project
 recent: true
+date: 2020
 title: How Practitioners Evaluate Biomedical Translation
 themes: 
     - Translational Research
-    - Actors & Networks
-    - Words & Framing
 permalink: /how-practitioners-evaluate-biomedical-translation
 ---
 

@@ -2,10 +2,9 @@
 layout: default
 type: project
 recent: false
+date: 2009
 title: Rational Suicide Bombers?
 themes: 
-    - Actors & Networks
-    - Open Science & Technology
 permalink: /challenging-futures-citizen
 ---
 

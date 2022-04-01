@@ -1,6 +1,6 @@
 ---
 layout: theme
-type: subtheme
+type: theme
 title: Translational Research
 theme: Science-Society Nexus
 permalink: /translational-research

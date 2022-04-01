@@ -2,6 +2,7 @@
 layout: default
 type: project
 recent: false
+date: 2014
 title: Challenging Futures of Citizen Panels
 themes: 
     - Policy Instrument Constituencies

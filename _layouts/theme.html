@@ -6,12 +6,13 @@ layout: default
 
 
 <!-- List related pages -->
+<!-- {% assign products_by_price = collection.products | sort: "price" %} -->
 <h2>Related Projects</h2>
 <ul>
-  {%- for p in site.pages -%}
+  {%- for p in site.pages | sort: "date" -%}
     {%- if p.type == "project" and p.themes contains page.title -%}
       <li style="list-style-type: none;">
-        <h3 class="home"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+        <h3 class="home" style="margin-bottom: 5px"><a href="{{ p.url }}">{{ p.title }}</a></h3>
         <p>
           {{ p.content | strip_html | truncatewords: 50 }}
           <small>...<a href="{{ p.url }}">Continue reading</a></small>

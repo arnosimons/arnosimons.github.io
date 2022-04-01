@@ -2,10 +2,10 @@
 layout: default
 type: project
 recent: false
+date: 2015
 title: Conservation Trading. A Critical Perspective
 themes: 
     - Policy Instrument Constituencies
-    - Actors & Networks
 permalink: /conservation-trading
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 type: project
 recent: true
+date: 2018
 title: Wo und wie gelingt Translation?
 themes: 
     - Translational Research

@@ -2,10 +2,10 @@
 layout: default
 type: project
 recent: true
+date: 2022
 title: Preprints in the German Legacy Press
 themes: 
     - Science Communication
-    - Words & Framing
 permalink: /preprints-in-the-press
 ---
 

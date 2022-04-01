@@ -2,12 +2,11 @@
 layout: default
 type: project
 recent: true
+date: 2022
 title: Wikipedia Science Analytics
 themes: 
     - Open Science & Technology
     - Science Communication
-    - Words & Framing
-    - Actors & Networks
 permalink: /wikipedia-science-analytics
 ---
 

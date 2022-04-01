@@ -2,11 +2,10 @@
 layout: default
 type: project
 recent: true
+date: 2019
 title: What are Clinician Scientists Expected to do?
 themes: 
     - Translational Research
-    - Actors & Networks
-    - Words & Framing
 permalink: /what-are-clinician-scientists-expected-to-do
 ---
 

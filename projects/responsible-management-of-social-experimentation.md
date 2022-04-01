@@ -2,6 +2,7 @@
 layout: default
 type: project
 recent: false
+date: 2015
 title: Responsible Management of Social Experiments
 themes: 
     - Social Experimentation

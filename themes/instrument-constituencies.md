@@ -1,6 +1,6 @@
 ---
 layout: theme
-type: subtheme
+type: theme
 title: Policy Instrument Consituencies
 theme: Science-Society Nexus
 permalink: /policy-instrument-constituencies
