@@ -1,5 +1,5 @@
 ---
-layout: subtheme
+layout: theme
 type: subtheme
 title: Evidence-Based Policy
 theme: Science-Society Nexus

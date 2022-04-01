@@ -1,5 +1,5 @@
 ---
-layout: subtheme
+layout: theme
 type: subtheme
 title: Environmental Markets
 theme: Science-Society Nexus

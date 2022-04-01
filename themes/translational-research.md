@@ -1,5 +1,5 @@
 ---
-layout: subtheme
+layout: theme
 type: subtheme
 title: Translational Research
 theme: Science-Society Nexus

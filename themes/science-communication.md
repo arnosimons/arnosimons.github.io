@@ -1,5 +1,5 @@
 ---
-layout: subtheme
+layout: theme
 type: subtheme
 title: Science Communication
 theme: Science-Society Nexus
