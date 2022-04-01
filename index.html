@@ -8,9 +8,10 @@ title: Home
 <p>Welcome to my website and blog! The page you see now is called "home". On the left you can browse themes and find the most important links and info. Below, you find previews of projects and the most recent posts from my blog. Enjoy!</p>
 
 <!-- List recent projects-->
+{% assign pages_by_date = site.pages | sort: "date" | reverse %}
 <h2>Recent Projects</h2>
 <ul>
-  {%- for p in site.pages -%}
+  {%- for p in pages_by_date -%}
     {%- if p.type == "project" and p.recent -%}
       <li style="list-style-type: none;">
         <h3 style="margin-bottom: 2px"><a href="{{ p.url }}">{{ p.title }}</a></h3>
