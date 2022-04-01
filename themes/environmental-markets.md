@@ -2,7 +2,6 @@
 layout: theme
 type: theme
 title: Environmental Markets
-theme: Science-Society Nexus
 permalink: /environmental-markets
 ---
 

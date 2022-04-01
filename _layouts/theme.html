@@ -6,7 +6,7 @@ layout: default
 
 
 <!-- List related pages -->
-{% assign pages_by_date = site.pages | sort: "date" %}
+{% assign pages_by_date = site.pages | sort: "date" | reverse %}
 <h2>Related Projects</h2>
 <ul>
   {%- for p in pages_by_date -%}

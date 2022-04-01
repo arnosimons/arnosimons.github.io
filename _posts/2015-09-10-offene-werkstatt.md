@@ -2,7 +2,7 @@
 layout: post
 title:  Offene Werkstätten als Reallabore für Suffizienz?
 date:   2015-09-10
-subthemes:
+themes:
   - Open Science & Technology
 ---
 

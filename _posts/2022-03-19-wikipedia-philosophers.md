@@ -2,9 +2,7 @@
 layout: post
 title:  "Wikipedia Science Maps: Philosophers"
 date:   2022-03-19
-subthemes:
-  - Actors & Networks
-  - Words & Framing
+themes:
   - Open Science & Technology
   - Science Communication
 ---
