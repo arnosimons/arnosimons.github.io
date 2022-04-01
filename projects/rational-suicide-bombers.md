@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Rational Suicide Bombers?
-subthemes: 
+themes: 
     - Actors & Networks
     - Open Science & Technology
 permalink: /challenging-futures-citizen

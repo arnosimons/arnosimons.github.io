@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Documented Authority. The Discoursive Construction of Emissions Trading
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Evidence-Based Policy
     - Actors & Networks

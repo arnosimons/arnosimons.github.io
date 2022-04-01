@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Conservation Trading. A Critical Perspective
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Actors & Networks
 permalink: /conservation-trading

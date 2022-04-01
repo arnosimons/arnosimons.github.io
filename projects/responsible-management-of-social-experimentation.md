@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Responsible Management of Social Experiments
-subthemes: 
+themes: 
     - Social Experimentation
 permalink: /responsible-management-of-social-experimentation
 ---

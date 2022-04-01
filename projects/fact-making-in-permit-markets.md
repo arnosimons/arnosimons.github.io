@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Fact-Making in Document Networks
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Actors & Networks
     - Words & Framing

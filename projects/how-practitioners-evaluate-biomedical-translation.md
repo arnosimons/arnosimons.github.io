@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: How Practitioners Evaluate Biomedical Translation
-subthemes: 
+themes: 
     - Translational Research
     - Actors & Networks
     - Words & Framing

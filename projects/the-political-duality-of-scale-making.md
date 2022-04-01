@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: The Political Duality of Scale-Making in Environmental Markets
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
     - Words & Frames

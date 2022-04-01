@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: What are Clinician Scientists Expected to do?
-subthemes: 
+themes: 
     - Translational Research
     - Actors & Networks
     - Words & Framing

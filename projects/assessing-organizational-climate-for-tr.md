@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: Assessing the Organizational Climate for Translational Research with a New Survey Tool
-subthemes: 
+themes: 
     - Translational Research
     - Actors & Networks
     - Words & Framing

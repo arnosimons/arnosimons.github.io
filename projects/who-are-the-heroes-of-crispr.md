@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: Who are the “Heroes of CRISPR”? Priority Disputes on Wikipedia
-subthemes: 
+themes: 
     - Science Communication
     - Open Science & Technology
     - Actors & Networks

@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Politics By Other Means
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
 permalink: /politics-by-other-means

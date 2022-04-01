@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: The Concept of Instrument Constituencies
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
     - Evidence-Based Policy

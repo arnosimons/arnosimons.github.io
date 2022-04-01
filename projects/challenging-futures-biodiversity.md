@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Challenging Futures of Biodiversity Offsets and Banking 
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
     - Open Science & Technology

@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Instrument Constituencies and the Supply-Side of Policy Innovation
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
 permalink: /instrument-constituencies-supply-side

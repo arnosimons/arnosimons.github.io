@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: Wikipedia Science Analytics
-subthemes: 
+themes: 
     - Open Science & Technology
     - Science Communication
     - Words & Framing

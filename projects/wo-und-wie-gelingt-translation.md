@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: Wo und wie gelingt Translation?
-subthemes: 
+themes: 
     - Translational Research
 permalink: /wo-und-wie-gelingt-translation
 ---

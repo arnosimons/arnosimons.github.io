@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 title: Challenging Futures of Citizen Panels
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Open Science & Technology
 permalink: /challenging-futures-citizen

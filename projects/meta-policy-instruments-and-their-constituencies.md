@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: true
 title: Meta Policy Instruments and their Constituencies
-subthemes: 
+themes: 
     - Policy Instrument Constituencies
     - Evidence-Based Policy
 permalink: /meta-policy-instruments-and-their-constituencies
