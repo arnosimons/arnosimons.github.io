@@ -3,7 +3,7 @@ layout: default
 type: project
 recent: false
 date: 2015
-title: Politics By Other Means
+title: Politics By Other Means. How an Instrument Constituency Made Emissions Trading "Work"
 themes: 
     - Policy Instrument Constituencies
     - Environmental Markets

@@ -3,9 +3,10 @@ layout: default
 type: project
 recent: false
 date: 2015
-title: Conservation Trading. A Critical Perspective
+title: Conservation Trading and Instrument Constituency Dynamics
 themes: 
     - Policy Instrument Constituencies
+    - Environmental Markets
 permalink: /conservation-trading
 ---
 

@@ -5,7 +5,6 @@ recent: false
 date: 2014
 title: Challenging Futures of Biodiversity Offsets and Banking 
 themes: 
-    - Policy Instrument Constituencies
     - Environmental Markets
     - Open Science & Technology
 permalink: /challenging-futures-biodiversity

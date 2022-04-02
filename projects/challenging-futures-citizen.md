@@ -5,7 +5,6 @@ recent: false
 date: 2014
 title: Challenging Futures of Citizen Panels
 themes: 
-    - Policy Instrument Constituencies
     - Open Science & Technology
 permalink: /challenging-futures-citizen
 ---

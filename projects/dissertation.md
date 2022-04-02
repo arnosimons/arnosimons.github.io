@@ -6,7 +6,6 @@ date: 2016
 title: Documented Authority. The Discoursive Construction of Emissions Trading
 themes: 
     - Environmental Markets
-    - Fact Making
     - Epistemic Authority
 permalink: /dissertation
 ---
