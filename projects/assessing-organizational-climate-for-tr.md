@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 date: 2020
 title: Assessing the Organizational Climate for Translational Research with a New Survey Tool
 themes: 

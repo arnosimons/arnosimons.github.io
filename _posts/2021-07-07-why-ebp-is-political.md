@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why Evidence-Based Policy is political
+title: Why Evidence-Based Policy is Political
 date:   2021-07-07
 themes:
     - Evidence-Based Policy

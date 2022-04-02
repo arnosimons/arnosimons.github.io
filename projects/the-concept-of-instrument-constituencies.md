@@ -6,7 +6,6 @@ date: 2018
 title: The Concept of Instrument Constituencies
 themes: 
     - Policy Instrument Constituencies
-    - Environmental Markets
 permalink: /the-concept-of-instrument-constituencies
 ---
 

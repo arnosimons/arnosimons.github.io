@@ -1,7 +1,7 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 date: 2018
 title: Wo und wie gelingt Translation?
 themes: 
