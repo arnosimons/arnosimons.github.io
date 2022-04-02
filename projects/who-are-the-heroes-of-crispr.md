@@ -5,7 +5,7 @@ recent: true
 date: 2022
 title: Who are the “Heroes of CRISPR”? Priority Disputes on Wikipedia
 themes: 
-    - Science Communication
+    - Epistemic Authority
     - Open Science & Technology
 permalink: /who-are-the-heroes-of-crispr
 ---

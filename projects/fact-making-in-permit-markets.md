@@ -5,8 +5,8 @@ recent: false
 date: 2015
 title: Fact-Making in Document Networks
 themes: 
-    - Policy Instrument Constituencies
     - Environmental Markets
+    - Epistemic Authority
 permalink: /fact-making-in-document-networks
 ---
 

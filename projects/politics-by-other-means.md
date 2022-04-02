@@ -7,6 +7,7 @@ title: Politics By Other Means
 themes: 
     - Policy Instrument Constituencies
     - Environmental Markets
+    - Epistemic Authority
 permalink: /politics-by-other-means
 ---
 
