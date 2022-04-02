@@ -5,7 +5,6 @@ recent: false
 date: 2007
 title: History of German Chemical Societies
 themes: 
-    - Open Science & Technology
 permalink: /history-of-chemical-societies
 ---
 
