@@ -5,7 +5,7 @@ recent: true
 date: 2020
 title: How Practitioners Evaluate Biomedical Translation
 themes: 
-    - Translational Research
+    - Biomedical Translation
 permalink: /how-practitioners-evaluate-biomedical-translation
 ---
 

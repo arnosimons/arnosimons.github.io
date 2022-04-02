@@ -5,7 +5,7 @@ recent: false
 date: 2020
 title: Assessing the Organizational Climate for Translational Research with a New Survey Tool
 themes: 
-    - Translational Research
+    - Biomedical Translation
 permalink: /assessing-organizational-climate-for-tr
 ---
 

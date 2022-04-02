@@ -5,7 +5,7 @@ recent: false
 date: 2018
 title: Wo und wie gelingt Translation?
 themes: 
-    - Translational Research
+    - Biomedical Translation
 permalink: /wo-und-wie-gelingt-translation
 ---
 

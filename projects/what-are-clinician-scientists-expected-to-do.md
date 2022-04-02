@@ -5,7 +5,7 @@ recent: true
 date: 2019
 title: What are Clinician Scientists Expected to do?
 themes: 
-    - Translational Research
+    - Biomedical Translation
 permalink: /what-are-clinician-scientists-expected-to-do
 ---
 
