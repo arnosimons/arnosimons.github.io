@@ -5,6 +5,7 @@ date:   2022-03-19
 themes:
   - Open Science & Technology
   - Science Communication
+  - Discourse Analytics
 ---
 
 Wikipedia is a great source for free knowledge, including knowledge about science and science history. For example, we can mine the collective effort of Wikipedians to draw a socio-intellectual map of philosophers, which, conincidentally, looks like a brain. Or rather like a jellyfish?

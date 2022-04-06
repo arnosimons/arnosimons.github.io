@@ -7,6 +7,7 @@ title: Fact-Making in Document Networks
 themes: 
     - Environmental Markets
     - Epistemic Authority
+    - Discourse Analytics
 permalink: /fact-making-in-document-networks
 ---
 

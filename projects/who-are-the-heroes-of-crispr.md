@@ -7,6 +7,7 @@ title: Who are the “Heroes of CRISPR”? Priority Disputes on Wikipedia
 themes: 
     - Epistemic Authority
     - Open Science & Technology
+    - Discourse Analytics
 permalink: /who-are-the-heroes-of-crispr
 ---
 
