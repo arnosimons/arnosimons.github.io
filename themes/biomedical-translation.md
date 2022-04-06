@@ -1,6 +1,6 @@
 ---
 layout: theme
-title: Biomedical Translational
+title: Biomedical Translation
 permalink: /biomedical-translation
 ---
 

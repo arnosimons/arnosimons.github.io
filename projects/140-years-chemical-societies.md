@@ -8,7 +8,7 @@ themes:
 permalink: /history-of-chemical-societies
 ---
 
-In [this article in *Nachrichten aus der Chemie*](https://doi.org/10.1002/nadc.200751956), I reconstructed and critically discussed the 140-year history of chemical societies in Germany.
+In [this article](https://doi.org/10.1002/nadc.200751956) in *Nachrichten aus der Chemie*, I reconstructed and critically discussed the 140-year history of chemical societies in Germany.
 
 <small>
     <a href="https://doi.org/10.1002/nadc.200751956">
