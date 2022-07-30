@@ -98,7 +98,7 @@ permalink: /scratchbook
   <div class="container-md pt-3 border rounded" style="background-color: white">
     <div class="panel-group" id="Rules">
       <div class="panel panel-default">
-        <div class="panel-heading"><h4>Visualizer</h4></div>
+        <div class="panel-heading"><h4>Library and Logic</h4></div>
         <div class="panel-body">
           <p style="margin-bottom: 5px;">ScratchBook follows an algebraic approach and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into scratch formulas.</p>
           <p>Open the cards to learn more...</p>
@@ -117,8 +117,9 @@ permalink: /scratchbook
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
-                   order : json.order,
-                   pageLength: 50,
+                   order: [[ 8, "asc" ], [ 0, "asc" ]],
+                   // order : json.order,
+                   // pageLength: 10,
                 })
               });
               </script>
