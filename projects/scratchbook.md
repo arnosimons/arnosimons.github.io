@@ -75,7 +75,7 @@ permalink: /scratchbook
   <div class="container-md pt-3 border rounded" style="background-color: white">
     <div class="panel-group" id="Visualizer">
       <div class="panel panel-default">
-        <div class="panel-heading"><h4>Laboratory</h4></div>
+        <div class="panel-heading"><h4>Visualizer</h4></div>
         <div class="panel-body">
           <p>Visualize your composition</p>
           <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn" placeholder="Type scratch formula.."/>
@@ -98,7 +98,7 @@ permalink: /scratchbook
   <div class="container-md pt-3 border rounded" style="background-color: white">
     <div class="panel-group" id="Rules">
       <div class="panel panel-default">
-        <div class="panel-heading"><h4>Library and Logic</h4></div>
+        <div class="panel-heading"><h4>Visualizer</h4></div>
         <div class="panel-body">
           <p style="margin-bottom: 5px;">ScratchBook follows an algebraic approach and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into scratch formulas.</p>
           <p>Open the cards to learn more...</p>
@@ -109,6 +109,7 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
+              <p>To visualize a scratch in TTM notation, simply type its name in the visualizer field above</p>
               <p>The following table lists and classifies all available scratches. Columns are explained underneath.</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
@@ -116,7 +117,8 @@ permalink: /scratchbook
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
-                   order : json.order
+                   order : json.order,
+                   pageLength: 50,
                 })
               });
               </script>
@@ -124,10 +126,9 @@ permalink: /scratchbook
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
               <p class="explainColumns"><strong>Code Words:</strong> Each scratch has at least one code word that can be used in scratch formulas. Multiple code words are seperated by a comma and can be used synonymously. If a scratch is composed of other scratches its formula is shown in the composition column.</p>
-              <p class="explainColumns"><strong>Sounds:</strong> Number of distinct sounds a scratch produces.</p>
-              <p class="explainColumns"><strong>Pauses:</strong> Number of pauses in a scratch. Pauses can occur either when the fader is closed (e.g. in "flares") or when the record is held still (e.g. in "tears").</p>
-              <p class="explainColumns"><strong>Beats:</strong> The length of a scratch in beats (aka quarter notes). This attribute can be altered using the "/" operator (as explained in the operator section).</p>
-              <p class="explainColumns"><strong>Sounds/Beat:</strong> Number of distinct sounds per beat.</p>
+              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in beats (aka quarter notes). This attribute can be altered using the "/" operator (as explained in the operator section).</p>
+              <p class="explainColumns"><strong>#Sounds:</strong> Number of distinct sounds a scratch produces.</p>
+              <p class="explainColumns"><strong>#Pauses:</strong> Number of pauses in a scratch. Pauses can occur either when the fader is closed (e.g. in "flares") or when the record is held still (e.g. in "tears").</p>
               <p class="explainColumns"><strong>Orbit:</strong> Narrowly defined, an orbit is any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence. In this table, an orbit is broadly defined as any scratch that is "loopable", i.e. whose start and end points on the record are the same. Consequently, scratches like the "autobahn" or the "prizm" are also listed as orbits here.</p>
               <p class="explainColumns">&#10024; Note that all narrowly defined orbits can be accessed via code words in the generic form of "forward_backward" (e.g. "fl2_fl1", "tr3_ct2", etc.)</p>
               <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in the composition column.</p>
