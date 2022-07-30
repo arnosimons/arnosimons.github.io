@@ -126,7 +126,7 @@ permalink: /scratchbook
               <br/>
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
-              <p class="explainColumns"><strong>Code Words:</strong> Each scratch has at least one code word that can be used in scratch formulas. Multiple code words are seperated by a comma and can be used synonymously. If a scratch is composed of other scratches its formula is shown in the composition column.</p>
+              <p class="explainColumns"><strong>CodeName:</strong> Each scratch has at least one code word that can be used in scratch formulas. Multiple code words are seperated by a comma and can be used synonymously. If a scratch is composed of other scratches its formula is shown in the composition column.</p>
               <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in beats (aka quarter notes). This attribute can be altered using the "/" operator (as explained in the operator section).</p>
               <p class="explainColumns"><strong>#Sounds:</strong> Number of distinct sounds a scratch produces.</p>
               <p class="explainColumns"><strong>#Pauses:</strong> Number of pauses in a scratch. Pauses can occur either when the fader is closed (e.g. in "flares") or when the record is held still (e.g. in "tears").</p>
@@ -248,7 +248,7 @@ permalink: /scratchbook
   exec(str(req.response))
   for name, row in df.iterrows():
       if not row.Composition == 'element':
-          exec(f"{' = '.join(row['Code Name'].split(', '))} = {row.Composition}")
+          exec(f"{' = '.join(row['CodeName'].split(', '))} = {row.Composition}")
   def plot(x=None):
       text = Element('scratch').element.value
       pyscript.write("session-output", Session(eval(text)).fig)
