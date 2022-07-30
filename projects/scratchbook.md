@@ -75,7 +75,7 @@ permalink: /scratchbook
   <div class="container-md pt-3 border rounded" style="background-color: white">
     <div class="panel-group" id="Visualizer">
       <div class="panel panel-default">
-        <div class="panel-heading"><h4>Visualizer</h4></div>
+        <div class="panel-heading"><h4>Laboratory</h4></div>
         <div class="panel-body">
           <p>Visualize your composition</p>
           <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn" placeholder="Type scratch formula.."/>
@@ -98,7 +98,7 @@ permalink: /scratchbook
   <div class="container-md pt-3 border rounded" style="background-color: white">
     <div class="panel-group" id="Rules">
       <div class="panel panel-default">
-        <div class="panel-heading"><h4>Compositional Rules</h4></div>
+        <div class="panel-heading"><h4>Library and Logic</h4></div>
         <div class="panel-body">
           <p style="margin-bottom: 5px;">ScratchBook follows an algebraic approach and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into scratch formulas.</p>
           <p>Open the cards to learn more...</p>
