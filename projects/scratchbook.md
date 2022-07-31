@@ -89,7 +89,7 @@ permalink: /scratchbook
               }
             });
           </script>
-          <div id="session-output"></div>
+          <div id="session-output" style="padding-bottom: 10px;"></div>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ permalink: /scratchbook
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Library and Logic</h4></div>
         <div class="panel-body">
-          <p style="margin-bottom: 5px;">ScratchBook follows an algebraic approach and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into scratch formulas.</p>
+          <p style="margin-bottom: 5px;">ScratchBook introduces an algebraic approach to scratch notation and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into complex scratch formulas.</p>
           <p>Open the cards to learn more...</p>
         </div>
         <div class="card" style="margin-bottom: 10px;">
@@ -109,8 +109,9 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>To visualize a scratch in TTM notation, simply type its name in the visualizer field above</p>
-              <p>The following table lists and classifies all available scratches. Columns are explained underneath.</p>
+              <p>The following table lists and classifies all available scratches.</p> 
+              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches:</strong> baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), click-tear ("ct"). Each type can be expressed in <strong>three types of curves (s-curve, exponential="Ex", logarithmic="Log")</strong>. Currently, tears can have up to 3 steps ("t1", "t2", "t3"), flares and click-tears can have up to 3 Clicks ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and transformers can have up to 4 clicks ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants (diminished="D", augmented="A", stretched="S")</strong> depending on the number of their clicks. In otal this currently makes 31 <strong>elementary scratches</strong>.</p>
+              <p>The next layer of complexity is achieved by combining these elementary scratches into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporates both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Independent of the elements used, <strong>five types of orbits (normal, right-skewed at 1/3, right-skewed at 1/4, left-skewed at 1/3, left-skewed at 1/4, right-skewed)</strong> are currently available</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
                 $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json', function(json) {
@@ -118,7 +119,6 @@ permalink: /scratchbook
                    data : json.data,
                    columns : json.columns,
                    order: [[ 8, "asc" ], [ 0, "asc" ]],
-                   // order : json.order,
                    // pageLength: 10,
                 })
               });
