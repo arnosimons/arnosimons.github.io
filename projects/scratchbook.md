@@ -257,7 +257,7 @@ permalink: /scratchbook
   req.send()
   exec(str(req.response))
   for name, row in df.iterrows():
-      if not row.Composition == ' is element' and not any(i in row.CodeName for i in ["f4", "t4", "ct4"]):
+      if not (row.Composition == ' is element' or any(i in row.CodeName for i in ["f4", "t4", "ct4"])):
           exec(f"{' = '.join(row.CodeName.split(', '))} = {row.Composition}")
   def plot(x=None):
       text = Element('scratch').element.value
