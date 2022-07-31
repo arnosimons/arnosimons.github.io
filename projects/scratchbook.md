@@ -68,7 +68,7 @@ permalink: /scratchbook
   <header style="background-color:rgb(33, 37, 41)">
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;&#9986;&#127898;</h1>
-      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank'>TTM-like notation</a>, based on a library of scratches currently including over &#128171; 40K scratches &#128194; &#128218;</p>
+      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' style="color: lightskyblue">TTM-like notation</a>, based on a library of scratches currently including over &#128171; 40K scratches &#128194;</p>
     </div>
   </header>
   <br/>
