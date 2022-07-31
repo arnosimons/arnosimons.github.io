@@ -67,8 +67,8 @@ permalink: /scratchbook
 <body style="background-color:#F8F8F8;">
   <header style="background-color:rgb(33, 37, 41)">
     <div class="container-md p-2.5 bg-dark text-white">
-      <h1>ScratchBook &#128221;&#127926;</h1>
-      <p style="color: white; font-size: 16px;">A platform for composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank'>TTM-like notation</a></p>
+      <h1>ScratchBook &#128221;&#127926;&#9986;&#127898;</h1>
+      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank'>TTM-like notation, based on a library of scratches currently including over &#128171; 40K scratches </a></p>
     </div>
   </header>
   <br/>
@@ -109,7 +109,7 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), and click-tear ("ct")</em>, as well as <strong>three types of curves</strong>: <em>s-curve (no special signification), exponential ("Ex"), logarithmic ("Log")</em>. Currently, tears can have up to 3 steps ("t1", "t2", "t3"), flares and click-tears can have up to 3 Clicks ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and transformers can have up to 4 clicks ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished ("D"), augmented ("A"), and stretched ("S")</em>, depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
+              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), and click-tear ("ct")</em>, as well as <strong>three types of curves</strong>: <em>s-curve (no special signification), exponential ("Ex"), logarithmic ("Log")</em>. Currently, <strong>tears can have up to 3 steps</strong> <em>("t1", "t2", "t3")</em>, <strong>flares and click-tears can have up to 3 Clicks</strong> <em>("f1", "f2", "f3", "ct1", "ct2", "ct3")</em>, and <strong>transformers can have up to 4 clicks</strong> <em>("tr1", "tr2", "tr3", "tr4")</em>. Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished ("D"), augmented ("A"), and stretched ("S")</em>, depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
               <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
