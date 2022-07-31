@@ -109,9 +109,9 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>The following table lists and classifies all available scratches.</p> 
-              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches:</strong> baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), click-tear ("ct"). Each type can be expressed in <strong>three types of curves (s-curve, exponential="Ex", logarithmic="Log")</strong>. Currently, tears can have up to 3 steps ("t1", "t2", "t3"), flares and click-tears can have up to 3 Clicks ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and transformers can have up to 4 clicks ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants (diminished="D", augmented="A", stretched="S")</strong> depending on the number of their clicks. In otal this currently makes 31 <strong>elementary scratches</strong>.</p>
-              <p>The next layer of complexity is achieved by combining these elementary scratches into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporates both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Independent of the elements used, <strong>five types of orbits (normal, right-skewed at 1/3, right-skewed at 1/4, left-skewed at 1/3, left-skewed at 1/4, right-skewed)</strong> are currently available</p>
+              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>&mdash;baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), click-tear ("ct")&mdash;as well as<strong>three types of curves</strong>: s-curve(no special signification), exponential ("Ex"), logarithmic ("Log"). Currently, tears can have up to 3 steps ("t1", "t2", "t3"), flares and click-tears can have up to 3 Clicks ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and transformers can have up to 4 clicks ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>&mdash;diminished ("D"), augmented ("A"), and stretched ("S")</strong>depending on the number of their clicks. In total, this currently adds up to 31 <strong>elementary scratches or "elements"</strong>.</p>
+              <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4").</p>
+              <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
                 $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json', function(json) {
@@ -126,13 +126,12 @@ permalink: /scratchbook
               <br/>
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
-              <p class="explainColumns"><strong>CodeName:</strong> Each scratch has at least one code word that can be used in scratch formulas. Multiple code words are seperated by a comma and can be used synonymously. If a scratch is composed of other scratches its formula is shown in the composition column.</p>
-              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in beats (aka quarter notes). This attribute can be altered using the "/" operator (as explained in the operator section).</p>
-              <p class="explainColumns"><strong>#Sounds:</strong> Number of distinct sounds a scratch produces.</p>
-              <p class="explainColumns"><strong>#Pauses:</strong> Number of pauses in a scratch. Pauses can occur either when the fader is closed (e.g. in "flares") or when the record is held still (e.g. in "tears").</p>
-              <p class="explainColumns"><strong>Orbit:</strong> Narrowly defined, an orbit is any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence. In this table, an orbit is broadly defined as any scratch that is "loopable", i.e. whose start and end points on the record are the same. Consequently, scratches like the "autobahn" or the "prizm" are also listed as orbits here.</p>
-              <p class="explainColumns">&#10024; Note that all narrowly defined orbits can be accessed via code words in the generic form of "forward_backward" (e.g. "fl2_fl1", "tr3_ct2", etc.)</p>
-              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in the composition column.</p>
+              <p class="explainColumns"><strong>CodeName:</strong> The code name(s) that can be used in scratch formulas. Multiple code names are seperated by a comma and can be used synonymously.</p>
+              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in quarter notes. This attribute can be altered using the "/" operator (as explained in the operator section).</p>
+              <p class="explainColumns"><strong>#Sounds:</strong> The number of distinct sounds a scratch produces.</p>
+              <p class="explainColumns"><strong>#Pauses:</strong> The umber of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
+              <p class="explainColumns"><strong>Orbit:</strong> Any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence (narrow definition of orbits), plus any scratch that is "loopable", i.e. whose start and end points on the record are the same (which includes scratches like the "autobahn" or the "prizm").</p>
+              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in this column. Otherwise its flagged as an element.</p>
             </div>
           </div>
         </div>
@@ -189,11 +188,20 @@ permalink: /scratchbook
                       <td>"Backwards" scratching (Flip a scratch on the x-axis)</td>
                       <td>-autobahn</td>
                   </tr>
-                  
                   <tr>
                       <td>%</td>
-                      <td>Shift the "phase" of a scratch</td>
+                      <td>Shift the "phase" of a scratch by rotating its parts from right to left</td>
                       <td>prizm % 0.25</td>
+                  </tr>
+                  <tr>
+                      <td>[n]</td>
+                      <td>Show the <em>n</em>-ths part of a composed scratch (!!!Note that the count starts at 0 not 1!!!)</td>
+                      <td>autobahn[3]</td>
+                  </tr>
+                  <tr>
+                      <td>[n:m]</td>
+                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (!!!Note that the counts start at 0 not 1!!!)</td>
+                      <td>autobahn[3:7]</td>
                   </tr>
                 </tbody>
               </table>
