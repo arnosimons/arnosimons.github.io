@@ -68,7 +68,8 @@ permalink: /scratchbook
   <header style="background-color:rgb(33, 37, 41)">
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;</h1>
-      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' style="color: lightskyblue">TTM-like notation</a>, based on a library of scratches currently including over &#128171; 40K scratches &#128194;</p>
+      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' style="color: lightskyblue">TTM-like notation.</a></p>
+      <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p>
     </div>
   </header>
   <br/>
@@ -256,8 +257,8 @@ permalink: /scratchbook
   req.send()
   exec(str(req.response))
   for name, row in df.iterrows():
-      if not row.Composition == ' is element':
-          exec(f"{' = '.join(row['CodeName'].split(', '))} = {row.Composition}")
+      if not row.Composition == ' is element' and not any(i in row.CodeName for i in ["f4", "t4", "ct4"]):
+          exec(f"{' = '.join(row.CodeName.split(', '))} = {row.Composition}")
   def plot(x=None):
       text = Element('scratch').element.value
       pyscript.write("session-output", Session(eval(text)).fig)
