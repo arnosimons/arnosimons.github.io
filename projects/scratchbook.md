@@ -67,7 +67,7 @@ permalink: /scratchbook
 <body style="background-color:#F8F8F8;">
   <header style="background-color:rgb(33, 37, 41)">
     <div class="container-md p-2.5 bg-dark text-white">
-      <h1>ScratchBook &#128221;&#127926;&#9986;&#127898;</h1>
+      <h1>ScratchBook &#128221;&#127926;</h1>
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' style="color: lightskyblue">TTM-like notation</a>, based on a library of scratches currently including over &#128171; 40K scratches &#128194;</p>
     </div>
   </header>
@@ -100,7 +100,7 @@ permalink: /scratchbook
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Library and Logic</h4></div>
         <div class="panel-body">
-          <p style="margin-bottom: 5px;">ScratchBook introduces an algebraic approach to scratch notation and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into complex scratch formulas.</p>
+          <p style="margin-bottom: 5px;">ScratchBook introduces an algebraic approach to scratch notation and provides a formal language. It's alphabet consists of <strong>scratches</strong> and <strong>operators</strong>, which can be combined into complex <strong>scratch formulas</strong>.</p>
           <p>Open the cards to learn more...</p>
         </div>
         <div class="card" style="margin-bottom: 10px;">
@@ -109,7 +109,7 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), and click-tear ("ct")</em>, as well as <strong>three types of curves</strong>: <em>s-curve (no special signification), exponential ("Ex"), logarithmic ("Log")</em>. Currently, <strong>tears can have up to 3 steps</strong> <em>("t1", "t2", "t3")</em>, <strong>flares and click-tears can have up to 3 Clicks</strong> <em>("f1", "f2", "f3", "ct1", "ct2", "ct3")</em>, and <strong>transformers can have up to 4 clicks</strong> <em>("tr1", "tr2", "tr3", "tr4")</em>. Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished ("D"), augmented ("A"), and stretched ("S")</em>, depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
+              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
               <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
               <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p>
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
