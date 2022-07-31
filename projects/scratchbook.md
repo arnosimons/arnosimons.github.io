@@ -196,12 +196,12 @@ permalink: /scratchbook
                   </tr>
                   <tr>
                       <td>[n]</td>
-                      <td>Show the <em>n</em>-ths part of a composed scratch (&#9757; counting starts at 0 not 1!)</td>
+                      <td>Show the <em>n</em>-ths part of a composed scratch (&#9888; counting starts at 0 not at 1!)</td>
                       <td>autobahn[3]</td>
                   </tr>
                   <tr>
                       <td>[n:m]</td>
-                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (&#9757; counting starts at 0 not 1!)</td>
+                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (&#9888; counting starts at 0 not at 1!)</td>
                       <td>autobahn[3:7]</td>
                   </tr>
                 </tbody>
