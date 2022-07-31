@@ -111,7 +111,8 @@ permalink: /scratchbook
             <div class="card-body" style="overflow-x:auto;">
               <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby ("b"), ghost ("g"), transformer ("tr"), flare ("f"), tear ("t"), and click-tear ("ct")</em>, as well as <strong>three types of curves</strong>: <em>s-curve (no special signification), exponential ("Ex"), logarithmic ("Log")</em>. Currently, <strong>tears can have up to 3 steps</strong> <em>("t1", "t2", "t3")</em>, <strong>flares and click-tears can have up to 3 Clicks</strong> <em>("f1", "f2", "f3", "ct1", "ct2", "ct3")</em>, and <strong>transformers can have up to 4 clicks</strong> <em>("tr1", "tr2", "tr3", "tr4")</em>. Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished ("D"), augmented ("A"), and stretched ("S")</em>, depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
               <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
-              <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below</p>
+              <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p>
+              <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
                 $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json', function(json) {
@@ -195,12 +196,12 @@ permalink: /scratchbook
                   </tr>
                   <tr>
                       <td>[n]</td>
-                      <td>Show the <em>n</em>-ths part of a composed scratch (!!!Note that the count starts at 0 not 1!!!)</td>
+                      <td>Show the <em>n</em>-ths part of a composed scratch (&#9757; counting starts at 0 not 1!)</td>
                       <td>autobahn[3]</td>
                   </tr>
                   <tr>
                       <td>[n:m]</td>
-                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (!!!Note that the counts start at 0 not 1!!!)</td>
+                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (&#9757; counting starts at 0 not 1!)</td>
                       <td>autobahn[3:7]</td>
                   </tr>
                 </tbody>
