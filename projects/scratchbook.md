@@ -119,7 +119,7 @@ permalink: /scratchbook
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
-                   order: [[ 8, "asc" ], [ 0, "asc" ]],
+                   order: [[ 11, "asc" ], [ 0, "asc" ]],
                    // pageLength: 10,
                 })
               });
@@ -246,35 +246,35 @@ permalink: /scratchbook
   </footer>
 </body>
 <py-script>
-    import re
+  import re
   from js import XMLHttpRequest
   req = XMLHttpRequest.new()
   req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions.py", False)
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
   req.send()
-  exec(f"library = {req.response}")
+  exec(f"codebook = {req.response}")
   def getCodeNames(text):
       if "Scratch" in text:
           return
       text = re.sub(r"[-+*/%~\[\]\(\).:]|yshift", " ", text)
-      for name in re.sub(r"\b\d*\b", " ", text).split():
-          if not name in library:
-              message = f'Sorry, but "{name}" is not in the library. Browse the library to see what scratches are available!'
+      for code_name in re.sub(r"\b\d*\b", " ", text).split():
+          if not code_name in codebook:
+              message = f'Sorry, but "{code_name}" is not in the codebook. Browse the library to see what scratches are available!'
               pyscript.write("session-output", message)
               raise ValueError(message)
           try:
-              exec(name)
+              exec(code_name)
           except NameError:
-              yield name
-              for i in getCodeNames(library[name]):
+              yield code_name
+              for i in getCodeNames(codebook[code_name]):
                   yield i
   def plot(x=None):
       text = Element('scratch').element.value
-      for name in list(getCodeNames(text))[::-1]:
-          exec(f"{name} = {library[name]}")
+      for code_name in list(getCodeNames(text))[::-1]:
+          exec(f"{code_name} = {codebook[code_name]}")
       pyscript.write("session-output", Session(eval(text)).fig)
   plot()
 </py-script>
