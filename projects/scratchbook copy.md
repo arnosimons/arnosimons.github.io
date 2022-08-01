@@ -23,7 +23,9 @@ permalink: /scratchbook
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
   <py-env>
+    - numpy
     - matplotlib
+    - pandas
   </py-env>
   <style>
     p, table {
@@ -245,35 +247,20 @@ permalink: /scratchbook
   </footer>
 </body>
 <py-script>
-    import re
   from js import XMLHttpRequest
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions.py", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes.py", False)
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.py", False)
   req.send()
-  exec(f"library = {req.response}")
-  def getCodeNames(text):
-      if "Scratch" in text:
-          return
-      text = re.sub(r"[-+*/%~\[\]\(\).:]|yshift", " ", text)
-      for name in re.sub(r"\b\d*\b", " ", text).split():
-          if not name in library:
-              message = f'Sorry, but "{name}" is not in the library. Browse the library to see what scratches are available!'
-              pyscript.write("session-output", message)
-              raise ValueError(message)
-          try:
-              exec(name)
-          except NameError:
-              yield name
-              for i in getCodeNames(library[name]):
-                  yield i
+  exec(str(req.response))
+  for name, row in df.iterrows():
+      if not (row.Composition == ' is element' or any(i in row.CodeName for i in ["f4", "t4", "ct4"])):
+          exec(f"{' = '.join(row.CodeName.split(', '))} = {row.Composition}")
   def plot(x=None):
       text = Element('scratch').element.value
-      for name in list(getCodeNames(text))[::-1]:
-          exec(f"{name} = {library[name]}")
       pyscript.write("session-output", Session(eval(text)).fig)
   plot()
 </py-script>
