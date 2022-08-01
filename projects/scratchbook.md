@@ -114,7 +114,7 @@ permalink: /scratchbook
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
-                $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/library_of_scratches.json', function(json) {
+                $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable.json', function(json) {
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
