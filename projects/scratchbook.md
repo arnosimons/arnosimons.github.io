@@ -128,11 +128,11 @@ permalink: /scratchbook
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
               <p class="explainColumns"><strong>CodeName:</strong> The code name(s) that can be used in scratch formulas. Multiple code names are seperated by a comma and can be used synonymously.</p>
-              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in quarter notes. This attribute can be altered using the "/" operator (as explained in the operator section).</p>
+              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in quarter notes, which can be altered using the "/" operator.</p>
               <p class="explainColumns"><strong>#Sounds:</strong> The number of distinct sounds a scratch produces.</p>
-              <p class="explainColumns"><strong>#Pauses:</strong> The umber of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
-              <p class="explainColumns"><strong>Orbit:</strong> Any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence (narrow definition of orbits), plus any scratch that is "loopable", i.e. whose start and end points on the record are the same (which includes scratches like the "autobahn" or the "prizm").</p>
-              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in this column. Otherwise its flagged as an element.</p>
+              <p class="explainColumns"><strong>#Pauses:</strong> The number of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
+              <p class="explainColumns"><strong>Orbit:</strong> If the scratch is "loopable" or not, i.e. if the start and end points on the record are the same (includes scratches like the "autobahn" or the "prizm").</p>
+              <p class="explainColumns"><strong>Composition:</strong> Shows a scratch's underlying composition or original python code.</p>
             </div>
           </div>
         </div>
