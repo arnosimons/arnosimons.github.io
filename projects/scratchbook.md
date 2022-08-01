@@ -276,6 +276,6 @@ permalink: /scratchbook
       text = Element('scratch').element.value
       for code_name in list(getCodeNames(text))[::-1]:
           exec(f"{code_name} = {codebook[code_name]}")
-      pyscript.write("session-output", Session(eval(text)).fig)
+      pyscript.write("session-output", Session(eval(text), fontsize=11, w_pad=2).fig, ) # rect: (left, bottom, right, top)
   plot()
 </py-script>
