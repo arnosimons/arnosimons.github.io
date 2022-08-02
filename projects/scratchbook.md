@@ -196,14 +196,24 @@ permalink: /scratchbook
                       <td>prizm % 0.25</td>
                   </tr>
                   <tr>
-                      <td>[n]</td>
+                      <td>[<em>n</em>]</td>
                       <td>Show the <em>n</em>-ths part of a composed scratch (<span style="color: #d13108">&#9888;</span> counting starts at 0 not at 1!)</td>
                       <td>autobahn[3]</td>
                   </tr>
                   <tr>
-                      <td>[n:m]</td>
+                      <td>[<em>n</em>:<em>m</em>]</td>
                       <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<span style="color: #d13108">&#9888;</span> counting starts at 0 not at 1!)</td>
                       <td>autobahn[3:7]</td>
+                  </tr>
+                  <tr>
+                      <td>(<em>formula</em>)</td>
+                      <td>Use brackets to logically "shield off" expressions from each other. For example, "chirp / (1/3)" produces a differnt result than "chirp / 1/3". Brackets are essential for many complex expressions.</td>
+                      <td>(chirp / (1/3) + ocf / (2/3)) / 2</td>
+                  </tr>
+                  <tr>
+                      <td>.ys(<em>n</em>)</td>
+                      <td>Use .ys(<em>n</em>) or .yshift(<em>n</em>) to move a scratch or expression up on the Y-axis</td>
+                      <td>(ocf // 0.5).ys(0.25)</td>
                   </tr>
                 </tbody>
               </table>
@@ -260,7 +270,7 @@ permalink: /scratchbook
   def getCodeNames(text):
       if "Scratch" in text:
           return
-      text = re.sub(r"[-+*/%~\[\]\(\).:]|yshift", " ", text)
+      text = re.sub(r"[-+*/%~\[\]\(\).:]|yshift|ys", " ", text)
       for code_name in re.sub(r"\b\d*\b", " ", text).split():
           if not code_name in codebook:
               message = f'Sorry, but "{code_name}" is not in the codebook. Browse the library to see what scratches are available!'
