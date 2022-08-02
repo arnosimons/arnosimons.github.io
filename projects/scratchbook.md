@@ -253,7 +253,8 @@ permalink: /scratchbook
       </section>
       <section class="mb-4">
         <p>Design and content by Arno Simons, a Berlin-based turntablist and researcher.</p>
-        <p>The underlying python code is licenced under the GNU General Public License v3.0 and can be downloaded <a href="https://github.com/arnosimons/scratchbook" target='_blank'>from this GitHub Repository</a>.</p>
+        <p>The underlying python code is licenced under the GNU General Public License v3.0 and can be downloaded <a href="https://github.com/arnosimons/scratchbook" target='_blank' id="GitHublink">from this GitHub Repository</a>.</p>
+        <style> #GitHublink, #GitHublink.page-link{color:lightskyblue; text-decoration:none;}  #GitHublink:hover {color:#d13108; font-weight: bold;}</style>
       </section>
     </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
