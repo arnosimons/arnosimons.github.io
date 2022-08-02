@@ -136,7 +136,7 @@ permalink: /scratchbook
               <p class="explainColumns"><strong>#Pauses:</strong> The number of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
               <p class="explainColumns"><strong>Orbit:</strong> If a scratch is "loopable" or not, i.e. if the start and end points on the record are the same (includes scratches like the "autobahn" or the "prizm").</p>
               <p class="explainColumns"><strong>OrbitType1:</strong> If a scratch is an orbit, this column reveals which elementary scratches it uses (e.g. "Flare-Orbit" or "Mixed-Orbit").</p>
-              <p class="explainColumns"><strong>Orbit:</strong> If a scratch is an orbit, this column reveals which curve-type it uses (e.g. "Tazer" or "Phantazm").</p>
+              <p class="explainColumns"><strong>OrbitType2:</strong> If a scratch is an orbit, this column reveals which curve-type it uses (e.g. "Tazer" or "Phantazm").</p>
               <p class="explainColumns"><strong>Formula:</strong> Shows a scratch's underlying composition or original python code.</p>
               <p class="explainColumns"><strong>Tutorial:</strong> For some scratches there are links to online tutorials.</p>
               <p class="explainColumns"><strong>Essentials:</strong> The default ordering of scratches as when you reload the page.</p>
