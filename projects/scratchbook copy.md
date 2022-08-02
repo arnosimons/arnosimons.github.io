@@ -69,7 +69,7 @@ permalink: /scratchbook
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
       <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
       <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p>
-      <p style="color: #d13108"><span style="font-size: 18px">&#9888;</span> Loading the page can be a little slow at the moment, especially on phones. Please be patient until you see the graph &#128591;</p>
+      <p style="color: #d13108"><span style="font-size: 18px">&#9888;</span> Loading the page can be a little slow at the moment. Please be patient until you see the graph &#128591;</p>
     </div>
   </header>
   <br/>
@@ -110,9 +110,9 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, all <strong>flares, transformers, tears, and click-tears are available up to 4 steps / 4 clicks</strong> ("f1", "f2", "f3", "f4", "tr1", "tr2", "tr3", "tr4", "t1" "t2", "t3", "t4", "ct1", "ct2", "ct3", "ct4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this makes <strong>31 elementary scratches or "elements"</strong>.</p>
-              <p>These elements are further paired up into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
-              <p>A number of <strong>more complex scratches</strong>, such as "autobahn" or "prizm", have also been added and given names.</p>
+              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
+              <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
+              <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p>
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
@@ -127,18 +127,13 @@ permalink: /scratchbook
               </script>
               <br/>
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
-              <p class="explainColumns"><strong>ID:</strong> The unique identifier of a scratch.</p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
-              <p class="explainColumns"><strong>CodeName(s):</strong> The code name(s) that can be used in scratch formulas. Multiple code names are seperated by a comma and can be used synonymously.</p>
-              <p class="explainColumns"><strong>#Length:</strong> The length of a scratch in quarter notes, which can be altered using the "/" operator.</p>
+              <p class="explainColumns"><strong>CodeName:</strong> The code name(s) that can be used in scratch formulas. Multiple code names are seperated by a comma and can be used synonymously.</p>
+              <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in quarter notes. This attribute can be altered using the "/" operator (as explained in the operator section).</p>
               <p class="explainColumns"><strong>#Sounds:</strong> The number of distinct sounds a scratch produces.</p>
-              <p class="explainColumns"><strong>#Pauses:</strong> The number of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
-              <p class="explainColumns"><strong>Orbit:</strong> If a scratch is "loopable" or not, i.e. if the start and end points on the record are the same (includes scratches like the "autobahn" or the "prizm").</p>
-              <p class="explainColumns"><strong>OrbitType1:</strong> If a scratch is an orbit, this column reveals which elementary scratches it uses (e.g. "Flare-Orbit" or "Mixed-Orbit").</p>
-              <p class="explainColumns"><strong>Orbit:</strong> If a scratch is an orbit, this column reveals which curve-type it uses (e.g. "Tazer" or "Phantazm").</p>
-              <p class="explainColumns"><strong>Formula:</strong> Shows a scratch's underlying composition or original python code.</p>
-              <p class="explainColumns"><strong>Tutorial:</strong> For some scratches there are links to online tutorials.</p>
-              <p class="explainColumns"><strong>Essentials:</strong> The default ordering of scratches as when you reload the page.</p>
+              <p class="explainColumns"><strong>#Pauses:</strong> The umber of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
+              <p class="explainColumns"><strong>Orbit:</strong> Any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence (narrow definition of orbits), plus any scratch that is "loopable", i.e. whose start and end points on the record are the same (which includes scratches like the "autobahn" or the "prizm").</p>
+              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in this column. Otherwise its flagged as an element.</p>
             </div>
           </div>
         </div>
