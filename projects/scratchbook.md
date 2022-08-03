@@ -300,4 +300,5 @@ permalink: /scratchbook
           pyscript.write("session-output", str(e))  
   for code_name in ["b", "tr1", "slice"]: # workaround for handling "slice" in python's namespace... 
       exec(f"{code_name} = {codebook[code_name]}")
+  plot()
 </py-script>
