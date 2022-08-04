@@ -213,13 +213,13 @@ permalink: /scratchbook
                   </tr>
                   <tr>
                       <td>(<em>formula</em>)</td>
-                      <td>Use brackets to logically "shield off" expressions from each other. For example, "chirp / (1/3)" produces a differnt result than "chirp / 1/3". Brackets are essential for many complex expressions.</td>
-                      <td>(chirp / (1/3) + ocf / (2/3)) / 2</td>
+                      <td>Use brackets to logically "shield off" expressions from each other. For example, "chirp / 1/3" is not the same as "chirp / (1/3)". Brackets are essential for many complex expressions.</td>
+                      <td>(chirp // (1/3)) ** (2/3)</td>
                   </tr>
                   <tr>
-                      <td>.ys(<em>n</em>)</td>
-                      <td>Use .ys(<em>n</em>) or .yshift(<em>n</em>) to move a scratch or expression up on the Y-axis</td>
-                      <td>(ocf // 0.5).ys(0.25)</td>
+                      <td> ** <em>n</em></td>
+                      <td>Move a scratch or expression up on the Y-axis. Typically used in connection with the "//" Operator". Use brackets wisely! For example, "chirp // 0.5 ** 0.5" is not the same as "(chirp // 0.5) ** 0.5".</td>
+                      <td>(chirp // 0.5) ** 0.5</td>
                   </tr>
                 </tbody>
               </table>
