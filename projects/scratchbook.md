@@ -120,7 +120,7 @@ permalink: /scratchbook
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
-                   order: [[ 14, "asc" ], [ 0, "asc" ]],
+                   order: [[ 15, "asc" ], [ 0, "asc" ]],
                    // pageLength: 10,
                 })
               });
