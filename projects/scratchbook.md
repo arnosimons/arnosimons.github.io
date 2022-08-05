@@ -317,7 +317,7 @@ permalink: /scratchbook
           pyscript.write("session-output", session.fig)
       except Exception as e:
           pyscript.write("session-output", str(e))  
-  for code_name in ["ls", "lc", "slice"]: # workaround for handling "slice" in python's namespace... 
+  for code_name in ["i", "o", "slice"]: # workaround for handling "slice" in python's namespace... 
       exec(f"{code_name} = {codebook[code_name]}")
   plot()
 </py-script>
