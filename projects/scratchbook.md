@@ -60,6 +60,52 @@ permalink: /scratchbook
     background-color: #d13108;
     border-color: #d13108;
     }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 22px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(18px);
+      -ms-transform: translateX(18px);
+      transform: translateX(18px);
+    }
   </style>
 </head>
 <body style="background-color:#F8F8F8;">
@@ -114,16 +160,110 @@ permalink: /scratchbook
               <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
               <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p>
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
+              <br/>
+              <p>Toggle column: 
+                <!-- <a class="toggle-vis" data-column="0">Name</a> -  -->
+                <!-- <a class="toggle-vis" data-column="1">CodeName(s)</a> -  -->
+                <a class="toggle-vis" data-column="2">Tutorial</a> -
+                <a class="toggle-vis" data-column="3">Formula</a> -
+                <a class="toggle-vis" data-column="4">#Sounds</a> - 
+                <a class="toggle-vis" data-column="5">#Pauses</a> -
+                <a class="toggle-vis" data-column="6">#Elements</a> - 
+                <a class="toggle-vis" data-column="7">Length</a> -
+                <a class="toggle-vis" data-column="8">Height</a> -
+                <a class="toggle-vis" data-column="9">Y-Shift</a> -
+                <a class="toggle-vis" data-column="10">Scaled</a> -
+                <a class="toggle-vis" data-column="11">IsElement</a> - 
+                <a class="toggle-vis" data-column="12">IsOrbit</a> - 
+                <a class="toggle-vis" data-column="13">OrbitType1</a> - 
+                <a class="toggle-vis" data-column="14">OrbitType2</a> -
+              </p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
-                $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable3.json', function(json) {
-                $('#scratch-table').DataTable({
-                   data : json.data,
-                   columns : json.columns,
-                   order: [[ 15, "asc" ], [ 0, "asc" ]],
-                   // pageLength: 10,
-                })
-              });
+                $(document).ready(function () {
+                  var table = $('#scratch-table').DataTable({
+                    ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_popular.json",
+                    columns: [
+                      { data: "Name", title: "Name", },
+                      { data: "CodeName(s)", title: "CodeName(s)"},
+                      { data: "Tutorial", title: "Tutorial", },
+                      { data: "Formula", title: "Formula", },
+                      { data: "#Sounds", title: "#Sounds", },
+                      { data: "#Pauses", title: "#Pauses", },
+                      { data: "#Elements", title: "#Elements", },
+                      { data: "Length", title: "Length", },
+                      { data: "Height", title: "Height", },
+                      { data: "Y-Shift", title: "Y-Shift", },
+                      { data: "Scaled", title: "Scaled", },
+                      { data: "IsElement", title: "IsElement", },
+                      { data: "IsOrbit", title: "IsOrbit", },
+                      { data: "OrbitType1", title: "OrbitType1", },
+                      { data: "OrbitType2", title: "OrbitType2", }
+
+                    ],
+                    // pageLength: 10,
+                    order: [
+                      [ 0, "asc" ], 
+                    ],
+                    columnDefs: [
+                      // {target: 0, visible: false, searchable: false,}, // Name
+                      // {target: 1, visible: false, searchable: false,}, // CodeName(s)
+                      // {target: 2, visible: false, searchable: false,}, // Tutorial
+                      // {target: 3, visible: false, searchable: false,}, // Formula
+                      {target: 4, visible: false, searchable: false,}, // #Sounds
+                      {target: 5, visible: false, searchable: false,}, // #Pauses
+                      {target: 6, visible: false, searchable: false,}, // #Elements
+                      {target: 7, visible: false, searchable: false,}, // Length
+                      {target: 8, visible: false, searchable: false,}, // Height
+                      {target: 9, visible: false, searchable: false,}, // Y-Shift
+                      {target: 10, visible: false, searchable: false,}, // Scaled
+                      {target: 11, visible: false, searchable: false,}, // IsElement
+                      {target: 12, visible: false, searchable: false,}, // IsOrbit
+                      {target: 13, visible: false, searchable: false,}, // OrbitType1
+                      {target: 14, visible: false, searchable: false,}, // OrbitType2
+                    ],                 
+                  });
+                  $('.dataTables_length').each(function () {
+
+                    $(this).append('<label style="margin-left: 50px;">Expert mode</label>');
+                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="expert_mode" type="checkbox"></input><span class="slider"></span></label>');
+
+                    $(this).append('<label style="margin-left: 50px;">Load all scratches</label>');
+                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="load_rest" type="checkbox"></input><span class="slider"></span></label>');
+
+                  });
+                  $('a.toggle-vis').on('click', function (e) {
+                    e.preventDefault();
+                    var column = table.column($(this).attr('data-column')); // Get the column API object
+                    column.visible(!column.visible(), false); // Toggle the visibility
+                    column.searchable(!column.searchable(), false); // Toggle the visibility
+                  });
+                  $("#load_rest").change(function() {
+                    if(this.checked) {
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_elements.json', function(json) {
+                        table.rows.add(json.data).draw(false);
+                      });
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_tears.json', function(json) {
+                        table.rows.add(json.data).draw(false);
+                      });
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits.json', function(json) {
+                        table.rows.add(json.data).draw(false);
+                      });
+                    }
+                  });
+
+                  $('#expert_mode').change(function() {
+                    var cols = [4,5,6,7,8,9,10,11,12,13,14]
+                    if(this.checked) {
+                      table.columns( cols ).visible(true, false);
+                      table.columns( cols ).searchable(true);
+                    }
+                    else {
+                      table.columns( cols ).visible(false, false);
+                      table.columns( cols ).searchable(false);
+                    }
+                  });
+                });
               </script>
               <br/>
               <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
@@ -240,7 +380,6 @@ permalink: /scratchbook
                       <td>(<em>expression</em>)</td>
                       <td>(chirp // (1/3)) ** (2/3)</td>
                   </tr>
-                  
                 </tbody>
               </table>
             </div>
@@ -286,11 +425,11 @@ permalink: /scratchbook
   import re
   from js import XMLHttpRequest
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions2.py", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions.py", False)
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook3.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook_complete.json", False)
   req.send()
   exec(f"codebook = {req.response}")
   def getCodeNames(text):

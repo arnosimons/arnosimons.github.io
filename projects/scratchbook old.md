@@ -79,7 +79,7 @@ permalink: /scratchbook
         <div class="panel-heading"><h4>Visualizer</h4></div>
         <div class="panel-body">
           <p>Visualize your composition</p>
-          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn + chirp / (1/3) * 3" placeholder="Type scratch formula.."/>
+          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="slice" placeholder="Type scratch formula... and press ENTER"/>
           <button id="scratch-button" type="submit" pys-onClick="plot"></button>
           <script>
             var input = document.getElementById("scratch");
@@ -106,7 +106,7 @@ permalink: /scratchbook
         </div>
         <div class="card" style="margin-bottom: 10px;">
           <div class="card-header">
-            <a class="btn" data-bs-toggle="collapse" href="#collapse1" style="font-size: 18px; font-weight: 500;">Scratches</a>
+            <a class="btn" data-bs-toggle="collapse" href="#collapse1" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Scratches</a>
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
@@ -116,11 +116,11 @@ permalink: /scratchbook
               <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
-                $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable.json', function(json) {
+                $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable3.json', function(json) {
                 $('#scratch-table').DataTable({
                    data : json.data,
                    columns : json.columns,
-                   order: [[ 11, "asc" ], [ 0, "asc" ]],
+                   order: [[ 15, "asc" ], [ 0, "asc" ]],
                    // pageLength: 10,
                 })
               });
@@ -140,7 +140,7 @@ permalink: /scratchbook
         <!-- <br/> -->
         <div class="card" style="width: auto">
           <div class="card-header">
-            <a class="btn" data-bs-toggle="collapse" href="#collapse2" style="font-size: 18px; font-weight: 500;">Operators</a>
+            <a class="btn" data-bs-toggle="collapse" href="#collapse2" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Operators</a>
           </div>
           <div id="collapse2" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
@@ -149,72 +149,98 @@ permalink: /scratchbook
               <script>
                 $(document).ready(function () {
                   $('#OperatorTable').DataTable();
+                    order: [[0, 'asc']],
                 });
               </script> 
               <table class="table" id="OperatorTable" style="font-size: 12px">
                 <thead>
                   <tr>
+                      <th>ID</th>
                       <th>Operator</th>
                       <th>Purpose</th>
+                      <th>Grammar</th>
                       <th>Example</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                      <td>+</td>
-                      <td>Chain scratches from left to right</td>
-                      <td>chirp + flob2 + steps</td>
-                  </tr>
-                  <tr>
-                      <td>*</td>
-                      <td>Repeat a scratch <em>n</em> times</td>
-                      <td>chirp * 4</td>
-                  </tr>
-                  <tr>
-                      <td>/</td>
-                      <td>Set the length of a scratch in beats (aka quarter notes)</td>
-                      <td>baby / 2</td>
-                  </tr>
-                  <tr>
-                      <td>//</td>
-                      <td>Decide how much of sample is used (between 0 and 1)</td>
-                      <td>swingflare // 0.2</td>
-                  </tr>
-                  <tr>
+                      <th>1</th>
                       <td>~</td>
-                      <td>"Reverse" scratching (Flip a scratch on the y-axis)</td>
+                      <td>"Reverse" or "backwards" scratching (Flip a scratch on the y-axis)</td>
+                      <td>~scratch</td>
                       <td>~autobahn</td>
                   </tr>
                   <tr>
+                      <th>2</th>
                       <td>-</td>
-                      <td>"Backwards" scratching (Flip a scratch on the x-axis)</td>
+                      <td>"Mirror" scratching (Flip a scratch on the x-axis)</td>
+                      <td>-scratch</td>
                       <td>-autobahn</td>
                   </tr>
                   <tr>
+                      <th>3</th>
+                      <td>*</td>
+                      <td>Repeat a scratch <em>n</em> times (<em>n</em> must be an integer number)</td>
+                      <td>scratch * <em>n</em></td>
+                      <td>chirp * 4</td>
+                  </tr>
+                  <tr>
+                      <th>4</th>
+                      <td>+</td>
+                      <td>Chain scratches from left to right</td>
+                      <td>scratch + scratch</td>
+                      <td>chirp + flob2 + steps</td>
+                  </tr>
+                  <tr>
+                      <th>5</th>
+                      <td>/</td>
+                      <td>Set the length <em>n</em> of a scratch in 1/4 notes (aka beats)</td>
+                      <td>scratch / <em>n</em></td>
+                      <td>baby / 2</td>
+                  </tr>
+                  <tr>
+                      <th>6</th>
+                      <td>//</td>
+                      <td>Decide how much of sample is used (<em>n</em> must be between 0 and 1)</td>
+                      <td>scratch // <em>n</em></td>
+                      <td>swingflare // 0.2</td>
+                  </tr>
+                  <tr>
+                      <th>7</th>
+                      <td>**</td>
+                      <td>Move a scratch or expression up on the Y-axis. Typically used in connection with the "//" Operator". Use brackets wisely! For example, "chirp // 0.5 ** 0.5" is not the same as "(chirp // 0.5) ** 0.5".</td>
+                      <td>expression ** <em>n</em></td>
+                      <td>(chirp // 0.5) ** 0.5</td>
+                  </tr>
+                  <tr>
+                      <th>8</th>
                       <td>%</td>
-                      <td>Shift the "phase" of a scratch by rotating its parts from right to left</td>
+                      <td>Shift the "phase" of a scratch by rotating its parts from right to left. (<em>n</em> must be an integer number)</td>
+                      <td>scratch % <em>n</em></td>
                       <td>prizm % 0.25</td>
                   </tr>
                   <tr>
+                      <th>9</th>
                       <td>[<em>n</em>]</td>
-                      <td>Show the <em>n</em>-ths part of a composed scratch (<span style="color: #d13108">&#9888;</span> counting starts at 0 not at 1!)</td>
+                      <td>Show the <em>n</em>-ths part of a composed scratch (<em>n</em> must be an integer number. <span style="color: #d13108">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                      <td>scratch[<em>n</em>]</td>
                       <td>autobahn[3]</td>
                   </tr>
                   <tr>
+                      <th>10</th>
                       <td>[<em>n</em>:<em>m</em>]</td>
-                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<span style="color: #d13108">&#9888;</span> counting starts at 0 not at 1!)</td>
+                      <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<em>n</em> and <em>m</em> must be integer numbers. <span style="color: #d13108">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                      <td>scratch[<em>n</em>:<em>m</em>]</td>
                       <td>autobahn[3:7]</td>
                   </tr>
                   <tr>
-                      <td>(<em>formula</em>)</td>
-                      <td>Use brackets to logically "shield off" expressions from each other. For example, "chirp / (1/3)" produces a differnt result than "chirp / 1/3". Brackets are essential for many complex expressions.</td>
-                      <td>(chirp / (1/3) + ocf / (2/3)) / 2</td>
+                      <th>11</th>
+                      <td>(<em>expression</em>)</td>
+                      <td>Use (nested) brackets to logically "shield off" expressions from each other. For example, "chirp / 1/3" is not the same as "chirp / (1/3)". Brackets are essential for many complex expressions.</td>
+                      <td>(<em>expression</em>)</td>
+                      <td>(chirp // (1/3)) ** (2/3)</td>
                   </tr>
-                  <tr>
-                      <td>.ys(<em>n</em>)</td>
-                      <td>Use .ys(<em>n</em>) or .yshift(<em>n</em>) to move a scratch or expression up on the Y-axis</td>
-                      <td>(ocf // 0.5).ys(0.25)</td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -260,11 +286,11 @@ permalink: /scratchbook
   import re
   from js import XMLHttpRequest
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions.py", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions2.py", False)
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook3.json", False)
   req.send()
   exec(f"codebook = {req.response}")
   def getCodeNames(text):
@@ -286,6 +312,12 @@ permalink: /scratchbook
       text = Element('scratch').element.value
       for code_name in list(getCodeNames(text))[::-1]:
           exec(f"{code_name} = {codebook[code_name]}")
-      pyscript.write("session-output", Session(eval(text), fontsize=11, w_pad=2).fig, ) # rect: (left, bottom, right, top)
+      try:
+          session = Session(eval(text), fontsize=11, w_pad=2)
+          pyscript.write("session-output", session.fig)
+      except Exception as e:
+          pyscript.write("session-output", str(e))  
+  for code_name in ["i", "o", "slice"]: # workaround for handling "slice" in python's namespace... 
+      exec(f"{code_name} = {codebook[code_name]}")
   plot()
 </py-script>
