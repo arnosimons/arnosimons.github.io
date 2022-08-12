@@ -124,8 +124,8 @@ permalink: /scratchbook
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Visualizer</h4></div>
         <div class="panel-body">
-          <p>Visualize your composition</p>
-          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn + prizm + (slice / 0.25) * 4" placeholder="Type scratch formula... and press ENTER"/>
+          <p>Type and visualize your scratch formula...</p>
+          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn + prizm + (slice / 0.25) * 4" placeholder="Type formula and press ENTER"/>
           <button id="scratch-button" type="submit" pys-onClick="plot"></button>
           <script>
             var input = document.getElementById("scratch");
