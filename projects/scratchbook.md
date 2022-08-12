@@ -115,9 +115,6 @@ permalink: /scratchbook
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
       <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
       <!-- <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p> -->
-      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
-      <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
-      <!-- <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p> -->
       <p style="color: #d13108"><span style="font-size: 18px">&#9888;</span> Loading the page can be a little slow at the moment. Please be patient until you see the graph &#128591;</p>
     </div>
   </header>
