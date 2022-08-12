@@ -114,7 +114,10 @@ permalink: /scratchbook
       <h1>ScratchBook &#128221;&#127926;</h1>
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
       <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
-      <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p>
+      <!-- <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p> -->
+      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
+      <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
+      <!-- <p>Based on a library of scratches currently including over &#128171; 60K scratches &#128194;</p> -->
       <p style="color: #d13108"><span style="font-size: 18px">&#9888;</span> Loading the page can be a little slow at the moment. Please be patient until you see the graph &#128591;</p>
     </div>
   </header>
@@ -125,7 +128,7 @@ permalink: /scratchbook
         <div class="panel-heading"><h4>Visualizer</h4></div>
         <div class="panel-body">
           <p>Visualize your composition</p>
-          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="slice" placeholder="Type scratch formula... and press ENTER"/>
+          <input class="form-control" type="text" id="scratch" style="font-size: 14px;" value="autobahn + prizm + (slice / 0.25) * 4" placeholder="Type scratch formula... and press ENTER"/>
           <button id="scratch-button" type="submit" pys-onClick="plot"></button>
           <script>
             var input = document.getElementById("scratch");
@@ -156,27 +159,22 @@ permalink: /scratchbook
           </div>
           <div id="collapse1" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
-              <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
-              <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
-              <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p>
-              <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p>
-              <br/>
-              <p>Toggle column: 
+              <!-- <p>The following table lists and classifies all available scratches. The meaning of the columns is explained below.</p> -->
+              <!-- <br/> -->
+              <p>Toggle columns: 
                 <!-- <a class="toggle-vis" data-column="0">Name</a> -  -->
-                <!-- <a class="toggle-vis" data-column="1">CodeName(s)</a> -  -->
-                <a class="toggle-vis" data-column="2">Tutorial</a> -
-                <a class="toggle-vis" data-column="3">Formula</a> -
-                <a class="toggle-vis" data-column="4">#Sounds</a> - 
-                <a class="toggle-vis" data-column="5">#Pauses</a> -
-                <a class="toggle-vis" data-column="6">#Elements</a> - 
-                <a class="toggle-vis" data-column="7">Length</a> -
-                <a class="toggle-vis" data-column="8">Height</a> -
-                <a class="toggle-vis" data-column="9">Y-Shift</a> -
-                <a class="toggle-vis" data-column="10">Scaled</a> -
-                <a class="toggle-vis" data-column="11">IsElement</a> - 
-                <a class="toggle-vis" data-column="12">IsOrbit</a> - 
-                <a class="toggle-vis" data-column="13">OrbitType1</a> - 
-                <a class="toggle-vis" data-column="14">OrbitType2</a> -
+                <a class="toggle-vis" data-column="1">Tutorial</a> -
+                <a class="toggle-vis" data-column="2">#Sounds</a> - 
+                <a class="toggle-vis" data-column="3">#Pauses</a> -
+                <a class="toggle-vis" data-column="4">CurveType</a> -
+                <a class="toggle-vis" data-column="5">ClickType</a> -
+                <a class="toggle-vis" data-column="6">IsOrbit</a> - 
+                <a class="toggle-vis" data-column="7">OrbitType1</a> - 
+                <a class="toggle-vis" data-column="8">OrbitType2</a> -
+                <a class="toggle-vis" data-column="9">IsElement</a> - 
+                <a class="toggle-vis" data-column="10">#Elements</a> - 
+                <a class="toggle-vis" data-column="11">Formula</a>
+                <!-- <a class="toggle-vis" data-column="12">Library</a>  -->
               </p>
               <table class="table" id="scratch-table" style="font-size: 12px"></table>
               <script type="text/javascript">
@@ -184,22 +182,19 @@ permalink: /scratchbook
                   var table = $('#scratch-table').DataTable({
                     ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_popular.json",
                     columns: [
-                      { data: "Name", title: "Name", },
-                      { data: "CodeName(s)", title: "CodeName(s)"},
-                      { data: "Tutorial", title: "Tutorial", },
-                      { data: "Formula", title: "Formula", },
-                      { data: "#Sounds", title: "#Sounds", },
-                      { data: "#Pauses", title: "#Pauses", },
-                      { data: "#Elements", title: "#Elements", },
-                      { data: "Length", title: "Length", },
-                      { data: "Height", title: "Height", },
-                      { data: "Y-Shift", title: "Y-Shift", },
-                      { data: "Scaled", title: "Scaled", },
-                      { data: "IsElement", title: "IsElement", },
-                      { data: "IsOrbit", title: "IsOrbit", },
-                      { data: "OrbitType1", title: "OrbitType1", },
-                      { data: "OrbitType2", title: "OrbitType2", }
-
+                      { data: "Name", title: "Name", }, 
+                      { data: "Tutorial", title: "Tutorial", }, 
+                      { data: "#Sounds", title: "#Sounds", }, 
+                      { data: "#Pauses", title: "#Pauses", }, 
+                      { data: "CurveType", title: "CurveType", }, 
+                      { data: "ClickType", title: "ClickType", }, 
+                      { data: "IsOrbit", title: "IsOrbit", }, 
+                      { data: "OrbitType1", title: "OrbitType1", }, 
+                      { data: "OrbitType2", title: "OrbitType2", }, 
+                      { data: "IsElement", title: "IsElement", }, 
+                      { data: "#Elements", title: "#Elements", }, 
+                      { data: "Formula", title: "Formula", }, 
+                      { data: "Library", title: "Library", }, 
                     ],
                     // pageLength: 10,
                     order: [
@@ -207,53 +202,65 @@ permalink: /scratchbook
                     ],
                     columnDefs: [
                       // {target: 0, visible: false, searchable: false,}, // Name
-                      // {target: 1, visible: false, searchable: false,}, // CodeName(s)
-                      // {target: 2, visible: false, searchable: false,}, // Tutorial
-                      // {target: 3, visible: false, searchable: false,}, // Formula
-                      {target: 4, visible: false, searchable: false,}, // #Sounds
-                      {target: 5, visible: false, searchable: false,}, // #Pauses
-                      {target: 6, visible: false, searchable: false,}, // #Elements
-                      {target: 7, visible: false, searchable: false,}, // Length
-                      {target: 8, visible: false, searchable: false,}, // Height
-                      {target: 9, visible: false, searchable: false,}, // Y-Shift
-                      {target: 10, visible: false, searchable: false,}, // Scaled
-                      {target: 11, visible: false, searchable: false,}, // IsElement
-                      {target: 12, visible: false, searchable: false,}, // IsOrbit
-                      {target: 13, visible: false, searchable: false,}, // OrbitType1
-                      {target: 14, visible: false, searchable: false,}, // OrbitType2
+                      // {target: 1, visible: false, searchable: false,}, // Tutorial
+                      // {target: 2, visible: false, searchable: false,}, // #Sounds
+                      // {target: 3, visible: false, searchable: false,}, // #Pauses
+                      {target: 4, visible: false, searchable: false,}, // CurveType
+                      {target: 5, visible: false, searchable: false,}, // ClickType
+                      {target: 6, visible: false, searchable: false,}, // IsOrbit
+                      {target: 7, visible: false, searchable: false,}, // OrbitType1
+                      {target: 8, visible: false, searchable: false,}, // OrbitType2
+                      {target: 9, visible: false, searchable: false,}, // IsElement
+                      {target: 10, visible: false, searchable: false,}, // #Elements
+                      {target: 11, visible: false, searchable: false,}, // Formula
+                      {target: 12, visible: false, searchable: true,}, // Library
                     ],                 
                   });
                   $('.dataTables_length').each(function () {
 
-                    $(this).append('<label style="margin-left: 50px;">Expert mode</label>');
-                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="expert_mode" type="checkbox"></input><span class="slider"></span></label>');
+                    $(this).append('<label style="margin-left: 50px;">All info</label>');
+                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="all_info" type="checkbox"></input><span class="slider"></span></label>');
 
-                    $(this).append('<label style="margin-left: 50px;">Load all scratches</label>');
-                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="load_rest" type="checkbox"></input><span class="slider"></span></label>');
+                    $(this).append('<label style="margin-left: 50px;">All scratches</label>');
+                    $(this).append('<label class="switch" style="margin-left: 5px;"><input id="all_scratches" type="checkbox"></input><span class="slider"></span></label>');
 
                   });
                   $('a.toggle-vis').on('click', function (e) {
                     e.preventDefault();
                     var column = table.column($(this).attr('data-column')); // Get the column API object
                     column.visible(!column.visible(), false); // Toggle the visibility
-                    column.searchable(!column.searchable(), false); // Toggle the visibility
+                    column.searchable(!column.searchable()); // Toggle the visibility
                   });
-                  $("#load_rest").change(function() {
-                    if(this.checked) {
+                  var first_switch = true
+                  $("#all_scratches").change(function() {
+                    if(this.checked && first_switch === true) {
+                      first_switch = false; // first switch has now ocurred :)
                       $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_elements.json', function(json) {
                         table.rows.add(json.data).draw(false);
                       });
                       $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_tears.json', function(json) {
                         table.rows.add(json.data).draw(false);
                       });
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits.json', function(json) {
-                        table.rows.add(json.data).draw(false);
-                      });
-                    }
+                      // $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits.json', function(json) {
+                      //   table.rows.add(json.data).draw(false);
+                      // });
+                    };
+                    if(this.checked === false) {
+                      $.fn.dataTable.ext.search.push(
+                         function(settings, data, dataIndex) {
+                          return data[12] == "popular";
+                         }
+                      );
+                      table.draw();
+                    };
+                    if(this.checked && first_switch === false) {
+                      $.fn.dataTable.ext.search.pop();
+                      table.draw();
+                    };
                   });
 
-                  $('#expert_mode').change(function() {
-                    var cols = [4,5,6,7,8,9,10,11,12,13,14]
+                  $('#all_info').change(function() {
+                    var cols = [4,5,6,7,8,9,10,11,] // exclude: 13 (Library)
                     if(this.checked) {
                       table.columns( cols ).visible(true, false);
                       table.columns( cols ).searchable(true);
@@ -266,19 +273,18 @@ permalink: /scratchbook
                 });
               </script>
               <br/>
-              <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
+              <!-- <p style="font-size: 16px; margin-bottom: 5px;"><strong>Explanation of columns</strong></p>
               <p class="explainColumns"><strong>Name:</strong> The name of a scratch.</p>
               <p class="explainColumns"><strong>CodeName:</strong> The code name(s) that can be used in scratch formulas. Multiple code names are seperated by a comma and can be used synonymously.</p>
               <p class="explainColumns"><strong>#Counts:</strong> The length of a scratch in quarter notes. This attribute can be altered using the "/" operator (as explained in the operator section).</p>
               <p class="explainColumns"><strong>#Sounds:</strong> The number of distinct sounds a scratch produces.</p>
               <p class="explainColumns"><strong>#Pauses:</strong> The umber of pauses in a scratch. Pauses can occur either when the fader is closed (as in flares) or when the record is held still (as in tears).</p>
               <p class="explainColumns"><strong>Orbit:</strong> Any scratch that incorporates both a forward and backward movement, or vice versa, of the record in sequence (narrow definition of orbits), plus any scratch that is "loopable", i.e. whose start and end points on the record are the same (which includes scratches like the "autobahn" or the "prizm").</p>
-              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in this column. Otherwise its flagged as an element.</p>
+              <p class="explainColumns"><strong>Composition:</strong> If a scratch is composed of other scratches its formula is shown in this column. Otherwise its flagged as an element.</p> -->
             </div>
           </div>
         </div>
-        <!-- <br/> -->
-        <div class="card" style="width: auto">
+        <div class="card" style="margin-bottom: 10px;">
           <div class="card-header">
             <a class="btn" data-bs-toggle="collapse" href="#collapse2" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Operators</a>
           </div>
@@ -382,6 +388,19 @@ permalink: /scratchbook
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: auto">
+          <div class="card-header">
+            <a class="btn" data-bs-toggle="collapse" href="#collapse3" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">More Info</a>
+          </div>
+          <div id="collapse3" class="collapse in">
+            <div class="card-body" style="overflow-x:auto;">
+              <p>Will follow soon...</p>
+              <!-- <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
+              <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
+              <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p> -->
             </div>
           </div>
         </div>
