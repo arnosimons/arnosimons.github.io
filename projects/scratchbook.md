@@ -390,7 +390,7 @@ permalink: /scratchbook
         </div>
         <div class="card" style="width: auto">
           <div class="card-header">
-            <a class="btn" data-bs-toggle="collapse" href="#collapse3" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">What is ScratchBook about?</a>
+            <a class="btn" data-bs-toggle="collapse" href="#collapse3" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">The Idea...</a>
           </div>
           <div id="collapse3" class="collapse in">
             <div class="card-body" style="overflow-x:auto;">
