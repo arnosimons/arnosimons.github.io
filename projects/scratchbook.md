@@ -195,10 +195,6 @@ permalink: /scratchbook
                       { data: "#Elements", title: "#Elements", }, 
                       { data: "Formula", title: "Formula", }, 
                       { data: "Library", title: "Library", }, 
-                      { data: "Core", title: "Core", }, 
-                      { data: "Elements", title: "Elements", }, 
-                      { data: "Tears", title: "Tears", }, 
-                      { data: "Orbits", title: "Orbits", }, 
                     ],
                     order: [
                       [ 0, "asc" ], 
@@ -214,10 +210,6 @@ permalink: /scratchbook
                       {target: 7, visible: false, searchable: false,}, // #Elements
                       {target: 8, visible: false, searchable: false,}, // Formula
                       {target: 9, visible: false, searchable: true,}, // Library
-                      {target: 10, visible: false, searchable: false,}, // Core
-                      {target: 11, visible: false, searchable: false,}, // Elements
-                      {target: 12, visible: false, searchable: false,}, // Tears
-                      {target: 13, visible: false, searchable: false,}, // Orbits
                     ], 
                     "searching": true,  
                     "lengthChange": true,
