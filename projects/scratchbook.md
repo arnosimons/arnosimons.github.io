@@ -127,7 +127,7 @@ permalink: /scratchbook
       <h1>ScratchBook &#128221;&#127926;</h1>
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
       <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
-      <p style="color: #d13108; font-size: 18px">&#9888; Loading the page is a little slow. Please be patient until you see the graph &#128591;</p>
+      <p style="color: #d13108; font-size: 18px">&#9888; Loading the page takes time. Please be patient until you see the graph &#128591;</p>
       <!-- <br/> -->
     </div>
   </header>
