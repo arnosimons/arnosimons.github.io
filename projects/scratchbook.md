@@ -16,11 +16,11 @@ permalink: /scratchbook
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- PyScript -->
-  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
   <py-env>
     - matplotlib
-  </py-env>
+  </py-env> -->
 
   <!-- Bootstrap 5.1.3 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -39,9 +39,6 @@ permalink: /scratchbook
   <!-- Global Styling -->
   <style>
 
-    select.form-select{
-
-    }
     p, table {
       font-size: 14px;
     }
@@ -128,7 +125,6 @@ permalink: /scratchbook
   <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px #d8d8d8">
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;</h1>
-
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
       <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
       <p style="color: #d13108; font-size: 18px">&#9888; Loading the page is a little slow. Please be patient until you see the graph &#128591;</p>
@@ -185,32 +181,58 @@ permalink: /scratchbook
                   var table = $('#scratch-table').DataTable({
                     ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_core.json",
                     columns: [
-                      { data: "Name", title: "Name(s)", }, 
-                      { data: "Tutorial", title: "Tutorial", }, 
-                      { data: "#Sounds", title: "#Sounds", }, 
-                      { data: "#Pauses", title: "#Pauses", }, 
-                      { data: "CurveType", title: "CurveType", }, 
-                      { data: "ClickType", title: "ClickType", }, 
-                      { data: "OrbitType", title: "OrbitType", }, 
-                      { data: "#Elements", title: "#Elements", }, 
-                      { data: "Formula", title: "Formula", }, 
-                      { data: "Library", title: "Library", }, 
+                      { data: 'Name(s)',  title: 'Name(s)',  },  
+                      { data: 'Tutorial', title: 'Tutorial', },
+                      { data: '#Sounds',  title: '#Sounds',  },
+                      { data: 'Ex',       title: 'Ex',       },
+                      { data: 'Log',      title: 'Log',      },
+                      { data: '#FOs',     title: '#FOs',     },
+                      { data: '#FCs',     title: '#FCs',     },
+                      { data: '#SBs',     title: '#SBs',     },
+                      { data: 'D',        title: 'D',        },
+                      { data: 'A',        title: 'A',        },
+                      { data: 'S',        title: 'S',        },
+                      { data: 'Q',        title: 'Q',        },
+                      { data: 'OrbType1', title: 'OrbType1', },
+                      { data: 'OrbType2', title: 'OrbType2', },
+                      { data: 'OrbType3', title: 'OrbType3', },                      
+                      { data: '#Els',     title: '#Els',     },
+                      { data: 'Formula',  title: 'Formula',  },
+                      { data: 'core',     title: 'core',     },
+                      { data: 'elements', title: 'elements', },
+                      { data: 'tears',    title: 'tears',    },
+                      { data: 'orbits1',  title: 'orbits1',  },
+                      { data: 'orbits2',  title: 'orbits2',  },
+                      { data: 'other',    title: 'other',    },
                     ],
+                    columnDefs: [
+                      // {target: 0,  visible: false, searchable: false,}, // 'Name(s)', 
+                      // {target: 1,  visible: false, searchable: false,}, // 'Tutorial',
+                      // {target: 2,  visible: false, searchable: false,}, // '#Sounds', 
+                      {target: 3,  visible: false, searchable: false,}, // 'Ex',      
+                      {target: 4,  visible: false, searchable: false,}, // 'Log',     
+                      {target: 5,  visible: false, searchable: false,}, // '#FOs',    
+                      {target: 6,  visible: false, searchable: false,}, // '#FCs',    
+                      {target: 7,  visible: false, searchable: false,}, // '#SBs',    
+                      {target: 8,  visible: false, searchable: false,}, // 'D',       
+                      {target: 9,  visible: false, searchable: false,}, // 'A',       
+                      {target: 10, visible: false, searchable: false,}, // 'S',       
+                      {target: 11, visible: false, searchable: false,}, // 'Q',       
+                      {target: 12, visible: false, searchable: false,}, // 'OrbType1',
+                      {target: 13, visible: false, searchable: false,}, // 'OrbType2',
+                      {target: 14, visible: false, searchable: false,},  // 'OrbType3',
+                      {target: 15, visible: false, searchable: false,},  // '#Els',    
+                      {target: 16, visible: false, searchable: false,},  // 'Formula', 
+                      {target: 17, visible: false, searchable: true,},  // 'core',    
+                      {target: 18, visible: false, searchable: true,},  // 'elements',
+                      {target: 19, visible: false, searchable: true,},  // 'tears',  
+                      {target: 20, visible: false, searchable: true,},  // 'orbits1',  
+                      {target: 21, visible: false, searchable: true,},  // 'orbits2',  
+                      {target: 22, visible: false, searchable: true,},  // 'other',   
+                    ], 
                     order: [
                       [ 0, "asc" ], 
                     ],
-                    columnDefs: [
-                      // {target: 0, visible: false, searchable: false,}, // Name
-                      // {target: 1, visible: false, searchable: false,}, // Tutorial
-                      // {target: 2, visible: false, searchable: false,}, // #Sounds
-                      // {target: 3, visible: false, searchable: false,}, // #Pauses
-                      {target: 4, visible: false, searchable: false,}, // CurveType
-                      {target: 5, visible: false, searchable: false,}, // ClickType
-                      {target: 6, visible: false, searchable: false,}, // OrbitType
-                      {target: 7, visible: false, searchable: false,}, // #Elements
-                      {target: 8, visible: false, searchable: false,}, // Formula
-                      {target: 9, visible: false, searchable: true,}, // Library
-                    ], 
                     "searching": true,  
                     "lengthChange": true,
                     // scrollY: '50vh',
@@ -223,17 +245,26 @@ permalink: /scratchbook
                   // Libraries and columns
 
                   $('.dataTables_wrapper').find("div").eq(0).prepend(
-                      '<div class="row">\
-                        <p style="font-size: 12px; margin-top:5px"><strong>Libraries:</strong>\
-                        <label style="margin-left: 15px;">Core</label>\
-                        <label class="switch" style="margin-left: 5px;"><input id="core" type="checkbox" checked></input><span class="slider"></span></label>\
-                        <label style="margin-left: 15px;">Elements</label>\
-                        <label class="switch" style="margin-left: 5px;"><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
-                        <label style="margin-left: 15px;">Tears</label>\
-                        <label class="switch" style="margin-left: 5px;"><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
-                        <label style="margin-left: 15px;">Orbits</label>\
-                        <label class="switch" style="margin-left: 5px;"><input id="orbits" type="checkbox"></input><span class="slider"></span></label>\
-                      </p><div>'
+                      '<div class="container" style="width:100%">\
+                        <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
+                          <p style="font-size: 16px; margin-top:5px"><strong>Libraries:</strong></p>\
+                          <p style="font-size: 12px;">\
+                            <label style="margin-left: 0px;">Core</label>\
+                            <label class="switch" style="margin-left: 5px;"><input id="core" type="checkbox" checked></input><span class="slider"></span></label>\
+                            <label style="margin-left: 15px;">Elements</label>\
+                            <label class="switch" style="margin-left: 5px;"><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
+                            <label style="margin-left: 15px;">Tears</label>\
+                            <label class="switch" style="margin-left: 5px;"><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
+                          </p><p style="font-size: 12px;">\
+                            <label style="margin-left: 0px;">Orbits1</label>\
+                            <label class="switch" style="margin-left: 5px;"><input id="orbits1" type="checkbox"></input><span class="slider"></span></label>\
+                            <label style="margin-left: 15px;">Orbits2</label>\
+                           <label class="switch" style="margin-left: 5px;"><input id="orbits2" type="checkbox"></input><span class="slider"></span></label>\
+                            <label style="margin-left: 15px;">Other</label>\
+                           <label class="switch" style="margin-left: 5px;"><input id="other" type="checkbox"></input><span class="slider"></span></label>\
+                          </p>\
+                        </div>\
+                      </div>'
                   );
 
                   $('.dataTables_length').prepend(
@@ -244,7 +275,7 @@ permalink: /scratchbook
                   // Column Switch
                   
                   $('#advanced').change(function() {
-                    var cols = [4,5,6,7,8,9,] 
+                    var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
                     if(this.checked) {
                       table.columns( cols ).visible(true, false);
                       table.columns( cols ).searchable(true);
@@ -261,19 +292,28 @@ permalink: /scratchbook
 
                   function activeLibs() {
                       let active_libs = [];
-                      for (let lib of ["elements", "core",  "orbits", "tears"]) {
-                        if (document.getElementById(lib).checked) {
-                            active_libs.push("data[lib_indx] == " + "'" + lib + "'")
+                      for (let libinfo of [
+                        ["core", 17],
+                        ["elements", 18],
+                        ["tears", 19],
+                        ["orbits1", 20],
+                        ["orbits2", 21],
+                        ["other", 22],
+                        
+                      ]) {
+                        if (document.getElementById(libinfo[0]).checked) {
+                            active_libs.push("data['" + libinfo[1] + "'] == 1")
                           }
                       }
+                      // document.getElementById("session-output").innerHTML = active_libs.join(" || ")
                       return active_libs.join(" || ")
                   }
 
                   $("#core").change(function() {
                       $.fn.dataTable.ext.search.push(
-                         function(settings, data, dataIndex) {
+                        function(settings, data, dataIndex) {
                           return eval(activeLibs())
-                         }
+                        }
                       );
                       table.draw();
                   });
@@ -288,7 +328,7 @@ permalink: /scratchbook
                     }
                     $.fn.dataTable.ext.search.push(
                         function(settings, data, dataIndex) {
-                        return eval(activeLibs())
+                          return eval(activeLibs())
                         }
                     );
                     table.draw();
@@ -310,11 +350,11 @@ permalink: /scratchbook
                     table.draw();
                   });
 
-                  var load_orbits = true
-                  $("#orbits").change(function() {
-                    if(this.checked && load_orbits === true) {
-                      load_orbits = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits.json', function(json) {
+                  var load_orbits1 = true
+                  $("#orbits1").change(function() {
+                    if(this.checked && load_orbits1 === true) {
+                      load_orbits1 = false;
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits1.json', function(json) {
                         table.rows.add(json.data).draw(false);
                       });
                     }
@@ -325,6 +365,39 @@ permalink: /scratchbook
                     );
                     table.draw();
                   });
+
+                  var load_orbits2 = true
+                  $("#orbits2").change(function() {
+                    if(this.checked && load_orbits2 === true) {
+                      load_orbits2 = false;
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits2.json', function(json) {
+                        table.rows.add(json.data).draw(false);
+                      });
+                    }
+                    $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                        return eval(activeLibs())
+                        }
+                    );
+                    table.draw();
+                  });
+
+                  var other = true
+                  $("#other").change(function() {
+                    if(this.checked && other === true) {
+                      other = false;
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_other.json', function(json) {
+                        table.rows.add(json.data).draw(false);
+                      });
+                    }
+                    $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                        return eval(activeLibs())
+                        }
+                    );
+                    table.draw();
+                  });
+
                 });
               </script>
               <br/>
@@ -348,7 +421,6 @@ permalink: /scratchbook
             <div class="card-body" style="overflow-x:auto;">
               <p>Operators can be used to modify and combine scratches. The following table lists and explains all available operators.
               </p>
-
               <table class="table" id="OperatorTable" style="font-size: 12px">
                 <thead>
                   <tr>
@@ -481,7 +553,7 @@ permalink: /scratchbook
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook_complete.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
   req.send()
   exec(f"codebook = {req.response}")
   def getCodeNames(text):
