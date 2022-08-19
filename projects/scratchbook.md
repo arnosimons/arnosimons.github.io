@@ -164,6 +164,7 @@ permalink: /scratchbook
         <div class="panel-body">
           <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: rgb(0, 102, 153)">autobahn + prizm + (slice / 0.25) * 4</code></p>
           <p>Open the cards to learn more...</p>
+          <p data-bs-toggle="tooltip" data-bs-placement="left" title="Some tip">Toggle popover</p>
         </div>
         <!-- Scratches -->
         <div class="card" style="margin-bottom: 10px;">
@@ -205,31 +206,6 @@ permalink: /scratchbook
                       { data: 'orbits2',  title: 'orbits2',  },
                       { data: 'other',    title: 'other',    },
                     ],
-                    columnDefs: [
-                      // {target: 0,  visible: false, searchable: false,}, // 'Name(s)', 
-                      // {target: 1,  visible: false, searchable: false,}, // 'Tutorial',
-                      // {target: 2,  visible: false, searchable: false,}, // '#Sounds', 
-                      {target: 3,  visible: false, searchable: false,}, // 'Ex',      
-                      {target: 4,  visible: false, searchable: false,}, // 'Log',     
-                      {target: 5,  visible: false, searchable: false,}, // '#FOs',    
-                      {target: 6,  visible: false, searchable: false,}, // '#FCs',    
-                      {target: 7,  visible: false, searchable: false,}, // '#SBs',    
-                      {target: 8,  visible: false, searchable: false,}, // 'D',       
-                      {target: 9,  visible: false, searchable: false,}, // 'A',       
-                      {target: 10, visible: false, searchable: false,}, // 'S',       
-                      {target: 11, visible: false, searchable: false,}, // 'Q',       
-                      {target: 12, visible: false, searchable: false,}, // 'OrbType1',
-                      {target: 13, visible: false, searchable: false,}, // 'OrbType2',
-                      {target: 14, visible: false, searchable: false,},  // 'OrbType3',
-                      {target: 15, visible: false, searchable: false,},  // '#Els',    
-                      {target: 16, visible: false, searchable: false,},  // 'Formula', 
-                      {target: 17, visible: false, searchable: true,},  // 'core',    
-                      {target: 18, visible: false, searchable: true,},  // 'elements',
-                      {target: 19, visible: false, searchable: true,},  // 'tears',  
-                      {target: 20, visible: false, searchable: true,},  // 'orbits1',  
-                      {target: 21, visible: false, searchable: true,},  // 'orbits2',  
-                      {target: 22, visible: false, searchable: true,},  // 'other',   
-                    ], 
                     order: [
                       [ 0, "asc" ], 
                     ],
@@ -239,11 +215,60 @@ permalink: /scratchbook
                     // scrollCollapse: true,
                     // fixedHeader: {
                     //   header: true,
-                    // },          
+                    // },
+                    "initComplete": function(settings){
+                      $('#scratch-table thead th').each(function () {
+                        var $td = $(this);
+                        var headerText = $td.text(); 
+                        var headerTitle=$td.text(); 
+                        if ( headerText == "Name(s)" )
+                          headerTitle =  "Available NAMES for the scratch, to be used in the VISUALIZER. Synonymous names are seperated by a comma.";
+                        else if (headerText == "Tutorial" )
+                          headerTitle = "A link to a VIDEO-TUTORIAL for the scratch (if available).";
+                        else if (headerText == "#Sounds" )
+                          headerTitle = "The number of SOUNDS the scratch makes.";
+                        else if (headerText == "Ex" )
+                          headerTitle = "Whether or not the scratch contains at least one EXPONENTIAL curve.";
+                        else if (headerText == "Log" )
+                          headerTitle = "Whether or not the scratch contains at least one LOGARITHMIC curve.";
+                        else if (headerText == "#FOs" )
+                          headerTitle = "The Number of times the FADER is OPENED in the scratch.";
+                        else if (headerText == "#FCs" )
+                          headerTitle = "The Number of times the FADER is CLOSED in the scratch.";
+                        else if (headerText == "#SBs" )
+                          headerTitle = "The Number of SILENT BREAKS in the scratch, i.e. when the record is held still.";
+                        else if (headerText == "D" )
+                          headerTitle = "Whether or not the scratch contains at least one DIMINISHED click pattern.";
+                        else if (headerText == "A" )
+                          headerTitle = "Whether or not the scratch contains at least one AUGMENTED click pattern.";
+                        else if (headerText == "S" )
+                          headerTitle = "Whether or not the scratch contains at least one STRECHED click pattern.";
+                        else if (headerText == "Q" )
+                          headerTitle = "Whether or not the scratch contains at least one SQUEEZED click pattern.";
+                        else if (headerText == "OrbType1" )
+                          headerTitle = "(Only applies to orbits) Whether the scratch is a PURE or an IMPURE orbit, i.e. whether or not the backward motion perfectly mirrors the forward motion.";
+                        else if (headerText == "OrbType2" )
+                          headerTitle = "(Only applies to orbits) Names the CURVE-SHAPE of the orbit, e.g. S-CURVED, TAZER or PHANTAZM.";
+                        else if (headerText == "OrbType3" )
+                          headerTitle = "(Only applies to orbits) Names the CLASS OF SCRATCHES used in the orbit, e.g. FLARE-ORBIT, TEAR-ORBIT, or MIXED-ORBIT.";
+                        else if (headerText == "#Els" )
+                          headerTitle = "The number of ELEMENTS the scratch is composed of.";
+                        else if (headerText == "Formula" )
+                          headerTitle = "The FORMULA for composing the scratch. Copy-n-paste formulas into the VISUALIZER to make your own modifications! ";
+
+                        $td.attr('title', headerTitle);
+                      });
+                      /* Apply the tooltips */
+                      $('#scratch-table thead th[title]').tooltip(
+                      {
+                         "container": 'body',
+                      });
+                      var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+                      table.columns( cols ).visible(false, false);
+                      table.columns( cols ).searchable(false);
+                    },
                   });
-
                   // Libraries and columns
-
                   $('.dataTables_wrapper').find("div").eq(0).prepend(
                       '<div class="container" style="width:100%">\
                         <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
@@ -268,15 +293,12 @@ permalink: /scratchbook
                         </div>\
                       </div>'
                   );
-
                   $('.dataTables_length').prepend(
                     '<label>All columns</label>\
-                    <label class="switch" style="margin-left: 5px; margin-right: 25px;"><input id="advanced" type="checkbox"></input><span class="slider"></span></label>'
+                    <label class="switch" style="margin-left: 5px; margin-right: 25px;"><input id="all_columns" type="checkbox"></input><span class="slider"></span></label>'
                     );
-
                   // Column Switch
-                  
-                  $('#advanced').change(function() {
+                  $('#all_columns').change(function() {
                     var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
                     if(this.checked) {
                       table.columns( cols ).visible(true, false);
