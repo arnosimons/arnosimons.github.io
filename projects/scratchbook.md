@@ -164,7 +164,6 @@ permalink: /scratchbook
         <div class="panel-body">
           <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: rgb(0, 102, 153)">autobahn + prizm + (slice / 0.25) * 4</code></p>
           <p>Open the cards to learn more...</p>
-          <p data-bs-toggle="tooltip" data-bs-placement="left" title="Some tip">Toggle popover</p>
         </div>
         <!-- Scratches -->
         <div class="card" style="margin-bottom: 10px;">
@@ -204,7 +203,7 @@ permalink: /scratchbook
                       { data: 'tears',    title: 'tears',    },
                       { data: 'orbits1',  title: 'orbits1',  },
                       { data: 'orbits2',  title: 'orbits2',  },
-                      { data: 'other',    title: 'other',    },
+                      { data: 'combos',    title: 'combos',    },
                     ],
                     order: [
                       [ 0, "asc" ], 
@@ -275,19 +274,19 @@ permalink: /scratchbook
                           <p style="font-size: 16px; margin-top:5px"><strong>Libraries:</strong></p>\
                           <p style="font-size: 12px;">\
                             <label style="margin-left: 0px;">Core</label>\
-                            <label class="switch" style="margin-left: 5px;"><input id="core" type="checkbox" checked></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;" title="The CORE library contains 22 scratches and is loaded on default when opening the page."><input id="core" type="checkbox" checked></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Elements</label>\
-                            <label class="switch" style="margin-left: 5px;"><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;" title="The ELEMENTS library contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches."><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Tears</label>\
-                            <label class="switch" style="margin-left: 5px;"><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;" title="The TEARS library contains 54 unidirectional tear variations."><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
                           </p>\
                           <p style="font-size: 12px;">\
                             <label style="margin-left: 0px;">Orbits1</label>\
-                            <label class="switch" style="margin-left: 5px;"><input id="orbits1" type="checkbox"></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;" title="The ORBITS1 library contains 53,207 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here."><input id="orbits1" type="checkbox"></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Orbits2</label>\
-                            <label class="switch" style="margin-left: 5px;"><input id="orbits2" type="checkbox"></input><span class="slider"></span></label>\
-                            <label style="margin-left: 15px;">Other</label>\
-                           <label class="switch" style="margin-left: 5px;"><input id="other" type="checkbox"></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;" title="The ORBITS2 library contains another 42,560 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them."><input id="orbits2" type="checkbox"></input><span class="slider"></span></label>\
+                            <label style="margin-left: 15px;">Combos</label>\
+                           <label class="switch" style="margin-left: 5px;" title="The COMBOS library contains 30 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE library."><input id="combos" type="checkbox"></input><span class="slider"></span></label>\
                           </p>\
                           <p style="color: #d13108; font-size: 12px">&#9888; Loading a library for the first time takes time (especially orbits)</p>\
                         </div>\
@@ -295,7 +294,7 @@ permalink: /scratchbook
                   );
                   $('.dataTables_length').prepend(
                     '<label>All columns</label>\
-                    <label class="switch" style="margin-left: 5px; margin-right: 25px;"><input id="all_columns" type="checkbox"></input><span class="slider"></span></label>'
+                     <label class="switch" style="margin-left: 5px; margin-right: 25px;" title="Toggle all columns with nerdy stats about the available scratches!"><input id="all_columns" type="checkbox"></input><span class="slider"></span></label>'
                     );
                   // Column Switch
                   $('#all_columns').change(function() {
@@ -310,6 +309,11 @@ permalink: /scratchbook
                     }
                   });
 
+                  // $('#all_columns').attr('title', "Toggle all columns with nerdy stats about the available scratches!");
+                  $('.switch[title]').tooltip({
+                     "container": 'body',
+                  });
+
                   // Library Switches
 
                   var lib_indx = 9
@@ -322,7 +326,7 @@ permalink: /scratchbook
                         ["tears", 19],
                         ["orbits1", 20],
                         ["orbits2", 21],
-                        ["other", 22],
+                        ["combos", 22],
                         
                       ]) {
                         if (document.getElementById(libinfo[0]).checked) {
@@ -406,11 +410,11 @@ permalink: /scratchbook
                     table.draw();
                   });
 
-                  var other = true
-                  $("#other").change(function() {
-                    if(this.checked && other === true) {
-                      other = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_other.json', function(json) {
+                  var combos = true
+                  $("#combos").change(function() {
+                    if(this.checked && combos === true) {
+                      combos = false;
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_combos.json', function(json) {
                         table.rows.add(json.data).draw(false);
                       });
                     }
