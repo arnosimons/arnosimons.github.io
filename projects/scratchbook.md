@@ -255,14 +255,16 @@ permalink: /scratchbook
                             <label class="switch" style="margin-left: 5px;"><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Tears</label>\
                             <label class="switch" style="margin-left: 5px;"><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
-                          </p><p style="font-size: 12px;">\
+                          </p>\
+                          <p style="font-size: 12px;">\
                             <label style="margin-left: 0px;">Orbits1</label>\
                             <label class="switch" style="margin-left: 5px;"><input id="orbits1" type="checkbox"></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Orbits2</label>\
-                           <label class="switch" style="margin-left: 5px;"><input id="orbits2" type="checkbox"></input><span class="slider"></span></label>\
+                            <label class="switch" style="margin-left: 5px;"><input id="orbits2" type="checkbox"></input><span class="slider"></span></label>\
                             <label style="margin-left: 15px;">Other</label>\
                            <label class="switch" style="margin-left: 5px;"><input id="other" type="checkbox"></input><span class="slider"></span></label>\
                           </p>\
+                          <p style="color: #d13108; font-size: 12px">&#9888; Loading a library for the first time takes time (especially orbits)</p>\
                         </div>\
                       </div>'
                   );
