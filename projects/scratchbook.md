@@ -147,7 +147,7 @@ permalink: /scratchbook
               scratch_input.addEventListener("keypress", function(event) {
                 if (event.key === "Enter") {
                   // update url params
-                  const defaultURL = 'https://arnosimons.github.io/scratchbook';
+                  const defaultURL = 'http://127.0.0.1:5500/scratchbook_offline_new_elements.html';
                   if (scratch_input.value) {
                     const nextURL = defaultURL + '?formula=' + encodeURIComponent(scratch_input.value) ;
                     window.history.replaceState({}, 'ScratchBook', nextURL);
@@ -187,31 +187,38 @@ permalink: /scratchbook
                   // Define table
                   $(document).ready(function () {
                     var table = $('#scratch-table').DataTable({
-                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_core.json",
+                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_CORE.json",
                       columns: [
-                        { data: 'Name(s)',  title: 'Name(s)',  },  
-                        { data: 'Tutorial', title: 'Tutorial', },
-                        { data: '#Sounds',  title: '#Sounds',  },
-                        { data: 'Ex',       title: 'Ex',       },
-                        { data: 'Log',      title: 'Log',      },
-                        { data: '#FOs',     title: '#FOs',     },
-                        { data: '#FCs',     title: '#FCs',     },
-                        { data: '#SBs',     title: '#SBs',     },
-                        { data: 'D',        title: 'D',        },
-                        { data: 'A',        title: 'A',        },
-                        { data: 'S',        title: 'S',        },
-                        { data: 'Q',        title: 'Q',        },
-                        { data: 'OrbType1', title: 'OrbType1', },
-                        { data: 'OrbType2', title: 'OrbType2', },
-                        { data: 'OrbType3', title: 'OrbType3', },                      
-                        { data: '#Els',     title: '#Els',     },
-                        { data: 'Formula',  title: 'Formula',  },
-                        { data: 'core',     title: 'core',     },
-                        { data: 'elements', title: 'elements', },
-                        { data: 'tears',    title: 'tears',    },
-                        { data: 'orbits1',  title: 'orbits1',  },
-                        { data: 'orbits2',  title: 'orbits2',  },
-                        { data: 'combos',    title: 'combos',    },
+                        { data: 'Name(s)',     title: 'Name(s)',     }, // 0
+                        { data: 'Tutorial',    title: 'Tutorial',    }, // 1
+                        { data: '#Sounds',     title: '#Sounds',     }, // 2
+                        { data: 'Baby',        title: 'Baby',        }, // 3
+                        { data: 'In',          title: 'In',          }, // 4
+                        { data: 'Out',         title: 'Out',         }, // 5
+                        { data: 'Dice',        title: 'Dice',        }, // 6
+                        { data: 'Flare',       title: 'Flare',       }, // 7
+                        { data: 'Transformer', title: 'Transformer', }, // 8
+                        { data: 'Tear',        title: 'Tear',        }, // 9
+                        { data: 'Ex',          title: 'Ex',          }, // 10
+                        { data: 'Log',         title: 'Log',         }, // 11
+                        { data: '#FO',         title: '#FO',         }, // 12
+                        { data: '#FC',         title: '#FC',         }, // 13
+                        { data: '#PO',         title: '#PO',         }, // 14
+                        { data: '#PC',         title: '#PC',         }, // 15
+                        { data: 'D',           title: 'D',           }, // 16
+                        { data: 'A',           title: 'A',           }, // 17
+                        { data: 'S',           title: 'S',           }, // 18
+                        { data: 'Q',           title: 'Q',           }, // 19
+                        { data: 'OrbType1',    title: 'OrbType1',    }, // 20
+                        { data: 'OrbType2',    title: 'OrbType2',    }, // 21
+                        { data: '#Els',        title: '#Els',        }, // 22
+                        { data: 'Formula',     title: 'Formula',     }, // 23
+                        { data: 'CORE',        title: 'CORE',        }, // 24
+                        { data: 'ELEMENTS',    title: 'ELEMENTS',    }, // 25
+                        { data: 'TEARS',       title: 'TEARS',       }, // 26
+                        { data: 'ORBITS1',     title: 'ORBITS1',     }, // 27
+                        { data: 'ORBITS2',     title: 'ORBITS2',     }, // 28
+                        { data: 'COMBOS',      title: 'COMBOS',      }, // 29
                       ],
                       order: [
                         [ 0, "asc" ], 
@@ -234,16 +241,32 @@ permalink: /scratchbook
                             headerTitle = "A link to a VIDEO-TUTORIAL for the scratch (if available).";
                           else if (headerText == "#Sounds" )
                             headerTitle = "The number of SOUNDS the scratch makes.";
+                          else if (headerText == "Baby" )
+                            headerTitle = "Whether or not the scratch contains at least one BABY-ELEMENT.";
+                          else if (headerText == "In" )
+                            headerTitle = "Whether or not the scratch contains at least one IN-ELEMENT.";
+                          else if (headerText == "Out" )
+                            headerTitle = "Whether or not the scratch contains at least one OUT-ELEMENT.";
+                          else if (headerText == "Dice" )
+                            headerTitle = "Whether or not the scratch contains at least one DICE-ELEMENT.";
+                          else if (headerText == "Flare" )
+                            headerTitle = "Whether or not the scratch contains at least one FLARE-ELEMENT.";
+                          else if (headerText == "Transformer" )
+                            headerTitle = "Whether or not the scratch contains at least one TRRANSFORMER-ELEMENT.";
+                          else if (headerText == "Tear" )
+                            headerTitle = "Whether or not the scratch contains at least one TEAR-ELEMENT.";
                           else if (headerText == "Ex" )
                             headerTitle = "Whether or not the scratch contains at least one EXPONENTIAL curve.";
                           else if (headerText == "Log" )
                             headerTitle = "Whether or not the scratch contains at least one LOGARITHMIC curve.";
-                          else if (headerText == "#FOs" )
+                          else if (headerText == "#FO" )
                             headerTitle = "The Number of times the FADER is OPENED in the scratch.";
-                          else if (headerText == "#FCs" )
+                          else if (headerText == "#FC" )
                             headerTitle = "The Number of times the FADER is CLOSED in the scratch.";
-                          else if (headerText == "#SBs" )
-                            headerTitle = "The Number of SILENT BREAKS in the scratch, i.e. when the record is held still.";
+                          else if (headerText == "#PO" )
+                            headerTitle = "The Number of times the PHANTOMFADER is OPENED in the scratch, i.e. one starts holding the record still.";
+                          else if (headerText == "#PC" )
+                            headerTitle = "The Number of times the PHANTOMFADER is CLOSED in the scratch, i.e. one stops holding the record still.";
                           else if (headerText == "D" )
                             headerTitle = "Whether or not the scratch contains at least one DIMINISHED click pattern.";
                           else if (headerText == "A" )
@@ -256,8 +279,6 @@ permalink: /scratchbook
                             headerTitle = "(Only applies to orbits) Whether the scratch is a PURE or an IMPURE orbit, i.e. whether or not the backward motion perfectly mirrors the forward motion.";
                           else if (headerText == "OrbType2" )
                             headerTitle = "(Only applies to orbits) Names the CURVE-SHAPE of the orbit, e.g. S-CURVED, TAZER or PHANTAZM.";
-                          else if (headerText == "OrbType3" )
-                            headerTitle = "(Only applies to orbits) Names the CLASS OF SCRATCHES used in the orbit, e.g. FLARE-ORBIT, TEAR-ORBIT, or MIXED-ORBIT.";
                           else if (headerText == "#Els" )
                             headerTitle = "The number of ELEMENTS the scratch is composed of.";
                           else if (headerText == "Formula" )
@@ -269,7 +290,7 @@ permalink: /scratchbook
                         {
                            "container": 'body',
                         });
-                        var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+                        var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
                         table.columns( cols ).visible(false, false);
                         table.columns( cols ).searchable(false);
                       },
@@ -281,11 +302,11 @@ permalink: /scratchbook
                             <p style="font-size: 16px; margin-top:5px"><strong>Libraries:</strong></p>\
                             <p style="font-size: 12px;">\
                               <label style="margin-left: 0px;">Core</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The CORE library contains 22 scratches and is loaded on default when opening the page."><input id="core" type="checkbox" checked></input><span class="slider"></span></label>\
+                              <label class="switch" style="margin-left: 5px;" title="The CORE library contains 22 scratches and is loaded on default when opening the page."><input id="CORE" type="checkbox" checked></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Elements</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ELEMENTS library contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches."><input id="elements" type="checkbox"></input><span class="slider"></span></label>\
+                              <label class="switch" style="margin-left: 5px;" title="The ELEMENTS library contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches."><input id="ELEMENTS" type="checkbox"></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Tears</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The TEARS library contains 54 unidirectional tear variations."><input id="tears" type="checkbox"></input><span class="slider"></span></label>\
+                              <label class="switch" style="margin-left: 5px;" title="The TEARS library contains 54 unidirectional tear variations."><input id="TEARS" type="checkbox"></input><span class="slider"></span></label>\
                             </p>\
                             <p style="font-size: 12px;">\
                               <label style="margin-left: 0px;">Orbits1</label>\
@@ -305,7 +326,7 @@ permalink: /scratchbook
                       );
                     // Column Switch
                     $('#all_columns').change(function() {
-                      var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
+                      var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -323,12 +344,12 @@ permalink: /scratchbook
                     function activeLibs() {
                         let active_libs = [];
                         for (let libinfo of [
-                          ["core", 17],
-                          ["elements", 18],
-                          ["tears", 19],
-                          ["orbits1", 20],
-                          ["orbits2", 21],
-                          ["combos", 22],
+                          ["CORE", 17],
+                          ["ELEMENTS", 18],
+                          ["TEARS", 19],
+                          ["ORBITS1", 20],
+                          ["ORBITS2", 21],
+                          ["COMBOS", 22],
                         ]) {
                           if (document.getElementById(libinfo[0]).checked) {
                               active_libs.push("data['" + libinfo[1] + "'] == 1")
@@ -338,7 +359,7 @@ permalink: /scratchbook
                         return active_libs.join(" || ")
                     }
                     // CORE Library
-                    $("#core").change(function() {
+                    $("#CORE").change(function() {
                         $.fn.dataTable.ext.search.push(
                           function(settings, data, dataIndex) {
                             return eval(activeLibs())
@@ -347,11 +368,11 @@ permalink: /scratchbook
                         table.draw();
                     });
                     // ELEMENTS Library
-                    var load_elements = true
-                    $("#elements").change(function() {
-                      if(this.checked && load_elements === true) {
-                        load_elements = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_elements.json', function(json) {
+                    var load_ELEMENTS = true
+                    $("#ELEMENTS").change(function() {
+                      if(this.checked && load_ELEMENTS === true) {
+                        load_ELEMENTS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -363,11 +384,11 @@ permalink: /scratchbook
                       table.draw();
                     });
                     // TEARS Library
-                    var load_tears = true
-                    $("#tears").change(function() {
-                      if(this.checked && load_tears === true) {
-                        load_tears = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_tears.json', function(json) {
+                    var load_TEARS = true
+                    $("#TEARS").change(function() {
+                      if(this.checked && load_TEARS === true) {
+                        load_TEARS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -379,11 +400,11 @@ permalink: /scratchbook
                       table.draw();
                     });
                     // ORBITS1 Library
-                    var load_orbits1 = true
-                    $("#orbits1").change(function() {
-                      if(this.checked && load_orbits1 === true) {
-                        load_orbits1 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits1.json', function(json) {
+                    var load_ORBITS1 = true
+                    $("#ORBITS1").change(function() {
+                      if(this.checked && load_ORBITS1 === true) {
+                        load_ORBITS1 = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -395,11 +416,11 @@ permalink: /scratchbook
                       table.draw();
                     });
                     // ORBITS2 Library
-                    var load_orbits2 = true
-                    $("#orbits2").change(function() {
-                      if(this.checked && load_orbits2 === true) {
-                        load_orbits2 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_orbits2.json', function(json) {
+                    var load_ORBITS2 = true
+                    $("#ORBITS2").change(function() {
+                      if(this.checked && load_ORBITS2 === true) {
+                        load_ORBITS2 = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -411,11 +432,11 @@ permalink: /scratchbook
                       table.draw();
                     });
                     // COMBOS Library
-                    var combos = true
-                    $("#combos").change(function() {
-                      if(this.checked && combos === true) {
-                        combos = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_combos.json', function(json) {
+                    var COMBOS = true
+                    $("#COMBOS").change(function() {
+                      if(this.checked && COMBOS === true) {
+                        COMBOS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
