@@ -187,7 +187,7 @@ permalink: /scratchbook
                   // Define table
                   $(document).ready(function () {
                     var table = $('#scratch-table').DataTable({
-                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_CORE.json",
+                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_CORE.json",
                       columns: [
                         // Basic
                         { data: 'Name(s)',     title: 'Name(s)',     }, // 0
@@ -218,9 +218,9 @@ permalink: /scratchbook
                         { data: 'Slice',       title: 'Slice',       }, // 22
                         { data: 'Chirp',       title: 'Chirp',       }, // 23
                         { data: 'Stab',        title: 'Stab',        }, // 24
-                        { data: 'OCFlare',     title: 'OCFlare',     }, // 25
-                        { data: 'TCFlare',     title: 'TCFlare',     }, // 26
-                        { data: 'OGFlare',     title: 'OGFlare',     }, // 27
+                        { data: 'OCF',         title: 'OCF',         }, // 25
+                        { data: 'TCF',         title: 'TCF',         }, // 26
+                        { data: 'OGF',         title: 'OGF',         }, // 27
                         // Composition
                         { data: '#Els',        title: '#Els',        }, // 28
                         { data: 'Formula',     title: 'Formula',     }, // 29
@@ -290,7 +290,7 @@ permalink: /scratchbook
                           else if (headerText == "Flare" )
                             headerTitle = "Whether or not the scratch contains at least one FLARE scratch.";
                           else if (headerText == "Transformer" )
-                            headerTitle = "Whether or not the scratch contains at least one TRRANSFORMER scratch.";
+                            headerTitle = "Whether or not the scratch contains at least one TRANSFORMER scratch.";
                           else if (headerText == "Tear" )
                             headerTitle = "Whether or not the scratch contains at least one TEAR scratch.";
                           else if (headerText == "Orbit" )
@@ -301,12 +301,12 @@ permalink: /scratchbook
                             headerTitle = "Whether or not the scratch contains at least one CHIRP scratch.";
                           else if (headerText == "Stab" )
                             headerTitle = "Whether or not the scratch contains at least one STAB scratch.";
-                          else if (headerText == "OCFlare" )
-                            headerTitle = "Whether or not the scratch contains at least one OCFLARE scratch.";
-                          else if (headerText == "TCFlare" )
-                            headerTitle = "Whether or not the scratch contains at least one TCFLARE scratch.";
-                          else if (headerText == "OGFlare" )
-                            headerTitle = "Whether or not the scratch contains at least one OGFLARE scratch.";                          
+                          else if (headerText == "OCF" )
+                            headerTitle = "Whether or not the scratch contains at least one OC-FLARE scratch.";
+                          else if (headerText == "TCF" )
+                            headerTitle = "Whether or not the scratch contains at least one TC-FLARE scratch.";
+                          else if (headerText == "OGF" )
+                            headerTitle = "Whether or not the scratch contains at least one OG-FLARE scratch.";                          
                           // Composition
                           else if (headerText == "#Els" )
                             headerTitle = "The number of ELEMENTS the scratch is composed of.";
@@ -323,34 +323,34 @@ permalink: /scratchbook
                         table.columns( cols ).searchable(false);
                       },
                     });
-                    // Libraries and columns
+                    // Collections and columns
                     $('.dataTables_wrapper').find("div").eq(0).prepend(
                         '<div class="container" style="width:100%">\
                           <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
-                            <p style="font-size: 14px; margin-top:5px"><strong>Libraries:</strong></p>\
+                            <p style="font-size: 14px; margin-top:5px"><strong>Collections:</strong></p>\
                             <p style="font-size: 12px;">\
                               <label style="margin-left: 0px;">Core</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The CORE library contains 22 scratches and is loaded on default when opening the page.">\
+                              <label class="switch" style="margin-left: 5px;" title="The CORE collection contains 24 scratches and is loaded on default when opening the page.">\
                                 <input id="CORE" type="checkbox" checked></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Elements</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ELEMENTS library contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">\
+                              <label class="switch" style="margin-left: 5px;" title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">\
                                 <input id="ELEMENTS" type="checkbox"></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Tears</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The TEARS library contains 54 unidirectional tear variations.">\
+                              <label class="switch" style="margin-left: 5px;" title="The TEARS collection contains 54 unidirectional tear variations.">\
                                 <input id="TEARS" type="checkbox"></input><span class="slider"></span></label>\
                             </p>\
                             <p style="font-size: 12px;">\
                               <label style="margin-left: 0px;">Orbits1</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ORBITS1 library contains 53,207 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">\
+                              <label class="switch" style="margin-left: 5px;" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">\
                                 <input id="ORBITS1" type="checkbox"></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Orbits2</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ORBITS2 library contains another 42,560 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">\
+                              <label class="switch" style="margin-left: 5px;" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">\
                                 <input id="ORBITS2" type="checkbox"></input><span class="slider"></span></label>\
                               <label style="margin-left: 15px;">Combos</label>\
-                             <label class="switch" style="margin-left: 5px;" title="The COMBOS library contains 30 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE library.">\
+                             <label class="switch" style="margin-left: 5px;" title="The COMBOS collection contains 17 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">\
                               <input id="COMBOS" type="checkbox"></input><span class="slider"></span></label>\
                             </p>\
-                            <p style="color: #d13108; font-size: 12px">&#9888; Loading a library for the first time takes time (especially orbits)</p>\
+                            <p style="color: #d13108; font-size: 12px">&#9888; Loading a collection for the first time takes time (especially orbits)</p>\
                           </div>\
                           <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
                             <p style="font-size: 14px; margin-top:5px"><strong>Columns:</strong></p>\
@@ -422,7 +422,7 @@ permalink: /scratchbook
                         table.columns( cols ).searchable(false);
                       }
                     });
-                    // Library Switches  
+                    // collection Switches  
                     function activeLibs() {
                         let active_libs = [];
                         for (let libinfo of [
@@ -434,14 +434,12 @@ permalink: /scratchbook
                           ["COMBOS", 35],
                         ]) {
                           if (document.getElementById(libinfo[0]).checked) {
-                              // $("#test").text(libinfo[1] + "SWITCH")
                               active_libs.push("data['" + libinfo[1] + "'] == 1")
                             }
                         }
-                        // document.getElementById("session_output").innerHTML = active_libs.join(" || ")
                         return active_libs.join(" || ")
                     }
-                    // CORE Library
+                    // CORE collection
                     $("#CORE").change(function() {
                         $.fn.dataTable.ext.search.push(
                           function(settings, data, dataIndex) {
@@ -450,12 +448,12 @@ permalink: /scratchbook
                         );
                         table.draw();
                     });
-                    // ELEMENTS Library
+                    // ELEMENTS collection
                     var load_ELEMENTS = true
                     $("#ELEMENTS").change(function() {
                       if(this.checked && load_ELEMENTS === true) {
                         load_ELEMENTS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_ELEMENTS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -466,13 +464,13 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
-                    // TEARS Library
+                    // TEARS collection
                     var load_TEARS = true
                     $("#TEARS").change(function() {
                       
                       if(this.checked && load_TEARS === true) {
                         load_TEARS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_TEARS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -483,13 +481,12 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
-                    // ORBITS1 Library
+                    // ORBITS1 collection
                     var load_ORBITS1 = true
                     $("#ORBITS1").change(function() {
-                      $("#test").text("O1 pressed")
                       if(this.checked && load_ORBITS1 === true) {
                         load_ORBITS1 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_ORBITS1.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -500,12 +497,12 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
-                    // ORBITS2 Library
+                    // ORBITS2 collection
                     var load_ORBITS2 = true
                     $("#ORBITS2").change(function() {
                       if(this.checked && load_ORBITS2 === true) {
                         load_ORBITS2 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_ORBITS2.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -516,12 +513,12 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
-                    // COMBOS Library
+                    // COMBOS collection
                     var COMBOS = true
                     $("#COMBOS").change(function() {
                       if(this.checked && COMBOS === true) {
                         COMBOS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/datatable_COMBOS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
                           table.rows.add(json.data).draw(false);
                         });
                       }
@@ -678,7 +675,7 @@ permalink: /scratchbook
     req.send()
     exec(str(req.response))
     req = XMLHttpRequest.new()
-    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/test/codebook.json", False)
+    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
     req.send()
     exec(f"codebook = {req.response}")
     def getCodeNames(text):
