@@ -131,7 +131,7 @@ permalink: /scratchbook
           <div class="panel-heading"><h4>Visualizer</h4></div>
           <div class="panel-body">
             <p>Type and visualize your scratch formula...</p>
-            <input class="form-control" type="text" id="scratch_input" style="font-size: 14px;" value="autobahn + (tcf * 3) / 2" placeholder="Type formula and press ENTER"/>
+            <input class="form-control" type="text" id="scratch_input" style="font-size: 14px;" value="kermit + prizm + (chirp / 0.25) * 4" placeholder="Type formula and press ENTER"/>
             <button id="scratch_button" type="submit" pys-onClick="plot"></button>
             <script>
               // get handler for the "scratch_input" element
