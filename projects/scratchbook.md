@@ -35,17 +35,17 @@ permalink: /scratchbook
       p, table {
         font-size: 14px;
       }
-      p.explainColumns {
-        font-size: 12px;
-        margin-bottom: 5px;
-      }
       .btn {
         font-size: 14px;
+      }
+      .btn:focus,.btn:active {
+        outline: none !important;
+        box-shadow: none;
       }
       .dataTables_wrapper {
         font-size: 12px;
       }
-      a, a.page-link {
+      a, a.page-link { 
         /*color: lightskyblue;*/
         color:#069;
         text-decoration:none;
@@ -112,6 +112,29 @@ permalink: /scratchbook
         -ms-transform: translateX(18px);
         transform: translateX(18px);
       }
+      .mybuttons {
+        border: solid;
+        border-width: 1px;
+        border-radius: 3px;
+        border-color: #d8d8d8;
+        padding: 4px;
+        box-shadow: 0px 2px 0px -1px #d8d8d8;
+        background-color: #F8F8F8;
+        font-size: 12px;
+        color:rgb(33, 37, 41);
+        text-align: center;
+      }
+      .mybuttons:hover {
+        background-color: rgba(135, 206, 250, 0.33);
+      }
+
+      .mybuttons:active {
+        transform: scale(.95);
+      }
+
+      .card-header:hover{
+        background-color: rgba(135, 206, 250, 0.33);
+      }
     </style>
   </head>
   <body style="background-color:#F8F8F8;">
@@ -131,36 +154,98 @@ permalink: /scratchbook
           <div class="panel-heading"><h4>Visualizer</h4></div>
           <div class="panel-body">
             <p>Type and visualize your scratch formula...</p>
-            <input class="form-control" type="text" id="scratch_input" style="font-size: 14px;" value="kermit + prizm + (chirp / 0.25) * 4" placeholder="Type formula and press ENTER"/>
-            <button id="scratch_button" type="submit" pys-onClick="plot"></button>
+            <input 
+              id="scratch_input"
+              class="form-control" 
+              type="text" 
+              style="font-size: 14px; font-family: Menlo; color:rgb(0, 102, 153); border-color: lightskyblue; " 
+              value="kermit + prizm + (chirp / 0.25) * 4" 
+              placeholder="Type formula and press ENTER"/>
+            <p style="margin-top: 5px;">
+              <button 
+                id="share_button" 
+                class="mybuttons"
+                title="Copy url+formula and share it with your friends.">
+                Share Formula
+              </button>
+              <button 
+                id="download_button"
+                class="mybuttons"
+                title="Download png image.">
+                Download Image
+              </button>            
+              <button 
+                id="scratch_button" 
+                type="submit" 
+                style="border: none; background-color:rgba(255, 255, 255, 0);"
+                pys-onClick="plot" >
+              </button>
+            </p>
+            <div 
+              id="session_output" 
+              style="padding-bottom: 10px;">
+            </div>
             <script>
-              // get handler for the "scratch_input" element
-              var scratch_input = document.getElementById("scratch_input");
-              // Get current url, check if it contains a formula and make it the first scratch to load
-              const queryString = window.location.search;
-              const urlParams = new URLSearchParams(queryString);
-              const formula = urlParams.get('formula')
-              if (urlParams.has("formula")) {
-                scratch_input.value = formula
-              }
-              // Define what happens when new scratch_input is given
-              scratch_input.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                  // update url params
-                  const defaultURL = 'https://arnosimons.github.io/scratchbook';
-                  if (scratch_input.value) {
-                    const nextURL = defaultURL + '?formula=' + encodeURIComponent(scratch_input.value) ;
-                    window.history.replaceState({}, 'ScratchBook', nextURL);
-                  } else {
-                    window.history.replaceState({}, 'ScratchBook', defaultURL);
-                  }
-                  // click the scratch_button
-                  event.preventDefault();
-                  document.getElementById("scratch_button").click();
+              $(document).ready(function () {
+                // tooltips for mybuttons
+                $('.mybuttons[title]').tooltip({
+                  trigger: "hover",
+                  "container": 'body',
+                });
+                // get handlers for key elements
+                var scratch_input = document.getElementById("scratch_input");
+                var session_output = document.getElementById("session_output");
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var formula = urlParams.get('formula')
+                if (urlParams.has("formula")) {
+                  scratch_input.value = formula
                 }
+                // addEventListener for download_button
+                $("#download_button").click(function(){
+                  let x = "IMG whuat?!";
+                  navigator.clipboard.writeText(x);
+
+                  if ($("#session_output").children('img').length){
+                    let x = "IMG found!";
+                    let img_src = $("#session_output").find('img').attr('src');
+                    var a_temp = document.createElement('a');
+                    a_temp.setAttribute('href', img_src);
+                    a_temp.setAttribute('download',  "scratchbook_output");
+                    document.body.appendChild(a_temp);
+                    a_temp.click();
+                    document.body.removeChild(a_temp);
+                    navigator.clipboard.writeText(x);
+                  } 
+                  else {
+                    let x = "IMG not found!";
+                    navigator.clipboard.writeText(x);
+                  };
+                });
+                
+                // addEventListener for share_button
+                $("#share_button").click(function(){
+                  navigator.clipboard.writeText(window.location);
+                });
+                
+                // addEventListener for scratch_input
+                scratch_input.addEventListener("keypress", function(event) {
+                  if (event.key === "Enter") {
+                    // update url params
+                    var defaultURL = 'https://arnosimons.github.io/scratchbook';
+                    if (scratch_input.value.trim()) {
+                      var nextURL = defaultURL + '?formula=' + encodeURIComponent(scratch_input.value.trim()) ;
+                      window.history.replaceState({}, 'ScratchBook', nextURL);
+                    } else {
+                      window.history.replaceState({}, 'ScratchBook', defaultURL);
+                    }
+                    // click the scratch_button
+                    event.preventDefault();
+                    document.getElementById("scratch_button").click();
+                  }
+                });
               });
             </script>
-            <div id="session_output" style="padding-bottom: 10px;"></div>
           </div>
         </div>
       </div>
@@ -316,7 +401,10 @@ permalink: /scratchbook
                           $td.attr('title', headerTitle);
                         });
                         /* Style header tooltips */
-                        $('#scratch-table thead th[title]').tooltip({"container": 'body',});
+                        $('#scratch-table thead th[title]').tooltip({
+                          trigger: "hover",
+                          "container": 'body',
+                        });
                         // Visibility of columns
                         var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,]
                         table.columns( cols ).visible(false, false);
@@ -376,7 +464,10 @@ permalink: /scratchbook
                     //    <label class="switch" style="margin-left: 5px; margin-right: 25px;" title="Toggle all columns with nerdy stats about the available scratches!"><input id="all_columns" type="checkbox"></input><span class="slider"></span></label>'
                     //   );
                     // Style tooltips for all switches:
-                    $('.switch[title]').tooltip({"container": 'body',});
+                    $('.switch[title]').tooltip({
+                      trigger: "hover",
+                      "container": 'body',
+                    });
                     // Column Switches
                     $('#Curves').change(function() {
                       var cols = [3,4,5]
