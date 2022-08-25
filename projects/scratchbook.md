@@ -127,11 +127,9 @@ permalink: /scratchbook
       .mybuttons:hover {
         background-color: rgba(135, 206, 250, 0.33);
       }
-
       .mybuttons:active {
         transform: scale(.95);
       }
-
       .card-header:hover{
         background-color: rgba(135, 206, 250, 0.33);
       }
@@ -141,11 +139,6 @@ permalink: /scratchbook
         width: 75px;
         /* height: 300px; Should be removed. Only for demonstration */
       }
-
-      /* .left, .right, .middle {
-        width: 12%;
-      } */
-
       /* Clear floats after the columns */
       .row:after {
         content: "";
@@ -159,6 +152,13 @@ permalink: /scratchbook
         margin-left: 0px; 
         margin-right: 1px; 
         margin-bottom: 0px;
+      }
+      .expert-heading {
+        font-size: 13px; 
+        font-weight: 500; 
+        margin-left: 0px; 
+        margin-top:5px; 
+        margin-bottom:5px;
       }
     </style>
   </head>
@@ -179,25 +179,43 @@ permalink: /scratchbook
           <div class="panel-heading"><h4>Visualizer</h4></div>
           <div class="panel-body">
             <p>Type and visualize your scratch formula...</p>
+            <p id="TEST"></p>
             <input 
               id="scratch_input"
               class="form-control" 
               type="text" 
               style="font-size: 14px; font-family: Menlo; color:rgb(0, 102, 153); border-color: lightskyblue; " 
-              value="kermit + prizm + (chirp / 0.25) * 4" 
               placeholder="Type formula and press ENTER"/>
             <p style="margin-top: 5px;">
               <button 
-                id="share_button" 
+                id="copy_button" 
                 class="mybuttons"
                 title="Copy url+formula and share it with your friends.">
-                Share Formula
+                Copy
               </button>
               <button 
                 id="download_button"
                 class="mybuttons"
                 title="Download png image.">
-                Download Image
+                Download
+              </button> 
+              <button 
+                id="clear_button"
+                class="mybuttons"
+                title="Clear the input field.">
+                Clear
+              </button>
+              <button 
+                id="default_button"
+                class="mybuttons"
+                title="Reset to default scratch formula.">
+                Default
+              </button>  
+              <button 
+                id="surprise_button"
+                class="mybuttons"
+                title="Pick a scratch at random (currently limited to the Combos collection).">
+                Surprise!
               </button>            
               <button 
                 id="scratch_button" 
@@ -211,28 +229,46 @@ permalink: /scratchbook
               style="padding-bottom: 10px;">
             </div>
             <script>
-              $(document).ready(function () {
+              $(document).ready(function () {       
                 // tooltips for mybuttons
                 $('.mybuttons[title]').tooltip({
                   trigger: "hover",
                   "container": 'body',
                 });
                 // get handlers for key elements
+                var default_url = 'https://arnosimons.github.io/scratchbook';
+                var default_formula = "kermit + prizm + (chirp / 0.25) * 4";
                 var scratch_input = document.getElementById("scratch_input");
+                var scratch_button = document.getElementById("scratch_button");
                 var session_output = document.getElementById("session_output");
-                var queryString = window.location.search;
-                var urlParams = new URLSearchParams(queryString);
-                var formula = urlParams.get('formula')
-                if (urlParams.has("formula")) {
-                  scratch_input.value = formula
+                var urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has("formula")) {scratch_input.value = urlParams.get('formula')} 
+                else {scratch_input.value = default_formula}
+                // updateURL function
+                function updateURL(formula) {
+                  formula = formula.trim()
+                  if (formula) {window.history.replaceState({}, 'ScratchBook', default_url + '?formula=' + encodeURIComponent(formula))} 
+                  else {window.history.replaceState({}, 'ScratchBook', default_url)}
                 }
-                // addEventListener for download_button
+                
+                // Initiate url params
+                updateURL(scratch_input.value.trim())
+                // Function for scratch_input
+                scratch_input.addEventListener("keypress", function(event) {
+                  if (event.key === "Enter") {
+                    updateURL(scratch_input.value)
+                    event.preventDefault();
+                    if (scratch_input.value.trim()) {scratch_button.click()}
+                    else {session_output.innerHTML = ""}
+                  }
+                });
+                // Function for copy_button
+                $("#copy_button").click(function(){
+                  navigator.clipboard.writeText(window.location);
+                });
+                // Function for download_button
                 $("#download_button").click(function(){
-                  let x = "IMG whuat?!";
-                  navigator.clipboard.writeText(x);
-
                   if ($("#session_output").children('img').length){
-                    let x = "IMG found!";
                     let img_src = $("#session_output").find('img').attr('src');
                     var a_temp = document.createElement('a');
                     a_temp.setAttribute('href', img_src);
@@ -240,32 +276,68 @@ permalink: /scratchbook
                     document.body.appendChild(a_temp);
                     a_temp.click();
                     document.body.removeChild(a_temp);
-                    navigator.clipboard.writeText(x);
-                  } 
-                  else {
-                    let x = "IMG not found!";
-                    navigator.clipboard.writeText(x);
-                  };
-                });
-                // addEventListener for share_button
-                $("#share_button").click(function(){
-                  navigator.clipboard.writeText(window.location);
-                });
-                // addEventListener for scratch_input
-                scratch_input.addEventListener("keypress", function(event) {
-                  if (event.key === "Enter") {
-                    // update url params
-                    var defaultURL = 'https://arnosimons.github.io/scratchbook';
-                    if (scratch_input.value.trim()) {
-                      var nextURL = defaultURL + '?formula=' + encodeURIComponent(scratch_input.value.trim()) ;
-                      window.history.replaceState({}, 'ScratchBook', nextURL);
-                    } else {
-                      window.history.replaceState({}, 'ScratchBook', defaultURL);
-                    }
-                    // click the scratch_button
-                    event.preventDefault();
-                    document.getElementById("scratch_button").click();
                   }
+                });
+                // Function for clear_button
+                $("#clear_button").click(function(){
+                  scratch_input.value = "";
+                  session_output.innerHTML = ""
+                  updateURL("")
+                });
+                // Function for default_button
+                $("#default_button").click(function(){
+                  scratch_input.value = default_formula;
+                  session_output.innerHTML = ""
+                  updateURL("")
+                });
+                // Function for surprise_button
+                $("#surprise_button").click(function(){
+                  scratches = [
+                    'autobahn',
+                    'babyorbit',
+                    'boomerang',
+                    'boomerang_roll',
+                    'brbhippopotamus',
+                    'chirp',
+                    'chirpboomerang',
+                    'chirpflare1',
+                    'chirpflare2',
+                    'chirpogflare',
+                    'chirpogflare_roll',
+                    'diceorbit',
+                    'drills',
+                    'enneagon',
+                    'enneagon_roll',
+                    'hendecagon',
+                    'hendecagon_roll',
+                    'hippopotamus',
+                    'hippopotamus_roll',
+                    'internet',
+                    'kermit',
+                    'military',
+                    'ogflare',
+                    'oneclickflare',
+                    'prizm',
+                    'prizm_roll',
+                    'rawhippopotamus',
+                    'royalline',
+                    'scribble',
+                    'seesaw',
+                    'slice',
+                    'slicecombo1',
+                    'slicecombo2',
+                    'stab',
+                    'stabcrab',
+                    'stabcrabmarch',
+                    'swingflare',
+                    'tazer1',
+                    'tazer2',
+                    'turnaroundtransform',
+                    'twoclickflare',
+                  ]
+                  scratch_input.value = scratches[Math.floor(Math.random() * scratches.length)];
+                  scratch_button.click();
+                  updateURL(scratch_input.value)
                 });
               });
             </script>
@@ -286,80 +358,128 @@ permalink: /scratchbook
           <!-- Scratches -->
           <div class="card" style="margin-bottom: 10px;">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#collapse1" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Scratches</a>
+              <a class="btn" data-bs-toggle="collapse" href="#ScratchCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Scratches</a>
             </div>
-            <div id="collapse1" class="collapse in">
+            <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <!-- Switches for collections -->
-                <div class="container" style="width:100%; padding:0px; background-color: #F8F8F8; margin-bottom: 10px;">
-                  <div class="row" style="margin-left: 0px;">
-                    <p style="font-size: 14px; margin-left: 0px; margin-top:5px; margin-bottom:5px">
-                      <strong>Collections:</strong>
-                    </p>
+                <div class="card" style="margin-bottom: 10px;">
+                  <div class="card-header">
+                    <a class="btn btn-sm" data-bs-toggle="collapse" href="#ExpertCard" title="Show expert controls." style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">Expert Mode</a>
                   </div>
-                  <div class="row switch-row">
-                    <div class="column" 
-                      title="The CORE collection contains 24 scratches and is loaded on default when opening the page.">
-                      <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
+                  <script>
+                    $(document).ready(function () {
+                      $('a[title]').tooltip({
+                        trigger: "hover",
+                        "container": 'body',
+                      });
+                    });
+                  </script>
+                  <div id="ExpertCard" class="collapse in">
+                    <!-- Switches for collections -->
+                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                      <div class="row" style="margin-left: 0px;">
+                        <p class="expert-heading">Collections</p>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" 
+                          title="The CORE collection contains 41 scratches and is loaded on default when opening the page.">
+                          <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" 
+                          title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
+                          <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="The TEARS collection contains 54 unidirectional tear variations.">
+                          <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Core</div>
+                        <div class="column">Elements</div>
+                        <div class="column">Tears</div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">
+                          <label class="switch"><input id="ORBITS1" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">
+                          <label class="switch"><input id="ORBITS2" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="The COMBOS collection contains 32 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">
+                          <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Orbits1</div>
+                        <div class="column">Orbits2</div>
+                        <div class="column">Combos</div>
+                      </div>
                     </div>
-                    <div class="column" 
-                      title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
-                      <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
+                    <!-- Switches for Curves -->
+                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                      <div class="row" style="margin-left: 0px;">
+                        <p class="expert-heading">Curves</p>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" title="Only show scratches with REGULAR CURVES.">
+                          <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Only show scratches with IRREGULAR CURVES (i.e. Log or Ex).">
+                          <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Regular</div>
+                        <div class="column">Irregular</div>
+                      </div>                  
                     </div>
-                    <div class="column" title="The TEARS collection contains 54 unidirectional tear variations.">
-                      <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
+                    <!-- Switches Clicks -->
+                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                      <div class="row" style="margin-left: 0px;">
+                        <p class="expert-heading">Clicks</p>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" title="Only show scratches with REGULAR CLICK PATTERNS.">
+                          <label class="switch"><input id="RegularClicks" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (i.e. D, A, S, or Q).">
+                          <label class="switch"><input id="IrregularClicks" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Regular</div>
+                        <div class="column">Irregular</div>
+                      </div>                  
                     </div>
-                  </div>
-                  <div class="row switch-row">
-                    <div class="column">Core</div>
-                    <div class="column">Elements</div>
-                    <div class="column">Tears</div>
-                  </div>
-                  <div class="row switch-row">
-                    <div class="column" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">
-                      <label class="switch"><input id="ORBITS1" type="checkbox"/><span class="slider"></span></label>
+                    <!-- Switches for columns -->
+                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px; margin-bottom: 10px">
+                      <div class="row" style="margin-left: 0px;">
+                        <p class="expert-heading">Columns</p>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" title="Show CURVE types.">
+                          <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Show CLICK types">
+                          <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Show SCRATCH types">
+                          <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Show FORMULA">
+                          <label class="switch"><input id="Composition" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Curves</div>
+                        <div class="column">Clicks</div>
+                        <div class="column">Scratches</div>
+                        <div class="column">Formula</div>
+                      </div>                  
                     </div>
-                    <div class="column" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">
-                      <label class="switch"><input id="ORBITS2" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                    <div class="column" title="The COMBOS collection contains 17 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">
-                      <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                  </div>
-                  <div class="row switch-row">
-                    <div class="column">Orbits1</div>
-                    <div class="column">Orbits2</div>
-                    <div class="column">Combos</div>
                   </div>
                 </div>
-                <!-- Switches for columns -->
-                <div class="container" style="width:100%; padding:0px; background-color: #F8F8F8; margin-bottom: 10px;">
-                  <div class="row" style="margin-left: 0px;">
-                    <p style="font-size: 14px; margin-left: 0px; margin-top:5px; margin-bottom:5px">
-                      <strong>Columns:</strong>
-                    </p>
-                  </div>
-                  <div class="row switch-row">
-                    <div class="column" title="Show CURVE types.">
-                      <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                    <div class="column" title="Show CLICK types">
-                      <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                    <div class="column" title="Show Scratch types">
-                      <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                    <div class="column" title="Show Composition">
-                      <label class="switch"><input id="Composition" type="checkbox"/><span class="slider"></span></label>
-                    </div>
-                  </div>
-                  <div class="row switch-row">
-                    <div class="column">Curves</div>
-                    <div class="column">Clicks</div>
-                    <div class="column">Scratches</div>
-                    <div class="column">Formula</div>
-                  </div>                  
-                </div>
+                
                 <!-- Style tooltips for all switches: -->
                 <script>
                   $(document).ready(function () {
@@ -514,6 +634,185 @@ permalink: /scratchbook
                         table.columns( cols ).searchable(false);
                       },
                     });
+                    
+                    // Functions for row-filtering switches  
+                    function activeLibs() {
+                        let active_switches = [];
+                        for (let libinfo of [
+                          ["CORE", 30],
+                          ["ELEMENTS", 31],
+                          ["TEARS", 32],
+                          ["ORBITS1", 33],
+                          ["ORBITS2", 34],
+                          ["COMBOS", 35],
+                        ]) {
+                          if (document.getElementById(libinfo[0]).checked) {
+                              active_switches.push("data['" + libinfo[1] + "'] == 1")
+                            }
+                        }
+                        return active_switches.join(" || ")
+                    };
+                    function curvesAndClicks() {
+                        let active_switches = [];
+                        if (document.getElementById("RegularCurves").checked) {
+                          active_switches.push("data['3'] == 0 && data['4'] == 0")
+                        } else if (document.getElementById("IrregularCurves").checked) {
+                          active_switches.push("data['3'] == 1 || data['4'] == 1")
+                        }
+                        if (document.getElementById("RegularClicks").checked) {
+                          active_switches.push("data['10'] == 0 && data['11'] == 0 && data['12'] == 0 && data['13'] == 0")
+                        } else if (document.getElementById("IrregularClicks").checked) {
+                          active_switches.push("data['10'] == 1 || data['11'] == 1 || data['12'] == 1 || data['13'] == 1")
+                        }
+                        return active_switches.join(" && ")
+                        
+                    };
+                    function filterRows() {
+                      let query = []
+                      if (activeLibs()) {
+                        query.push("(" + activeLibs() + ")");
+                        if (curvesAndClicks()) { // only relevant if some lib is active, hence nested here
+                          query.push("(" + curvesAndClicks() + ")");
+                        }
+                      }
+                      document.getElementById("TEST").innerHTML = "TEST:" + query.join(" && ")
+                      return query.join(" && ")
+                    };
+                    // CORE switch
+                    $("#CORE").change(function() {
+                        $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                            return eval(filterRows())
+                          }
+                        );
+                        table.draw();
+                    });
+                    // ELEMENTS switch
+                    var load_ELEMENTS = true
+                    $("#ELEMENTS").change(function() {
+                      if(this.checked && load_ELEMENTS === true) {
+                        load_ELEMENTS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
+                          table.rows.add(json.data).draw(false);
+                        });
+                      }
+                      $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                            return eval(filterRows())
+                          }
+                      );
+                      table.draw();
+                    });
+                    // TEARS switch
+                    var load_TEARS = true
+                    $("#TEARS").change(function() {
+                      if(this.checked && load_TEARS === true) {
+                        load_TEARS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
+                          table.rows.add(json.data).draw(false);
+                        });
+                      }
+                      $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                          }
+                      );
+                      table.draw();
+                    });
+                    // ORBITS1 switch
+                    var load_ORBITS1 = true
+                    $("#ORBITS1").change(function() {
+                      if(this.checked && load_ORBITS1 === true) {
+                        load_ORBITS1 = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
+                          table.rows.add(json.data).draw(false);
+                        });
+                      }
+                      $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                          }
+                      );
+                      table.draw();
+                    });
+                    // ORBITS2 switch
+                    var load_ORBITS2 = true
+                    $("#ORBITS2").change(function() {
+                      if(this.checked && load_ORBITS2 === true) {
+                        load_ORBITS2 = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
+                          table.rows.add(json.data).draw(false);
+                        });
+                      }
+                      $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                          }
+                      );
+                      table.draw();
+                    });
+                    // COMBOS switch
+                    var COMBOS = true
+                    $("#COMBOS").change(function() {
+                      if(this.checked && COMBOS === true) {
+                        COMBOS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
+                          table.rows.add(json.data).draw(false);
+                        });
+                      }
+                      $.fn.dataTable.ext.search.push(
+                          function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                          }
+                      );
+                      table.draw();
+                    });
+                    // Regular Curves Switch
+                    $("#RegularCurves").change(function() {
+                      if (document.getElementById("RegularCurves").checked) {
+                        document.getElementById("IrregularCurves").checked = false
+                      }
+                      $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                        }
+                      );
+                      table.draw();
+                    });
+                    $("#IrregularCurves").change(function() {
+                      if (document.getElementById("IrregularCurves").checked) {
+                        document.getElementById("RegularCurves").checked = false
+                      }
+                      $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                        }
+                      );
+                      table.draw();
+                    });
+                    // Regular Clicks Switch
+                    $("#RegularClicks").change(function() {
+                      if (document.getElementById("RegularClicks").checked) {
+                        document.getElementById("IrregularClicks").checked = false
+                      }
+                      $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                        }
+                      );
+                      table.draw();
+                    });
+                    $("#IrregularClicks").change(function() {
+                      if (document.getElementById("IrregularClicks").checked) {
+                        document.getElementById("RegularClicks").checked = false
+                      }
+                      $.fn.dataTable.ext.search.push(
+                        function(settings, data, dataIndex) {
+                          return eval(filterRows())
+                        }
+                      );
+                      table.draw();
+                    });
                     // Column Switches
                     $('#Curves').change(function() {
                       var cols = [3,4,5]
@@ -559,113 +858,6 @@ permalink: /scratchbook
                         table.columns( cols ).searchable(false);
                       }
                     });
-                    // collection Switches  
-                    function activeLibs() {
-                        let active_libs = [];
-                        for (let libinfo of [
-                          ["CORE", 30],
-                          ["ELEMENTS", 31],
-                          ["TEARS", 32],
-                          ["ORBITS1", 33],
-                          ["ORBITS2", 34],
-                          ["COMBOS", 35],
-                        ]) {
-                          if (document.getElementById(libinfo[0]).checked) {
-                              active_libs.push("data['" + libinfo[1] + "'] == 1")
-                            }
-                        }
-                        return active_libs.join(" || ")
-                    }
-                    // CORE collection
-                    $("#CORE").change(function() {
-                        $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                            return eval(activeLibs())
-                          }
-                        );
-                        table.draw();
-                    });
-                    // ELEMENTS collection
-                    var load_ELEMENTS = true
-                    $("#ELEMENTS").change(function() {
-                      if(this.checked && load_ELEMENTS === true) {
-                        load_ELEMENTS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                            return eval(activeLibs())
-                          }
-                      );
-                      table.draw();
-                    });
-                    // TEARS collection
-                    var load_TEARS = true
-                    $("#TEARS").change(function() {
-                      
-                      if(this.checked && load_TEARS === true) {
-                        load_TEARS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                          return eval(activeLibs())
-                          }
-                      );
-                      table.draw();
-                    });
-                    // ORBITS1 collection
-                    var load_ORBITS1 = true
-                    $("#ORBITS1").change(function() {
-                      if(this.checked && load_ORBITS1 === true) {
-                        load_ORBITS1 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
-                          table.rows.add(json.data).draw(false);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                          return eval(activeLibs())
-                          }
-                      );
-                      table.draw();
-                    });
-                    // ORBITS2 collection
-                    var load_ORBITS2 = true
-                    $("#ORBITS2").change(function() {
-                      if(this.checked && load_ORBITS2 === true) {
-                        load_ORBITS2 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
-                          table.rows.add(json.data).draw(false);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                          return eval(activeLibs())
-                          }
-                      );
-                      table.draw();
-                    });
-                    // COMBOS collection
-                    var COMBOS = true
-                    $("#COMBOS").change(function() {
-                      if(this.checked && COMBOS === true) {
-                        COMBOS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                          return eval(activeLibs())
-                          }
-                      );
-                      table.draw();
-                    });
                   });
                 </script>
               </div>
@@ -674,9 +866,9 @@ permalink: /scratchbook
           <!-- Operators -->
           <div class="card" style="margin-bottom: 10px;">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#collapse2" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Operators</a>
+              <a class="btn" data-bs-toggle="collapse" href="#OperatorCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Operators</a>
             </div>
-            <div id="collapse2" class="collapse in">
+            <div id="OperatorCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p>Operators can be used to modify and combine scratches. The following table lists and explains all available operators.
                 </p>
@@ -764,9 +956,9 @@ permalink: /scratchbook
           <!-- The Idea -->
           <div class="card" style="width: auto">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#collapse3" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">The Idea...</a>
+              <a class="btn" data-bs-toggle="collapse" href="#IdeaCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">The Idea...</a>
             </div>
-            <div id="collapse3" class="collapse in">
+            <div id="IdeaCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p>Will follow soon...</p>
                 <!-- <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
@@ -832,6 +1024,9 @@ permalink: /scratchbook
                     yield i
     def plot(x=None):
         text = Element("scratch_input").element.value
+        if not text:
+          pyscript.write("session_output", "plot() requires a formula as input.")
+          return
         for code_name in list(getCodeNames(text))[::-1]:
             exec(f"{code_name} = {codebook[code_name]}")
         try:
