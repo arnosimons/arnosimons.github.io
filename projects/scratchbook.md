@@ -49,46 +49,6 @@ permalink: /scratchbook
         /*color: lightskyblue;*/
         color:#069;
         text-decoration:none;
-     <head>
-    <title>ScratchBook</title>
-    <!-- Standard stuff -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- PyScript -->
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
-    <py-env>
-      - matplotlib
-    </py-env>
-    <!-- Bootstrap 5.1.3 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- Datatables -->
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <!-- Global Styling -->
-    <style>
-      p, table {
-        font-size: 14px;
-      }
-      .btn {
-        font-size: 14px;
-      }
-      .btn:focus,.btn:active {
-        outline: none !important;
-        box-shadow: none;
-      }
-      .dataTables_wrapper {
-        font-size: 12px;
-      }
-      a, a.page-link { 
-        /*color: lightskyblue;*/
-        color:#069;
-        text-decoration:none;
       }
       a:hover, a.page-link:hover {
         color:#d13108;
@@ -403,7 +363,6 @@ permalink: /scratchbook
                 <!-- Style tooltips for all switches: -->
                 <script>
                   $(document).ready(function () {
-                    
                     $('.column[title]').tooltip({
                       trigger: "hover",
                       "container": 'body',
