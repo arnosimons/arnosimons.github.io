@@ -300,7 +300,7 @@ permalink: /scratchbook
                   <div class="row switch-row">
                     <div class="column" 
                       title="The CORE collection contains 24 scratches and is loaded on default when opening the page.">
-                      <label class="switch"><input id="CORE" type="checkbox" checked></input><span class="slider"></span></label>
+                      <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
                     </div>
                     <div class="column" 
                       title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
