@@ -675,7 +675,7 @@ permalink: /scratchbook
                           query.push("(" + curvesAndClicks() + ")");
                         }
                       }
-                      document.getElementById("TEST").innerHTML = "TEST:" + query.join(" && ")
+                      // document.getElementById("TEST").innerHTML = "TEST:" + query.join(" && ")
                       return query.join(" && ")
                     };
                     // CORE switch
