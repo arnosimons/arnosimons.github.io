@@ -166,7 +166,7 @@ permalink: /scratchbook
     <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px #d8d8d8">
       <div class="container-md p-2.5 bg-dark text-white">
         <h1>ScratchBook &#128221;&#127926;</h1>
-        <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://www.ttm-dj.com/" target='_blank' id="TTMLink">TTM-like notation.</a></p>
+        <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank' id="TTMLink">TTM-like notation.</a></p>
         <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
         <p style="color: #d13108; font-size: 18px">&#9888; Loading the page takes time. Please be patient until you see the graph &#128591;</p>
       </div>
