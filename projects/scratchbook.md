@@ -49,6 +49,46 @@ permalink: /scratchbook
         /*color: lightskyblue;*/
         color:#069;
         text-decoration:none;
+     <head>
+    <title>ScratchBook</title>
+    <!-- Standard stuff -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PyScript -->
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
+    <py-env>
+      - matplotlib
+    </py-env>
+    <!-- Bootstrap 5.1.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <!-- Global Styling -->
+    <style>
+      p, table {
+        font-size: 14px;
+      }
+      .btn {
+        font-size: 14px;
+      }
+      .btn:focus,.btn:active {
+        outline: none !important;
+        box-shadow: none;
+      }
+      .dataTables_wrapper {
+        font-size: 12px;
+      }
+      a, a.page-link { 
+        /*color: lightskyblue;*/
+        color:#069;
+        text-decoration:none;
       }
       a:hover, a.page-link:hover {
         color:#d13108;
@@ -135,6 +175,31 @@ permalink: /scratchbook
       .card-header:hover{
         background-color: rgba(135, 206, 250, 0.33);
       }
+      .column {
+        float: left;
+        padding: 0px;
+        width: 75px;
+        /* height: 300px; Should be removed. Only for demonstration */
+      }
+
+      /* .left, .right, .middle {
+        width: 12%;
+      } */
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .switch-row {
+        font-size: 12px;
+        text-align: center;
+        width: auto; 
+        margin-left: 0px; 
+        margin-right: 1px; 
+        margin-bottom: 0px;
+      }
     </style>
   </head>
   <body style="background-color:#F8F8F8;">
@@ -179,7 +244,7 @@ permalink: /scratchbook
                 type="submit" 
                 style="border: none; background-color:rgba(255, 255, 255, 0);"
                 pys-onClick="plot" >
-              </button>
+              </button> 
             </p>
             <div 
               id="session_output" 
@@ -222,12 +287,10 @@ permalink: /scratchbook
                     navigator.clipboard.writeText(x);
                   };
                 });
-                
                 // addEventListener for share_button
                 $("#share_button").click(function(){
                   navigator.clipboard.writeText(window.location);
                 });
-                
                 // addEventListener for scratch_input
                 scratch_input.addEventListener("keypress", function(event) {
                   if (event.key === "Enter") {
@@ -267,6 +330,87 @@ permalink: /scratchbook
             </div>
             <div id="collapse1" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
+                <!-- Switches for collections -->
+                <div class="container" style="width:100%; padding:0px; background-color: #F8F8F8; margin-bottom: 10px;">
+                  <div class="row" style="margin-left: 0px;">
+                    <p style="font-size: 14px; margin-left: 0px; margin-top:5px; margin-bottom:5px">
+                      <strong>Collections:</strong>
+                    </p>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column" 
+                      title="The CORE collection contains 24 scratches and is loaded on default when opening the page.">
+                      <label class="switch"><input id="CORE" type="checkbox" checked></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" 
+                      title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
+                      <label class="switch"><input id="ELEMENTS" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="The TEARS collection contains 54 unidirectional tear variations.">
+                      <label class="switch"><input id="TEARS" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column">Core</div>
+                    <div class="column">Elements</div>
+                    <div class="column">Tears</div>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">
+                      <label class="switch"><input id="ORBITS1" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">
+                      <label class="switch"><input id="ORBITS2" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="The COMBOS collection contains 17 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">
+                      <label class="switch"><input id="COMBOS" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column">Orbits1</div>
+                    <div class="column">Orbits2</div>
+                    <div class="column">Combos</div>
+                  </div>
+                </div>
+                <!-- Switches for columns -->
+                <div class="container" style="width:100%; padding:0px; background-color: #F8F8F8; margin-bottom: 10px;">
+                  <div class="row" style="margin-left: 0px;">
+                    <p style="font-size: 14px; margin-left: 0px; margin-top:5px; margin-bottom:5px">
+                      <strong>Columns:</strong>
+                    </p>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column" title="Show CURVE types.">
+                      <label class="switch"><input id="Curves" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="Show CLICK types">
+                      <label class="switch"><input id="Clicks" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="Show Scratch types">
+                      <label class="switch"><input id="Scratches" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                    <div class="column" title="Show Composition">
+                      <label class="switch"><input id="Composition" type="checkbox"></input><span class="slider"></span></label>
+                    </div>
+                  </div>
+                  <div class="row switch-row">
+                    <div class="column">Curves</div>
+                    <div class="column">Clicks</div>
+                    <div class="column">Scratches</div>
+                    <div class="column">Formula</div>
+                  </div>                  
+                </div>
+                <!-- Style tooltips for all switches: -->
+                <script>
+                  $(document).ready(function () {
+                    
+                    $('.column[title]').tooltip({
+                      trigger: "hover",
+                      "container": 'body',
+                    });
+                  });
+                </script>
+                <!-- DataTable -->
                 <table class="table" id="scratch-table" style="font-size: 12px; background-color: #F8F8F8"></table>
                 <script type="text/javascript">
                   // Define table
@@ -410,63 +554,6 @@ permalink: /scratchbook
                         table.columns( cols ).visible(false, false);
                         table.columns( cols ).searchable(false);
                       },
-                    });
-                    // Collections and columns
-                    $('.dataTables_wrapper').find("div").eq(0).prepend(
-                        '<div class="container" style="width:100%">\
-                          <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
-                            <p style="font-size: 14px; margin-top:5px"><strong>Collections:</strong></p>\
-                            <p style="font-size: 12px;">\
-                              <label style="margin-left: 0px;">Core</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The CORE collection contains 24 scratches and is loaded on default when opening the page.">\
-                                <input id="CORE" type="checkbox" checked></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Elements</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">\
-                                <input id="ELEMENTS" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Tears</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The TEARS collection contains 54 unidirectional tear variations.">\
-                                <input id="TEARS" type="checkbox"></input><span class="slider"></span></label>\
-                            </p>\
-                            <p style="font-size: 12px;">\
-                              <label style="margin-left: 0px;">Orbits1</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">\
-                                <input id="ORBITS1" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Orbits2</label>\
-                              <label class="switch" style="margin-left: 5px;" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">\
-                                <input id="ORBITS2" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Combos</label>\
-                             <label class="switch" style="margin-left: 5px;" title="The COMBOS collection contains 17 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">\
-                              <input id="COMBOS" type="checkbox"></input><span class="slider"></span></label>\
-                            </p>\
-                            <p style="color: #d13108; font-size: 12px">&#9888; Loading a collection for the first time takes time (especially orbits)</p>\
-                          </div>\
-                          <div class="row" style=" background-color: #F8F8F8; width: auto; margin-left: 0px; margin-right: 1px; margin-bottom: 12px">\
-                            <p style="font-size: 14px; margin-top:5px"><strong>Columns:</strong></p>\
-                            <p style="font-size: 12px;">\
-                              <label style="margin-left: 0px;">Curves</label>\
-                              <label class="switch" style="margin-left: 5px;" title="Show CURVE types.">\
-                                <input id="Curves" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Clicks</label>\
-                              <label class="switch" style="margin-left: 5px;" title="Show CLICK types">\
-                                <input id="Clicks" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Scratches</label>\
-                              <label class="switch" style="margin-left: 5px;" title="Show Scratch types">\
-                                <input id="Scratches" type="checkbox"></input><span class="slider"></span></label>\
-                              <label style="margin-left: 15px;">Composition</label>\
-                              <label class="switch" style="margin-left: 5px;" title="Show Composition">\
-                                <input id="Composition" type="checkbox"></input><span class="slider"></span></label>\
-                              </p>\
-                          </div>\
-                        </div>'
-                    );
-                    // $('.dataTables_length').prepend(
-                    //   '<label>All columns</label>\
-                    //    <label class="switch" style="margin-left: 5px; margin-right: 25px;" title="Toggle all columns with nerdy stats about the available scratches!"><input id="all_columns" type="checkbox"></input><span class="slider"></span></label>'
-                    //   );
-                    // Style tooltips for all switches:
-                    $('.switch[title]').tooltip({
-                      trigger: "hover",
-                      "container": 'body',
                     });
                     // Column Switches
                     $('#Curves').change(function() {
