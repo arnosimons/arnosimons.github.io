@@ -304,10 +304,10 @@ permalink: /scratchbook
                     </div>
                     <div class="column" 
                       title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
-                      <label class="switch"><input id="ELEMENTS" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="The TEARS collection contains 54 unidirectional tear variations.">
-                      <label class="switch"><input id="TEARS" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
                     </div>
                   </div>
                   <div class="row switch-row">
@@ -317,13 +317,13 @@ permalink: /scratchbook
                   </div>
                   <div class="row switch-row">
                     <div class="column" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">
-                      <label class="switch"><input id="ORBITS1" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="ORBITS1" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">
-                      <label class="switch"><input id="ORBITS2" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="ORBITS2" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="The COMBOS collection contains 17 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">
-                      <label class="switch"><input id="COMBOS" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
                     </div>
                   </div>
                   <div class="row switch-row">
@@ -341,16 +341,16 @@ permalink: /scratchbook
                   </div>
                   <div class="row switch-row">
                     <div class="column" title="Show CURVE types.">
-                      <label class="switch"><input id="Curves" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="Show CLICK types">
-                      <label class="switch"><input id="Clicks" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="Show Scratch types">
-                      <label class="switch"><input id="Scratches" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
                     </div>
                     <div class="column" title="Show Composition">
-                      <label class="switch"><input id="Composition" type="checkbox"></input><span class="slider"></span></label>
+                      <label class="switch"><input id="Composition" type="checkbox"/><span class="slider"></span></label>
                     </div>
                   </div>
                   <div class="row switch-row">
