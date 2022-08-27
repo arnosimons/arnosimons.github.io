@@ -32,39 +32,64 @@ permalink: /scratchbook
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
     <!-- Global Styling -->
     <style>
-      p, table {
+      :root {
+          /* --hover-color: rgba(135, 206, 250, 0.124); */
+          --hover-color: rgba(0, 0, 0, 0.09);
+
+          /* --blue-light: rgba(135, 206, 250, 0.33); */
+          --blue-light: lightskyblue;
+          /* --blue-light: #2196F3; */
+
+          --blue-dark: #069;
+          --blue-dark: rgb(0, 102, 153);
+
+          --grey-light: #F8F8F8;
+          /* --grey-light: #61dd7e; */
+
+          /* --grey-dark: #d8d8d8;
+          --grey-dark: #ccc; */
+          --grey-dark: rgba(0, 0, 0, 0.125);
+          /* --grey-dark: #61dd7e; */
+
+          --black: rgb(33, 37, 41);
+
+          --red:#d13108;
+          
+      }
+      p {
         font-size: 14px;
       }
-      .btn {
-        font-size: 14px;
-      }
-      .btn:focus,.btn:active {
-        outline: none !important;
-        box-shadow: none;
-      }
-      .dataTables_wrapper {
-        font-size: 12px;
-      }
-      a, a.page-link { 
-        /*color: lightskyblue;*/
-        color:#069;
+      a, a.page-link {
+        color:var(--blue-dark); 
+        font-weight: 300;
+        text-decoration:none;
+      }  
+      a:hover {
+        color:var(--blue-dark);
+        font-weight: 500;
         text-decoration:none;
       }
-      a:hover, a.page-link:hover {
-        color:#d13108;
-        font-weight: bold;
+      .dark-link {
+        color:var(--blue-light); 
+        font-weight: 200;
+        text-decoration:none;
+      }  
+      .dark-link:hover  {
+        color:var(--blue-light);
+        font-weight: 400;
       }
+      .dataTables_wrapper { /* Show Entries, Search, Pagination*/
+        font-size: 12px;
+      }      
       .pagination .page-item.active .page-link { 
-        background-color: #069;
-        border-color: #069; 
+        background-color: var(--blue-dark);
+        border-color: var(--blue-dark); 
       }
-      div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.active .page-link:focus {
-        background-color: #069;
-        border-color: #069;
+      .pagination .page-link:hover { 
+        background-color: var(--hover-color);
       }
-      .pagination .page-item.active .page-link:hover {
-        background-color: #d13108;
-        border-color: #d13108;
+      .pagination .page-link:focus { 
+        box-shadow: 0 0 3px 3px var(--blue-light)
       }
       .switch {
         position: relative;
@@ -84,7 +109,7 @@ permalink: /scratchbook
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
+        background-color: var(--grey-dark);
         -webkit-transition: .4s;
         transition: .4s;
         border-radius: 22px;
@@ -102,49 +127,83 @@ permalink: /scratchbook
         border-radius: 50%;
       }
       input:checked + .slider {
-        background-color: #2196F3;
+        background-color: var(--blue-light);
       }
       input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
+        box-shadow: 0 0 1px var(--blue-light);
       }
       input:checked + .slider:before {
         -webkit-transform: translateX(18px);
         -ms-transform: translateX(18px);
         transform: translateX(18px);
       }
+      input.form-control{
+        font-size: 14px; 
+        font-family: Menlo; 
+        color: var(--blue-dark); 
+        border-color: var(--blue-light);
+        border-radius: 4px;
+        border-width: 2px;
+        /* box-shadow: 0 0 3px 3px var(--blue-light) */
+      }
+      input.form-control:focus{
+        color: var(--blue-dark);
+        border-color: var(--blue-light);
+        box-shadow: 0 0 5px 1px var(--blue-light)
+      }
       .mybuttons {
         border: solid;
         border-width: 1px;
         border-radius: 3px;
-        border-color: #d8d8d8;
-        padding: 4px;
-        box-shadow: 0px 2px 0px -1px #d8d8d8;
-        background-color: #F8F8F8;
+        border-color: var(--grey-dark);
+        padding: 3px;
+        box-shadow: 0px 2px 0px -1px var(--grey-dark);
+        background-color: var(--grey-light);
         font-size: 12px;
+        font-weight: 370;
         color:rgb(33, 37, 41);
         text-align: center;
       }
       .mybuttons:hover {
-        background-color: rgba(135, 206, 250, 0.33);
+        background-color: var(--hover-color);
       }
       .mybuttons:active {
         transform: scale(.95);
       }
       .card-header:hover{
-        background-color: rgba(135, 206, 250, 0.33);
+        background-color: var(--hover-color);
+      }
+      .card-header {
+        background-color: var(--grey-light);
+      }
+      .btn[data-bs-toggle="collapse"]:focus {
+        outline: none !important;
+        box-shadow: none;
+      }
+      .btn[data-bs-toggle="collapse"]:after {
+        content: '+'; 
+        font-size: 16px;
+        font-weight: 50;
+        color: var(--black);
+        float: right;
+      }
+      .btn[aria-expanded="true"]:after {
+        content: '-'; 
+      }
+      .btn[aria-expanded="false"]:after {
+        content: '+'; 
       }
       .column {
         float: left;
         padding: 0px;
         width: 75px;
-        /* height: 300px; Should be removed. Only for demonstration */
       }
       /* Clear floats after the columns */
-      .row:after {
+      /* .row:after {
         content: "";
         display: table;
         clear: both;
-      }
+      } */
       .switch-row {
         font-size: 12px;
         text-align: center;
@@ -160,20 +219,21 @@ permalink: /scratchbook
         margin-top:5px; 
         margin-bottom:5px;
       }
+      
+      
     </style>
   </head>
-  <body style="background-color:#F8F8F8;">
-    <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px #d8d8d8">
+  <body style="background-color:var(--grey-light);">
+    <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px var(--grey-dark)">
       <div class="container-md p-2.5 bg-dark text-white">
         <h1>ScratchBook &#128221;&#127926;</h1>
-        <p style="color: white; font-size: 16px;">A free platform for browsing, composing and visualizing scratches in <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank' id="TTMLink">TTM-like notation.</a></p>
-        <style> #TTMLink, #TTMLink.page-link{color:lightskyblue; text-decoration:none;}  #TTMLink:hover {color:#d13108; font-weight: bold;}</style>
-        <p style="color: #d13108; font-size: 18px">&#9888; Loading the page takes time. Please be patient until you see the graph &#128591;</p>
+        <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM-like notation.</a></p>
+        <p style="color: var(--red); font-size: 18px">&#9888; Loading the page takes time. Please be patient until you see the scratch plot.</p>
       </div>
     </header>
     <br/>
     <!-- Visualizer -->
-    <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px #d8d8d8">
+    <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
       <div class="panel-group" id="Visualizer">
         <div class="panel panel-default">
           <div class="panel-heading"><h4>Visualizer</h4></div>
@@ -184,7 +244,7 @@ permalink: /scratchbook
               id="scratch_input"
               class="form-control" 
               type="text" 
-              style="font-size: 14px; font-family: Menlo; color:rgb(0, 102, 153); border-color: lightskyblue; " 
+              
               placeholder="Type formula and press ENTER"/>
             <p style="margin-top: 5px;">
               <button 
@@ -226,8 +286,9 @@ permalink: /scratchbook
             </p>
             <div 
               id="session_output" 
-              style="padding-bottom: 10px;">
+              style="padding-bottom: 10px">
             </div>
+            <p id="session_message" style="font-size: 14px; color: var(--red)"></p>
             <script>
               $(document).ready(function () {       
                 // tooltips for mybuttons
@@ -241,6 +302,7 @@ permalink: /scratchbook
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
                 var session_output = document.getElementById("session_output");
+                var session_message = document.getElementById("session_message");
                 var urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.has("formula")) {scratch_input.value = urlParams.get('formula')} 
                 else {scratch_input.value = default_formula}
@@ -264,10 +326,17 @@ permalink: /scratchbook
                 });
                 // Function for copy_button
                 $("#copy_button").click(function(){
-                  navigator.clipboard.writeText(window.location);
+                  session_message.innerHTML = "";
+                  if (scratch_input.value.trim()) {
+                    navigator.clipboard.writeText(window.location);
+                    session_message.innerHTML = "Copied formula to clipboard"
+                  }
+                  else {session_message.innerHTML = "Nothing to copy"}
+                  ;
                 });
                 // Function for download_button
                 $("#download_button").click(function(){
+                  session_message.innerHTML = "";
                   if ($("#session_output").children('img').length){
                     let img_src = $("#session_output").find('img').attr('src');
                     var a_temp = document.createElement('a');
@@ -276,22 +345,27 @@ permalink: /scratchbook
                     document.body.appendChild(a_temp);
                     a_temp.click();
                     document.body.removeChild(a_temp);
-                  }
+                  } 
+                  else {session_message.innerHTML = "Nothing to download"}
                 });
                 // Function for clear_button
                 $("#clear_button").click(function(){
+                  session_message.innerHTML = "";
                   scratch_input.value = "";
                   session_output.innerHTML = ""
                   updateURL("")
                 });
                 // Function for default_button
                 $("#default_button").click(function(){
+                  session_message.innerHTML = "";
                   scratch_input.value = default_formula;
-                  session_output.innerHTML = ""
-                  updateURL("")
+                  session_output.innerHTML = "";
+                  updateURL("");
+                  scratch_button.click();
                 });
                 // Function for surprise_button
                 $("#surprise_button").click(function(){
+                  session_message.innerHTML = "";
                   scratches = [
                     'autobahn',
                     'babyorbit',
@@ -347,12 +421,12 @@ permalink: /scratchbook
     </div>
     <br/>
     <!-- Library and Logic -->
-    <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px #d8d8d8">
+    <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
       <div class="panel-group" id="Rules">
         <div class="panel panel-default">
           <div class="panel-heading"><h4>Library and Logic</h4></div>
           <div class="panel-body">
-            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: rgb(0, 102, 153)">autobahn + prizm + (slice / 0.25) * 4</code></p>
+            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: var(--blue-dark)">autobahn + prizm + (slice / 0.25) * 4</code></p>
             <p>Open the cards to learn more...</p>
           </div>
           <!-- Scratches -->
@@ -376,7 +450,7 @@ permalink: /scratchbook
                   </script>
                   <div id="ExpertCard" class="collapse in">
                     <!-- Switches for collections -->
-                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Collections</p>
                       </div>
@@ -416,7 +490,7 @@ permalink: /scratchbook
                       </div>
                     </div>
                     <!-- Switches for Curves -->
-                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Curves</p>
                       </div>
@@ -434,7 +508,7 @@ permalink: /scratchbook
                       </div>                  
                     </div>
                     <!-- Switches Clicks -->
-                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px">
+                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Clicks</p>
                       </div>
@@ -452,7 +526,7 @@ permalink: /scratchbook
                       </div>                  
                     </div>
                     <!-- Switches for columns -->
-                    <div class="container" style="width:95%; padding:0px; background-color: #F8F8F8; margin-top: 10px; margin-bottom: 10px">
+                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px; margin-bottom: 10px">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Columns</p>
                       </div>
@@ -490,7 +564,7 @@ permalink: /scratchbook
                   });
                 </script>
                 <!-- DataTable -->
-                <table class="table" id="scratch-table" style="font-size: 12px; background-color: #F8F8F8"></table>
+                <table class="table" id="scratch-table" style="font-size: 12px; background-color: var(--grey-light)"></table>
                 <script type="text/javascript">
                   // Define table
                   $(document).ready(function () {
@@ -675,9 +749,37 @@ permalink: /scratchbook
                           query.push("(" + curvesAndClicks() + ")");
                         }
                       }
-                      // document.getElementById("TEST").innerHTML = "TEST:" + query.join(" && ")
                       return query.join(" && ")
+                    }
+                    function removeDuplicates(table) {
+                      var names = table.column( 0 ).data().toArray();
+                      session_message.innerHTML = names[0]
+                      var rowsToRemove = [];
+                      table.rows().every(function(rowIdx, tableLoop, rowLoop) {
+                        var data = this.data();
+                        // Find number of times name is in names array
+                        var numOccurances = names.filter(x => x === data["Name(s)"]).length;
+                        // If only once remove the row
+                        if (! numOccurances > 1 ) {
+                          rowsToRemove.push( this.index() );
+                        }
+                      });
+                      table.rows( rowsToRemove ).remove().draw();
                     };
+                    
+                    function addNewRows(table, json) {
+                      var existing_names = table.column( 0 ).data().toArray();
+                      rowsToAdd = []
+                      for (let row of json.data) {
+                        // session_message.innerHTML = row["Name(s)"];
+                        if (!existing_names.includes(row["Name(s)"])) {
+                          rowsToAdd.push(row)
+                        }
+                      }
+                      session_message.innerHTML = "Added " + rowsToAdd.length + " rows";
+                      table.rows.add(rowsToAdd).draw(false);
+                    }
+                    ///////////////////////////////////////////////////////////////////////
                     // CORE switch
                     $("#CORE").change(function() {
                         $.fn.dataTable.ext.search.push(
@@ -693,7 +795,7 @@ permalink: /scratchbook
                       if(this.checked && load_ELEMENTS === true) {
                         load_ELEMENTS = false;
                         $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
+                          addNewRows(table, json);
                         });
                       }
                       $.fn.dataTable.ext.search.push(
@@ -709,7 +811,7 @@ permalink: /scratchbook
                       if(this.checked && load_TEARS === true) {
                         load_TEARS = false;
                         $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
+                          addNewRows(table, json);
                         });
                       }
                       $.fn.dataTable.ext.search.push(
@@ -725,7 +827,8 @@ permalink: /scratchbook
                       if(this.checked && load_ORBITS1 === true) {
                         load_ORBITS1 = false;
                         $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
-                          table.rows.add(json.data).draw(false);
+                          // table.rows.add(json.data).draw(false);
+                          addNewRows(table, json);
                         });
                       }
                       $.fn.dataTable.ext.search.push(
@@ -741,7 +844,7 @@ permalink: /scratchbook
                       if(this.checked && load_ORBITS2 === true) {
                         load_ORBITS2 = false;
                         $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
-                          table.rows.add(json.data).draw(false);
+                          addNewRows(table, json);
                         });
                       }
                       $.fn.dataTable.ext.search.push(
@@ -757,7 +860,7 @@ permalink: /scratchbook
                       if(this.checked && COMBOS === true) {
                         COMBOS = false;
                         $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
-                          table.rows.add(json.data).draw(false);
+                          addNewRows(table, json);
                         });
                       }
                       $.fn.dataTable.ext.search.push(
@@ -767,6 +870,7 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
+                    ///////////////////////////////////////////////////////////////////////
                     // Regular Curves Switch
                     $("#RegularCurves").change(function() {
                       if (document.getElementById("RegularCurves").checked) {
@@ -932,13 +1036,13 @@ permalink: /scratchbook
                     </tr>
                     <tr>
                         <td>[<em>n</em>]</td>
-                        <td>Show the <em>n</em>-ths part of a composed scratch (<em>n</em> must be an integer number. <span style="color: #d13108">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                        <td>Show the <em>n</em>-ths part of a composed scratch (<em>n</em> must be an integer number. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
                         <td>scratch[<em>n</em>]</td>
                         <td>autobahn[3]</td>
                     </tr>
                     <tr>
                         <td>[<em>n</em>:<em>m</em>]</td>
-                        <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<em>n</em> and <em>m</em> must be integer numbers. <span style="color: #d13108">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                        <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<em>n</em> and <em>m</em> must be integer numbers. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
                         <td>scratch[<em>n</em>:<em>m</em>]</td>
                         <td>autobahn[3:7]</td>
                     </tr>
@@ -956,11 +1060,30 @@ permalink: /scratchbook
           <!-- The Idea -->
           <div class="card" style="width: auto">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#IdeaCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">The Idea...</a>
+              <a class="btn" data-bs-toggle="collapse" href="#IdeaCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Notation</a>
             </div>
             <div id="IdeaCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <p>Will follow soon...</p>
+                <p> 
+                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. According to the original <a href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>TTM-booklet</a>, TTM is emphatically <em>"an open source effort...Fight it, defend it, tweak it, trash it - all will assist its evolution"</em> (p.10).
+                </p>
+                <p> 
+                  In this spirit, <b>ScratchBook modifies the original TTM</b> in the following way: 
+                </p>
+                <ol style="font-size:14px">
+                  <li>The <b>color white</b> generally indicates that the <b>fader is closed</b>.</li>
+                  <li><b>Regular fader clicks</b> are sybolized as <b>white cirlces</b> (not as black circles)</li>
+                  <li><b>Silent record motions</b>, such as during a stab scratch, are symbolized by <b>white curves</b>.</li>
+                  <li><b>No "phantom clicks"</b> are shown, but they can always be inferred from near-zero slopes of the scratch curves.</li>
+                  
+                </ol> 
+               
+
+                
+                  
+                  
+                  
+                  
                 <!-- <p>Each scratch has a unique name, which signifies its specific composition. On the most basic level there are <strong>6 types of scratches</strong>: <em>baby</em> ("b"), <em>ghost</em> ("g"), <em>transformer</em> ("tr"), <em>flare</em> ("f"), <em>tear</em> ("t"), and <em>click-tear</em> ("ct"), as well as <strong>three types of curves</strong>: <em>s-curve</em> (no special signification), <em>exponential</em> ("Ex"), <em>logarithmic</em> ("Log"). Currently, <strong>tears can have up to 3 steps</strong> ("t1", "t2", "t3"), <strong>flares and click-tears can have up to 3 Clicks</strong> ("f1", "f2", "f3", "ct1", "ct2", "ct3"), and <strong>transformers can have up to 4 clicks</strong> ("tr1", "tr2", "tr3", "tr4"). Transformers and flares also come in up to <strong>three clicking variants</strong>: <em>diminished</em> ("D"), <em>augmented</em> ("A"), and <em>stretched</em> ("S"), depending on the number of their clicks. In total, this currently adds up to <strong>31 elementary scratches or "elements"</strong>.</p>
                 <p>The next layer of complexity is achieved by combining these elements into all possible combinations of <strong>orbits</strong>, i.e. scratches that incorporate both a forward and backward movement (each being one of the elements), or vice versa, of the record in sequence. Orbits are signified using one element on each side, joined by an underscore (e.g. "f1_f1" or "tr3A_bEx"). Independent of the elements used, <strong>five types of orbits</strong> are currently available: <em>normal (no special signification), right-skewed at 1/4 ("_R4"), right-skewed at 1/3 ("_R3"), left-skewed at 1/3 ("_L3"), and left-skewed at 1/4 ("_L4")</em>.</p>
                 <p>A number of <strong>special scratches</strong>, such as "autobahn" or "prizm", are composed of more than two elements and therefore carry special names and abbreviations.</p> -->
@@ -990,11 +1113,16 @@ permalink: /scratchbook
             ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
         </section>
         <section class="mb-4">
-          <p> © 2022: Design, content and <a id="githubLink" href="https://github.com/arnosimons/scratchbook" target='_blank'>code</a> by Arno Simons, a Berlin-based turntablist and researcher.</p>
+          <p>ScratchBook is an educational and non-commercial project. The <a class="dark-link" href="https://github.com/arnosimons/scratchbook" target='_blank'>underlying code</a> is free freely available and reusable under the GPL-3.0 license.</p>
+          <p> The <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> ScratchBook uses was created and <a class="dark-link" href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>published</a> by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. I am deeply indebted to their work.
+          <p> © 2022 by Arno Simons, a Berlin-based turntablist and researcher.</p>
         </section>
       </div>
-      <style> #githubLink, #githubLink.page-link{color:lightskyblue; text-decoration:none;}  #githubLink:hover {color:#d13108; font-weight: bold;}</style>
     </footer>
+    
+
+
+
   </body>
   <py-script>
     import re
