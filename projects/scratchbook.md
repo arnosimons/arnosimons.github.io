@@ -1106,10 +1106,6 @@ permalink: /scratchbook
         </section>
       </div>
     </footer>
-    
-
-
-
   </body>
   <py-script>
     import re
