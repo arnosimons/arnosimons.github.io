@@ -33,28 +33,14 @@ permalink: /scratchbook
     <!-- Global Styling -->
     <style>
       :root {
-          /* --hover-color: rgba(135, 206, 250, 0.124); */
           --hover-color: rgba(0, 0, 0, 0.09);
-
-          /* --blue-light: rgba(135, 206, 250, 0.33); */
           --blue-light: lightskyblue;
-          /* --blue-light: #2196F3; */
-
           --blue-dark: #069;
           --blue-dark: rgb(0, 102, 153);
-
           --grey-light: #F8F8F8;
-          /* --grey-light: #61dd7e; */
-
-          /* --grey-dark: #d8d8d8;
-          --grey-dark: #ccc; */
           --grey-dark: rgba(0, 0, 0, 0.125);
-          /* --grey-dark: #61dd7e; */
-
           --black: rgb(33, 37, 41);
-
           --red:#d13108;
-          
       }
       p {
         font-size: 14px;
@@ -219,8 +205,6 @@ permalink: /scratchbook
         margin-top:5px; 
         margin-bottom:5px;
       }
-      
-      
     </style>
   </head>
   <body style="background-color:var(--grey-light);">
@@ -244,7 +228,6 @@ permalink: /scratchbook
               id="scratch_input"
               class="form-control" 
               type="text" 
-              
               placeholder="Type formula and press ENTER"/>
             <p style="margin-top: 5px;">
               <button 
@@ -706,7 +689,6 @@ permalink: /scratchbook
                         table.columns( cols ).searchable(false);
                       },
                     });
-                    
                     // Functions for row-filtering switches  
                     function activeLibs() {
                         let active_switches = [];
@@ -737,7 +719,6 @@ permalink: /scratchbook
                           active_switches.push("data['10'] == 1 || data['11'] == 1 || data['12'] == 1 || data['13'] == 1")
                         }
                         return active_switches.join(" && ")
-                        
                     };
                     function filterRows() {
                       let query = []
@@ -764,7 +745,6 @@ permalink: /scratchbook
                       });
                       table.rows( rowsToRemove ).remove().draw();
                     };
-                    
                     function addNewRows(table, json) {
                       var existing_names = table.column( 0 ).data().toArray();
                       rowsToAdd = []
@@ -774,7 +754,7 @@ permalink: /scratchbook
                           rowsToAdd.push(row)
                         }
                       }
-                      session_message.innerHTML = "Added " + rowsToAdd.length + " rows";
+                      // session_message.innerHTML = "Added " + rowsToAdd.length + " rows";
                       table.rows.add(rowsToAdd).draw(false);
                     }
                     ///////////////////////////////////////////////////////////////////////
