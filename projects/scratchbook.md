@@ -297,7 +297,7 @@ permalink: /scratchbook
                   "container": 'body',
                 });
                 // get handlers for key elements
-                var default_url = 'http://127.0.0.1:5500/scratchbook_offline.html';
+                var default_url = 'https://arnosimons.github.io/scratchbook';
                 var default_formula = "kermit + prizm + (chirp / 0.25) * 4";
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
@@ -312,7 +312,6 @@ permalink: /scratchbook
                   if (formula) {window.history.replaceState({}, 'ScratchBook', default_url + '?formula=' + encodeURIComponent(formula))} 
                   else {window.history.replaceState({}, 'ScratchBook', default_url)}
                 }
-                
                 // Initiate url params
                 updateURL(scratch_input.value.trim())
                 // Function for scratch_input
@@ -553,7 +552,6 @@ permalink: /scratchbook
                     </div>
                   </div>
                 </div>
-                
                 <!-- Style tooltips for all switches: -->
                 <script>
                   $(document).ready(function () {
