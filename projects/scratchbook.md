@@ -1050,7 +1050,7 @@ permalink: /scratchbook
                 </p>
                 <ol style="font-size:14px">
                   <li>1) The <b>color white</b> generally indicates that the <b>fader is closed</b>.</li>
-                  <li>2) <b>Regular fader clicks</b> are sybolized as <b>white cirlces</b> (not as black circles)</li>
+                  <li>2) <b>Regular fader clicks</b> are symbolized by <b>white circles</b> (not by black circles).</li>
                   <li>3) <b>Silent record motions</b>, such as during a stab scratch, are symbolized by <b>white curves</b>.</li>
                   <li>4) <b>No "phantom clicks"</b> are shown, but they can always be inferred from near-zero slopes of the scratch curves.</li>
                 </ol>
