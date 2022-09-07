@@ -244,6 +244,9 @@ permalink: /scratchbooknew
       li {
         font-size: 14px;
       }
+      ul {
+        list-style-type: circle;
+      }
       .center {
         display: block;
         margin-left: auto;
@@ -1351,7 +1354,8 @@ permalink: /scratchbooknew
   </body>
   <py-script>
     import re
-    from js import XMLHttpRequest
+    from scratchbook import *
+    <!-- from js import XMLHttpRequest
     req = XMLHttpRequest.new()
     req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/scratchbook.py", False)
     req.send()
@@ -1359,7 +1363,8 @@ permalink: /scratchbooknew
     req = XMLHttpRequest.new()
     req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook_new.json", False)
     req.send()
-    exec(f"codebook = {req.response}")
+    exec(f"codebook = {req.response}") -->
+
     slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
     <!-- pyscript.write("session_message", codebook['_2cf']) -->
     session_info = document.getElementById("session_info")
