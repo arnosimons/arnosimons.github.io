@@ -333,6 +333,9 @@ permalink: /scratchbooknew
                 </div>
                 <div id="InfoCard" class="collapse in">
                   <div class="card-body" style="overflow-x:auto;">
+                    <p>
+                      The following tables tell you how many sounds your composition makes, how many elements and popular scratches it contains, which types of clicks and curves are involved, and much more.
+                    </p>
                     <div class="info_container">
                       <p class="info_table_title">Basic Info</p>
                       <table id="info_basic" class="table info_table">
@@ -714,7 +717,7 @@ permalink: /scratchbooknew
                   // Define table
                   $(document).ready(function () {
                     var table = $('#scratch_table').DataTable({
-                      ajax: "CORE.json",
+                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/CORE.json",
                       columns: [
                       {data:"Name(s)", title: "Name(s)"}, // 0
                       {data:"Tutorial", title: "Tutorial"}, // 1
