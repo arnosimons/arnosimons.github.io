@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: default2
 type: project
 recent: true
 date: 2022
-title: Who are the “Heroes of CRISPR”? Priority Disputes on Wikipedia
+title: Who are the “Heroes of CRISPR”? Controversies about micro-notability in innovation histories on Wikipedia
 themes: 
     - Epistemic Authority
     - Open Science & Technology

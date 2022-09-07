@@ -241,11 +241,11 @@ permalink: /scratchbooknew
         background-color: var(--grey-light); 
         margin-top: 10px;
       }
-      li {
-        font-size: 14px;
-      }
       ul {
         list-style-type: circle;
+      }
+      li {
+        font-size: 14px;
       }
       .center {
         display: block;
@@ -354,8 +354,8 @@ permalink: /scratchbooknew
                         <thead><tr id="info_curves_clicks_thead">
                           <td title="Number of times the FADER is OPENED in the composition">FO</td>
                           <td title="Number of times the FADER is CLOSED in the composition">FC</td>
-                          <td title="Number of times the PHANTOMFADER is OPENED in the composition">PO</td>
-                          <td title="Number of times the PHANTOMFADER is CLOSED in the composition">PC</td>
+                          <td title="Number of times the PHANTOM-FADER is OPENED in the composition">PO</td>
+                          <td title="Number of times the PHANTOM-FADER is CLOSED in the composition">PC</td>
                           <td title="Number of DIMINISHED click patterns in the composition">D</td>
                           <td title="Number of AUGMENTED click patterns in the composition">A</td>
                           <td title="Number of STRETCHED click patterns in the composition">S</td>
@@ -405,11 +405,11 @@ permalink: /scratchbooknew
                       <p class="info_table_title">Orbit Types</p>
                       <table id="info_orbit_types" class="table info_table">
                         <thead><tr id="info_orbit_types_thead">
-                          <td title="Number of S-CURVED in the composition">S-Curved</td>
-                          <td title="Number of TAZERS in the composition">Tazers</td>
-                          <td title="Number of PHANTAZMS in the composition">Phantazms</td>
-                          <td title="Number of EX-TAZERS in the composition">Ex-Tazers</td>
-                          <td title="Number of EX-PHANTAZMS in the composition">Ex-Phantazms</td>
+                          <td title="Number of S-CURVED ORBITS in the composition">S-Curved</td>
+                          <td title="Number of TAZER ORBITS in the composition">Tazers</td>
+                          <td title="Number of PHANTAZM ORBITS in the composition">Phantazms</td>
+                          <td title="Number of EX-TAZER ORBITS in the composition">Ex-Tazers</td>
+                          <td title="Number of EX-PHANTAZM ORBITS in the composition">Ex-Phantazms</td>
                         </tr></thead>
                         <tbody id="info_orbit_types_tbody"></tbody>
                       </table>
@@ -428,10 +428,9 @@ permalink: /scratchbooknew
                   trigger: "hover",
                   "container": 'body',
                 });
-                
                 // get handlers for key elements
                 var default_url = 'https://arnosimons.github.io/scratchbooknew';
-                var default_formula = "flob1 + (c * 2)/1 + i/.25 + ~f2SLog_f3Q_14/.75";
+                var default_formula = "autobahn + chirp / 0.25 * 4";
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
                 var session_output = document.getElementById("session_output");
@@ -577,6 +576,7 @@ permalink: /scratchbooknew
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#ScratchCard" 
+                title="Show ScratchBook's LIBRARY OF SCRATCHES"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Scratches
               </a>
@@ -584,10 +584,13 @@ permalink: /scratchbooknew
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p>
-                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and its <strong>operators</strong> (see also the "Theory" section). You can also browse ScratchBook's library of <strong>pre-composed scratches</strong> in <strong>the table</strong>.
+                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong> and with the help of ScratchBook's special <strong>tear and orbit sub-languages</strong>.
                 </p>
                 <p>
-                  Use the <strong>"Expert Mode"</strong> below to show more geeky colums, to filter scratches, and to load more libraries.
+                  But ScratchBook also provides a <strong>library of pre-composed scratches</strong>, which you can browse here.
+                </p>
+                <p>
+                  Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
                 </p>
                 <div class="card">
                   <div class="card-header">
@@ -595,7 +598,7 @@ permalink: /scratchbooknew
                       class="btn btn-sm" 
                       data-bs-toggle="collapse" 
                       href="#ExpertCard" 
-                      title="Show expert controls" 
+                      title="Show EXPERT CONTROLS" 
                       style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
                       Expert Mode
                     </a>
@@ -616,20 +619,20 @@ permalink: /scratchbooknew
                       </div>
                       <div class="row switch-row">
                         <div class="column" 
-                          title="The CORE collection contains 42 scratches and is loaded on default when opening the page">
+                          title="The CORE collection contains 43 scratches and is loaded on default when opening the page">
                           <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
                         </div>
                         <div class="column" 
-                          title="The ELEMENTS collection contains 156 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches">
+                          title="The ELEMENTS collection contains 171 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches">
                           <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
                         </div>
                         <div class="column" title="The TEARS collection contains 42 unidirectional tear variations">
                           <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="The ORBITS collection contains 513 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
+                        <div class="column" title="The ORBITS collection contains 594 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
                           <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="The COMBOS collection contains 32 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection">
+                        <div class="column" title="The COMBOS collection contains 33 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection">
                           <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
@@ -650,7 +653,7 @@ permalink: /scratchbooknew
                         <div class="column" title="Only show scratches with REGULAR CLICK PATTERNS">
                           <label class="switch"><input id="RegularClicks" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (i.e. D, A, S, or Q)">
+                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (D, A, S, or Q)">
                           <label class="switch"><input id="IrregularClicks" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
@@ -668,7 +671,7 @@ permalink: /scratchbooknew
                         <div class="column" title="Only show scratches with REGULAR CURVES">
                           <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CURVES (i.e. Log or Ex)">
+                        <div class="column" title="Only show scratches with IRREGULAR CURVES (Ex or Log)">
                           <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
@@ -809,9 +812,9 @@ permalink: /scratchbooknew
                           else if (headerText == "FC" )
                             headerTitle = "Number of times the FADER is CLOSED in the scratch";
                           else if (headerText == "PO" )
-                            headerTitle = "Number of times the PHANTOMFADER is OPENED in the scratch";
+                            headerTitle = "Number of times the PHANTOM-FADER is OPENED in the scratch";
                           else if (headerText == "PC" )
-                            headerTitle = "Number of times the PHANTOMFADER is OPENED in the scratch";
+                            headerTitle = "Number of times the PHANTOM-FADER is OPENED in the scratch";
                           else if (headerText == "D" )
                             headerTitle = "Number of DIMINISHED click patterns in the scratch";
                           else if (headerText == "A" )
@@ -836,6 +839,10 @@ permalink: /scratchbooknew
                             headerTitle = "Number of DICES in the scratch";
                           else if (headerText == "Flares" )
                             headerTitle = "Number of FLARES in the scratch";
+                          else if (headerText == "iFlares" )
+                            headerTitle = "Number of iFLARES in the scratch";
+                          else if (headerText == "oFlares" )
+                            headerTitle = "Number of oFLARES in the scratch";
                           else if (headerText == "Transformers" )
                             headerTitle = "Number of TRANSFORMERS in the scratch";
                           else if (headerText == "Ghosts" )
@@ -863,15 +870,15 @@ permalink: /scratchbooknew
                             headerTitle = "Number of OFF-STABS in the scratch";
                           // Orbit-Types
                           else if (headerText == "S-Curved" )
-                            headerTitle = "Number of S-CURVED in the scratch";
+                            headerTitle = "Number of S-CURVED ORBITS in the scratch";
                           else if (headerText == "Tazers" )
-                            headerTitle = "Number of TAZERS in the scratch";
+                            headerTitle = "Number of TAZER ORBITS in the scratch";
                           else if (headerText == "Phantazms" )
-                            headerTitle = "Number of PHANTAZMS in the scratch";
+                            headerTitle = "Number of PHANTAZM ORBITS in the scratch";
                           else if (headerText == "Ex-Tazers" )
-                            headerTitle = "Number of EX-TAZERS in the scratch";
+                            headerTitle = "Number of EX-TAZER ORBITS in the scratch";
                           else if (headerText == "Ex-Phantazms" )
-                            headerTitle = "Number of EX-PHANTAZMS in the scratch";
+                            headerTitle = "Number of EX-PHANTAZM ORBITS in the scratch";
                           // Formula 1
                           else if (headerText == "Formula" )
                             headerTitle = "The FORMULA for composing the scratch. Copy-and-paste formulas into the VISUALIZER to make your own modifications!";
@@ -1139,6 +1146,7 @@ permalink: /scratchbooknew
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#OperatorCard" 
+                title="Show ScratchBook's OPERATORS"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Operators
               </a>
@@ -1253,6 +1261,7 @@ permalink: /scratchbooknew
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#NotationCard" 
+                title="Show information about ScratchBook's NOTATION"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Notation
               </a>
@@ -1287,6 +1296,7 @@ permalink: /scratchbooknew
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#ElementsCard" 
+                title="Show information about ScratchBook's ELEMENTS"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Elements
               </a>
@@ -1348,12 +1358,11 @@ permalink: /scratchbooknew
         </section>
         <section class="mb-4">
           <p>ScratchBook is an educational and non-commercial project. The <a class="dark-link" href="https://github.com/arnosimons/scratchbook" target='_blank'>underlying code</a> is free freely available and reusable under the GPL-3.0 license.</p>
-          <p> The <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> ScratchBook uses was created and <a class="dark-link" href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>published</a> by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. I am deeply indebted to their work.</p>
-          <p> © 2022 by Arno Simons, a Berlin-based turntablist and researcher.</p>
+          <p>ScratchBook uses a slightly modified version of the <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a>, which was created and <a class="dark-link" href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>published</a> by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. I am deeply indebted to their work.</p>
+          <p> © 2022 by <a class="dark-link" href="https://arnosimons.github.io/" target='_blank'>Arno Simons</a>, a Berlin-based turntablist and researcher.</p>
         </section>
       </div>
     </footer>
-
   </body>
   <py-script>
     import re
@@ -1367,6 +1376,7 @@ permalink: /scratchbooknew
     req.send()
     exec(f"codebook = {req.response}")
     slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
+    <!-- pyscript.write("session_message", codebook['_2cf']) -->
     session_info = document.getElementById("session_info")
     info_basic = document.getElementById("info_basic_tbody")
     info_curves_clicks = document.getElementById("info_curves_clicks_tbody")

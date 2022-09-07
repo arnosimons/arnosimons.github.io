@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default2
 type: project
 recent: false
 date: 2016
