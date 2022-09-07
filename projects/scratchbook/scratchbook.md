@@ -584,10 +584,10 @@ permalink: /scratchbook
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p>
-                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong> and with the help of ScratchBook's special <strong>tear and orbit sub-languages</strong>.
+                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong>. For composing <strong>tears</strong> and <strong>orbits</strong>, ScratchBook even provides a special <strong>short-cut language</strong> (explanation coming soon).
                 </p>
                 <p>
-                  But ScratchBook also provides a <strong>library of pre-composed scratches</strong>, which you can browse here.
+                  But ScratchBook also includes a <strong>library of pre-composed scratches</strong>, which you can browse here.
                 </p>
                 <p>
                   Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
@@ -1372,7 +1372,7 @@ permalink: /scratchbook
     req.send()
     exec(str(req.response))
     req = XMLHttpRequest.new()
-    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook_new.json", False)
+    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
     req.send()
     exec(f"codebook = {req.response}")
     slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
