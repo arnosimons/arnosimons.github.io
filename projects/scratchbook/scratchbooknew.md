@@ -1,15 +1,15 @@
 ---
 layout: default
 type: project
-recent: true
+recent: false
 date: 2022
-title: ScratchBook
+title: ScratchBookNew
 themes: 
     - Turntablism
-permalink: /scratchbook
+permalink: /scratchbooknew
 ---
 
-<head>
+  <head>
     <title>ScratchBook</title>
     <!-- Standard stuff -->
     <meta charset="utf-8">
@@ -156,6 +156,9 @@ permalink: /scratchbook
       .mybuttons:active {
         transform: scale(.95);
       }
+      .card{
+        margin-bottom: 10px;
+      }
       .card-header:hover{
         background-color: var(--hover-color);
       }
@@ -205,6 +208,48 @@ permalink: /scratchbook
         margin-top:5px; 
         margin-bottom:5px;
       }
+      .scratch_table {
+        font-size: 12px; 
+        background-color: var(--grey-light);
+      }
+      /* .scratch_table thead th[class="sorting"] {
+        line-height: 18px;
+        color: yellow;
+      }
+      .scratch_table thead th[class="sorting sorting_asc"] {
+        line-height: 18px;
+        color: green;
+      }
+      .scratch_table thead th[class="sorting sorting_desc"] {
+        line-height: 18px;
+        color: red;
+      } */
+      .info_table {
+        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .info_table_title{
+        font-size: 14px;
+        font-weight: 600;
+        padding: 7px;
+      }
+      .info_container{
+        width:100%; 
+        padding:0px; 
+        background-color: var(--grey-light); 
+        margin-top: 10px;
+      }
+      li {
+        font-size: 14px;
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
     </style>
   </head>
   <body style="background-color:var(--grey-light);">
@@ -218,12 +263,11 @@ permalink: /scratchbook
     <br/>
     <!-- Visualizer -->
     <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
-      <div class="panel-group" id="Visualizer">
+      <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading"><h4>Visualizer</h4></div>
           <div class="panel-body">
             <p>Type and visualize your scratch formula...</p>
-            <p id="TEST"></p>
             <input 
               id="scratch_input"
               class="form-control" 
@@ -233,31 +277,31 @@ permalink: /scratchbook
               <button 
                 id="copy_button" 
                 class="mybuttons"
-                title="Copy url+formula and share it with your friends.">
+                title="Copy url+formula and share it with your friends">
                 Copy
               </button>
               <button 
                 id="download_button"
                 class="mybuttons"
-                title="Download png image.">
+                title="Download png image">
                 Download
               </button> 
               <button 
                 id="clear_button"
                 class="mybuttons"
-                title="Clear the input field.">
+                title="Clear the input field">
                 Clear
               </button>
               <button 
                 id="default_button"
                 class="mybuttons"
-                title="Reset to default scratch formula.">
+                title="Reset to default scratch formula">
                 Default
               </button>  
               <button 
                 id="surprise_button"
                 class="mybuttons"
-                title="Pick a scratch at random (currently limited to the Combos collection).">
+                title="Pick a scratch at random (currently limited to the Combos collection)">
                 Surprise!
               </button>            
               <button 
@@ -268,24 +312,126 @@ permalink: /scratchbook
               </button> 
             </p>
             <div 
-              id="session_output" 
+            id="session_output" 
               style="padding-bottom: 10px">
             </div>
             <p id="session_message" style="font-size: 14px; color: var(--red)"></p>
+            <div class="container" id="session_info">
+              <div class="card" >
+                <div class="card-header">
+                  <a 
+                    class="btn btn-sm" 
+                    data-bs-toggle="collapse" 
+                    href="#InfoCard" 
+                    title="Show detailed stats about your composition" 
+                    style="width: 100%; text-align: left; font-size: 16px; font-weight: 500;">
+                    Analyze your composition...
+                  </a>
+                </div>
+                <div id="InfoCard" class="collapse in">
+                  <div class="card-body" style="overflow-x:auto;">
+                    <div class="info_container">
+                      <p class="info_table_title">Basic Info</p>
+                      <table id="info_basic" class="table info_table">
+                        <thead><tr id="info_basic_thead">                          
+                          <td title="Number of DISTINCT SOUNDS the composition makes">Sounds</td>
+                          <td title="Number of ELEMENTARY SCRATCHES in the composition">Elements</td>
+                          <td title="Number of TEARS in the composition">Tears</td>
+                          <td title="Number of ORBITS in the composition">Orbits</td>
+                        </tr></thead>
+                        <tbody id="info_basic_tbody"></tbody>
+                      </table>
+                    </div>
+                    <div class="info_container">
+                      <p class="info_table_title">Clicks and Curves</p>
+                      <table id="info_curves_clicks" class="table info_table">
+                        <thead><tr id="info_curves_clicks_thead">
+                          <td title="Number of times the FADER is OPENED in the composition">FO</td>
+                          <td title="Number of times the FADER is CLOSED in the composition">FC</td>
+                          <td title="Number of times the PHANTOMFADER is OPENED in the composition">PO</td>
+                          <td title="Number of times the PHANTOMFADER is CLOSED in the composition">PC</td>
+                          <td title="Number of DIMINISHED click patterns in the composition">D</td>
+                          <td title="Number of AUGMENTED click patterns in the composition">A</td>
+                          <td title="Number of STRETCHED click patterns in the composition">S</td>
+                          <td title="Number of SQUEEZED click patterns in the composition">Q</td>
+                          <td title="Number of EXPONENTIAL curves in the composition">Ex</td>
+                          <td title="Number of LOGARITHMIC curves in the scratch">Log</td>
+                        </tr></thead>
+                        <tbody id="info_curves_clicks_tbody"></tbody>
+                      </table>
+                    </div>
+                    <div class="info_container">
+                      <p class="info_table_title">Elements</p>
+                      <table id="info_elements" class="table info_table">
+                        <thead><tr id="info_elements_thead">                          
+                          <td title="Number of BABIES in the composition">Babies</td>
+                          <td title="Number of INS in the composition">Ins</td>
+                          <td title="Number of OUTS in the composition">Outs</td>
+                          <td title="Number of DICES in the composition">Dices</td>
+                          <td title="Number of FLARES in the composition">Flares</td>
+                          <td title="Number of iFLARES in the composition">iFlares</td>
+                          <td title="Number of oFLARES in the composition">oFlares</td>
+                          <td title="Number of TRANSFORMERS in the composition">Transformers</td>
+                          <td title="Number of GHOSTS in the composition">Ghosts</td>
+                          <td title="Number of HOLDS in the composition">Holds</td>
+                          <td title="Number of G-HOLDS in the composition">G-Holds</td>
+                        </tr></thead>
+                        <tbody id="info_elements_tbody"></tbody>
+                      </table>
+                    </div>
+                    <div class="info_container">
+                      <p class="info_table_title">Orbits</p>
+                      <table id="info_orbits" class="table info_table">
+                        <thead><tr id="info_orbits_thead">
+                          <td title="Number of CHIRPS in the composition">Chirps</td>
+                          <td title="Number of SLICES in the composition">Slices</td>
+                          <td title="Number of STABS in the composition">Stabs</td>
+                          <td title="Number of FLARE-ORBITS in the composition">Flare-Orbits</td>
+                          <td title="Number of OG-FLARES in the composition">OG-Flares</td>
+                          <td title="Number of BABY-ORBITS in the composition">Baby-Orbits</td>
+                          <td title="Number of DICE-ORBITS in the composition">Dice-Orbits</td>
+                          <td title="Number of OFF-STABS in the composition">Off-Stabs</td>
+                        </tr></thead>
+                        <tbody id="info_orbits_tbody"></tbody>
+                      </table>
+                    </div>
+                    <div class="info_container">
+                      <p class="info_table_title">Orbit Types</p>
+                      <table id="info_orbit_types" class="table info_table">
+                        <thead><tr id="info_orbit_types_thead">
+                          <td title="Number of S-CURVED in the composition">S-Curved</td>
+                          <td title="Number of TAZERS in the composition">Tazers</td>
+                          <td title="Number of PHANTAZMS in the composition">Phantazms</td>
+                          <td title="Number of EX-TAZERS in the composition">Ex-Tazers</td>
+                          <td title="Number of EX-PHANTAZMS in the composition">Ex-Phantazms</td>
+                        </tr></thead>
+                        <tbody id="info_orbit_types_tbody"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <script>
-              $(document).ready(function () {       
-                // tooltips for mybuttons
+              $(document).ready(function () { 
                 $('.mybuttons[title]').tooltip({
                   trigger: "hover",
                   "container": 'body',
                 });
+                $('.table [title]').tooltip({
+                  trigger: "hover",
+                  "container": 'body',
+                });
+                
                 // get handlers for key elements
-                var default_url = 'https://arnosimons.github.io/scratchbook';
-                var default_formula = "kermit + prizm + (chirp / 0.25) * 4";
+                var default_url = 'https://arnosimons.github.io/scratchbooknew';
+                var default_formula = "flob1 + (c * 2)/1 + i/.25 + ~f2SLog_f3Q_14/.75";
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
                 var session_output = document.getElementById("session_output");
                 var session_message = document.getElementById("session_message");
+                var session_info = document.getElementById("session_info");
+                session_info.style.display = "none";
                 var urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.has("formula")) {scratch_input.value = urlParams.get('formula')} 
                 else {scratch_input.value = default_formula}
@@ -302,7 +448,9 @@ permalink: /scratchbook
                   if (event.key === "Enter") {
                     updateURL(scratch_input.value)
                     event.preventDefault();
-                    if (scratch_input.value.trim()) {scratch_button.click()}
+                    if (scratch_input.value.trim()) {
+                      scratch_button.click();
+                    }
                     else {session_output.innerHTML = ""}
                   }
                 });
@@ -335,6 +483,7 @@ permalink: /scratchbook
                   session_message.innerHTML = "";
                   scratch_input.value = "";
                   session_output.innerHTML = ""
+                  session_info.style.display = "none";
                   updateURL("")
                 });
                 // Function for default_button
@@ -342,7 +491,7 @@ permalink: /scratchbook
                   session_message.innerHTML = "";
                   scratch_input.value = default_formula;
                   session_output.innerHTML = "";
-                  updateURL("");
+                  updateURL(scratch_input.value);
                   scratch_button.click();
                 });
                 // Function for surprise_button
@@ -364,6 +513,9 @@ permalink: /scratchbook
                     'drills',
                     'enneagon',
                     'enneagon_roll',
+                    'flareorbit1',
+                    'flareorbit2',
+                    'flareorbit3',
                     'hendecagon',
                     'hendecagon_roll',
                     'hippopotamus',
@@ -372,7 +524,6 @@ permalink: /scratchbook
                     'kermit',
                     'military',
                     'ogflare',
-                    'oneclickflare',
                     'prizm',
                     'prizm_roll',
                     'rawhippopotamus',
@@ -389,7 +540,6 @@ permalink: /scratchbook
                     'tazer1',
                     'tazer2',
                     'turnaroundtransform',
-                    'twoclickflare',
                   ]
                   scratch_input.value = scratches[Math.floor(Math.random() * scratches.length)];
                   scratch_button.click();
@@ -400,27 +550,49 @@ permalink: /scratchbook
           </div>
         </div>
       </div>
+      <br/>
     </div>
     <br/>
-    <!-- Library and Logic -->
+    <!-- Library -->
     <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
-      <div class="panel-group" id="Rules">
+      <div class="panel-group">
         <div class="panel panel-default">
-          <div class="panel-heading"><h4>Library and Logic</h4></div>
+          <div class="panel-heading">
+            <h4>Library</h4>
+          </div>
           <div class="panel-body">
             <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: var(--blue-dark)">autobahn + prizm + (slice / 0.25) * 4</code></p>
             <p>Open the cards to learn more...</p>
           </div>
           <!-- Scratches -->
-          <div class="card" style="margin-bottom: 10px;">
+          <div class="card">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#ScratchCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Scratches</a>
+              <a 
+                class="btn" 
+                data-bs-toggle="collapse" 
+                href="#ScratchCard" 
+                style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
+                Scratches
+              </a>
             </div>
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <div class="card" style="margin-bottom: 10px;">
+                <p>
+                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and its <strong>operators</strong> (see also the "Theory" section). You can also browse ScratchBook's library of <strong>pre-composed scratches</strong> in <strong>the table</strong>.
+                </p>
+                <p>
+                  Use the <strong>"Expert Mode"</strong> below to show more geeky colums, to filter scratches, and to load more libraries.
+                </p>
+                <div class="card">
                   <div class="card-header">
-                    <a class="btn btn-sm" data-bs-toggle="collapse" href="#ExpertCard" title="Show expert controls." style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">Expert Mode</a>
+                    <a 
+                      class="btn btn-sm" 
+                      data-bs-toggle="collapse" 
+                      href="#ExpertCard" 
+                      title="Show expert controls" 
+                      style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
+                      Expert Mode
+                    </a>
                   </div>
                   <script>
                     $(document).ready(function () {
@@ -438,56 +610,30 @@ permalink: /scratchbook
                       </div>
                       <div class="row switch-row">
                         <div class="column" 
-                          title="The CORE collection contains 41 scratches and is loaded on default when opening the page.">
+                          title="The CORE collection contains 42 scratches and is loaded on default when opening the page">
                           <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
                         </div>
                         <div class="column" 
-                          title="The ELEMENTS collection contains 242 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches.">
+                          title="The ELEMENTS collection contains 156 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches">
                           <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="The TEARS collection contains 54 unidirectional tear variations.">
+                        <div class="column" title="The TEARS collection contains 42 unidirectional tear variations">
                           <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="The ORBITS collection contains 513 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
+                          <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="The COMBOS collection contains 32 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection">
+                          <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
                       <div class="row switch-row">
                         <div class="column">Core</div>
                         <div class="column">Elements</div>
                         <div class="column">Tears</div>
-                      </div>
-                      <div class="row switch-row">
-                        <div class="column" title="The ORBITS1 collection contains 57,025 orbits, generated from pairwise combinations of elements and tears. Most orbits you will ever need are in here.">
-                          <label class="switch"><input id="ORBITS1" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                        <div class="column" title="The ORBITS2 collection contains another 45,620 orbits, generated from pairwise combinations of elements and tears. These orbits are less common and you might not be interested in them.">
-                          <label class="switch"><input id="ORBITS2" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                        <div class="column" title="The COMBOS collection contains 32 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection.">
-                          <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                      </div>
-                      <div class="row switch-row">
-                        <div class="column">Orbits1</div>
-                        <div class="column">Orbits2</div>
+                        <div class="column">Orbits</div>
                         <div class="column">Combos</div>
                       </div>
-                    </div>
-                    <!-- Switches for Curves -->
-                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
-                      <div class="row" style="margin-left: 0px;">
-                        <p class="expert-heading">Curves</p>
-                      </div>
-                      <div class="row switch-row">
-                        <div class="column" title="Only show scratches with REGULAR CURVES.">
-                          <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CURVES (i.e. Log or Ex).">
-                          <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                      </div>
-                      <div class="row switch-row">
-                        <div class="column">Regular</div>
-                        <div class="column">Irregular</div>
-                      </div>                  
                     </div>
                     <!-- Switches Clicks -->
                     <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
@@ -495,11 +641,29 @@ permalink: /scratchbook
                         <p class="expert-heading">Clicks</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" title="Only show scratches with REGULAR CLICK PATTERNS.">
+                        <div class="column" title="Only show scratches with REGULAR CLICK PATTERNS">
                           <label class="switch"><input id="RegularClicks" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (i.e. D, A, S, or Q).">
+                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (i.e. D, A, S, or Q)">
                           <label class="switch"><input id="IrregularClicks" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column">Regular</div>
+                        <div class="column">Irregular</div>
+                      </div>                  
+                    </div>
+                    <!-- Switches for Curves -->
+                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
+                      <div class="row" style="margin-left: 0px;">
+                        <p class="expert-heading">Curves</p>
+                      </div>
+                      <div class="row switch-row">
+                        <div class="column" title="Only show scratches with REGULAR CURVES">
+                          <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
+                        </div>
+                        <div class="column" title="Only show scratches with IRREGULAR CURVES (i.e. Log or Ex)">
+                          <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
                       <div class="row switch-row">
@@ -513,24 +677,20 @@ permalink: /scratchbook
                         <p class="expert-heading">Columns</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" title="Show CURVE types.">
-                          <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
-                        </div>
-                        <div class="column" title="Show CLICK types">
+                        <div class="column" title="Show CLICK TYPES">
                           <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="Show SCRATCH types">
-                          <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column" title="Show CURVE TYPES">
+                          <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="Show FORMULA">
-                          <label class="switch"><input id="Composition" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column" title="Show SCRATCH TYPES">
+                          <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
                       <div class="row switch-row">
-                        <div class="column">Curves</div>
                         <div class="column">Clicks</div>
+                        <div class="column">Curves</div>
                         <div class="column">Scratches</div>
-                        <div class="column">Formula</div>
                       </div>                  
                     </div>
                   </div>
@@ -545,55 +705,69 @@ permalink: /scratchbook
                   });
                 </script>
                 <!-- DataTable -->
-                <table class="table" id="scratch-table" style="font-size: 12px; background-color: var(--grey-light)"></table>
+                <!-- <table class="table scratch_table" id="scratch_table" style="font-size: 12px; background-color: var(--grey-light)"></table> -->
+                <table class="table scratch_table" id="scratch_table"></table>
                 <script type="text/javascript">
                   // Define table
                   $(document).ready(function () {
-                    var table = $('#scratch-table').DataTable({
-                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_CORE.json",
+                    var table = $('#scratch_table').DataTable({
+                      ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/CORE.json",
                       columns: [
-                        // Basic
-                        { data: 'Name(s)',     title: 'Name(s)',     }, // 0
-                        { data: 'Tutorial',    title: 'Tutorial',    }, // 1
-                        { data: '#Sounds',     title: '#Sounds',     }, // 2
-                        // Curves
-                        { data: 'Ex',          title: 'Ex',          }, // 3
-                        { data: 'Log',         title: 'Log',         }, // 4
-                        { data: 'OrbCurve',    title: 'OrbCurve',    }, // 5
-                        // Clicks
-                        { data: '#FO',         title: '#FO',         }, // 6
-                        { data: '#FC',         title: '#FC',         }, // 7
-                        { data: '#PO',         title: '#PO',         }, // 8
-                        { data: '#PC',         title: '#PC',         }, // 9
-                        { data: 'D',           title: 'D',           }, // 10
-                        { data: 'A',           title: 'A',           }, // 11
-                        { data: 'S',           title: 'S',           }, // 12
-                        { data: 'Q',           title: 'Q',           }, // 13
-                        // Scratches
-                        { data: 'Baby',        title: 'Baby',        }, // 14
-                        { data: 'In',          title: 'In',          }, // 15
-                        { data: 'Out',         title: 'Out',         }, // 16
-                        { data: 'Dice',        title: 'Dice',        }, // 17
-                        { data: 'Flare',       title: 'Flare',       }, // 18
-                        { data: 'Transformer', title: 'Transformer', }, // 19
-                        { data: 'Tear',        title: 'Tear',        }, // 20
-                        { data: 'Orbit',       title: 'Orbit',       }, // 21
-                        { data: 'Slice',       title: 'Slice',       }, // 22
-                        { data: 'Chirp',       title: 'Chirp',       }, // 23
-                        { data: 'Stab',        title: 'Stab',        }, // 24
-                        { data: 'OCF',         title: 'OCF',         }, // 25
-                        { data: 'TCF',         title: 'TCF',         }, // 26
-                        { data: 'OGF',         title: 'OGF',         }, // 27
-                        // Composition
-                        { data: '#Els',        title: '#Els',        }, // 28
-                        { data: 'Formula',     title: 'Formula',     }, // 29
-                        // Libraries
-                        { data: 'CORE',        title: 'CORE',        }, // 30
-                        { data: 'ELEMENTS',    title: 'ELEMENTS',    }, // 31
-                        { data: 'TEARS',       title: 'TEARS',       }, // 32
-                        { data: 'ORBITS1',     title: 'ORBITS1',     }, // 33
-                        { data: 'ORBITS2',     title: 'ORBITS2',     }, // 34
-                        { data: 'COMBOS',      title: 'COMBOS',      }, // 35
+                      {data:"Name(s)", title: "Name(s)"}, // 0
+                      {data:"Tutorial", title: "Tutorial"}, // 1
+                      {data:"Sounds", title: "Sounds"}, // 2
+                      {data:"Elements", title: "Elements"}, // 3
+                      {data:"Tears", title: "Tears"}, // 4
+                      {data:"Orbits", title: "Orbits"}, // 5
+
+                      {data:"FO", title: "FO"}, // 6
+                      {data:"FC", title: "FC"}, // 7
+                      {data:"PO", title: "PO"}, // 8
+                      {data:"PC", title: "PC"}, // 9
+                      {data:"D", title: "D"}, // 10
+                      {data:"A", title: "A"}, // 11
+                      {data:"S", title: "S"}, // 12
+                      {data:"Q", title: "Q"}, // 13
+
+                      {data:"Ex", title: "Ex"}, // 14
+                      {data:"Log", title: "Log"}, // 15
+
+                      {data:"Babies", title: "Babies"}, // 16
+                      {data:"Ins", title: "Ins"}, // 17
+                      {data:"Outs", title: "Outs"}, // 18
+                      {data:"Dices", title: "Dices"}, // 19
+                      {data:"Flares", title: "Flares"}, // 20
+                      {data:"iFlares", title: "iFlares"}, // 21
+                      {data:"oFlares", title: "oFlares"}, // 22
+                      {data:"Transformers", title: "Transformers"}, // 23
+                      {data:"Ghosts", title: "Ghosts"}, // 24
+                      {data:"Holds", title: "Holds"}, // 25
+                      {data:"G-Holds", title: "G-Holds"}, // 26
+
+                      {data:"Chirps", title: "Chirps"}, // 27
+                      {data:"Slices", title: "Slices"}, // 28
+                      {data:"Stabs", title: "Stabs"}, // 29
+                      {data:"Flare-Orbits", title: "Flare-Orbits"}, // 30
+                      {data:"OG-Flares", title: "OG-Flares"}, // 31
+                      {data:"Baby-Orbits", title: "Baby-Orbits"}, // 32
+                      {data:"Dice-Orbits", title: "Dice-Orbits"}, // 33
+                      {data:"Off-Stabs", title: "Off-Stabs"}, // 34
+
+                      {data:"S-Curved", title: "S-Curved"}, // 35
+                      {data:"Tazers", title: "Tazers"}, // 36
+                      {data:"Phantazms", title: "Phantazms"}, // 37
+                      {data:"Ex-Tazers", title: "Ex-Tazers"}, // 38
+                      {data:"Ex-Phantazms", title: "Ex-Phantazms"}, // 39
+
+                      {data:"Formula", title: "Formula"}, // 40
+
+                      {data:"Search", title: "Search"}, // 41
+                      
+                      {data:"CORE", title: "CORE"}, // 42
+                      {data:"ELEMENTS", title: "ELEMENTS"}, // 43
+                      {data:"TEARS", title: "TEARS"}, // 44
+                      {data:"ORBITS", title: "ORBITS"}, // 45
+                      {data:"COMBOS", title: "COMBOS"}, // 46
                       ],
                       order: [
                         [ 0, "asc" ], 
@@ -606,99 +780,133 @@ permalink: /scratchbook
                       //   header: true,
                       // },
                       "initComplete": function(settings){
-                        $('#scratch-table thead th').each(function () {
+                        $('#scratch_table thead th').each(function () {
                           var $td = $(this);
                           var headerText = $td.text(); 
                           var headerTitle=$td.text(); 
-                          // Basic
+                          // Basic 6
                           if ( headerText == "Name(s)" )
-                            headerTitle =  "Available NAMES for the scratch, to be used in the VISUALIZER. Synonymous names are seperated by a comma.";
+                            headerTitle =  "Available NAMES for the scratch, to be used in the VISUALIZER. Synonymous names are seperated by a comma";
                           else if (headerText == "Tutorial" )
-                            headerTitle = "A link to a VIDEO-TUTORIAL for the scratch (if available).";
-                          else if (headerText == "#Sounds" )
-                            headerTitle = "The number of SOUNDS the scratch makes.";
-                          // Curves
-                          else if (headerText == "Ex" )
-                            headerTitle = "Whether or not the scratch contains at least one EXPONENTIAL curve.";
-                          else if (headerText == "Log" )
-                            headerTitle = "Whether or not the scratch contains at least one LOGARITHMIC curve.";
-                          else if (headerText == "OrbCurve" )
-                            headerTitle = "(Only applies to orbits) Names the CURVE-SHAPE of the orbit, e.g. S-CURVED, TAZER or PHANTAZM.";
-                          // Clicks
-                          else if (headerText == "#FO" )
-                            headerTitle = "The Number of times the FADER is OPENED in the scratch.";
-                          else if (headerText == "#FC" )
-                            headerTitle = "The Number of times the FADER is CLOSED in the scratch.";
-                          else if (headerText == "#PO" )
-                            headerTitle = "The Number of times the PHANTOMFADER is OPENED in the scratch, i.e. one starts holding the record still.";
-                          else if (headerText == "#PC" )
-                            headerTitle = "The Number of times the PHANTOMFADER is CLOSED in the scratch, i.e. one stops holding the record still.";
+                            headerTitle = "A link to a VIDEO-TUTORIAL for the scratch (if available)";
+                          else if (headerText == "Sounds" )
+                            headerTitle = "Number of DISTINCT SOUNDS the scratch makes";
+                          else if (headerText == "Elements" )
+                            headerTitle = "Number of ELEMENTS in the scratch";
+                          else if (headerText == "Tears" )
+                            headerTitle = "Number of TEARS the scratch";
+                          else if (headerText == "Orbits" )
+                            headerTitle = "Number of ORBITS in the scratch";
+                          // Clicks 8
+                          else if (headerText == "FO" )
+                            headerTitle = "Number of times the FADER is OPENED in the scratch";
+                          else if (headerText == "FC" )
+                            headerTitle = "Number of times the FADER is CLOSED in the scratch";
+                          else if (headerText == "PO" )
+                            headerTitle = "Number of times the PHANTOMFADER is OPENED in the scratch";
+                          else if (headerText == "PC" )
+                            headerTitle = "Number of times the PHANTOMFADER is OPENED in the scratch";
                           else if (headerText == "D" )
-                            headerTitle = "Whether or not the scratch contains at least one DIMINISHED click pattern.";
+                            headerTitle = "Number of DIMINISHED click patterns in the scratch";
                           else if (headerText == "A" )
-                            headerTitle = "Whether or not the scratch contains at least one AUGMENTED click pattern.";
+                            headerTitle = "Number of AUGMENTED click patterns in the scratch";
                           else if (headerText == "S" )
-                            headerTitle = "Whether or not the scratch contains at least one STRECHED click pattern.";
+                            headerTitle = "Number of STRECHED click patterns in the scratch";
                           else if (headerText == "Q" )
-                            headerTitle = "Whether or not the scratch contains at least one SQUEEZED click pattern.";
-                          // Scratches
-                          else if (headerText == "Baby" )
-                            headerTitle = "Whether or not the scratch contains at least one BABY scratch.";
-                          else if (headerText == "In" )
-                            headerTitle = "Whether or not the scratch contains at least one IN scratch";
-                          else if (headerText == "Out" )
-                            headerTitle = "Whether or not the scratch contains at least one OUT scratch.";
-                          else if (headerText == "Dice" )
-                            headerTitle = "Whether or not the scratch contains at least one DICE scratch.";
-                          else if (headerText == "Flare" )
-                            headerTitle = "Whether or not the scratch contains at least one FLARE scratch.";
-                          else if (headerText == "Transformer" )
-                            headerTitle = "Whether or not the scratch contains at least one TRANSFORMER scratch.";
-                          else if (headerText == "Tear" )
-                            headerTitle = "Whether or not the scratch contains at least one TEAR scratch.";
-                          else if (headerText == "Orbit" )
-                            headerTitle = "Whether or not the scratch contains at least one ORBIT scratch.";
-                          else if (headerText == "Slice" )
-                            headerTitle = "Whether or not the scratch contains at least one SLICE scratch.";
-                          else if (headerText == "Chirp" )
-                            headerTitle = "Whether or not the scratch contains at least one CHIRP scratch.";
-                          else if (headerText == "Stab" )
-                            headerTitle = "Whether or not the scratch contains at least one STAB scratch.";
-                          else if (headerText == "OCF" )
-                            headerTitle = "Whether or not the scratch contains at least one OC-FLARE scratch.";
-                          else if (headerText == "TCF" )
-                            headerTitle = "Whether or not the scratch contains at least one TC-FLARE scratch.";
-                          else if (headerText == "OGF" )
-                            headerTitle = "Whether or not the scratch contains at least one OG-FLARE scratch.";                          
-                          // Composition
-                          else if (headerText == "#Els" )
-                            headerTitle = "The number of ELEMENTS the scratch is composed of.";
+                            headerTitle = "Number of SQUEEZED click patterns in the scratch";
+                          // Curves 2
+                          else if (headerText == "Ex" )
+                            headerTitle = "Number of EXPONENTIAL curves in the scratch";
+                          else if (headerText == "Log" )
+                            headerTitle = "Number of LOGARITHMIC curves in the scratch";
+                          // Elements 9
+                          else if (headerText == "Babies" )
+                            headerTitle = "Number of BABIES in the scratch";
+                          else if (headerText == "Ins" )
+                            headerTitle = "Number of INS in the scratch";
+                          else if (headerText == "Outs" )
+                            headerTitle = "Number of OUTS in the scratch";
+                          else if (headerText == "Dices" )
+                            headerTitle = "Number of DICES in the scratch";
+                          else if (headerText == "Flares" )
+                            headerTitle = "Number of FLARES in the scratch";
+                          else if (headerText == "Transformers" )
+                            headerTitle = "Number of TRANSFORMERS in the scratch";
+                          else if (headerText == "Ghosts" )
+                            headerTitle = "Number of GHOSTS in the scratch";
+                          else if (headerText == "Holds" )
+                            headerTitle = "Number of HOLDS in the scratch";
+                          else if (headerText == "G-Holds" )
+                            headerTitle = "Number of G-HOLDS in the scratch";
+                          // Orbits
+                          else if (headerText == "Chirps" )
+                            headerTitle = "Number of CHIRPS in the scratch";
+                          else if (headerText == "Slices" )
+                            headerTitle = "Number of SLICES in the scratch";
+                          else if (headerText == "Stabs" )
+                            headerTitle = "Number of STABS in the scratch";
+                          else if (headerText == "Flare-Orbits" )
+                            headerTitle = "Number of FLARE-ORBITS in the scratch";
+                          else if (headerText == "OG-Flares" )
+                            headerTitle = "Number of OG-FLARES in the scratch";
+                          else if (headerText == "Baby-Orbits" )
+                            headerTitle = "Number of BABY-ORBITS in the scratch";
+                          else if (headerText == "Dice-Orbits" )
+                            headerTitle = "Number of DICE-ORBITS in the scratch";
+                          else if (headerText == "Off-Stabs" )
+                            headerTitle = "Number of OFF-STABS in the scratch";
+                          // Orbit-Types
+                          else if (headerText == "S-Curved" )
+                            headerTitle = "Number of S-CURVED in the scratch";
+                          else if (headerText == "Tazers" )
+                            headerTitle = "Number of TAZERS in the scratch";
+                          else if (headerText == "Phantazms" )
+                            headerTitle = "Number of PHANTAZMS in the scratch";
+                          else if (headerText == "Ex-Tazers" )
+                            headerTitle = "Number of EX-TAZERS in the scratch";
+                          else if (headerText == "Ex-Phantazms" )
+                            headerTitle = "Number of EX-PHANTAZMS in the scratch";
+                          // Formula 1
                           else if (headerText == "Formula" )
-                            headerTitle = "The FORMULA for composing the scratch. Copy-n-paste formulas into the VISUALIZER to make your own modifications! ";
+                            headerTitle = "The FORMULA for composing the scratch. Copy-and-paste formulas into the VISUALIZER to make your own modifications!";
                           // Set the attribute...
                           $td.attr('title', headerTitle);
                         });
                         /* Style header tooltips */
-                        $('#scratch-table thead th[title]').tooltip({
+                        $('#scratch_table [title]').tooltip({
                           trigger: "hover",
                           "container": 'body',
                         });
-                        // Visibility of columns
-                        var cols = [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,]
+                        // Visibility of columns (the once skipped are the ones always visible)
+                        var cols = [
+                          // 0,1,2, // Name(s), Tutorial, Sounds
+                          // 3,4,5, // Elements, Tears, Orbits
+                          6,7,8,9, // clicks
+                          10,11,12,13, // click patterns
+                          14,15, // curves
+                          16,17,18,19,20,21,22,23,24,25,26, // elements
+                          27,28,29,30,31,32,33,34, // orbits
+                          35, 36,37,38,39, // orbit-types
+                          // 40, // formula
+                          41, // search
+                          42,43,44,45,46 // libraries
+                        ]
                         table.columns( cols ).visible(false, false);
                         table.columns( cols ).searchable(false);
+                        // Search column extra:
+                        // table.columns( [41] ).visible(false, false);
+                        table.columns( [41] ).searchable(true);
                       },
                     });
                     // Functions for row-filtering switches  
                     function activeLibs() {
                         let active_switches = [];
                         for (let libinfo of [
-                          ["CORE", 30],
-                          ["ELEMENTS", 31],
-                          ["TEARS", 32],
-                          ["ORBITS1", 33],
-                          ["ORBITS2", 34],
-                          ["COMBOS", 35],
+                          ["CORE", 42],
+                          ["ELEMENTS", 43],
+                          ["TEARS", 44],
+                          ["ORBITS", 45],
+                          ["COMBOS", 46],
                         ]) {
                           if (document.getElementById(libinfo[0]).checked) {
                               active_switches.push("data['" + libinfo[1] + "'] == 1")
@@ -706,12 +914,12 @@ permalink: /scratchbook
                         }
                         return active_switches.join(" || ")
                     };
-                    function curvesAndClicks() {
+                    function crossFilters() {
                         let active_switches = [];
                         if (document.getElementById("RegularCurves").checked) {
-                          active_switches.push("data['3'] == 0 && data['4'] == 0")
+                          active_switches.push("data['14'] == 0 && data['15'] == 0")
                         } else if (document.getElementById("IrregularCurves").checked) {
-                          active_switches.push("data['3'] == 1 || data['4'] == 1")
+                          active_switches.push("data['14'] == 1 || data['15'] == 1")
                         }
                         if (document.getElementById("RegularClicks").checked) {
                           active_switches.push("data['10'] == 0 && data['11'] == 0 && data['12'] == 0 && data['13'] == 0")
@@ -724,8 +932,8 @@ permalink: /scratchbook
                       let query = []
                       if (activeLibs()) {
                         query.push("(" + activeLibs() + ")");
-                        if (curvesAndClicks()) { // only relevant if some lib is active, hence nested here
-                          query.push("(" + curvesAndClicks() + ")");
+                        if (crossFilters()) { // only relevant if some lib is active, hence nested here
+                          query.push("(" + crossFilters() + ")");
                         }
                       }
                       return query.join(" && ")
@@ -736,9 +944,7 @@ permalink: /scratchbook
                       var rowsToRemove = [];
                       table.rows().every(function(rowIdx, tableLoop, rowLoop) {
                         var data = this.data();
-                        // Find number of times name is in names array
                         var numOccurances = names.filter(x => x === data["Name(s)"]).length;
-                        // If only once remove the row
                         if (! numOccurances > 1 ) {
                           rowsToRemove.push( this.index() );
                         }
@@ -749,12 +955,10 @@ permalink: /scratchbook
                       var existing_names = table.column( 0 ).data().toArray();
                       rowsToAdd = []
                       for (let row of json.data) {
-                        // session_message.innerHTML = row["Name(s)"];
                         if (!existing_names.includes(row["Name(s)"])) {
                           rowsToAdd.push(row)
                         }
                       }
-                      // session_message.innerHTML = "Added " + rowsToAdd.length + " rows";
                       table.rows.add(rowsToAdd).draw(false);
                     }
                     ///////////////////////////////////////////////////////////////////////
@@ -772,7 +976,7 @@ permalink: /scratchbook
                     $("#ELEMENTS").change(function() {
                       if(this.checked && load_ELEMENTS === true) {
                         load_ELEMENTS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ELEMENTS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/ELEMENTS.json', function(json) {
                           addNewRows(table, json);
                         });
                       }
@@ -788,7 +992,7 @@ permalink: /scratchbook
                     $("#TEARS").change(function() {
                       if(this.checked && load_TEARS === true) {
                         load_TEARS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_TEARS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/TEARS.json', function(json) {
                           addNewRows(table, json);
                         });
                       }
@@ -799,29 +1003,13 @@ permalink: /scratchbook
                       );
                       table.draw();
                     });
-                    // ORBITS1 switch
-                    var load_ORBITS1 = true
-                    $("#ORBITS1").change(function() {
-                      if(this.checked && load_ORBITS1 === true) {
-                        load_ORBITS1 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS1.json', function(json) {
+                    // ORBITS switch
+                    var load_ORBITS = true
+                    $("#ORBITS").change(function() {
+                      if(this.checked && load_ORBITS === true) {
+                        load_ORBITS = false;
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/ORBITS.json', function(json) {
                           // table.rows.add(json.data).draw(false);
-                          addNewRows(table, json);
-                        });
-                      }
-                      $.fn.dataTable.ext.search.push(
-                          function(settings, data, dataIndex) {
-                          return eval(filterRows())
-                          }
-                      );
-                      table.draw();
-                    });
-                    // ORBITS2 switch
-                    var load_ORBITS2 = true
-                    $("#ORBITS2").change(function() {
-                      if(this.checked && load_ORBITS2 === true) {
-                        load_ORBITS2 = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_ORBITS2.json', function(json) {
                           addNewRows(table, json);
                         });
                       }
@@ -837,7 +1025,7 @@ permalink: /scratchbook
                     $("#COMBOS").change(function() {
                       if(this.checked && COMBOS === true) {
                         COMBOS = false;
-                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/datatable_COMBOS.json', function(json) {
+                        $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/COMBOS.json', function(json) {
                           addNewRows(table, json);
                         });
                       }
@@ -897,7 +1085,7 @@ permalink: /scratchbook
                     });
                     // Column Switches
                     $('#Curves').change(function() {
-                      var cols = [3,4,5]
+                      var cols = [14,15]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -908,7 +1096,7 @@ permalink: /scratchbook
                       }
                     });
                     $('#Clicks').change(function() {
-                      var cols = [6,7,8,9,10,11,12,13,]
+                      var cols = [6,7,8,9,10,11,12,13]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -919,18 +1107,11 @@ permalink: /scratchbook
                       }
                     });
                     $('#Scratches').change(function() {
-                      var cols = [14,15,16,17,18,19,20,21,22,23,24,25,26,27]
-                      if(this.checked) {
-                        table.columns( cols ).visible(true, false);
-                        table.columns( cols ).searchable(true);
-                      }
-                      else {
-                        table.columns( cols ).visible(false, false);
-                        table.columns( cols ).searchable(false);
-                      }
-                    });
-                    $('#Composition').change(function() {
-                      var cols = [28,29]
+                      var cols = [
+                        16,17,18,19,20,21,22,23,24,25,26, // elements
+                        27,28,29,30,31,32,33,34, // orbits
+                        35, 36,37,38,39, // orbit-types
+                      ]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -946,13 +1127,19 @@ permalink: /scratchbook
             </div>
           </div>
           <!-- Operators -->
-          <div class="card" style="margin-bottom: 10px;">
+          <div class="card">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#OperatorCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Operators</a>
+              <a 
+                class="btn" 
+                data-bs-toggle="collapse" 
+                href="#OperatorCard" 
+                style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
+                Operators
+              </a>
             </div>
             <div id="OperatorCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <p>Operators can be used to modify and combine scratches. The following table lists and explains all available operators.
+                <p><strong>Operators</strong> can be used <strong>to modify and combine scratches</strong>. The following table lists and explains all available operators.
                 </p>
                 <table class="table" id="OperatorTable" style="font-size: 12px">
                   <thead>
@@ -984,7 +1171,7 @@ permalink: /scratchbook
                     </tr>
                     <tr>
                         <td>+</td>
-                        <td>Chain scratches from left to right</td>
+                        <td>Add scratches from left to right</td>
                         <td>scratch + scratch</td>
                         <td>chirp + flob2 + steps</td>
                     </tr>
@@ -1008,19 +1195,19 @@ permalink: /scratchbook
                     </tr>
                     <tr>
                         <td>%</td>
-                        <td>Shift the "phase" of a scratch by rotating its parts from right to left. (<em>n</em> must be an integer number)</td>
+                        <td>Shift the "phase" of a scratch by rotating its elements from right to left. (<em>n</em> must be an integer number)</td>
                         <td>scratch % <em>n</em></td>
                         <td>prizm % 0.25</td>
                     </tr>
                     <tr>
                         <td>[<em>n</em>]</td>
-                        <td>Show the <em>n</em>-ths part of a composed scratch (<em>n</em> must be an integer number. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                        <td>Show the <em>n</em>-ths element of a composed scratch (<em>n</em> must be an integer number. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
                         <td>scratch[<em>n</em>]</td>
                         <td>autobahn[3]</td>
                     </tr>
                     <tr>
                         <td>[<em>n</em>:<em>m</em>]</td>
-                        <td>Show all parts between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) part of a composed scratch (<em>n</em> and <em>m</em> must be integer numbers. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
+                        <td>Show all elements between the <em>n</em>-ths (included) and <em>m</em>-ths (excluded) element of a composed scratch (<em>n</em> and <em>m</em> must be integer numbers. <span style="color: var(--red)">&#9888;</span> Counting starts at 0 not at 1!)</td>
                         <td>scratch[<em>n</em>:<em>m</em>]</td>
                         <td>autobahn[3:7]</td>
                     </tr>
@@ -1035,25 +1222,99 @@ permalink: /scratchbook
               </div>
             </div>
           </div>
-          <!-- The Idea -->
-          <div class="card" style="width: auto">
+        </div>
+      </div>
+      <br/>
+    </div>
+    <br/>
+    <!-- Theory -->
+    <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Theory</h4>
+          </div>
+          <div class="panel-body">
+            <p style="margin-bottom: 5px;">
+              ScratchBook builds on two theoretical pillars: A theory of <strong>scratch notation</strong> and a theory of <strong>scratch elements</strong>.
+            </p>
+            <p>Open the cards to learn more...</p>
+          </div>
+          <!-- Notation -->
+          <div class="card">
             <div class="card-header">
-              <a class="btn" data-bs-toggle="collapse" href="#IdeaCard" style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">Notation</a>
+              <a 
+                class="btn" 
+                data-bs-toggle="collapse" 
+                href="#NotationCard" 
+                style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
+                Notation
+              </a>
             </div>
-            <div id="IdeaCard" class="collapse in">
+            <div id="NotationCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p> 
-                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. According to the original <a href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>TTM-booklet</a>, TTM is emphatically <em>"an open source effort...Fight it, defend it, tweak it, trash it - all will assist its evolution"</em> (p.10).
+                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. It is a system for transcribing any scratch as the graph of a function of time, on the x-axis, either vs. the roation of the record or vs. the duration of the sample, on the y-axis.
                 </p>
+                <ul>
+                  <li>When <strong>the curve moves up</strong> this means that the record moves forward. When <strong>the curve moves down</strong> the record moves down.</li>
+                  <li>The <strong>steepness of the curve</strong> at any point signifies the speed of the record, which usually corresponds to the pitch of the sample (except when pitch control technologies are used). The faster the sample is played, the steeper the curve and vice versa.</li>
+                  <li>When <strong>the curve forms a horizontal line</strong>, even for a very short period of time, this indicates that the record is held still and makes no sound. This occurs, for example, during a tear scratch and at the turning point of any orbit scratch.</li>
+                  <li><strong>Circles on top of the curve</strong> signify "clicks", i.e. moments when the cross-fader is closed and re-opened in as little time as possible, causing small breaks in the sound.</li>
+                </ul>
                 <p> 
-                  In this spirit, <b>ScratchBook modifies the original TTM</b> in the following way: 
+                  According to the original <a href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>TTM-booklet</a>, TTM is emphatically <em>"an open source effort...Fight it, defend it, tweak it, trash it - all will assist its evolution"</em> (p.10). In this spirit, <strong>ScratchBook modifies the original TTM</strong> in the following way: 
                 </p>
-                <ol style="font-size:14px">
-                  <li>1) The <b>color white</b> generally indicates that the <b>fader is closed</b>.</li>
-                  <li>2) <b>Regular fader clicks</b> are symbolized by <b>white circles</b> (not by black circles).</li>
-                  <li>3) <b>Silent record motions</b>, such as during a stab scratch, are symbolized by <b>white curves</b>.</li>
-                  <li>4) <b>No "phantom clicks"</b> are shown, but they can always be inferred from near-zero slopes of the scratch curves.</li>
-                </ol>
+                <ul>
+                  <li><strong>The color white</strong> generally indicates that the <strong>fader is closed</strong>.</li>
+                  <li>Consequently, <strong>white circles</strong> (<u>not black ones</u>) are used to represent <strong>regular fader clicks</strong>.</li>
+                  <li><strong>When the cross fader is closed for a longer time period</strong>, e.g. when the record is brought back during the second half of a stab scratch, this is indicated by a <strong>white curve</strong>.</li>
+                  <li><strong>No "phantom clicks"</strong> are used to indicate moments when the record is held still. However, for the geeks among you, the number of opening and closing "phantom clicks" is reported in the tables.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Elements -->
+          <div class="card">
+            <div class="card-header">
+              <a 
+                class="btn" 
+                data-bs-toggle="collapse" 
+                href="#ElementsCard" 
+                style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
+                Elements
+              </a>
+            </div>
+            <div id="ElementsCard" class="collapse in">
+              <div class="card-body" style="overflow-x:auto;">
+                <p> 
+                  Under the hood, <strong>ScratchBook takes an atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.  
+                </p>
+                <p>
+                  The total number of elements depends on the number of subatomic features and the rules of their combination, i.e <strong>the "grammar"</strong>. ScratchBook considers <strong>five classes of features</strong>:
+                </p>
+                <ul>
+                  <li><strong>Curve shapes</strong> (horizontal, sine, exponential, logarithmic)</li>
+                  <li><strong>Curve colors</strong> (black, white)</li>
+                  <li><strong>io-Clicks</strong> (in/out-clicks), i.e. clicks at the start and/or at the end of a of a scratch ([], [0], [1], [0,1]])</li>
+                  <li><strong>f-Clicks</strong> (flare-clicks), i.e. clicks somewhere in the middle of a scratch (0 - 3 clicks)</li>
+                  <li><strong>Click patterns</strong> (normal, diminished, augmented, stretched, squeezed)</li>
+                </ul> 
+                <p>
+                  <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
+                </p>
+                <p>
+                  The following decision tree maps out <strong>ScratchBook's current grammar</strong>, which results in a total of <strong>170 elements</strong>:
+                </p>
+                <p>
+                  <img class="center" src="decision_tree.png" alt="Element construction" style="width: 536px; height: 223px;"> 
+                </p>
+                <p>
+                  ScratchBook's element can be grouped into <strong>eleven classes of elements</strong> with the following <strong>distribution of subatomic features</strong>: 
+                </p>
+                <p>
+                  <img class="center" src="el_classes.png" alt="Element construction" style="width: 653px; height: 413px;">
+                </p>
               </div>
             </div>
           </div>
@@ -1086,46 +1347,53 @@ permalink: /scratchbook
         </section>
       </div>
     </footer>
+
   </body>
   <py-script>
     import re
     from js import XMLHttpRequest
     req = XMLHttpRequest.new()
-    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/classes_and_functions.py", False)
+    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/scratchbook.py", False)
     req.send()
     exec(str(req.response))
     req = XMLHttpRequest.new()
-    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
+    req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook_new.json", False)
     req.send()
     exec(f"codebook = {req.response}")
-    def getCodeNames(text):
-        if "Scratch" in text:
-            return
-        text = re.sub(r"[-+*/%~\[\]\(\).:]|yshift|ys", " ", text)
-        for code_name in re.sub(r"\b\d*\b", " ", text).split():
-            if not code_name in codebook:
-                message = f'Sorry, but "{code_name}" is not in the codebook. Browse the library to see what scratches are available!'
-                pyscript.write("session_output", message)
-                raise ValueError(message)
-            try:
-                exec(code_name)
-            except NameError:
-                yield code_name
-                for i in getCodeNames(codebook[code_name]):
-                    yield i
+    slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
+    <!-- pyscript.write("session_message", codebook['_2cf']) -->
+    session_info = document.getElementById("session_info")
+    info_basic = document.getElementById("info_basic_tbody")
+    info_curves_clicks = document.getElementById("info_curves_clicks_tbody")
+    info_elements = document.getElementById("info_elements_tbody")    
+    info_orbits = document.getElementById("info_orbits_tbody")
+    info_orbit_types = document.getElementById("info_orbit_types_tbody")    
     def plot(x=None):
-        text = Element("scratch_input").element.value
-        if not text:
-          pyscript.write("session_output", "plot() requires a formula as input.")
-          return
-        for code_name in list(getCodeNames(text))[::-1]:
-            exec(f"{code_name} = {codebook[code_name]}")
+        formula = Element("scratch_input").element.value
+        if not formula:
+            pyscript.write("session_output", "plot() requires a formula as input.")
+            return
         try:
-            session = Session(eval(text), fontsize=11, w_pad=2)
-            pyscript.write("session_output", session.fig)
+            myscratch = makeScratch(formula, codebook)
+            info = getInfo(myscratch)
+            fig = Session(myscratch, fontsize=11, w_pad=2).fig
+            pyscript.write("session_output", fig)
+            for body, keys in [
+                [info_basic, ["Sounds", "Elements", "Tears", "Orbits"]],
+                [info_curves_clicks, ["FO", "FC", "PO", "PC", "D", "A", "S", "Q", "Ex", "Log"]],
+                [info_elements, ["Babies", "Ins", "Outs", "Dices", "Flares", "iFlares", "oFlares", "Transformers", "Ghosts", "Holds", "G-Holds"]],
+                [info_orbits, ["Chirps", "Slices", "Stabs", "Flare-Orbits", "OG-Flares", "Baby-Orbits", "Dice-Orbits", "Off-Stabs"]],
+                [info_orbit_types, ["S-Curved", "Tazers", "Phantazms", "Ex-Tazers", "Ex-Phantazms"]],
+            ]:
+                body.innerHTML = ""
+                row = document.createElement('tr')
+                for k in keys:
+                    td = document.createElement('td')
+                    td.innerHTML = info[k]
+                    row.appendChild(td)
+                    body.appendChild(row)
+            session_info.style.display = "block"
         except Exception as e:
             pyscript.write("session_output", str(e))  
-    for code_name in ["i", "o", "slice"]: # workaround for handling "slice" in python's namespace... 
-        exec(f"{code_name} = {codebook[code_name]}")
     plot()
   </py-script>
