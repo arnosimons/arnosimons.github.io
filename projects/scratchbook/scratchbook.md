@@ -540,7 +540,7 @@ permalink: /scratchbook
                     'slicecombo2',
                     'stab',
                     'stabcrab',
-                    'stabcrabmarch',
+                    'stabcrab_roll',
                     'swingflare',
                     'tazer1',
                     'tazer2',
@@ -583,11 +583,11 @@ permalink: /scratchbook
             </div>
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <p>
+                <!-- <p>
                   In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong>. For composing <strong>tears</strong> and <strong>orbits</strong>, ScratchBook even provides a special <strong>short-cut language</strong> (explanation coming soon).
-                </p>
+                </p> -->
                 <p>
-                  But ScratchBook also includes a <strong>library of pre-composed scratches</strong>, which you can browse here.
+                  Here you can browse ScratchBook <strong>library of pre-composed scratches</strong>. Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
                 </p>
                 <p>
                   Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
