@@ -3,10 +3,10 @@ layout: default
 type: project
 recent: false
 date: 2022
-title: ScratchBookNew
+title: ScratchBook
 themes: 
     - Turntablism
-permalink: /scratchbooknew
+permalink: /scratchbook
 ---
 
   <head>
