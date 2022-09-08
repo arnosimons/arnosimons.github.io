@@ -15,11 +15,11 @@ permalink: /scratchbook
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PyScript -->
-    <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <py-env>
       - matplotlib
-    </py-env> -->
+    </py-env>
     <!-- Bootstrap 5.1.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
