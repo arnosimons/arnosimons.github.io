@@ -15,11 +15,11 @@ permalink: /scratchbook
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PyScript -->
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <py-env>
       - matplotlib
-    </py-env>
+    </py-env> -->
     <!-- Bootstrap 5.1.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -252,6 +252,11 @@ permalink: /scratchbook
         margin-left: auto;
         margin-right: auto;
         width: 50%;
+      }
+      img {
+          max-width: 100%;
+          height: auto;
+          width: auto\9; /* ie8 */
       }
     </style>
   </head>
@@ -576,7 +581,7 @@ permalink: /scratchbook
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#ScratchCard" 
-                title="Show ScratchBook's LIBRARY OF SCRATCHES"
+                title="Show SCRATCHES"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Scratches
               </a>
@@ -586,19 +591,19 @@ permalink: /scratchbook
                 <!-- <p>
                   In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong>. For composing <strong>tears</strong> and <strong>orbits</strong>, ScratchBook even provides a special <strong>short-cut language</strong> (explanation coming soon).
                 </p> -->
-                <p>
+                <!-- <p>
+                  ScratchBook's <strong>library of pre-composed scratches</strong>.
+                </p> -->
+                <!-- <p>
                   Here you can browse ScratchBook <strong>library of pre-composed scratches</strong>. Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
-                </p>
-                <p>
-                  Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
-                </p>
+                </p> -->
                 <div class="card">
                   <div class="card-header">
                     <a 
                       class="btn btn-sm" 
                       data-bs-toggle="collapse" 
                       href="#ExpertCard" 
-                      title="Show EXPERT CONTROLS" 
+                      title="Show EXPERT CONTROLS (more info, more scratches)" 
                       style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
                       Expert Mode
                     </a>
@@ -1146,15 +1151,16 @@ permalink: /scratchbook
                 class="btn" 
                 data-bs-toggle="collapse" 
                 href="#OperatorCard" 
-                title="Show ScratchBook's OPERATORS"
+                title="Show OPERATORS"
                 style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
                 Operators
               </a>
             </div>
             <div id="OperatorCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <p><strong>Operators</strong> can be used <strong>to modify and combine scratches</strong>. The following table lists and explains all available operators.
-                </p>
+                <!-- <p>
+                  <strong>Operators</strong> can be used <strong>to modify and combine scratches</strong>. The following table lists and explains all available operators.
+                </p> -->
                 <table class="table" id="OperatorTable" style="font-size: 12px">
                   <thead>
                     <tr>
@@ -1323,13 +1329,15 @@ permalink: /scratchbook
                   The following decision tree maps out <strong>ScratchBook's current grammar</strong>, which results in a total of <strong>170 elements</strong>:
                 </p>
                 <p>
-                  <img class="center" src="decision_tree.png" alt="Element construction" style="width: 536px; height: 223px;"> 
+                  <img class="center" src="decision_tree.png" alt="Element construction"> 
+                  <!-- style="width: 536px; height: 223px;" -->
                 </p>
                 <p>
                   ScratchBook's element can be grouped into <strong>eleven classes of elements</strong> with the following <strong>distribution of subatomic features</strong>: 
                 </p>
                 <p>
-                  <img class="center" src="el_classes.png" alt="Element construction" style="width: 653px; height: 413px;">
+                  <img class="center" src="el_classes.png" alt="Element construction">
+                  <!-- style="width: 653px; height: 413px;" -->
                 </p>
               </div>
             </div>
