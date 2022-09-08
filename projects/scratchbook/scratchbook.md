@@ -566,15 +566,15 @@ permalink: /scratchbook
       <br/>
     </div>
     <br/>
-    <!-- Library -->
+    <!-- Library and Logic -->
     <div class="container-md pt-3 border rounded" style="background-color: white; box-shadow:0px 2px 0px -1px var(--grey-dark)">
       <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4>Library</h4>
+            <h4>Library and Logic</h4>
           </div>
           <div class="panel-body">
-            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code>autobahn + prizm + (slice / 0.25) * 4</code></p>
+            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into <strong>formulas</strong>, such as: <code>autobahn + prizm + (slice / 0.25) * 4</code></p>
             <p>Open the cards to learn more...</p>
           </div>
           <!-- Scratches -->
