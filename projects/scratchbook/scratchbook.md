@@ -1401,7 +1401,7 @@ permalink: /scratchbook
                 <p>
                   <img 
                     class="center" 
-                    src="el_classes.png" 
+                    src="/projects/scratchbook/el_classes.png"
                     alt="classes of elements">
                   <!-- style="width: 653px; height: 413px;" -->
                 </p>
