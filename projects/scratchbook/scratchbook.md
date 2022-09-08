@@ -1390,8 +1390,9 @@ permalink: /scratchbook
                 <p>
                   <img 
                     class="center" 
-                    src="decision_tree.png"
+                    src="/projects/scratchbook/decision_tree.png"
                     alt="rules for combining elements"> 
+                  <!-- src="decision_tree.png" -->
                   <!-- style="width: 536px; height: 223px;" -->
                 </p>
                 <p>
