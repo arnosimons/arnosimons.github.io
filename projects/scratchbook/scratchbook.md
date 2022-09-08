@@ -258,6 +258,9 @@ permalink: /scratchbook
           height: auto;
           width: auto\9; /* ie8 */
       }
+      code {
+        color: var(--blue-dark)
+      }
     </style>
   </head>
   <body style="background-color:var(--grey-light);">
@@ -571,7 +574,7 @@ permalink: /scratchbook
             <h4>Library</h4>
           </div>
           <div class="panel-body">
-            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code style="color: var(--blue-dark)">autobahn + prizm + (slice / 0.25) * 4</code></p>
+            <p style="margin-bottom: 5px;">ScratchBook lets you write TTM-notation just like math. Combine <strong>scratches</strong> and <strong>operators</strong> into formulas, such as: <code>autobahn + prizm + (slice / 0.25) * 4</code></p>
             <p>Open the cards to learn more...</p>
           </div>
           <!-- Scratches -->
@@ -1242,6 +1245,62 @@ permalink: /scratchbook
               </div>
             </div>
           </div>
+          <!-- Formulas -->
+          <div class="card">
+            <div class="card-header">
+              <a 
+                class="btn" 
+                data-bs-toggle="collapse" 
+                href="#FormulasCard" 
+                title="Get geeky about Formulas"
+                style="width: 100%; text-align: left; font-size: 18px; font-weight: 500;">
+                Formulas
+              </a>
+            </div>
+            <div id="FormulasCard" class="collapse in">
+              <div class="card-body" style="overflow-x:auto;">
+                <p> 
+                  ScratchBook's <strong>formulas work on two levels</strong>.
+                </p>
+                <p>
+                  At the <strong>first level</strong>, you can combine <strong>scratches</strong> (i.e. their names) and <strong>operators</strong> into formulas like <code>autobahn + prizm + (slice / 0.25) * 4</code>. See the two tabs above to learn more. 
+                </p>
+                <p>
+                  At the <strong>second level</strong>, ScratchBook offers <strong>formal languages</strong> to define <strong>elements</strong>, <strong>tears</strong>, and <strong>orbits</strong>.
+                </p>
+                <p>
+                  <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "sub-atomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
+                </p>
+                <ul>
+                  <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>bases</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
+                  <li><code>[N]*</code> is only possible but then also obligatory after the bases <code>f, if, of</code>, where it stands for the number of <strong>flare-clicks</strong>, as well as after the base <code>tr</code>, where it stands for the number of <strong>transformer sounds</strong>. Currently, all numbers between <code>1</code> and <code>9</code> are permitted.</li>
+                  <li><code>[CP]*</code> is optional and stands for a non-standard <strong>click-pattern</strong> (<code>D, A, S</code> or <code>Q</code>) after any of the bases <code>f, if, of, tr</code>.</li>
+                  <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>) after all bases except <code>g, h, gh</code>.</li>
+                </ul> 
+                <p>
+                  <strong>Tears</strong> are sequences of upwards or downwards oriented elements, forming cascades. Their names obey the <strong>grammar</strong> <code>[TBASE]*t[N][CRV]*[__EL]*</code>, whereby
+                </p>
+                <ul>
+                  <li><code>[TBASE]</code> is optional and stands for one of the following <strong>tear-bases</strong>: <code>i, o, d, f, if, of, tr</code>. The main <strong>purpose</strong> of the tear-base is to specify <strong>if and where clicks are added</strong> when the record is paused, i.e. during <strong>during the tearing moments</strong>: <code>i</code>=click at the start, <code>o</code>=click at the end, <code>d</code>=click at the start AND click at the end, <code>f</code>=clicks at every tearing moment, <code>if</code>=click at the start AND clicks at every tearing moment, <code>of</code>=clicks at every tearing moment AND click at the end, <code>tr</code>=click at the start AND clicks at every tearing moment AND click at the end.</li>
+                  <li><code>t</code> is obligatory and simply stands for "tear".</li>
+                  <li><code>[N]</code> is obligatory and stands for the number of pauses or <strong>tearing moments</strong>, i.e. how often the record is held still during a tear scratch.</li>
+                  <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>).</li>
+                  <li><code>[__EL]*</code> is optional and stands for <strong>a specific element</strong> being used during the tear scratch. <u>Only useful for tears and transformers</u>, and only their base names are allowed, e.g. <code>f3</code> or <code>tr2</code>, but not  <code>f3D</code> or <code>tr2Log</code></li>
+                </ul> 
+                <p>
+                  <strong>Orbits</strong> are scratches that incorporate both a forward and backward movement, or vice versa, of the record in sequence. At the first level, you can always construct orbits like so: <code>[SCRATCH] + ~[SCRATCH]</code>, where <code>[SCRATCH]</code> in both cases stands for any scratch. But if you want to specify a particular length-ratio, things get messier. For example, to get a ratio of "two-to-three", you need to write something like <code>([SCRATCH] / 2 + ~[SCRATCH] / 3) / 1</code>.
+                </p>
+                <p>
+                  At the second level, <strong>a more convenient way</strong> to formulate orbits is to use the <strong>grammar</strong> <code>[SCRATCH]_[SCRATCH][_RATIO]*</code>, whereby
+                </p>
+                <ul>
+                  <li><code>[SCRATCH]</code> is obligatory in both cases and stands for any scratch (the second one automatically being the backward scratch).</li>
+                  <li><code>_</code> is obligatory and simply stands for "orbit".</li>
+                  <li><code>[_RATIO]*</code> is optional and stands for a specific <strong>length-ratio</strong>, such as <code>_23</code>, meaning "two-to-three", i.e. that the forward scratch gets 2/5<i>th</i> of the total length while the backward scratch gets 3/5<i>th</i> of the total length.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <br/>
@@ -1313,7 +1372,7 @@ permalink: /scratchbook
                   Under the hood, <strong>ScratchBook takes an atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.  
                 </p>
                 <p>
-                  The total number of elements depends on the number of subatomic features and the rules of their combination, i.e <strong>the "grammar"</strong>. ScratchBook considers <strong>five classes of features</strong>:
+                  The total number of elements depends on the number of subatomic features and the rules of their combination. ScratchBook considers <strong>five classes of features</strong>:
                 </p>
                 <ul>
                   <li><strong>Curve shapes</strong> (horizontal, sine, exponential, logarithmic)</li>
@@ -1326,17 +1385,23 @@ permalink: /scratchbook
                   <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
                 </p>
                 <p>
-                  The following decision tree maps out <strong>ScratchBook's current grammar</strong>, which results in a total of <strong>170 elements</strong>:
+                  The following decision tree maps out <strong>ScratchBook's current rules of combination</strong>, which result in a total of <strong>171 elements</strong>:
                 </p>
                 <p>
-                  <img class="center" src="decision_tree.png" alt="Element construction"> 
+                  <img 
+                    class="center" 
+                    src="decision_tree.png"
+                    alt="rules for combining elements"> 
                   <!-- style="width: 536px; height: 223px;" -->
                 </p>
                 <p>
                   ScratchBook's element can be grouped into <strong>eleven classes of elements</strong> with the following <strong>distribution of subatomic features</strong>: 
                 </p>
                 <p>
-                  <img class="center" src="el_classes.png" alt="Element construction">
+                  <img 
+                    class="center" 
+                    src="el_classes.png" 
+                    alt="classes of elements">
                   <!-- style="width: 653px; height: 413px;" -->
                 </p>
               </div>
