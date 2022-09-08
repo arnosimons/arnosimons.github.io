@@ -438,6 +438,7 @@ permalink: /scratchbook
                 });
                 // get handlers for key elements
                 var default_url = 'https://arnosimons.github.io/scratchbook';
+                // var default_url = 'http://127.0.0.1:5500/scratchbook.html';
                 var default_formula = "autobahn + chirp / 0.25 * 4";
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
@@ -1392,8 +1393,7 @@ permalink: /scratchbook
                     class="center" 
                     src="/projects/scratchbook/decision_tree.png"
                     alt="rules for combining elements"> 
-                  <!-- src="decision_tree.png" -->
-                  <!-- style="width: 536px; height: 223px;" -->
+                    <!-- src="/projects/scratchbook/decision_tree.png" -->
                 </p>
                 <p>
                   ScratchBook's element can be grouped into <strong>eleven classes of elements</strong> with the following <strong>distribution of subatomic features</strong>: 
@@ -1401,9 +1401,9 @@ permalink: /scratchbook
                 <p>
                   <img 
                     class="center" 
-                    src="/projects/scratchbook/el_classes.png"
+                    src="/projects/scratchbook/el_classes.png" 
                     alt="classes of elements">
-                  <!-- style="width: 653px; height: 413px;" -->
+                    <!-- src="/projects/scratchbook/el_classes.png" -->
                 </p>
               </div>
             </div>
