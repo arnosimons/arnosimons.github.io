@@ -294,7 +294,7 @@ permalink: /scratchbook
               <button 
                 id="download_button"
                 class="mybuttons"
-                title="Download png image">
+                title="Download svg image">
                 Download
               </button> 
               <button 
@@ -322,10 +322,7 @@ permalink: /scratchbook
                 pys-onClick="plot" >
               </button> 
             </p>
-            <div 
-            id="session_output" 
-              style="padding-bottom: 10px">
-            </div>
+            <div id="session_output" style="padding-bottom: 10px"></div>
             <p id="session_message" style="font-size: 14px; color: var(--red)"></p>
             <div class="container" id="session_info">
               <div class="card" >
@@ -1269,36 +1266,149 @@ permalink: /scratchbook
                 <p>
                   At the <strong>second level</strong>, ScratchBook offers <strong>formal languages</strong> to define <strong>elements</strong>, <strong>tears</strong>, and <strong>orbits</strong>.
                 </p>
-                <p>
-                  <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "sub-atomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
-                </p>
-                <ul>
-                  <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>bases</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
-                  <li><code>[N]*</code> is only possible but then also obligatory after the bases <code>f, if, of</code>, where it stands for the number of <strong>flare-clicks</strong>, as well as after the base <code>tr</code>, where it stands for the number of <strong>transformer sounds</strong>. Currently, all numbers between <code>1</code> and <code>9</code> are permitted.</li>
-                  <li><code>[CP]*</code> is optional and stands for a non-standard <strong>click-pattern</strong> (<code>D, A, S</code> or <code>Q</code>) after any of the bases <code>f, if, of, tr</code>.</li>
-                  <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>) after all bases except <code>g, h, gh</code>.</li>
-                </ul> 
-                <p>
-                  <strong>Tears</strong> are sequences of upwards or downwards oriented elements, forming cascades. Their names obey the <strong>grammar</strong> <code>[TBASE]*t[N][CRV]*[__EL]*</code>, whereby
-                </p>
-                <ul>
-                  <li><code>[TBASE]</code> is optional and stands for one of the following <strong>tear-bases</strong>: <code>i, o, d, f, if, of, tr</code>. The main <strong>purpose</strong> of the tear-base is to specify <strong>if and where clicks are added</strong> when the record is paused, i.e. during <strong>during the tearing moments</strong>: <code>i</code>=click at the start, <code>o</code>=click at the end, <code>d</code>=click at the start AND click at the end, <code>f</code>=clicks at every tearing moment, <code>if</code>=click at the start AND clicks at every tearing moment, <code>of</code>=clicks at every tearing moment AND click at the end, <code>tr</code>=click at the start AND clicks at every tearing moment AND click at the end.</li>
-                  <li><code>t</code> is obligatory and simply stands for "tear".</li>
-                  <li><code>[N]</code> is obligatory and stands for the number of pauses or <strong>tearing moments</strong>, i.e. how often the record is held still during a tear scratch.</li>
-                  <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>).</li>
-                  <li><code>[__EL]*</code> is optional and stands for <strong>a specific element</strong> being used during the tear scratch. <u>Only useful for tears and transformers</u>, and only their base names are allowed, e.g. <code>f3</code> or <code>tr2</code>, but not  <code>f3D</code> or <code>tr2Log</code></li>
-                </ul> 
-                <p>
-                  <strong>Orbits</strong> are scratches that incorporate both a forward and backward movement, or vice versa, of the record in sequence. At the first level, you can always construct orbits like so: <code>[SCRATCH] + ~[SCRATCH]</code>, where <code>[SCRATCH]</code> in both cases stands for any scratch. But if you want to specify a particular length-ratio, things get messier. For example, to get a ratio of "two-to-three", you need to write something like <code>([SCRATCH] / 2 + ~[SCRATCH] / 3) / 1</code>.
-                </p>
-                <p>
-                  At the second level, <strong>a more convenient way</strong> to formulate orbits is to use the <strong>grammar</strong> <code>[SCRATCH]_[SCRATCH][_RATIO]*</code>, whereby
-                </p>
-                <ul>
-                  <li><code>[SCRATCH]</code> is obligatory in both cases and stands for any scratch (the second one automatically being the backward scratch).</li>
-                  <li><code>_</code> is obligatory and simply stands for "orbit".</li>
-                  <li><code>[_RATIO]*</code> is optional and stands for a specific <strong>length-ratio</strong>, such as <code>_23</code>, meaning "two-to-three", i.e. that the forward scratch gets 2/5<i>th</i> of the total length while the backward scratch gets 3/5<i>th</i> of the total length.</li>
-                </ul>
+                <div class="card">
+                  <div class="card-header">
+                    <a 
+                      class="btn btn-sm" 
+                      data-bs-toggle="collapse" 
+                      href="#ElementsLanguageCard" 
+                      title="Show ELEMENT LANGUAGE" 
+                      style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
+                      Language for Elements
+                    </a>
+                  </div>
+                  <div id="ElementsLanguageCard" class="collapse in">
+                    <div class="card-body" style="overflow-x:auto;">
+                      <div class="container" style="width:95%; padding:0px; margin-top: 10px">
+                        <p>
+                          <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "sub-atomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
+                        </p>
+                        <ul>
+                          <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>bases</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
+                          <li><code>[N]*</code> is only possible but then also obligatory after the bases <code>f, if, of</code>, where it stands for the number of <strong>flare-clicks</strong>, as well as after the base <code>tr</code>, where it stands for the number of <strong>transformer sounds</strong>. Currently, all numbers between <code>1</code> and <code>9</code> are permitted.</li>
+                          <li><code>[CP]*</code> is optional and stands for a non-standard <strong>click-pattern</strong> (<code>D, A, S</code> or <code>Q</code>) after any of the bases <code>f, if, of, tr</code>.</li>
+                          <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>) after all bases except <code>g, h, gh</code>.</li>
+                        </ul>
+                        <p>
+                          <strong>Examples</strong> for elements following this grammar are:
+                        </p>
+                        <ul>
+                          <li>
+                            <code>bLog</code> (a baby with a logarithmic curve)
+                          </li>
+                          <li>
+                            <code>f8Q</code> (an 8-click flare with a squeezed click-pattern)
+                          </li>
+                          <li>
+                            <code>tr2AEx</code> (a 2-sound transformer with an augmented click-pattern and an exponential curve)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a 
+                      class="btn btn-sm" 
+                      data-bs-toggle="collapse" 
+                      href="#TearsLanguageCard" 
+                      title="Show TEAR LANGUAGE" 
+                      style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
+                      Language for Tears
+                    </a>
+                  </div>
+                  <div id="TearsLanguageCard" class="collapse in">
+                    <div class="card-body" style="overflow-x:auto;">
+                      <div class="container" style="width:95%; padding:0px; margin-top: 10px">
+                        <p>
+                          <strong>Tears</strong> are sequences of upwards or downwards oriented elements, forming cascades. Their names obey the <strong>grammar</strong> <code>[TBASE]*t[N][CRV]*[__EL]*</code>, whereby
+                        </p>
+                        <ul>
+                          <li><code>[TBASE]</code> is optional and stands for one of the following <strong>tear-bases</strong>: <code>i, o, d, f, if, of, tr</code>. The main <strong>purpose</strong> of the tear-base is to specify <strong>if and where clicks are added</strong> when the record is paused, i.e. during <strong>during the tearing moments</strong>: <code>i</code>=click at the start, <code>o</code>=click at the end, <code>d</code>=click at the start AND click at the end, <code>f</code>=clicks at every tearing moment, <code>if</code>=click at the start AND clicks at every tearing moment, <code>of</code>=clicks at every tearing moment AND click at the end, <code>tr</code>=click at the start AND clicks at every tearing moment AND click at the end.</li>
+                          <li><code>t</code> is obligatory and simply stands for "tear".</li>
+                          <li><code>[N]</code> is obligatory and stands for the number of pauses or <strong>tearing moments</strong>, i.e. how often the record is held still during a tear scratch.</li>
+                          <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>).</li>
+                          <li><code>[__EL]*</code> is optional and stands for <strong>a specific element</strong> being used during the tear scratch. <u>This function is only useful for tears and transformers</u>, and only their base names are allowed, e.g. <code>__f3</code> or <code>__tr2</code>, but not <code>__f3D</code> or <code>tr2Log</code>. Note that you must use <u>two underscores</u> to specify the tear element (otherwise you're falsely using the orbit language, see the tab below).</li>
+                        </ul>
+                        <p>
+                          <strong>Examples</strong> for tears following this grammar are:
+                        </p>
+                        <ul>
+                          <li>
+                            <code>t5</code> (a 5-tear without any clicks)
+                          </li>
+                          <li>
+                            <code>it2</code> (a 2-tear with a click at the start)
+                          </li>
+                          <li>
+                            <code>oft4</code> (a 4-tear with clicks at all 4 tearing moments and a click at the end)
+                          </li>
+                          <li>
+                            <code>it4__f1</code> (a 4-tear with a click at the start whose elements are 1-click flares)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a 
+                      class="btn btn-sm" 
+                      data-bs-toggle="collapse" 
+                      href="#OrbitsLanguageCard" 
+                      title="Show ORBIT LANGUAGE" 
+                      style="width: 100%; text-align: left; font-size: 14px; font-weight: 500;">
+                      Language for Orbits
+                    </a>
+                  </div>
+                  <div id="OrbitsLanguageCard" class="collapse in">
+                    <div class="card-body" style="overflow-x:auto;">
+                      <div class="container" style="width:95%; padding:0px; margin-top: 10px">
+                        <p>
+                          <strong>Orbits</strong> are scratches that incorporate both a forward and backward movement, or vice versa, of the record in sequence. At the first level, you can always construct orbits like so: <code>[SCRATCH] + ~[SCRATCH]</code>, where <code>[SCRATCH]</code> in both cases stands for any scratch. But if you want to specify a particular length-ratio, things get messier. For example, to get a ratio of "two-to-three", you need to write something like <code>([SCRATCH] / 2 + ~[SCRATCH] / 3) / 1</code>.
+                        </p>
+                        <p>
+                          At the second level, <strong>a more convenient way</strong> to formulate orbits is to use the <strong>grammar</strong> <code>[SCRATCH]_[SCRATCH][_RATIO]*</code>, whereby
+                        </p>
+                        <ul>
+                          <li><code>[SCRATCH]</code> is obligatory in both cases and stands for any scratch (the second one automatically being the backward scratch).</li>
+                          <li><code>_</code> is obligatory and simply stands for "orbit".</li>
+                          <li><code>[_RATIO]*</code> is optional and stands for a specific <strong>length-ratio</strong>, such as <code>_23</code>, meaning "two-to-three", i.e. that the forward scratch gets 2/5<i>th</i> of the total length while the backward scratch gets 3/5<i>th</i> of the total length. If no length-ratio is specified, a ratio of "one-to-one" is automatically assumed.</li>
+                        </ul>
+                        <p>
+                          <strong>Examples</strong> for orbits following this grammar are:
+                        </p>
+                        <ul>
+                          <li>
+                            <code>f1_f2</code> (a "1-click-flare-to-2-click-flare" orbit with a non-specified "one-to-one" length-ratio, aka a "raw hippopotamus"")
+                          </li>
+                          <li>
+                            <code>f1_f2_23</code> (a "1-click-flare-to-2-click-flare" orbit with a specified "two-to-three" length-ratio, aka a "balanced hippopotamus"")
+                          </li>
+                          <li>
+                            <code>it4_o</code> (a "4-tear-to-out" orbit)
+                          </li>
+                        </ul>
+                        <p>
+                          <strong>Please note</strong>:
+                        </p>
+                        <ul>
+                          <li>
+                            You can use both <strong>elements</strong> and <strong>tears</strong> as scratches.
+                          </li>
+                          <li>
+                            The grammar allows you to compose <strong>unloopable orbits</strong>, like <code>b_o</code>, whose start and end connectors do not match, so that the orbit could not be looped in reality.
+                          </li>
+                          <li>
+                            The grammar (currently) does not prohibit you from composing <strong>"impossible" orbits</strong>, like <code>b_i</code>, whose direct connectors don't match. In the example, a baby-scratch <u>without</u> a click at the end meets an in-scratch <u>with</u> a click at the start. 
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1401,7 +1511,7 @@ permalink: /scratchbook
                 <p>
                   <img 
                     class="center" 
-                    src="/projects/scratchbook/el_classes.png" 
+                    src="/projects/scratchbook/el_classes.png"
                     alt="classes of elements">
                     <!-- src="/projects/scratchbook/el_classes.png" -->
                 </p>
@@ -1439,6 +1549,8 @@ permalink: /scratchbook
     </footer>
   </body>
   <py-script>
+    import base64
+    from io import BytesIO
     import re
     from js import XMLHttpRequest
     req = XMLHttpRequest.new()
@@ -1450,23 +1562,28 @@ permalink: /scratchbook
     req.send()
     exec(f"codebook = {req.response}")
     slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
-    <!-- pyscript.write("session_message", codebook['_2cf']) -->
     session_info = document.getElementById("session_info")
+    session_output = document.getElementById("session_output")
     info_basic = document.getElementById("info_basic_tbody")
     info_curves_clicks = document.getElementById("info_curves_clicks_tbody")
     info_elements = document.getElementById("info_elements_tbody")    
     info_orbits = document.getElementById("info_orbits_tbody")
     info_orbit_types = document.getElementById("info_orbit_types_tbody")    
     def plot(x=None):
+        session_output.innerHTML = ""
         formula = Element("scratch_input").element.value
-        if not formula:
-            pyscript.write("session_output", "plot() requires a formula as input.")
-            return
         try:
             myscratch = makeScratch(formula, codebook)
             info = getInfo(myscratch)
             fig = Session(myscratch, fontsize=11, w_pad=2).fig
-            pyscript.write("session_output", fig)
+            tmpfile = BytesIO()
+            fig.savefig(tmpfile, format='svg')
+            encoded = base64.b64encode(tmpfile.getvalue()).decode('utf-8')
+            src = f'data:image/svg+xml;base64, {encoded}'
+            svgimg = document.createElement('img')
+            svgimg.setAttribute("src", src)
+            svgimg.setAttribute("alt", "My SVG")
+            session_output.appendChild(svgimg)
             for body, keys in [
                 [info_basic, ["Sounds", "Elements", "Tears", "Orbits"]],
                 [info_curves_clicks, ["FO", "FC", "PO", "PC", "D", "A", "S", "Q", "Ex", "Log"]],
@@ -1482,7 +1599,16 @@ permalink: /scratchbook
                     row.appendChild(td)
                     body.appendChild(row)
             session_info.style.display = "block"
+        except SyntaxError as e:
+            session_output.innerHTML = repr(e)
+        except KeyError as e:
+            session_output.innerHTML = f'{e} is not a valid scratch name'
+        except AttributeError as e:
+            if "object has no attribute 'slices'" in repr(e):
+                session_output.innerHTML = "You have used an invalid scratch name"
+            else:
+                session_output.innerHTML = repr(e)
         except Exception as e:
-            pyscript.write("session_output", str(e))  
+            session_output.innerHTML = repr(e)
     plot()
   </py-script>
