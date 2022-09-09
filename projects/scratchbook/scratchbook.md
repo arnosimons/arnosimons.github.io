@@ -537,6 +537,7 @@ permalink: /scratchbook
                 $("#surprise_button").click(function(){
                   session_message.innerHTML = "";
                   scratches = [
+                    'aquaman',
                     'autobahn',
                     'babyorbit',
                     'boomerang',
@@ -549,6 +550,7 @@ permalink: /scratchbook
                     'chirpogflare',
                     'chirpogflare_roll',
                     'clovertears',
+                    'delete',
                     'diceorbit',
                     'drills',
                     'enneagon',
@@ -562,6 +564,8 @@ permalink: /scratchbook
                     'hippopotamus_roll',
                     'internet',
                     'kermit',
+                    'mflare1',
+                    'mflare2',
                     'military',
                     'ogflare',
                     'prizm',
@@ -573,13 +577,19 @@ permalink: /scratchbook
                     'slice',
                     'slicecombo1',
                     'slicecombo2',
+                    'scribbleflare1',
+                    'scribbleflare2',
+                    'spairflare',
+                    'squareflare',
                     'stab',
                     'stabcrab',
                     'stabcrab_roll',
                     'swingflare',
+                    'swirl',
                     'tazer1',
                     'tazer1_roll',
                     'tazer2',
+                    'tazer2_roll',
                     'turnaroundtransform',
                     'xenon',
                   ]
@@ -647,7 +657,7 @@ permalink: /scratchbook
                       </div>
                       <div class="row switch-row">
                         <div class="column" 
-                          title="The CORE collection contains 43 scratches and is loaded on default when opening the page">
+                          title="The CORE collection contains 59 scratches and is loaded on default when opening the page">
                           <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
                         </div>
                         <div class="column" 
@@ -660,7 +670,7 @@ permalink: /scratchbook
                         <div class="column" title="The ORBITS collection contains 594 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
                           <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="The COMBOS collection contains 33 popular scratch combos, most of which you want to use at some point. All of these combos are also included in the CORE collection">
+                        <div class="column" title="The COMBOS collection contains 49 popular scratch combos, all of which are also included in the CORE collection">
                           <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
