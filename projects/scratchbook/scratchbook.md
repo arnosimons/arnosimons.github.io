@@ -338,9 +338,9 @@ permalink: /scratchbook
                 </div>
                 <div id="InfoCard" class="collapse in">
                   <div class="card-body" style="overflow-x:auto;">
-                    <p>
+                    <!-- <p>
                       The following tables tell you how many sounds your composition makes, how many elements and popular scratches it contains, which types of clicks and curves are involved, and much more.
-                    </p>
+                    </p> -->
                     <div class="info_container">
                       <p class="info_table_title">Basic Info</p>
                       <table id="info_basic" class="table info_table">
@@ -729,61 +729,62 @@ permalink: /scratchbook
                     var table = $('#scratch_table').DataTable({
                       ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/CORE.json",
                       columns: [
-                      {data:"Name(s)", title: "Name(s)"}, // 0
-                      {data:"Tutorial", title: "Tutorial"}, // 1
-                      {data:"Sounds", title: "Sounds"}, // 2
-                      {data:"Elements", title: "Elements"}, // 3
-                      {data:"Tears", title: "Tears"}, // 4
-                      {data:"Orbits", title: "Orbits"}, // 5
+                      {data:"Preview", title: "Preview" }, // 0
+                      {data:"Name(s)", title: "Name(s)"}, // 1
+                      {data:"Tutorial", title: "Tutorial"}, // 2
+                      {data:"Sounds", title: "Sounds"}, // 3
+                      {data:"Elements", title: "Elements"}, // 4
+                      {data:"Tears", title: "Tears"}, // 5
+                      {data:"Orbits", title: "Orbits"}, // 6
 
-                      {data:"FO", title: "FO"}, // 6
-                      {data:"FC", title: "FC"}, // 7
-                      {data:"PO", title: "PO"}, // 8
-                      {data:"PC", title: "PC"}, // 9
-                      {data:"D", title: "D"}, // 10
-                      {data:"A", title: "A"}, // 11
-                      {data:"S", title: "S"}, // 12
-                      {data:"Q", title: "Q"}, // 13
+                      {data:"FO", title: "FO"}, // 7
+                      {data:"FC", title: "FC"}, // 8
+                      {data:"PO", title: "PO"}, // 9
+                      {data:"PC", title: "PC"}, // 10
+                      {data:"D", title: "D"}, // 11
+                      {data:"A", title: "A"}, // 12
+                      {data:"S", title: "S"}, // 13
+                      {data:"Q", title: "Q"}, // 14
 
-                      {data:"Ex", title: "Ex"}, // 14
-                      {data:"Log", title: "Log"}, // 15
-
-                      {data:"Babies", title: "Babies"}, // 16
-                      {data:"Ins", title: "Ins"}, // 17
-                      {data:"Outs", title: "Outs"}, // 18
-                      {data:"Dices", title: "Dices"}, // 19
-                      {data:"Flares", title: "Flares"}, // 20
-                      {data:"iFlares", title: "iFlares"}, // 21
-                      {data:"oFlares", title: "oFlares"}, // 22
-                      {data:"Transformers", title: "Transformers"}, // 23
-                      {data:"Ghosts", title: "Ghosts"}, // 24
-                      {data:"Holds", title: "Holds"}, // 25
-                      {data:"G-Holds", title: "G-Holds"}, // 26
-
-                      {data:"Chirps", title: "Chirps"}, // 27
-                      {data:"Slices", title: "Slices"}, // 28
-                      {data:"Stabs", title: "Stabs"}, // 29
-                      {data:"Flare-Orbits", title: "Flare-Orbits"}, // 30
-                      {data:"OG-Flares", title: "OG-Flares"}, // 31
-                      {data:"Baby-Orbits", title: "Baby-Orbits"}, // 32
-                      {data:"Dice-Orbits", title: "Dice-Orbits"}, // 33
-                      {data:"Off-Stabs", title: "Off-Stabs"}, // 34
-
-                      {data:"S-Curved", title: "S-Curved"}, // 35
-                      {data:"Tazers", title: "Tazers"}, // 36
-                      {data:"Phantazms", title: "Phantazms"}, // 37
-                      {data:"Ex-Tazers", title: "Ex-Tazers"}, // 38
-                      {data:"Ex-Phantazms", title: "Ex-Phantazms"}, // 39
-
-                      {data:"Formula", title: "Formula"}, // 40
-
-                      {data:"Search", title: "Search"}, // 41
+                      {data:"Ex", title: "Ex"}, // 15
+                      {data:"Log", title: "Log"}, // 16
                       
-                      {data:"CORE", title: "CORE"}, // 42
-                      {data:"ELEMENTS", title: "ELEMENTS"}, // 43
-                      {data:"TEARS", title: "TEARS"}, // 44
-                      {data:"ORBITS", title: "ORBITS"}, // 45
-                      {data:"COMBOS", title: "COMBOS"}, // 46
+                      {data:"Babies", title: "Babies"}, // 17
+                      {data:"Ins", title: "Ins"}, // 18
+                      {data:"Outs", title: "Outs"}, // 19
+                      {data:"Dices", title: "Dices"}, // 20
+                      {data:"Flares", title: "Flares"}, // 21
+                      {data:"iFlares", title: "iFlares"}, // 22
+                      {data:"oFlares", title: "oFlares"}, // 23
+                      {data:"Transformers", title: "Transformers"}, // 24
+                      {data:"Ghosts", title: "Ghosts"}, // 25
+                      {data:"Holds", title: "Holds"}, // 26
+                      {data:"G-Holds", title: "G-Holds"}, // 27
+                      
+                      {data:"Chirps", title: "Chirps"}, // 28
+                      {data:"Slices", title: "Slices"}, // 29
+                      {data:"Stabs", title: "Stabs"}, // 30
+                      {data:"Flare-Orbits", title: "Flare-Orbits"}, // 31
+                      {data:"OG-Flares", title: "OG-Flares"}, // 32
+                      {data:"Baby-Orbits", title: "Baby-Orbits"}, // 33
+                      {data:"Dice-Orbits", title: "Dice-Orbits"}, // 34
+                      {data:"Off-Stabs", title: "Off-Stabs"}, // 35
+                      
+                      {data:"S-Curved", title: "S-Curved"}, // 36
+                      {data:"Tazers", title: "Tazers"}, // 37
+                      {data:"Phantazms", title: "Phantazms"}, // 38
+                      {data:"Ex-Tazers", title: "Ex-Tazers"}, // 39
+                      {data:"Ex-Phantazms", title: "Ex-Phantazms"}, // 40
+                      
+                      {data:"Formula", title: "Formula"}, // 41
+                      
+                      {data:"Search", title: "Search"}, // 42
+                      
+                      {data:"CORE", title: "CORE"}, // 43
+                      {data:"ELEMENTS", title: "ELEMENTS"}, // 44
+                      {data:"TEARS", title: "TEARS"}, // 45
+                      {data:"ORBITS", title: "ORBITS"}, // 46
+                      {data:"COMBOS", title: "COMBOS"}, // 47
                       ],
                       order: [
                         [ 0, "asc" ], 
@@ -800,7 +801,9 @@ permalink: /scratchbook
                           var $td = $(this);
                           var headerText = $td.text(); 
                           var headerTitle=$td.text(); 
-                          // Basic 6
+                          // Basic 7
+                          if ( headerText == "Preview" )
+                            headerTitle =  "A PREVIEW of the scratch";
                           if ( headerText == "Name(s)" )
                             headerTitle =  "Available NAMES for the scratch, to be used in the VISUALIZER. Synonymous names are seperated by a comma";
                           else if (headerText == "Tutorial" )
@@ -899,17 +902,17 @@ permalink: /scratchbook
                         });
                         // Visibility of columns (the once skipped are the ones always visible)
                         var cols = [
-                          // 0,1,2, // Name(s), Tutorial, Sounds
-                          // 3,4,5, // Elements, Tears, Orbits
-                          6,7,8,9, // clicks
-                          10,11,12,13, // click patterns
-                          14,15, // curves
-                          16,17,18,19,20,21,22,23,24,25,26, // elements
-                          27,28,29,30,31,32,33,34, // orbits
-                          35, 36,37,38,39, // orbit-types
-                          // 40, // formula
-                          41, // search
-                          42,43,44,45,46 // libraries
+                          // 0,1,2,3 // Preview, Name(s), Tutorial, Sounds
+                          // 4,5,6 // Elements, Tears, Orbits
+                          7,8,9,10, // clicks
+                          11,12,13,14, // click patterns
+                          15,16, // curves
+                          17,18,19,20,21,22,23,24,25,26,27, // elements
+                          28,29,30,31,32,33,34,35, // orbits
+                          36,37,38,39,40, // orbit-types
+                          // 41, // formula
+                          42, // search
+                          43,44,45,46,47 // libraries
                         ]
                         table.columns( cols ).visible(false, false);
                         table.columns( cols ).searchable(false);
@@ -922,11 +925,11 @@ permalink: /scratchbook
                     function activeLibs() {
                         let active_switches = [];
                         for (let libinfo of [
-                          ["CORE", 42],
-                          ["ELEMENTS", 43],
-                          ["TEARS", 44],
-                          ["ORBITS", 45],
-                          ["COMBOS", 46],
+                          ["CORE", 43],
+                          ["ELEMENTS", 44],
+                          ["TEARS", 45],
+                          ["ORBITS", 46],
+                          ["COMBOS", 47],
                         ]) {
                           if (document.getElementById(libinfo[0]).checked) {
                               active_switches.push("data['" + libinfo[1] + "'] == 1")
@@ -937,14 +940,14 @@ permalink: /scratchbook
                     function crossFilters() {
                         let active_switches = [];
                         if (document.getElementById("RegularCurves").checked) {
-                          active_switches.push("data['14'] == 0 && data['15'] == 0")
+                          active_switches.push("data['15'] == 0 && data['16'] == 0")
                         } else if (document.getElementById("IrregularCurves").checked) {
-                          active_switches.push("data['14'] == 1 || data['15'] == 1")
+                          active_switches.push("data['15'] == 1 || data['16'] == 1")
                         }
                         if (document.getElementById("RegularClicks").checked) {
-                          active_switches.push("data['10'] == 0 && data['11'] == 0 && data['12'] == 0 && data['13'] == 0")
+                          active_switches.push("data['11'] == 0 && data['12'] == 0 && data['13'] == 0 && data['14'] == 0")
                         } else if (document.getElementById("IrregularClicks").checked) {
-                          active_switches.push("data['10'] == 1 || data['11'] == 1 || data['12'] == 1 || data['13'] == 1")
+                          active_switches.push("data['11'] == 1 || data['12'] == 1 || data['13'] == 1 || data['14'] == 1")
                         }
                         return active_switches.join(" && ")
                     };
@@ -959,8 +962,7 @@ permalink: /scratchbook
                       return query.join(" && ")
                     }
                     function removeDuplicates(table) {
-                      var names = table.column( 0 ).data().toArray();
-                      session_message.innerHTML = names[0]
+                      var names = table.column( 1 ).data().toArray();
                       var rowsToRemove = [];
                       table.rows().every(function(rowIdx, tableLoop, rowLoop) {
                         var data = this.data();
@@ -972,7 +974,7 @@ permalink: /scratchbook
                       table.rows( rowsToRemove ).remove().draw();
                     };
                     function addNewRows(table, json) {
-                      var existing_names = table.column( 0 ).data().toArray();
+                      var existing_names = table.column( 1 ).data().toArray();
                       rowsToAdd = []
                       for (let row of json.data) {
                         if (!existing_names.includes(row["Name(s)"])) {
@@ -1105,7 +1107,7 @@ permalink: /scratchbook
                     });
                     // Column Switches
                     $('#Curves').change(function() {
-                      var cols = [14,15]
+                      var cols = [15,16]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -1116,7 +1118,7 @@ permalink: /scratchbook
                       }
                     });
                     $('#Clicks').change(function() {
-                      var cols = [6,7,8,9,10,11,12,13]
+                      var cols = [7,8,9,10,11,12,13,14]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
                         table.columns( cols ).searchable(true);
@@ -1128,9 +1130,9 @@ permalink: /scratchbook
                     });
                     $('#Scratches').change(function() {
                       var cols = [
-                        16,17,18,19,20,21,22,23,24,25,26, // elements
-                        27,28,29,30,31,32,33,34, // orbits
-                        35, 36,37,38,39, // orbit-types
+                        17,18,19,20,21,22,23,24,25,26,27, // elements
+                        28,29,30,31,32,33,34,35, // orbits
+                        36,37,38,39,40, // orbit-types
                       ]
                       if(this.checked) {
                         table.columns( cols ).visible(true, false);
