@@ -292,10 +292,16 @@ permalink: /scratchbook
                 Copy
               </button>
               <button 
-                id="download_button"
+                id="svg_button"
                 class="mybuttons"
-                title="Download svg image">
-                Download
+                title="Download SVG image">
+                SVG
+              </button>
+              <button 
+                id="png_button"
+                class="mybuttons"
+                title="Download PNG image">
+                PNG
               </button> 
               <button 
                 id="clear_button"
@@ -322,7 +328,8 @@ permalink: /scratchbook
                 pys-onClick="plot" >
               </button> 
             </p>
-            <div id="session_output" style="padding-bottom: 10px"><p style="font-size: 14px; color: var(--red)">Loading scratch plot...</p></div>
+            <div id="session_svg" style="padding-bottom: 10px"><p style="font-size: 14px; color: var(--red)">Loading scratch plot...</p></div>
+            <div id="session_png" style="display: none"></div>
             <p id="session_message" style="font-size: 14px; color: var(--red)"></p>
             <div class="container" id="session_info">
               <div class="card" >
@@ -439,7 +446,8 @@ permalink: /scratchbook
                 var default_formula = "autobahn + chirp / 0.25 * 4";
                 var scratch_input = document.getElementById("scratch_input");
                 var scratch_button = document.getElementById("scratch_button");
-                var session_output = document.getElementById("session_output");
+                var session_svg = document.getElementById("session_svg");
+                var session_png = document.getElementById("session_png");
                 var session_message = document.getElementById("session_message");
                 var session_info = document.getElementById("session_info");
                 session_info.style.display = "none";
@@ -463,7 +471,10 @@ permalink: /scratchbook
                     if (scratch_input.value.trim()) {
                       scratch_button.click();
                     }
-                    else {session_output.innerHTML = ""}
+                    else {
+                      session_svg.innerHTML = "";
+                      session_png.innerHTML = "";
+                    }
                   }
                 });
                 // Function for copy_button
@@ -476,11 +487,25 @@ permalink: /scratchbook
                   else {session_message.innerHTML = "Nothing to copy"}
                   ;
                 });
-                // Function for download_button
-                $("#download_button").click(function(){
+                // Function for svg_button
+                $("#svg_button").click(function(){
                   session_message.innerHTML = "";
-                  if ($("#session_output").children('img').length){
-                    let img_src = $("#session_output").find('img').attr('src');
+                  if ($("#session_svg").children('img').length){
+                    let img_src = $("#session_svg").find('img').attr('src');
+                    var a_temp = document.createElement('a');
+                    a_temp.setAttribute('href', img_src);
+                    a_temp.setAttribute('download',  "scratchbook_output");
+                    document.body.appendChild(a_temp);
+                    a_temp.click();
+                    document.body.removeChild(a_temp);
+                  } 
+                  else {session_message.innerHTML = "Nothing to download"}
+                });
+                // Function for png_button
+                $("#png_button").click(function(){
+                  session_message.innerHTML = "";
+                  if ($("#session_png").children('img').length){
+                    let img_src = $("#session_png").find('img').attr('src');
                     var a_temp = document.createElement('a');
                     a_temp.setAttribute('href', img_src);
                     a_temp.setAttribute('download',  "scratchbook_output");
@@ -494,7 +519,8 @@ permalink: /scratchbook
                 $("#clear_button").click(function(){
                   session_message.innerHTML = "";
                   scratch_input.value = "";
-                  session_output.innerHTML = ""
+                  session_svg.innerHTML = "";
+                  session_png.innerHTML = "";
                   session_info.style.display = "none";
                   updateURL("")
                 });
@@ -502,7 +528,8 @@ permalink: /scratchbook
                 $("#default_button").click(function(){
                   session_message.innerHTML = "";
                   scratch_input.value = default_formula;
-                  session_output.innerHTML = "";
+                  session_svg.innerHTML = "";
+                  session_png.innerHTML = "";
                   updateURL(scratch_input.value);
                   scratch_button.click();
                 });
@@ -555,7 +582,7 @@ permalink: /scratchbook
                   ]
                   scratch_input.value = scratches[Math.floor(Math.random() * scratches.length)];
                   scratch_button.click();
-                  updateURL(scratch_input.value)
+                  updateURL(scratch_input.value);
                 });
               });
             </script>
@@ -590,15 +617,6 @@ permalink: /scratchbook
             </div>
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <!-- <p>
-                  In principle, <strong>you can compose almost any scratch</strong> out of ScratchBook's <strong>elements</strong> and <strong>operators</strong>. For composing <strong>tears</strong> and <strong>orbits</strong>, ScratchBook even provides a special <strong>short-cut language</strong> (explanation coming soon).
-                </p> -->
-                <!-- <p>
-                  ScratchBook's <strong>library of pre-composed scratches</strong>.
-                </p> -->
-                <!-- <p>
-                  Here you can browse ScratchBook <strong>library of pre-composed scratches</strong>. Use the <strong>"Expert Mode"</strong> to show more geeky colums, to filter scratches, and to switch additional collections on and off.
-                </p> -->
                 <div class="card">
                   <div class="card-header">
                     <a 
@@ -721,7 +739,6 @@ permalink: /scratchbook
                   });
                 </script>
                 <!-- DataTable -->
-                <!-- <table class="table scratch_table" id="scratch_table" style="font-size: 12px; background-color: var(--grey-light)"></table> -->
                 <table class="table scratch_table" id="scratch_table"></table>
                 <script type="text/javascript">
                   // Define table
@@ -798,9 +815,9 @@ permalink: /scratchbook
                       // },
                       "initComplete": function(settings){
                         $('#scratch_table thead th').each(function () {
-                          var $td = $(this);
-                          var headerText = $td.text(); 
-                          var headerTitle=$td.text(); 
+                          var $th = $(this);
+                          var headerText = $th.text(); 
+                          var headerTitle = $th.text(); 
                           // Basic 7
                           if ( headerText == "Preview" )
                             headerTitle =  "A PREVIEW of the scratch";
@@ -893,12 +910,38 @@ permalink: /scratchbook
                           else if (headerText == "Formula" )
                             headerTitle = "The FORMULA for composing the scratch. Copy-and-paste formulas into the VISUALIZER to make your own modifications!";
                           // Set the attribute...
-                          $td.attr('title', headerTitle);
+                          $th.attr('title', headerTitle);
+                        });
+                        // Tooltips for clicking Previews and Names
+                        $('#scratch_table tbody tr').each(function () {
+                          var tr = $(this);
+                          td1 = tr.find("td:eq(0)");
+                          td1.attr('title', "Click to add scratch to visualizer!");
+                          td2 = tr.find("td:eq(1)");
+                          td2.attr('title', "Click to add scratch to visualizer!");
                         });
                         /* Style header tooltips */
                         $('#scratch_table [title]').tooltip({
                           trigger: "hover",
                           "container": 'body',
+                        });
+                        // Get name when clicking on rows
+                        $('#scratch_table').on('click', 'td', function () {
+                          var cell = table.cell( this ).data();
+                          var colindx = table.column( this ).index();
+                          if (colindx == 0 || colindx == 1) {
+                            var row = table.row( this ).data();
+                            var names = row["Name(s)"];
+                            names = names.split(",");
+                            if (scratch_input.value.trim()) {
+                              scratch_input.value += " + " + names[0];
+                            }
+                            else{
+                              scratch_input.value += names[0];
+                            };
+                            scratch_button.click();
+                            updateURL(scratch_input.value);
+                          }; 
                         });
                         // Visibility of columns (the once skipped are the ones always visible)
                         var cols = [
@@ -917,7 +960,6 @@ permalink: /scratchbook
                         table.columns( cols ).visible(false, false);
                         table.columns( cols ).searchable(false);
                         // Search column extra:
-                        // table.columns( [41] ).visible(false, false);
                         table.columns( [41] ).searchable(true);
                       },
                     });
@@ -1566,27 +1608,30 @@ permalink: /scratchbook
     exec(f"codebook = {req.response}")
     slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
     session_info = document.getElementById("session_info")
-    session_output = document.getElementById("session_output")
+    session_svg = document.getElementById("session_svg")
+    session_png = document.getElementById("session_png")
     info_basic = document.getElementById("info_basic_tbody")
     info_curves_clicks = document.getElementById("info_curves_clicks_tbody")
     info_elements = document.getElementById("info_elements_tbody")    
     info_orbits = document.getElementById("info_orbits_tbody")
     info_orbit_types = document.getElementById("info_orbit_types_tbody")    
     def plot(x=None):
-        session_output.innerHTML = ""
+        session_svg.innerHTML = ""
+        session_png.innerHTML = ""
         formula = Element("scratch_input").element.value
         try:
             myscratch = makeScratch(formula, codebook)
             info = getInfo(myscratch)
             fig = Session(myscratch, fontsize=11, w_pad=2).fig
             tmpfile = BytesIO()
+            
             fig.savefig(tmpfile, format='svg')
             encoded = base64.b64encode(tmpfile.getvalue()).decode('utf-8')
             src = f'data:image/svg+xml;base64, {encoded}'
-            svgimg = document.createElement('img')
-            svgimg.setAttribute("src", src)
-            svgimg.setAttribute("alt", "My SVG")
-            session_output.appendChild(svgimg)
+            svg = document.createElement('img')
+            svg.setAttribute("src", src)
+            session_svg.appendChild(svg)
+            pyscript.write("session_png", fig)
             for body, keys in [
                 [info_basic, ["Sounds", "Elements", "Tears", "Orbits"]],
                 [info_curves_clicks, ["FO", "FC", "PO", "PC", "D", "A", "S", "Q", "Ex", "Log"]],
@@ -1603,15 +1648,15 @@ permalink: /scratchbook
                     body.appendChild(row)
             session_info.style.display = "block"
         except SyntaxError as e:
-            session_output.innerHTML = repr(e)
+            session_svg.innerHTML = repr(e)
         except KeyError as e:
-            session_output.innerHTML = f'{e} is not a valid scratch name'
+            session_svg.innerHTML = f'{e} is not a valid scratch name'
         except AttributeError as e:
             if "object has no attribute 'slices'" in repr(e):
-                session_output.innerHTML = "You have used an invalid scratch name"
+                session_svg.innerHTML = "You have used an invalid scratch name"
             else:
-                session_output.innerHTML = repr(e)
+                session_svg.innerHTML = repr(e)
         except Exception as e:
-            session_output.innerHTML = repr(e)
+            session_svg.innerHTML = repr(e)
     plot()
   </py-script>
