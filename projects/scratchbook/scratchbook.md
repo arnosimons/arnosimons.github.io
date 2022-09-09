@@ -1383,10 +1383,10 @@ permalink: /scratchbook
                         </p>
                         <ul>
                           <li>
-                            <code>f1_f2</code> (a "1-click-flare-to-2-click-flare" orbit with a non-specified "one-to-one" length-ratio, aka a "raw hippopotamus"")
+                            <code>f1_f2</code> (a "1-click-flare-to-2-click-flare" orbit aka "rawhippopotamus" with a non-specified "one-to-one" length-ratio.)
                           </li>
                           <li>
-                            <code>f1_f2_23</code> (a "1-click-flare-to-2-click-flare" orbit with a specified "two-to-three" length-ratio, aka a "balanced hippopotamus"")
+                            <code>f1_f2_23</code> (a "1-click-flare-to-2-click-flare" orbit aka "hippopotamus" with a specified "two-to-three" length-ratio.)
                           </li>
                           <li>
                             <code>it4_o</code> (a "4-tear-to-out" orbit)
