@@ -268,7 +268,7 @@ permalink: /scratchbook
       <div class="container-md p-2.5 bg-dark text-white">
         <h1>ScratchBook &#128221;&#127926;</h1>
         <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM-like notation.</a></p>
-        <p style="color: var(--red); font-size: 18px">&#9888; Loading the page takes time. Please be patient until you see the scratch plot.</p>
+        <p style="color: var(--red); font-size: 18px">&#9888; Loading the page takes time. Please wait until you see the scratch plot.</p>
       </div>
     </header>
     <br/>
@@ -322,7 +322,7 @@ permalink: /scratchbook
                 pys-onClick="plot" >
               </button> 
             </p>
-            <div id="session_output" style="padding-bottom: 10px"></div>
+            <div id="session_output" style="padding-bottom: 10px"><p style="font-size: 14px; color: var(--red)">Loading scratch plot...</p></div>
             <p id="session_message" style="font-size: 14px; color: var(--red)"></p>
             <div class="container" id="session_info">
               <div class="card" >
@@ -1488,15 +1488,15 @@ permalink: /scratchbook
                 <ul>
                   <li><strong>Curve shapes</strong> (horizontal, sine, exponential, logarithmic)</li>
                   <li><strong>Curve colors</strong> (black, white)</li>
-                  <li><strong>io-Clicks</strong> (in/out-clicks), i.e. clicks at the start and/or at the end of a of a scratch ([], [0], [1], [0,1]])</li>
-                  <li><strong>f-Clicks</strong> (flare-clicks), i.e. clicks somewhere in the middle of a scratch (0 - 3 clicks)</li>
+                  <li><strong>io-Clicks</strong> (in/out-clicks), i.e. clicks at the start and/or at the end of a of a scratch (none, start, end, start+end).</li>
+                  <li><strong>f-Clicks</strong> (flare-clicks), i.e. clicks somewhere in the middle of a scratch (0-9 clicks, but limited to 0-3 clicks in the element collection)</li>
                   <li><strong>Click patterns</strong> (normal, diminished, augmented, stretched, squeezed)</li>
                 </ul> 
                 <p>
                   <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
                 </p>
                 <p>
-                  The following decision tree maps out <strong>ScratchBook's current rules of combination</strong>, which result in a total of <strong>171 elements</strong>:
+                  The following decision tree maps out <strong>ScratchBook's current rules of combination</strong> used to produce the <strong>element collection</strong> (see Library) with a total of <strong>171 elements</strong>:
                 </p>
                 <p>
                   <img 
