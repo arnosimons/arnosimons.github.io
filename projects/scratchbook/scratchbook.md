@@ -457,6 +457,7 @@ permalink: /scratchbook
                 // Function for scratch_input
                 scratch_input.addEventListener("keypress", function(event) {
                   if (event.key === "Enter") {
+                    session_message.innerHTML = "";
                     updateURL(scratch_input.value)
                     event.preventDefault();
                     if (scratch_input.value.trim()) {
