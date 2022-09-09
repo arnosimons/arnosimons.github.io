@@ -548,6 +548,7 @@ permalink: /scratchbook
                     'chirpflare2',
                     'chirpogflare',
                     'chirpogflare_roll',
+                    'clovertears',
                     'diceorbit',
                     'drills',
                     'enneagon',
@@ -577,8 +578,10 @@ permalink: /scratchbook
                     'stabcrab_roll',
                     'swingflare',
                     'tazer1',
+                    'tazer1_roll',
                     'tazer2',
                     'turnaroundtransform',
+                    'xenon',
                   ]
                   scratch_input.value = scratches[Math.floor(Math.random() * scratches.length)];
                   scratch_button.click();
