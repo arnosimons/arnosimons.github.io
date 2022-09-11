@@ -1417,7 +1417,6 @@ permalink: /scratchbook
                     </div>
                   </div>
                 </div>
-                
                 <br/>
                 <p>
                   Note the following <strong>relations between these elements</strong>:
