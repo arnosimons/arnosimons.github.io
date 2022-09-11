@@ -15,11 +15,11 @@ permalink: /scratchbook
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PyScript -->
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <py-env>
       - matplotlib
-    </py-env>
+    </py-env> -->
     <!-- Bootstrap 5.1.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,238 +30,8 @@ permalink: /scratchbook
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <!-- Global Styling -->
-    <style>
-      :root {
-          --hover-color: rgba(0, 0, 0, 0.09);
-          --blue-light: lightskyblue;
-          --blue-dark: #069;
-          --blue-dark: rgb(0, 102, 153);
-          --grey-light: #F8F8F8;
-          --grey-dark: rgba(0, 0, 0, 0.125);
-          --black: rgb(33, 37, 41);
-          --red:#d13108;
-      }
-      p {
-        font-size: 14px;
-      }
-      a, a.page-link {
-        color:var(--blue-dark); 
-        font-weight: 300;
-        text-decoration:none;
-      }  
-      a:hover {
-        color:var(--blue-dark);
-        font-weight: 500;
-        text-decoration:none;
-      }
-      .dark-link {
-        color:var(--blue-light); 
-        font-weight: 200;
-        text-decoration:none;
-      }  
-      .dark-link:hover  {
-        color:var(--blue-light);
-        font-weight: 400;
-      }
-      .dataTables_wrapper { /* Show Entries, Search, Pagination*/
-        font-size: 12px;
-      }      
-      .pagination .page-item.active .page-link { 
-        background-color: var(--blue-dark);
-        border-color: var(--blue-dark); 
-      }
-      .pagination .page-link:hover { 
-        background-color: var(--hover-color);
-      }
-      .pagination .page-link:focus { 
-        box-shadow: 0 0 3px 3px var(--blue-light)
-      }
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 40px;
-        height: 22px;
-      }
-      .switch input { 
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--grey-dark);
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 22px;
-      }
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 18px;
-        width: 18px;
-        left: 2px;
-        bottom: 2px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 50%;
-      }
-      input:checked + .slider {
-        background-color: var(--blue-light);
-      }
-      input:focus + .slider {
-        box-shadow: 0 0 1px var(--blue-light);
-      }
-      input:checked + .slider:before {
-        -webkit-transform: translateX(18px);
-        -ms-transform: translateX(18px);
-        transform: translateX(18px);
-      }
-      input.form-control{
-        font-size: 14px; 
-        font-family: Menlo; 
-        color: var(--blue-dark); 
-        border-color: var(--blue-light);
-        border-radius: 4px;
-        border-width: 2px;
-        /* box-shadow: 0 0 3px 3px var(--blue-light) */
-      }
-      input.form-control:focus{
-        color: var(--blue-dark);
-        border-color: var(--blue-light);
-        box-shadow: 0 0 5px 1px var(--blue-light)
-      }
-      .mybuttons {
-        border: solid;
-        border-width: 1px;
-        border-radius: 3px;
-        border-color: var(--grey-dark);
-        padding: 3px;
-        box-shadow: 0px 2px 0px -1px var(--grey-dark);
-        background-color: var(--grey-light);
-        font-size: 12px;
-        font-weight: 370;
-        color:rgb(33, 37, 41);
-        text-align: center;
-      }
-      .mybuttons:hover {
-        background-color: var(--hover-color);
-      }
-      .mybuttons:active {
-        transform: scale(.95);
-      }
-      .card{
-        margin-bottom: 10px;
-      }
-      .card-header:hover{
-        background-color: var(--hover-color);
-      }
-      .card-header {
-        background-color: var(--grey-light);
-      }
-      .btn[data-bs-toggle="collapse"]:focus {
-        outline: none !important;
-        box-shadow: none;
-      }
-      .btn[data-bs-toggle="collapse"]:after {
-        content: '+'; 
-        font-size: 16px;
-        font-weight: 50;
-        color: var(--black);
-        float: right;
-      }
-      .btn[aria-expanded="true"]:after {
-        content: '-'; 
-      }
-      .btn[aria-expanded="false"]:after {
-        content: '+'; 
-      }
-      .column {
-        float: left;
-        padding: 0px;
-        width: 75px;
-      }
-      /* Clear floats after the columns */
-      /* .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      } */
-      .switch-row {
-        font-size: 12px;
-        text-align: center;
-        width: auto; 
-        margin-left: 0px; 
-        margin-right: 1px; 
-        margin-bottom: 0px;
-      }
-      .expert-heading {
-        font-size: 13px; 
-        font-weight: 500; 
-        margin-left: 0px; 
-        margin-top:5px; 
-        margin-bottom:5px;
-      }
-      .scratch_table {
-        font-size: 12px; 
-        background-color: var(--grey-light);
-      }
-      /* .scratch_table thead th[class="sorting"] {
-        line-height: 18px;
-        color: yellow;
-      }
-      .scratch_table thead th[class="sorting sorting_asc"] {
-        line-height: 18px;
-        color: green;
-      }
-      .scratch_table thead th[class="sorting sorting_desc"] {
-        line-height: 18px;
-        color: red;
-      } */
-      .info_table {
-        font-size: 12px;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .info_table_title{
-        font-size: 14px;
-        font-weight: 600;
-        padding: 7px;
-      }
-      .info_container{
-        width:100%; 
-        padding:0px; 
-        background-color: var(--grey-light); 
-        margin-top: 10px;
-      }
-      ul {
-        list-style-type: circle;
-      }
-      li {
-        font-size: 14px;
-      }
-      .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-      }
-      img {
-          max-width: 100%;
-          height: auto;
-          width: auto\9; /* ie8 */
-      }
-      code {
-        color: var(--blue-dark)
-      }
-    </style>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="scratchbook.css">
   </head>
   <body style="background-color:var(--grey-light);">
     <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px var(--grey-dark)">
@@ -348,9 +118,9 @@ permalink: /scratchbook
                     <!-- <p>
                       The following tables tell you how many sounds your composition makes, how many elements and popular scratches it contains, which types of clicks and curves are involved, and much more.
                     </p> -->
-                    <div class="info_container">
-                      <p class="info_table_title">Basic Info</p>
-                      <table id="info_basic" class="table info_table">
+                    <div class="info-container">
+                      <p class="info-table-title">Basic Info</p>
+                      <table id="info_basic" class="table info-table">
                         <thead><tr id="info_basic_thead">                          
                           <td title="Number of DISTINCT SOUNDS the composition makes">Sounds</td>
                           <td title="Number of ELEMENTARY SCRATCHES in the composition">Elements</td>
@@ -360,9 +130,9 @@ permalink: /scratchbook
                         <tbody id="info_basic_tbody"></tbody>
                       </table>
                     </div>
-                    <div class="info_container">
-                      <p class="info_table_title">Clicks and Curves</p>
-                      <table id="info_curves_clicks" class="table info_table">
+                    <div class="info-container">
+                      <p class="info-table-title">Clicks and Curves</p>
+                      <table id="info_curves_clicks" class="table info-table">
                         <thead><tr id="info_curves_clicks_thead">
                           <td title="Number of times the FADER is OPENED in the composition">FO</td>
                           <td title="Number of times the FADER is CLOSED in the composition">FC</td>
@@ -378,9 +148,9 @@ permalink: /scratchbook
                         <tbody id="info_curves_clicks_tbody"></tbody>
                       </table>
                     </div>
-                    <div class="info_container">
-                      <p class="info_table_title">Elements</p>
-                      <table id="info_elements" class="table info_table">
+                    <div class="info-container">
+                      <p class="info-table-title">Elements</p>
+                      <table id="info_elements" class="table info-table">
                         <thead><tr id="info_elements_thead">                          
                           <td title="Number of BABIES in the composition">Babies</td>
                           <td title="Number of INS in the composition">Ins</td>
@@ -397,9 +167,9 @@ permalink: /scratchbook
                         <tbody id="info_elements_tbody"></tbody>
                       </table>
                     </div>
-                    <div class="info_container">
-                      <p class="info_table_title">Orbits</p>
-                      <table id="info_orbits" class="table info_table">
+                    <div class="info-container">
+                      <p class="info-table-title">Orbits</p>
+                      <table id="info_orbits" class="table info-table">
                         <thead><tr id="info_orbits_thead">
                           <td title="Number of CHIRPS in the composition">Chirps</td>
                           <td title="Number of SLICES in the composition">Slices</td>
@@ -413,9 +183,9 @@ permalink: /scratchbook
                         <tbody id="info_orbits_tbody"></tbody>
                       </table>
                     </div>
-                    <div class="info_container">
-                      <p class="info_table_title">Orbit Types</p>
-                      <table id="info_orbit_types" class="table info_table">
+                    <div class="info-container">
+                      <p class="info-table-title">Orbit Types</p>
+                      <table id="info_orbit_types" class="table info-table">
                         <thead><tr id="info_orbit_types_thead">
                           <td title="Number of S-CURVED ORBITS in the composition">S-Curved</td>
                           <td title="Number of TAZER ORBITS in the composition">Tazers</td>
@@ -752,7 +522,7 @@ permalink: /scratchbook
                   });
                 </script>
                 <!-- DataTable -->
-                <table class="table scratch_table" id="scratch_table"></table>
+                <table class="table scratch-table" id="scratch_table"></table>
                 <script type="text/javascript">
                   // Define table
                   $(document).ready(function () {
@@ -766,7 +536,6 @@ permalink: /scratchbook
                       {data:"Elements", title: "Elements"}, // 4
                       {data:"Tears", title: "Tears"}, // 5
                       {data:"Orbits", title: "Orbits"}, // 6
-
                       {data:"FO", title: "FO"}, // 7
                       {data:"FC", title: "FC"}, // 8
                       {data:"PO", title: "PO"}, // 9
@@ -775,10 +544,8 @@ permalink: /scratchbook
                       {data:"A", title: "A"}, // 12
                       {data:"S", title: "S"}, // 13
                       {data:"Q", title: "Q"}, // 14
-
                       {data:"Ex", title: "Ex"}, // 15
                       {data:"Log", title: "Log"}, // 16
-                      
                       {data:"Babies", title: "Babies"}, // 17
                       {data:"Ins", title: "Ins"}, // 18
                       {data:"Outs", title: "Outs"}, // 19
@@ -1339,7 +1106,7 @@ permalink: /scratchbook
                     <div class="card-body" style="overflow-x:auto;">
                       <div class="container" style="width:95%; padding:0px; margin-top: 10px">
                         <p>
-                          <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "sub-atomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
+                          <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "subatomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
                         </p>
                         <ul>
                           <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>bases</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
@@ -1503,7 +1270,7 @@ permalink: /scratchbook
             <div id="NotationCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p> 
-                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. It is a system for transcribing any scratch as the graph of a function of time, on the x-axis, either vs. the roation of the record or vs. the duration of the sample, on the y-axis.
+                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. It is a system for transcribing any scratch as the graph of a function of time, on the x-axis, either vs. the roation of the record or vs. the duration of the sample, on the y-axis.<sup><a href="#footnote-1"><span style="font-size: 9px;">[1]</span></a></sup>
                 </p>
                 <ul>
                   <li>When <strong>the curve moves up</strong> this means that the record moves forward. When <strong>the curve moves down</strong> the record moves down.</li>
@@ -1520,6 +1287,7 @@ permalink: /scratchbook
                   <li><strong>When the cross fader is closed for a longer time period</strong>, e.g. when the record is brought back during the second half of a stab scratch, this is indicated by a <strong>white curve</strong>.</li>
                   <li><strong>No "phantom clicks"</strong> are used to indicate moments when the record is held still. However, for the geeks among you, the number of opening and closing "phantom clicks" is reported in the tables.</li>
                 </ul>
+                <p class="footnote" id="footnote-1"><sup>[1]</sup> There is also an alternative scratch notation system, which resembles the modern staff notation. See Alex Sonnenfeld's <a href="http://www.alexandersonnenfeld.com/fileadmin/user_upload/S-Notation/S-Notation-Paper_Tenor_2016.pdf" target='_blank'>S-Notation</a>.</p>
               </div>
             </div>
           </div>
@@ -1538,10 +1306,141 @@ permalink: /scratchbook
             <div id="ElementsCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p> 
-                  Under the hood, <strong>ScratchBook takes an atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.  
+                  Under the hood, <strong>ScratchBook takes an atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.
                 </p>
                 <p>
-                  The total number of elements depends on the number of subatomic features and the rules of their combination. ScratchBook considers <strong>five classes of features</strong>:
+                  ScratchBook's element can be grouped into <strong>eleven classes</strong>:
+                </p>
+                <div class="container elements-container">
+                  <div class="row elements-group">
+                    <p class="expert-heading">Group 1</p>
+                  </div>
+                  <div class="row">
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/b.png" alt="Babies"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Babies</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/i.png" alt="Ins"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Ins</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/o.png" alt="Outs"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Outs</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/d.png" alt="Dices"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Dices</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container elements-container">
+                  <div class="row">
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f1.png" alt="Flares"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Flares</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/if1.png" alt="iFlares"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">iFlares</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/of1.png" alt="oFlares"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">oFlares</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/tr2.png" alt="dFlares (Transformers)"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">dFlares (Transformers)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container elements-container" style="margin-top: 10px;">
+                  <div class="row elements-group">
+                    <p class="expert-heading">Group 2</p>
+                  </div>
+                  <div class="row">
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/g.png" alt="Ghost"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Ghost</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/h.png" alt="Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Hold</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/gh.png" alt="Ghost-Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">Ghost-Hold</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <br/>
+                <p>
+                  Note the following <strong>relations between these elements</strong>:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Babies and Flares</strong> both have no clicks at their start and end points, but they differ in that only the Flares have clicks in between their start and end points (only one such click is shown here, but scratches of all Flare classes can have up to 9 clicks).
+                  </li>
+                  <li>
+                    <strong>Ins and iFlares</strong> both have a click at their start points and no click at their end points, but they differ in that only the iFlares have clicks in between their start and end points.
+                  </li>
+                  <li>
+                    <strong>Outs and oFlares</strong> both have a click at their end points and no click at their start points (opposite of Ins/iFlares!), but they differ in that only the iFlares have clicks in between their start and end points.
+                  </li>
+                  <li>
+                    <strong>Dices and dFlares </strong> both have clicks at their start AND end points, but they differ in that only the dFlares have clicks in between their start and end points.
+                  </li>
+                  <li>
+                    Since <strong>dFlares are commonly referred to as Transformers</strong>, Scratchbook permits both names, <strong>but the grammar is slightly different</strong>. The equivalent of <code>df2</code> is <code>tr3</code> (<u>not</u> <code>t2</code>), because the numbers refer to different quantities. <strong>In all flare scratches</strong>, including dFlares, the number refers to <strong>the number of clicks</strong> while <strong>in transformers</strong> the number refers to <strong>the number of sounds</strong>. 
+                  </li>
+                </ul>
+                <p>
+                  The <strong>total number of elements within and across all classes</strong> depends on the number of subatomic features and the rules of their combination. ScratchBook considers <strong>five classes of features</strong>:
                 </p>
                 <ul>
                   <li><strong>Curve shapes</strong> (horizontal, sine, exponential, logarithmic)</li>
@@ -1554,25 +1453,68 @@ permalink: /scratchbook
                   <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
                 </p>
                 <p>
-                  The following decision tree maps out <strong>ScratchBook's current rules of combination</strong> used to produce the <strong>element collection</strong> (see Library) with a total of <strong>171 elements</strong>:
+                  The following table shows the <strong>distribution of subatomic features over ScratchBook's elements</strong> : 
+                </p>
+                <p class="centered">
+                  <img 
+                  src="/projects/scratchbook/el_classes.png"
+                    alt="classes of elements" 
+                    style="max-width: 60%">
                 </p>
                 <p>
+                  In order to keep the size of ScratchBook's <strong>elements collection</strong> reasonably small, the number of f-clicks is limited to 3 there, resulting in a total of <strong>171 elements</strong>, computed by the following <strong>rules of combination</strong>:
+                </p>
+                <p class="centered">
                   <img 
-                    class="center" 
                     src="/projects/scratchbook/decision_tree.png"
-                    alt="rules for combining elements"> 
-                    <!-- src="/projects/scratchbook/decision_tree.png" -->
+                    alt="rules for combining elements" 
+                    style="max-width: 52%">
                 </p>
-                <p>
-                  ScratchBook's element can be grouped into <strong>eleven classes of elements</strong> with the following <strong>distribution of subatomic features</strong>: 
-                </p>
-                <p>
-                  <img 
-                    class="center" 
-                    src="/projects/scratchbook/el_classes.png"
-                    alt="classes of elements">
-                    <!-- src="/projects/scratchbook/el_classes.png" -->
-                </p>
+                <p>Last but not least, the following example of a 3-click flare scratch showcases <strong>the five available click patterns</strong>:</p>
+                <div class="container">
+                  <div class="row">
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f3.png" alt="normal"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">normal (<code>f3</code>)</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f3A.png" alt="Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">augmented (<code>f3A</code>)</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f3D.png" alt="Ghost-Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">diminished (<code>f3D</code>)</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f3S.png" alt="Ghost-Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">stretched (<code>f3S</code>)</p>
+                      </div>
+                    </div>
+                    <div class="col centered">
+                      <div class="row">
+                        <span><img class="preview" src="/projects/scratchbook/previews/f3Q.png" alt="Ghost-Hold"></span>
+                      </div>
+                      <div class="row">
+                        <p class="preview-title">squeezed (<code>f3Q</code>)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
