@@ -427,7 +427,7 @@ permalink: /scratchbook
                       </div>
                       <div class="row switch-row">
                         <div class="column" 
-                          title="The CORE collection contains 59 scratches and is loaded on default when opening the page">
+                          title="The CORE collection contains 57 scratches and is loaded on default when opening the page">
                           <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
                         </div>
                         <div class="column" 
@@ -440,7 +440,7 @@ permalink: /scratchbook
                         <div class="column" title="The ORBITS collection contains 594 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
                           <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
                         </div>
-                        <div class="column" title="The COMBOS collection contains 49 popular scratch combos, all of which are also included in the CORE collection">
+                        <div class="column" title="The COMBOS collection contains 47 popular scratch combos, all of which are also included in the CORE collection">
                           <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
                         </div>
                       </div>
