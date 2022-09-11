@@ -234,7 +234,10 @@ font-size: 13px;
   font-size: 10px;
 }
 .centered {
-  text-align: center
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .elements-group {
   font-size: 12px;
