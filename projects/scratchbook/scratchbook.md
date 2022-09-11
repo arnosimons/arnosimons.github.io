@@ -1619,7 +1619,6 @@ permalink: /scratchbook
     req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
     req.send()
     exec(f"codebook = {req.response}")
-    slice = makeScratch('i_o', codebook)  # workaround to avoid name collision with "slice"   
     session_info = document.getElementById("session_info")
     session_svg = document.getElementById("session_svg")
     session_png = document.getElementById("session_png")
@@ -1637,7 +1636,6 @@ permalink: /scratchbook
             info = getInfo(myscratch)
             fig = Session(myscratch, fontsize=11, w_pad=2).fig
             tmpfile = BytesIO()
-            
             fig.savefig(tmpfile, format='svg')
             encoded = base64.b64encode(tmpfile.getvalue()).decode('utf-8')
             src = f'data:image/svg+xml;base64, {encoded}'
