@@ -213,6 +213,9 @@ img {
   max-width: 100%;
   height: auto;
   width: auto\9; /* ie8 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 code {
 color: var(--blue-dark)
@@ -235,9 +238,6 @@ font-size: 13px;
 }
 .centered {
   text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .elements-group {
   font-size: 12px;
