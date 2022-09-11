@@ -1451,25 +1451,7 @@ permalink: /scratchbook
                 <p>
                   <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
                 </p>
-                <p>
-                  The following table shows the <strong>distribution of subatomic features over ScratchBook's elements</strong> : 
-                </p>
-                <p class="centered">
-                  <img 
-                  src="/projects/scratchbook/el_classes.png"
-                    alt="classes of elements" 
-                    style="max-width: 60%">
-                </p>
-                <p>
-                  In order to keep the size of ScratchBook's <strong>elements collection</strong> reasonably small, the number of f-clicks is limited to 3 there, resulting in a total of <strong>171 elements</strong>, computed by the following <strong>rules of combination</strong>:
-                </p>
-                <p class="centered">
-                  <img 
-                    src="/projects/scratchbook/decision_tree.png"
-                    alt="rules for combining elements" 
-                    style="max-width: 52%">
-                </p>
-                <p>Last but not least, the following example of a 3-click flare scratch showcases <strong>the five available click patterns</strong>:</p>
+                <p>The following example of a 3-click flare scratch gives an overview over <strong>the five available click patterns</strong>:</p>
                 <div class="container">
                   <div class="row">
                     <div class="col centered">
@@ -1514,6 +1496,24 @@ permalink: /scratchbook
                     </div>
                   </div>
                 </div>
+                <p>
+                  The following table shows the <strong>distribution of subatomic features over ScratchBook's elements</strong>: 
+                </p>
+                <p class="centered">
+                  <img 
+                  src="/projects/scratchbook/el_classes.png"
+                    alt="classes of elements" 
+                    style="max-width: 60%">
+                </p>
+                <p>
+                  In order to keep the size of ScratchBook's <strong>elements collection</strong> reasonably small, the number of f-clicks is limited to 3 there, resulting in a total of <strong>171 elements</strong>, computed by the following <strong>rules of combination</strong>:
+                </p>
+                <p class="centered">
+                  <img 
+                    src="/projects/scratchbook/decision_tree.png"
+                    alt="rules for combining elements" 
+                    style="max-width: 52%">
+                </p>
               </div>
             </div>
           </div>
