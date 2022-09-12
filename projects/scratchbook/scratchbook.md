@@ -400,6 +400,7 @@ permalink: /scratchbook
             </div>
             <div id="ScratchCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
+                <p><strong>Browse scratches</strong> and <strong>click on their preview</strong> to add them to the visualizer. Use the <strong>expert mode</strong> for more options.</p>
                 <div class="card">
                   <div class="card-header">
                     <a 
@@ -421,101 +422,151 @@ permalink: /scratchbook
                   </script>
                   <div id="ExpertCard" class="collapse in">
                     <!-- Switches for collections -->
-                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
+                    <div class="container expert-container">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Collections</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" 
-                          title="The CORE collection contains 57 scratches and is loaded on default when opening the page">
-                          <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="The CORE collection contains 57 scratches and is loaded on default when opening the page">
+                            <label class="switch"><input id="CORE" type="checkbox" checked/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Core</p>
+                          </div>
                         </div>
-                        <div class="column" 
-                          title="The ELEMENTS collection contains 171 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches">
-                          <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="The ELEMENTS collection contains 171 unidirectional scratches with various modifications that form the ELEMENTS for all other scratches">
+                            <label class="switch"><input id="ELEMENTS" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Elements</p>
+                          </div>
                         </div>
-                        <div class="column" title="The TEARS collection contains 42 unidirectional tear variations">
-                          <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="The TEARS collection contains 42 unidirectional tear variations">
+                            <label class="switch"><input id="TEARS" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Tears</p>
+                          </div>
                         </div>
-                        <div class="column" title="The ORBITS collection contains 594 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
-                          <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="The ORBITS collection contains 594 orbits, generated from pairwise combinations of elements. Most orbits you will ever need are in here">
+                            <label class="switch"><input id="ORBITS" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Orbits</p>
+                          </div>
                         </div>
-                        <div class="column" title="The COMBOS collection contains 47 popular scratch combos, all of which are also included in the CORE collection">
-                          <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="The COMBOS collection contains 47 popular scratch combos, all of which are also included in the CORE collection">
+                            <label class="switch"><input id="COMBOS" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Combos</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="row switch-row">
-                        <div class="column">Core</div>
-                        <div class="column">Elements</div>
-                        <div class="column">Tears</div>
-                        <div class="column">Orbits</div>
-                        <div class="column">Combos</div>
                       </div>
                     </div>
                     <!-- Switches Clicks -->
-                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
+                    <div class="container expert-container">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Clicks</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" title="Only show scratches with REGULAR CLICK PATTERNS">
-                          <label class="switch"><input id="RegularClicks" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Only show scratches with REGULAR CLICK PATTERNS">
+                            <label class="switch"><input id="RegularClicks" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Regular</p>
+                          </div>
                         </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CLICK PATTERNS (D, A, S, or Q)">
-                          <label class="switch"><input id="IrregularClicks" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Only show scratches with IRREGULAR CLICK PATTERNS (D, A, S, or Q)">
+                            <label class="switch"><input id="IrregularClicks" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Irregular</p>
+                          </div>
                         </div>
                       </div>
-                      <div class="row switch-row">
-                        <div class="column">Regular</div>
-                        <div class="column">Irregular</div>
-                      </div>                  
                     </div>
                     <!-- Switches for Curves -->
-                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px">
+                    <div class="container expert-container">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Curves</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" title="Only show scratches with REGULAR CURVES">
-                          <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Only show scratches with REGULAR CURVES">
+                            <label class="switch"><input id="RegularCurves" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Regular</p>
+                          </div>
                         </div>
-                        <div class="column" title="Only show scratches with IRREGULAR CURVES (Ex or Log)">
-                          <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Only show scratches with IRREGULAR CURVES (Ex or Log)">
+                            <label class="switch"><input id="IrregularCurves" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Irregular</p>
+                          </div>
                         </div>
                       </div>
-                      <div class="row switch-row">
-                        <div class="column">Regular</div>
-                        <div class="column">Irregular</div>
-                      </div>                  
                     </div>
                     <!-- Switches for columns -->
-                    <div class="container" style="width:95%; padding:0px; background-color: var(--grey-light); margin-top: 10px; margin-bottom: 10px">
+                    <div class="container expert-container" style="margin-bottom: 10px">
                       <div class="row" style="margin-left: 0px;">
                         <p class="expert-heading">Columns</p>
                       </div>
                       <div class="row switch-row">
-                        <div class="column" title="Show CLICK TYPES">
-                          <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Show CLICK TYPES">
+                            <label class="switch"><input id="Clicks" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Clicks</p>
+                          </div>
                         </div>
-                        <div class="column" title="Show CURVE TYPES">
-                          <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Show CURVE TYPES">
+                            <label class="switch"><input id="Curves" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Curves</p>
+                          </div>
                         </div>
-                        <div class="column" title="Show SCRATCH TYPES">
-                          <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
+                        <div class="column">
+                          <div class="row"
+                            title="Show SCRATCH TYPES">
+                            <label class="switch"><input id="Scratches" type="checkbox"/><span class="slider"></span></label>
+                          </div>
+                          <div class="row switch-row">
+                            <p class="expert-title">Scratches</p>
+                          </div>
                         </div>
                       </div>
-                      <div class="row switch-row">
-                        <div class="column">Clicks</div>
-                        <div class="column">Curves</div>
-                        <div class="column">Scratches</div>
-                      </div>                  
                     </div>
                   </div>
                 </div>
                 <!-- Style tooltips for all switches: -->
                 <script>
                   $(document).ready(function () {
-                    $('.column[title]').tooltip({
+                    $('.row[title]').tooltip({
                       trigger: "hover",
                       "container": 'body',
                     });
@@ -984,9 +1035,9 @@ permalink: /scratchbook
             </div>
             <div id="OperatorCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
-                <!-- <p>
-                  <strong>Operators</strong> can be used <strong>to modify and combine scratches</strong>. The following table lists and explains all available operators.
-                </p> -->
+                <p>
+                  Read how <strong>operators</strong> can be used <strong>to modify and combine scratches</strong>.
+                </p>
                 <table class="table" id="OperatorTable" style="font-size: 12px">
                   <thead>
                     <tr>
@@ -1109,7 +1160,8 @@ permalink: /scratchbook
                           <strong>Elements</strong> are scratches that cannot be broken down into smaller scratches, only into their "subatomic features" (see the Theory section below). Their names obey the <strong>grammar</strong> <code>[BASE][N]*[CP]*[CRV]*</code>, whereby
                         </p>
                         <ul>
-                          <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>bases</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
+                          <li><code>[BASE]</code> is obligatory and stands for one of the eleven <strong>base names</strong>: <code>baby, in, out, dice, flare, iflare, oflare, transformer, ghost, hold, ghosthold</code>. 
+                            <br/>&#128123; If you're lazy, like me, simply use <strong>abbreviations</strong>: <code>b, i, o, d, f, if, of, tr, g, h, gh</code>.</li>
                           <li><code>[N]*</code> is only possible but then also obligatory after the bases <code>f, if, of</code>, where it stands for the number of <strong>flare-clicks</strong>, as well as after the base <code>tr</code>, where it stands for the number of <strong>transformer sounds</strong>. Currently, all numbers between <code>1</code> and <code>9</code> are permitted.</li>
                           <li><code>[CP]*</code> is optional and stands for a non-standard <strong>click-pattern</strong> (<code>D, A, S</code> or <code>Q</code>) after any of the bases <code>f, if, of, tr</code>.</li>
                           <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>) after all bases except <code>g, h, gh</code>.</li>
@@ -1119,7 +1171,7 @@ permalink: /scratchbook
                         </p>
                         <ul>
                           <li>
-                            <code>bLog</code> (a baby with a logarithmic curve)
+                            <code>babyLog</code> (a baby with a logarithmic curve)
                           </li>
                           <li>
                             <code>f8Q</code> (an 8-click flare with a squeezed click-pattern)
@@ -1147,11 +1199,18 @@ permalink: /scratchbook
                     <div class="card-body" style="overflow-x:auto;">
                       <div class="container" style="width:95%; padding:0px; margin-top: 10px">
                         <p>
-                          <strong>Tears</strong> are sequences of upwards or downwards oriented elements, forming cascades. Their names obey the <strong>grammar</strong> <code>[TBASE]*t[N][CRV]*[__EL]*</code>, whereby
+                          <strong>Tears</strong> are sequences of upwards or downwards oriented elements, forming cascades. Their names obey the <strong>grammar</strong> <code>[TBASE]*tear[N][CRV]*[__EL]*</code>, whereby
                         </p>
                         <ul>
-                          <li><code>[TBASE]</code> is optional and stands for one of the following <strong>tear-bases</strong>: <code>i, o, d, f, if, of, tr</code>. The main <strong>purpose</strong> of the tear-base is to specify <strong>if and where clicks are added</strong> when the record is paused, i.e. during <strong>during the tearing moments</strong>: <code>i</code>=click at the start, <code>o</code>=click at the end, <code>d</code>=click at the start AND click at the end, <code>f</code>=clicks at every tearing moment, <code>if</code>=click at the start AND clicks at every tearing moment, <code>of</code>=clicks at every tearing moment AND click at the end, <code>tr</code>=click at the start AND clicks at every tearing moment AND click at the end.</li>
-                          <li><code>t</code> is obligatory and simply stands for "tear".</li>
+                          <li><code>[TBASE]</code> is optional and stands for one of the following <strong>tear-bases</strong>: <code>i, o, d, f, if, of, tr</code>. The <strong>purpose</strong> of the tear-base is to specify <strong>if and where clicks are added</strong> when the record is paused, i.e. <strong>during the tearing moments</strong>:
+                            <br/><code>i</code> = click at the start, 
+                            <br/><code>o</code> = click at the end, 
+                            <br/><code>d</code> = click at the start AND click at the end, 
+                            <br/><code>f</code> = clicks at every tearing moment, 
+                            <br/><code>if</code> = click at the start AND clicks at every tearing moment, 
+                            <br/><code>of</code> = clicks at every tearing moment AND click at the end, 
+                            <br/><code>tr</code> = click at the start AND clicks at every tearing moment AND click at the end.</li>
+                          <li><code>tear</code> is obligatory but <strong>can be abbreviated</strong> as <code>t</code>.</li>
                           <li><code>[N]</code> is obligatory and stands for the number of pauses or <strong>tearing moments</strong>, i.e. how often the record is held still during a tear scratch.</li>
                           <li><code>[CRV]*</code> is optional and stands for a non-standard <strong>curve shape</strong> (<code>Ex</code> or <code>Log</code>).</li>
                           <li><code>[__EL]*</code> is optional and stands for <strong>a specific element</strong> being used during the tear scratch. <u>This function is only useful for tears and transformers</u>, and only their base names are allowed, e.g. <code>__f3</code> or <code>__tr2</code>, but not <code>__f3D</code> or <code>tr2Log</code>. Note that you must use <u>two underscores</u> to specify the tear element (otherwise you're falsely using the orbit language, see the tab below).</li>
@@ -1161,7 +1220,7 @@ permalink: /scratchbook
                         </p>
                         <ul>
                           <li>
-                            <code>t5</code> (a 5-tear without any clicks)
+                            <code>tear5</code> (a 5-tear without any clicks)
                           </li>
                           <li>
                             <code>it2</code> (a 2-tear with a click at the start)
@@ -1192,13 +1251,13 @@ permalink: /scratchbook
                     <div class="card-body" style="overflow-x:auto;">
                       <div class="container" style="width:95%; padding:0px; margin-top: 10px">
                         <p>
-                          <strong>Orbits</strong> are scratches that incorporate both a forward and backward movement, or vice versa, of the record in sequence. At the first level, you can always construct orbits like so: <code>[SCRATCH] + ~[SCRATCH]</code>, where <code>[SCRATCH]</code> in both cases stands for any scratch. But if you want to specify a particular length-ratio, things get messier. For example, to get a ratio of "two-to-three", you need to write something like <code>([SCRATCH] / 2 + ~[SCRATCH] / 3) / 1</code>.
+                          <strong>Orbits</strong> are scratches that incorporate both a forward and backward movement, or vice versa, of the record in sequence. At the first level, you can always construct orbits like so: <code>[SCRATCH] + ~[SCRATCH]</code>, where <code>[SCRATCH]</code> in both cases stands for any element or tear scratch. But if you want to specify a particular length-ratio, things get messier. For example, to get a ratio of "two-to-three", you need to write something like <code>([SCRATCH] / 2 + ~[SCRATCH] / 3) / 1</code>.
                         </p>
                         <p>
                           At the second level, <strong>a more convenient way</strong> to formulate orbits is to use the <strong>grammar</strong> <code>[SCRATCH]_[SCRATCH][_RATIO]*</code>, whereby
                         </p>
                         <ul>
-                          <li><code>[SCRATCH]</code> is obligatory in both cases and stands for any scratch (the second one automatically being the backward scratch).</li>
+                          <li><code>[SCRATCH]</code> is obligatory in both cases and stands for <strong>any element or tear scratch</strong> (the second one automatically being the backward scratch).</li>
                           <li><code>_</code> is obligatory and simply stands for "orbit".</li>
                           <li><code>[_RATIO]*</code> is optional and stands for a specific <strong>length-ratio</strong>, such as <code>_23</code>, meaning "two-to-three", i.e. that the forward scratch gets 2/5<i>th</i> of the total length while the backward scratch gets 3/5<i>th</i> of the total length. If no length-ratio is specified, a ratio of "one-to-one" is automatically assumed.</li>
                         </ul>
@@ -1207,13 +1266,13 @@ permalink: /scratchbook
                         </p>
                         <ul>
                           <li>
-                            <code>f1_f2</code> (a "1-click-flare-to-2-click-flare" orbit aka "rawhippopotamus" with a non-specified "one-to-one" length-ratio.)
+                            <code>flare1_flare2</code> (a "1-click-flare-vs-2-click-flare" orbit aka "rawhippopotamus" with a non-specified "one-to-one" length-ratio.)
                           </li>
                           <li>
-                            <code>f1_f2_23</code> (a "1-click-flare-to-2-click-flare" orbit aka "hippopotamus" with a specified "two-to-three" length-ratio.)
+                            <code>f1_f2_23</code> (a "1-click-flare-vs-2-click-flare" orbit aka "hippopotamus" with a specified "two-to-three" length-ratio.)
                           </li>
                           <li>
-                            <code>it4_o</code> (a "4-tear-to-out" orbit)
+                            <code>it4_o</code> (a "4-tear-vs-out" orbit)
                           </li>
                         </ul>
                         <p>
@@ -1270,7 +1329,7 @@ permalink: /scratchbook
             <div id="NotationCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p> 
-                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. It is a system for transcribing any scratch as the graph of a function of time, on the x-axis, either vs. the roation of the record or vs. the duration of the sample, on the y-axis.<sup><a href="#footnote-1"><span style="font-size: 9px;">[1]</span></a></sup>
+                  The <a href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a> was created and published by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. It is a system for transcribing any scratch as the graph of a function of time, on the x-axis, against the roation of the record or against the duration of the sample, on the y-axis.<sup><a href="#footnote-1"><span style="font-size: 9px;">[1]</span></a></sup>
                 </p>
                 <ul>
                   <li>When <strong>the curve moves up</strong> this means that the record moves forward. When <strong>the curve moves down</strong> the record moves down.</li>
@@ -1287,7 +1346,7 @@ permalink: /scratchbook
                   <li><strong>When the cross fader is closed for a longer time period</strong>, e.g. when the record is brought back during the second half of a stab scratch, this is indicated by a <strong>white curve</strong>.</li>
                   <li><strong>No "phantom clicks"</strong> are used to indicate moments when the record is held still. However, for the geeks among you, the number of opening and closing "phantom clicks" is reported in the tables.</li>
                 </ul>
-                <p class="footnote" id="footnote-1"><sup>[1]</sup> There is also an alternative scratch notation system, which resembles the modern staff notation. See Alex Sonnenfeld's <a href="http://www.alexandersonnenfeld.com/fileadmin/user_upload/S-Notation/S-Notation-Paper_Tenor_2016.pdf" target='_blank'>S-Notation</a>.</p>
+                <p class="footnote" id="footnote-1"><sup>[1]</sup> TTM has been fleshed out more fully in Raymond Pirtle's later work on the "Periodic Matrix of Scratches". There is also an alternative scratch notation system, which resembles the modern staff notation. See Alex Sonnenfeld's <a href="http://www.alexandersonnenfeld.com/fileadmin/user_upload/S-Notation/S-Notation-Paper_Tenor_2016.pdf" target='_blank'>S-Notation</a>.</p>
               </div>
             </div>
           </div>
@@ -1306,10 +1365,10 @@ permalink: /scratchbook
             <div id="ElementsCard" class="collapse in">
               <div class="card-body" style="overflow-x:auto;">
                 <p> 
-                  Under the hood, <strong>ScratchBook takes an atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.
+                  Under the hood, <strong>ScratchBook takes a unique atomistic approach to scratch notation</strong>. Any scratch curve is generated from a sequence of distinct building blocks, called <strong>elements</strong>, each of which exhibits a unique combination of <strong>"subatomic features"</strong>.
                 </p>
                 <p>
-                  ScratchBook's element can be grouped into <strong>eleven classes</strong>:
+                  ScratchBook's elements fall into <strong>eleven classes</strong> and <strong>two groups</strong>:
                 </p>
                 <div class="container elements-container">
                   <div class="row elements-group">
@@ -1419,7 +1478,7 @@ permalink: /scratchbook
                 </div>
                 <br/>
                 <p>
-                  Note the following <strong>relations between these elements</strong>:
+                  <strong>Group 1</strong> comprises 8 classes of <strong>elements that make a sound</strong>. These classes relate to each other in the following ways:
                 </p>
                 <ul>
                   <li>
@@ -1439,6 +1498,20 @@ permalink: /scratchbook
                   </li>
                 </ul>
                 <p>
+                  <strong>Group 2</strong> comprises 3 <strong>elements that do <u>not</u> make a sound</strong>:
+                </p>
+                <ul>
+                  <li>
+                    The <strong>Ghost</strong> is used mainly in the <code>stab</code> scratch, where it signifies the silent backward movement of the record after the fader has been closed.
+                  </li>
+                  <li>
+                    The <strong>Hold</strong> is used whenever the record is held still for a longer time period while the fader remains open. See for example the <code>slicecombo1</code>.
+                  </li>
+                  <li>
+                    The <strong>Ghost-Hold</strong> is used whenever the record is held still for a longer time period while the fader is closed.
+                  </li>
+                </ul>
+                <p>
                   The <strong>total number of elements within and across all classes</strong> depends on the number of subatomic features and the rules of their combination. ScratchBook considers <strong>five classes of features</strong>:
                 </p>
                 <ul>
@@ -1447,7 +1520,7 @@ permalink: /scratchbook
                   <li><strong>io-Clicks</strong> (in/out-clicks), i.e. clicks at the start and/or at the end of a of a scratch (none, start, end, start+end).</li>
                   <li><strong>f-Clicks</strong> (flare-clicks), i.e. clicks somewhere in the middle of a scratch (0-9 clicks, but limited to 0-3 clicks in the element collection)</li>
                   <li><strong>Click patterns</strong> (normal, diminished, augmented, stretched, squeezed)</li>
-                </ul> 
+                </ul>
                 <p>
                   <strong>Not all of these features should be combined with each other</strong>. For example, since white curves always represents silent record movement, they should  never have any clicks at all, and, to keep things simple, when they are not horizontal (1 Ghost-Hold), they should always be sine (1 Ghost). Also, click patterns only ever make sense when a scratch has at least one f-click, whereby stretched and squeezed patterns only make sense when at least two f-clicks are given.
                 </p>
