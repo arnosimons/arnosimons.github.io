@@ -1,12 +1,56 @@
 ---
 layout: theme
-title: Policy Making
-permalink: /policy-making
+title: Evidence-Based Policy
+permalink: /evidence-based-policy
 ---
 
-How are the policies made that affect us all? 
+The idea that public policy making should be informed by scientific knowledge or otherwise modelled after scientific knowledge practices has great appeal. There is a growing understanding among politicians, the media and the public that decision making, especially on complex issues such as climate change and biodiversity, should include a scientific evaluation of the underlying problems, the available solutions, and/or the procedures by which solutions are matched to problems. A phrase often used used in this context is "evidence-based-policy".
 
-Part of the answer to this question lies in transnational dynamics. Since the late 2000s I have investigated how major environmental and social policies around the world were drafted from generic blueprints like "cap-and-trade" and "evidence-based-policy". In particular, I have focused on two related phenomena: instrument constituencies and policy experimentation.
+In my own research on evidence-based-policy and scientific advice to policy making more generally, I have taken a very ciritcal stance. I love science and I believe that scientific knowledge can be useful for many things including policy making. But I fear that much of the discourse on "evidence-based-policy" is deceiving and conveys false hopes both for science and for policy.
+
+## Instrument constituencies and blueprints
+
+A first major focus of my research in this area has been [the description and study of "instrument constituencies"](https://doi.org/10.1080/14494035.2017.1375248), i.e. expert networks oriented towards developing and promoting particular policy-designs as solutions to policy problems.
+
+The instrument constituency is a previously neglected type of collective actor, whose agency explains the often-observed paradox that in policy making solutions sometimes ["chase"](https://onlinelibrary.wiley.com/doi/10.1111/gove.12179) rather than follow problems. Demand for policy instruments is driven not only by newly arising problems, shifting ideologies or power constellations but also by endogenous dynamics of instrument development, creating a supply push. 
+
+Importantly, instrument constituencies frame their instruments in two distinct ways. Not only are they concerned with the **implementation** of specific policy programs, more importantly, they also tend to develop generic **blueprints**. For example, while [the US Acid Rain Program](https://www.taylorfrancis.com/chapters/edit/10.4324/9781315886985-11/politics-means-making-emissions-trading-instrument-pre-history-carbon-trading-arno-simons-jan-peter-vo%C3%9F) may or may not have been successful or even be remebered, it was legitmated by and has in turn given authority to [the blueprint of "cap-and-trade"](http://dx.doi.org/10.14279/depositonce-5561). More generally, policy makers may be compelled or even feel obliged to work with an instrument that is widely regarded as state-of-the-art.
+
+In the ecosystem of public policy making instrument constituencies thus play a unique role. Their focus on specific *and* generic policy solutions and on the knowledge practices around these solutions, [separates instrument constituencies from other key policy actors](http://dx.doi.org/10.2139/ssrn.2593626), most importantly epistemic cummunities, which are mostly focussed on problems, and advocacy coalitions, focused on crafting political consensus. 
+
+## Meta-instruments and their constituencies
+
+Instrument constitutencies and their blueprints, which often 
+
+
+ may be obliged to work with an instrument that is widely regarded to represent the state-of-the-art in policymaking
+
+
+Policy blueprints appear as universal knowledge, produced and circulated by legitimate experts, which makes the toolbox an authoritative knowledge reservoir open to interested policymakers around the world. ‘Authoritative’ in this context means that blueprints in the tool- box enjoy a special status in virtue of which policymakers are likely to accept their prescriptions as compelling, reasonable, and/or legitimate.
+
+
+Strikingly, the development of "evidence-based-policy" can itself be analyzed as a constituency-driven process, resulting in both a blueprint and various implementated policy programmes.
+
+
+
+, as we have shown [in a recent paper](https://doi.org/10.1332/030557321X16225469993170). 
+
+
+as a blueprint and practice can itself be 
+
+
+More recently, I have analyzed (together with Alexander Schniedermann)  
+
+
+
+
+- scientific advice
+- scientific methods/ experiments/ srs
+- standardization/ blueprints
+
+
+
+Part of the answer to this question lies in transnational dynamics. Since the late 2000s I have investigated how major environmental and social policies around the world were drafted from generic blueprints like "cap-and-trade" and "evidence-based-policy". In particular, I have focused on three related phenomena: 1) instrument constituencies, 2) policy experimentation and 3) evidence-based policy.
 
 ## Instrument constituencies
 
