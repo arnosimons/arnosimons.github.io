@@ -1,5 +1,5 @@
 ---
-layout: theme
+layout: theme2
 title: Science communication
 permalink: /science-communication
 ---

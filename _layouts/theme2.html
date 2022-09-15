@@ -1,0 +1,45 @@
+---
+layout: default2
+---
+
+{{ content }}
+
+
+<!-- List related pages -->
+<!-- {% assign pages_by_date = site.pages | sort: "date" | reverse %}
+<h2>Related Projects</h2>
+<ul>
+  {%- for p in pages_by_date -%}
+    {%- if p.type == "project" and p.themes contains page.title -%}
+      <li style="list-style-type: none;">
+        <h3 style="margin-bottom: 5px"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+        <p>
+          {{ p.content | strip_html | truncatewords: 50 }}
+          <small>...<a href="{{ p.url }}">Continue reading</a></small>
+        </p>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul> -->
+
+
+<!-- List related posts -->
+<!-- <h2>Related Posts</h2>
+<ul>
+  {%- for p in site.posts -%}
+    {%- if p.themes contains page.title -%}
+      <li style="list-style-type: none;">
+        <span>{{ p.date | date: "%b %-d, %Y" }}</span>
+        <h3 style="margin-bottom: 5px">
+          <a href="{{ p.url }}">
+            {{ p.title }}
+          </a>
+        </h3>
+        <p>
+          {{ p.content | strip_html | truncatewords: 50 }}
+          <small>...<a href="{{ p.url }}">Continue reading</a></small>
+        </p>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul> -->

@@ -1,5 +1,5 @@
 ---
-layout: theme
+layout: theme2
 title: Evidence-Based Policy
 permalink: /evidence-based-policy
 ---
