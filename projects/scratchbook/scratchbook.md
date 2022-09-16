@@ -1596,6 +1596,8 @@ permalink: /scratchbook
     </div>
     <br/>
     <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4">
         <section class="mb-4">
           <p>ScratchBook is an educational and non-commercial project. The <a class="dark-link" href="https://github.com/arnosimons/scratchbook" target='_blank'>underlying code</a> is free freely available and reusable under the GPL-3.0 license.</p>
           <p>ScratchBook uses a slightly modified version of the <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a>, which was created and <a class="dark-link" href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>published</a> by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. I am deeply indebted to their work.</p>
