@@ -2,6 +2,9 @@
 layout: default 
 title: Home
 ---
-
-URL = "https://arnosimons.github.io/scratchbook"
-window.history.replaceState({}, 'ScratchBook', URL)
+<script>
+  $(document).ready(function () {
+    var url = "https://arnosimons.github.io/scratchbook";
+    window.history.replaceState({}, 'ScratchBook', url);
+  }
+</script>
