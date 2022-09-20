@@ -6,6 +6,7 @@
   --grey-light: #F8F8F8;
   --grey-dark: rgba(0, 0, 0, 0.125);
   --black: rgb(33, 37, 41);
+  --white: rgb(255, 255, 255);
   --red:#d13108;
 }
 p {
@@ -180,6 +181,29 @@ margin-bottom: 10px;
 .btn[aria-expanded="false"]:after {
   content: '+'; 
 }
+.dark-card-header {
+  background-color: var(--black);
+}
+.dark-card-body {
+  font-weight: 100;
+}
+.dark-btn{
+  width: 50%; 
+  text-align: middle; 
+  font-size: 14px; 
+  font-weight: 300; 
+  color: var(--white);
+  margin-bottom: 5px;
+}
+.impressum-link:hover  {
+  color:var(--light-grey);
+  font-weight: 400;
+}
+.dark-btn[data-bs-toggle="collapse"]:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
 .scratch-table {
   font-size: 12px; 
   background-color: var(--grey-light);
