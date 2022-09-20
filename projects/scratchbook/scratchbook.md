@@ -1617,7 +1617,7 @@ permalink: /scratchbook
         </div>
         <div id="ImpressumCard" class="collapse in">
           <div class="dark-card-body" style="overflow-x:auto;">
-          </br>
+          <br/>
             <p>Angaben gemäß § 5 TMG</p>
             <p>
                 Arno Simons <br> 
@@ -1626,7 +1626,7 @@ permalink: /scratchbook
             </p>
             <p>
                 Kontakt: <br>
-                E-Mail: <a href='mailto:arno.simons@gmail.com'>arno.simons@gmail.com</a></br></p>
+                E-Mail: <a href='mailto:arno.simons@gmail.com'>arno.simons@gmail.com</a><br/></p>
             </p>
             <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
             <p>
@@ -1634,7 +1634,7 @@ permalink: /scratchbook
                 Deidesheimer Str. 2<br> 
                 14197 Berlin <br>
             </p> 
-          </br>
+          <br/>
             <p>
                 <strong>HAFTUNGSAUSSCHLUSS</strong>
                 <br><br>            
@@ -1663,7 +1663,7 @@ permalink: /scratchbook
       </div>
     </div>
     
-  </br>
+  <br/>
   </footer>
 </body>
 <py-script>
