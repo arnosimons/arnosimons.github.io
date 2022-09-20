@@ -211,8 +211,8 @@ permalink: /scratchbook
                 "container": 'body',
               });
               // get handlers for key elements
-              // var default_url = 'https://arnosimons.github.io/scratchbook';
-              var default_url = 'http://127.0.0.1:5500/scratchbook.html';
+              var default_url = 'https://arnosimons.github.io/scratchbook';
+              // var default_url = 'http://127.0.0.1:5500/scratchbook.html';
               var default_formula = "autobahn + chirp / 0.25 * 4";
               var scratch_input = document.getElementById("scratch_input");
               var scratch_button = document.getElementById("scratch_button");
