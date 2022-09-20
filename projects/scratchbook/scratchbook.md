@@ -1626,7 +1626,7 @@ permalink: /scratchbook
             </p>
             <p>
                 Kontakt: <br>
-                E-Mail: <a href='mailto:arno.simons@gmail.com'>arno.simons@gmail.com</a><br/></p>
+                E-Mail: <a href='mailto:arno.simons@gmail.com'>arno.simons@gmail.com</a></p>
             </p>
             <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
             <p>
