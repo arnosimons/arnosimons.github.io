@@ -37,8 +37,8 @@ permalink: /scratchbook
   <header style="background-color:rgb(33, 37, 41);box-shadow:0px 4px 3px -1px var(--grey-dark)">
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;</h1>
-      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM-like notation.</a></p>
-      <p style="color: var(--red); font-size: 18px">&#9888; Loading the page takes time. Please wait until you see the scratch plot.</p>
+      <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM notation.</a></p>
+      <p style="color: var(--red); font-size: 16px">&#9888; Loading the page takes time. Please wait until you see the scratch plot.</p>
     </div>
   </header>
   <br/>
@@ -608,7 +608,6 @@ permalink: /scratchbook
                     {data:"Ghosts", title: "Ghosts"}, // 25
                     {data:"Holds", title: "Holds"}, // 26
                     {data:"G-Holds", title: "G-Holds"}, // 27
-                    
                     {data:"Chirps", title: "Chirps"}, // 28
                     {data:"Slices", title: "Slices"}, // 29
                     {data:"Stabs", title: "Stabs"}, // 30
@@ -617,17 +616,13 @@ permalink: /scratchbook
                     {data:"Baby-Orbits", title: "Baby-Orbits"}, // 33
                     {data:"Dice-Orbits", title: "Dice-Orbits"}, // 34
                     {data:"Off-Stabs", title: "Off-Stabs"}, // 35
-                    
                     {data:"S-Curved", title: "S-Curved"}, // 36
                     {data:"Tazers", title: "Tazers"}, // 37
                     {data:"Phantazms", title: "Phantazms"}, // 38
                     {data:"Ex-Tazers", title: "Ex-Tazers"}, // 39
-                    {data:"Ex-Phantazms", title: "Ex-Phantazms"}, // 40
-                    
-                    {data:"Formula", title: "Formula"}, // 41
-                    
+                    {data:"Ex-Phantazms", title: "Ex-Phantazms"}, // 40          
+                    {data:"Formula", title: "Formula"}, // 41                    
                     {data:"Search", title: "Search"}, // 42
-                    
                     {data:"CORE", title: "CORE"}, // 43
                     {data:"ELEMENTS", title: "ELEMENTS"}, // 44
                     {data:"TEARS", title: "TEARS"}, // 45
@@ -747,9 +742,9 @@ permalink: /scratchbook
                       $('#scratch_table tbody tr').each(function () {
                         var tr = $(this);
                         td1 = tr.find("td:eq(0)");
-                        td1.attr('title', "Click to add scratch to visualizer!");
+                        td1.attr('title', "Click to visualize!");
                         td2 = tr.find("td:eq(1)");
-                        td2.attr('title', "Click to add scratch to visualizer!");
+                        td2.attr('title', "Click to visualize!");
                       });
                       /* Style header tooltips */
                       $('#scratch_table [title]').tooltip({
@@ -764,12 +759,13 @@ permalink: /scratchbook
                           var row = table.row( this ).data();
                           var names = row["Name(s)"];
                           names = names.split(",");
-                          if (scratch_input.value.trim()) {
-                            scratch_input.value += " + " + names[0];
-                          }
-                          else{
-                            scratch_input.value += names[0];
-                          };
+                          scratch_input.value = names[0];
+                          // if (scratch_input.value.trim()) {
+                          //   scratch_input.value += " + " + names[0];
+                          // }
+                          // else{
+                          //   scratch_input.value += names[0];
+                          // };
                           scratch_button.click();
                           updateURL(scratch_input.value);
                         }; 
