@@ -211,7 +211,7 @@ permalink: /scratchbook
                 "container": 'body',
               });
               // get handlers for key elements
-              var default_url = 'https://arnosimons.github.io/scratchbook';
+              var default_url = 'https://arnosimons.github.io/scratchbook_old';
               // var default_url = 'http://127.0.0.1:5500/scratchbook.html';
               var default_formula = "autobahn + chirp / 0.25 * 4";
               var scratch_input = document.getElementById("scratch_input");
@@ -578,7 +578,7 @@ permalink: /scratchbook
                 // Define table
                 $(document).ready(function () {
                   var table = $('#scratch_table').DataTable({
-                    ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook/main/CORE.json",
+                    ajax: "https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/CORE.json",
                     columns: [
                     {data:"Preview", title: "Preview" }, // 0
                     {data:"Name(s)", title: "Name(s)"}, // 1
@@ -867,7 +867,7 @@ permalink: /scratchbook
                   $("#ELEMENTS").change(function() {
                     if(this.checked && load_ELEMENTS === true) {
                       load_ELEMENTS = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/ELEMENTS.json', function(json) {
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/ELEMENTS.json', function(json) {
                         addNewRows(table, json);
                       });
                     }
@@ -883,7 +883,7 @@ permalink: /scratchbook
                   $("#TEARS").change(function() {
                     if(this.checked && load_TEARS === true) {
                       load_TEARS = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/TEARS.json', function(json) {
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/TEARS.json', function(json) {
                         addNewRows(table, json);
                       });
                     }
@@ -899,7 +899,7 @@ permalink: /scratchbook
                   $("#ORBITS").change(function() {
                     if(this.checked && load_ORBITS === true) {
                       load_ORBITS = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/ORBITS.json', function(json) {
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/ORBITS.json', function(json) {
                         // table.rows.add(json.data).draw(false);
                         addNewRows(table, json);
                       });
@@ -916,7 +916,7 @@ permalink: /scratchbook
                   $("#COMBOS").change(function() {
                     if(this.checked && COMBOS === true) {
                       COMBOS = false;
-                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook/main/COMBOS.json', function(json) {
+                      $.getJSON('https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/COMBOS.json', function(json) {
                         addNewRows(table, json);
                       });
                     }
