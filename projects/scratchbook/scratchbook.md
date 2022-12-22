@@ -38,7 +38,7 @@ permalink: /scratchbook
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;</h1>
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM notation.</a></p>
-      <p style="color: var(--red); font-size: 16px">&#9888; Loading the page takes time. Please wait until you see the scratch plot.</p>
+      <p style="color: var(--red); font-size: 18px">This Page is old, please use the <a class="dark-link" href="[https://en.wikipedia.org/wiki/Turntablist_transcription_methodology](https://scratchbook.pythonanywhere.com/)" target='_blank'>New ScratchBook.</a>.</p>
     </div>
   </header>
   <br/>
@@ -211,7 +211,7 @@ permalink: /scratchbook
                 "container": 'body',
               });
               // get handlers for key elements
-              var default_url = 'https://arnosimons.github.io/scratchbook_old';
+              var default_url = 'https://arnosimons.github.io/scratchbook';
               // var default_url = 'http://127.0.0.1:5500/scratchbook.html';
               var default_formula = "autobahn + chirp / 0.25 * 4";
               var scratch_input = document.getElementById("scratch_input");
