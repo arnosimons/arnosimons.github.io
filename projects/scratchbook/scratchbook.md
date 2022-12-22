@@ -1595,7 +1595,7 @@ permalink: /scratchbook
     <!-- Grid container -->
     <div class="container p-4">
       <section class="mb-4">
-        <p>ScratchBook is an educational and non-commercial project. The <a class="dark-link" href="https://github.com/arnosimons/scratchbook" target='_blank'>underlying code</a> is free freely available and reusable under the GPL-3.0 license.</p>
+        <p>ScratchBook is an educational and non-commercial project. The <a class="dark-link" href="https://github.com/arnosimons/scratchbook_old" target='_blank'>underlying code</a> is free freely available and reusable under the GPL-3.0 license.</p>
         <p>ScratchBook uses a slightly modified version of the <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>turntablist transcription methodology (TTM)</a>, which was created and <a class="dark-link" href="https://www.ttm-dj.com/TTMv1.1_Eng.pdf" target='_blank'>published</a> by John Carluccio, Ithan Imboden, and Raymond Pirtle in the late 1990s. I am deeply indebted to their work.</p>
         <p> © 2022 by Arno Simons, a Berlin-based <a class="dark-link" href="https://www.instagram.com/dj_hdrs/" target='_blank'>turntablist</a> and <a class="dark-link" href="https://scholar.google.de/citations?user=NhCwiDwAAAAJ&hl=en" target='_blank'>researcher</a>.</p>
       </section>
@@ -1668,11 +1668,11 @@ permalink: /scratchbook
   import re
   from js import XMLHttpRequest
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/scratchbook.py", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/scratchbook.py", False)
   req.send()
   exec(str(req.response))
   req = XMLHttpRequest.new()
-  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook/main/codebook.json", False)
+  req.open("GET", "https://raw.githubusercontent.com/arnosimons/scratchbook_old/main/codebook.json", False)
   req.send()
   exec(f"codebook = {req.response}")
   session_info = document.getElementById("session_info")
