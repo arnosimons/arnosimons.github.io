@@ -38,7 +38,7 @@ permalink: /scratchbook
     <div class="container-md p-2.5 bg-dark text-white">
       <h1>ScratchBook &#128221;&#127926;</h1>
       <p style="color: white; font-size: 16px;">A platform for browsing, composing and visualizing scratches in <a class="dark-link" href="https://en.wikipedia.org/wiki/Turntablist_transcription_methodology" target='_blank'>TTM notation.</a></p>
-      <p style="color: var(--red); font-size: 18px">This Page is old, please use the <a class="dark-link" href="[https://en.wikipedia.org/wiki/Turntablist_transcription_methodology](https://scratchbook.pythonanywhere.com/)" target='_blank'>New ScratchBook.</a>.</p>
+      <p style="color: var(--red); font-size: 18px">This Page is old, please use the <a class="dark-link" href="https://www.scratchbook.app" target='_blank'>New ScratchBook.</a>.</p>
     </div>
   </header>
   <br/>
